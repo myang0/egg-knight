@@ -5,6 +5,7 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler<MovementVectorEventArgs> OnMovement;
 	public static event EventHandler OnMovementKeysPressed;
 	public static event EventHandler OnRightClick;
+	public static event EventHandler OnSpaceBarPressed;
 
 	private bool _controlsEnabled = true;
 
@@ -31,6 +32,8 @@ public class PlayerControls : MonoBehaviour {
 			MovementControls();
 
 			RollControls();
+
+			ShootControls();
 		}
 	}
 
@@ -56,6 +59,12 @@ public class PlayerControls : MonoBehaviour {
 	private void RollControls() {
 		if (Input.GetMouseButtonDown((int)MouseInput.RightClick)) {
 			OnRightClick?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
+	private void ShootControls() {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			OnSpaceBarPressed?.Invoke(this, EventArgs.Empty);
 		}
 	}
 

@@ -35,10 +35,7 @@ public class PlayerMovement : MonoBehaviour {
   IEnumerator Roll() {
     Vector3 mousePosInWorld = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-    Vector2 mousePos2D = new Vector2(mousePosInWorld.x, mousePosInWorld.y);
-    Vector2 playerPos2D = new Vector2(transform.position.x, transform.position.y);
-
-    Vector2 vectorToMouse = (mousePos2D - playerPos2D).normalized;
+    Vector2 vectorToMouse = VectorHelper.GetVectorToPoint(transform.position, mousePosInWorld);
 
     _rb.velocity = vectorToMouse * _rollSpeed;
     _rb.drag = _rollDrag;
