@@ -14,6 +14,8 @@ public class EggGuardBehaviour : MonoBehaviour {
 
   private void Awake() {
     _rb = gameObject.GetComponent<Rigidbody2D>();
+
+    EggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage; 
   }
 
   private void Update() {
@@ -42,5 +44,19 @@ public class EggGuardBehaviour : MonoBehaviour {
     yield return new WaitForSeconds(_attackCooldown);
 
     _isAttacking = false;
+  }
+
+  private void HandleStatusDamage(object sender, EnemyStatusEventArgs e) {
+    if (e.status == StatusCondition.Yolked) {
+      StartCoroutine(Yolked());
+    }
+  }
+
+  IEnumerator Yolked() {
+    _speed /= 2;
+
+    yield return new WaitForSeconds(2);
+
+    _speed *= 2;
   }
 }

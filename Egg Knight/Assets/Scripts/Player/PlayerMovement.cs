@@ -3,8 +3,6 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-  private Camera _mainCamera;
-
   private Rigidbody2D _rb;
 
   [SerializeField] private float _movementSpeed = 5.0f;
@@ -21,7 +19,6 @@ public class PlayerMovement : MonoBehaviour {
     PlayerControls.OnRightClick += HandleRoll;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
-    _mainCamera = Camera.main;
   }
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
@@ -33,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   IEnumerator Roll() {
-    Vector3 mousePosInWorld = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     Vector2 vectorToMouse = VectorHelper.GetVectorToPoint(transform.position, mousePosInWorld);
 
