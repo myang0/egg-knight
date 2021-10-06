@@ -8,7 +8,13 @@ public abstract class Health : MonoBehaviour {
     _currentHealth = _maxHealth;
   }
 
-  public abstract void Damage(float amount);
+  public virtual void Damage(float amount) {
+    _currentHealth -= amount;
+
+    if (_currentHealth <= 0) {
+      Die();
+    }
+  }
 
   public virtual void Heal(float amount) {
     _currentHealth += amount;
@@ -18,5 +24,7 @@ public abstract class Health : MonoBehaviour {
     }
   }
 
-  protected abstract void Die();
+  protected virtual void Die() {
+    Destroy(gameObject);
+  }
 }

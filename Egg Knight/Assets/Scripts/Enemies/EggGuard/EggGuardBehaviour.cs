@@ -2,20 +2,16 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EggGuardBehaviour : MonoBehaviour {
-  private Rigidbody2D _rb;
-
-  [SerializeField] private float _speed = 3.0f;
-
+public class EggGuardBehaviour : EnemyBehaviour {
   [SerializeField] private float _maxDistanceToAttack = 2.0f;
   [SerializeField] private float _attackCooldown = 1.5f;
 
   private bool _isAttacking = false;
 
-  private void Awake() {
-    _rb = gameObject.GetComponent<Rigidbody2D>();
+  protected override void Awake() {
+    EggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage;
 
-    EggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage; 
+    base.Awake();
   }
 
   private void Update() {
@@ -32,7 +28,7 @@ public class EggGuardBehaviour : MonoBehaviour {
       Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
       Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
 
-      _rb.velocity = vectorToPlayer * _speed;
+      _rb.velocity = vectorToPlayer * _currentSpeed;
     }
   }
 
@@ -44,19 +40,5 @@ public class EggGuardBehaviour : MonoBehaviour {
     yield return new WaitForSeconds(_attackCooldown);
 
     _isAttacking = false;
-  }
-
-  private void HandleStatusDamage(object sender, EnemyStatusEventArgs e) {
-    if (e.status == StatusCondition.Yolked) {
-      StartCoroutine(Yolked());
-    }
-  }
-
-  IEnumerator Yolked() {
-    _speed /= 2;
-
-    yield return new WaitForSeconds(2);
-
-    _speed *= 2;
   }
 }

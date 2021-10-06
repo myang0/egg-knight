@@ -5,5 +5,8 @@ public abstract class EnemyHealth : Health {
 
   public abstract void DamageWithStatus(float amount, StatusCondition status);
 
-  public abstract void DamageWithType(float amount, DamageType type);
+  public virtual void DamageWithType(float amount, DamageType type) {
+    float bonusDamage = (type == _weakTo) ? (amount * 0.5f) : 0;
+    Damage(amount + bonusDamage);
+  }
 }
