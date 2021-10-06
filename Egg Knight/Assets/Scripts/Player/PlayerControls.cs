@@ -29,7 +29,6 @@ public class PlayerControls : MonoBehaviour {
     private void Update() {
         if (_controlsEnabled) {
             MovementControls();
-
             RollControls();
         }
     }
