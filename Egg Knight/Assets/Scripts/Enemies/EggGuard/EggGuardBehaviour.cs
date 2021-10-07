@@ -9,7 +9,8 @@ public class EggGuardBehaviour : EnemyBehaviour {
   private bool _isAttacking = false;
 
   protected override void Awake() {
-    EggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage;
+    EggGuardHealth eggGuardHealth = gameObject.GetComponent<EggGuardHealth>();
+    eggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage;
 
     base.Awake();
   }
