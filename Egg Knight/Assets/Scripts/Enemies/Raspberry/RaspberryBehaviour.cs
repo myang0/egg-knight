@@ -12,7 +12,8 @@ public class RaspberryBehaviour : EnemyBehaviour {
   private RaspberryState _state = RaspberryState.Fleeing;
 
   protected override void Awake() {
-    RaspberryHealth.OnRaspberryStatusDamage += HandleStatusDamage;
+    RaspberryHealth raspberryHealth = gameObject.GetComponent<RaspberryHealth>();
+    raspberryHealth.OnRaspberryStatusDamage += HandleStatusDamage;
 
     base.Awake();
   }
