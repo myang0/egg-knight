@@ -170,7 +170,7 @@ namespace Stage {
             if (stageType != StageType.Spawn) {
                 _levelManager.IncrementStagesCleared();
                 _levelManager.IncrementRest(5);
-                _levelManager.IncrementShop(5);
+                _levelManager.IncrementShop(35);
                 _levelManager.IncrementSirracha(5);  
             }
         }
