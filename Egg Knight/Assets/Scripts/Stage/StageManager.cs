@@ -28,7 +28,7 @@ namespace Stage {
         
         private LevelManager _levelManager;
         private BoxCollider _camBoundary;
-        private bool _isDifficultyInitialized;
+        private bool _isStageInitialized;
 
         // 100% - _% = Actual Spawn Rate
         private const int MediumStageSpawnRate = 50;
@@ -64,7 +64,7 @@ namespace Stage {
             if (stageStatus == StageStatus.Active) {
                 if (stageType == StageType.Easy || stageType == StageType.Medium ||
                     stageType == StageType.Hard || stageType == StageType.Survival) {
-                    InitializeDifficulty();
+                    InitializeStage();
                     SpawnEnemies();
                     
                 }
@@ -73,10 +73,8 @@ namespace Stage {
                     if (itemStatus == StageItemStatus.NeverSpawned) {
                         SpawnItem();
                         OnStageClear?.Invoke(this, EventArgs.Empty);
-                        // ClearStage();
-                    }
-                    if (itemStatus == StageItemStatus.FailedSpawn ||
-                        itemStatus == StageItemStatus.Collected) {
+                    } else if (itemStatus == StageItemStatus.FailedSpawn ||
+                              itemStatus == StageItemStatus.Collected) {
                         stageStatus = StageStatus.Cleared;
                         GenerateExits();
                     }
@@ -122,8 +120,8 @@ namespace Stage {
             return false;
         }
 
-        private void InitializeDifficulty() {
-            if (_isDifficultyInitialized) return;
+        private void InitializeStage() {
+            if (_isStageInitialized) return;
 
             switch (stageType) {
                 case StageType.Hard:
@@ -133,8 +131,11 @@ namespace Stage {
                     numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.65f);
                     break;
             }
-
-            _isDifficultyInitialized = true;
+            
+            //todo: this will call pizza delivery 
+            OnStageStart?.Invoke(this, EventArgs.Empty);
+            
+            _isStageInitialized = true;
         }
 
         private void SpawnEnemies() {

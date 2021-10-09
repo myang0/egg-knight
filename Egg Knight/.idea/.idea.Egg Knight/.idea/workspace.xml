@@ -20,19 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlaceholderEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlaceholderEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +106,7 @@
       <workItem from="1633378681437" duration="759000" />
       <workItem from="1633384566118" duration="21598000" />
       <workItem from="1633472554771" duration="17051000" />
-      <workItem from="1633730554582" duration="12361000" />
+      <workItem from="1633730554582" duration="13256000" />
     </task>
     <servers />
   </component>
