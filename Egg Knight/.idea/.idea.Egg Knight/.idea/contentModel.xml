@@ -7,30 +7,61 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Enemies" t="Include">
+            <e p="EggGuard" t="Include">
+              <e p="EggGuardBehaviour.cs" t="Include" />
+              <e p="EggGuardHealth.cs" t="Include" />
+            </e>
+            <e p="EnemyBehaviour.cs" t="Include" />
+            <e p="EnemyHealth.cs" t="Include" />
+            <e p="Raspberry" t="Include">
+              <e p="RaspberryBehaviour.cs" t="Include" />
+              <e p="RaspberryHealth.cs" t="Include" />
+              <e p="RaspberryProjectile.cs" t="Include" />
+              <e p="RaspberryState.cs" t="Include" />
+            </e>
+          </e>
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />
             <e p="PlaceholderEnemy.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="DamageType.cs" t="Include" />
             <e p="Direction.cs" t="Include" />
             <e p="MouseInput.cs" t="Include" />
+            <e p="StageItemStatus.cs" t="Include" />
             <e p="StageStatus.cs" t="Include" />
             <e p="StageType.cs" t="Include" />
+            <e p="StatusCondition.cs" t="Include" />
           </e>
           <e p="Events" t="Include">
+            <e p="EnemyStatusEventArgs.cs" t="Include" />
             <e p="MovementVectorEventArgs.cs" t="Include" />
             <e p="RollEventArgs.cs" t="Include" />
           </e>
+          <e p="Health.cs" t="Include" />
+          <e p="Helpers" t="Include">
+            <e p="VectorHelper.cs" t="Include" />
+          </e>
           <e p="Pickups" t="Include">
             <e p="Coin.cs" t="Include" />
+            <e p="ItemManager.cs" t="Include" />
+            <e p="PowerUp.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="Attacks" t="Include">
+              <e p="YolkProjectile.cs" t="Include" />
+            </e>
             <e p="PlayerAnimation.cs" t="Include" />
+            <e p="PlayerCombat.cs" t="Include" />
             <e p="PlayerControls.cs" t="Include" />
+            <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
+          <e p="Projectile.cs" t="Include" />
           <e p="Stage" t="Include">
             <e p="EnemySpawnpoint.cs" t="Include" />
+            <e p="ItemSpawnpoint.cs" t="Include" />
             <e p="LevelManager.cs" t="Include" />
             <e p="StageEntrance.cs" t="Include" />
             <e p="StageExit.cs" t="Include" />

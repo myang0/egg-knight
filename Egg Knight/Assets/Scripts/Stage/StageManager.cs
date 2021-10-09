@@ -16,8 +16,13 @@ namespace Stage {
         [SerializeField] private int numEnemiesMax;
         [SerializeField] private int numWavesMax;
         [SerializeField] private int numWavesCurr;
-        
+        [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
+        public event EventHandler OnStageStart;
+
+        public event EventHandler OnStageClear;
+
         private StageEntrance _stageEntrance;
+        private ItemSpawnpoint _itemSpawnpoint;
         private List<StageExit> _stageExits = new List<StageExit>();
         private List<EnemySpawnpoint> _eSpawnpoints = new List<EnemySpawnpoint>();
         
@@ -34,13 +39,18 @@ namespace Stage {
         private const int NumStagesToBossLv1 = 10;
         private const int NumStagesToBossLv2 = 12;
         private const int NumStagesToBossLv3 = 15;
-        
+
+        private static readonly int[] Level1ItemStages = {3, 7, 11};
+        private static readonly int[] Level2ItemStages = {4, 8, 13};
+        private static readonly int[] Level3ItemStages = {5, 9, 13};
+
         private const float SurvivalTimer = 30f;
 
         private void Start() {
             _eSpawnpoints.AddRange(GetComponentsInChildren<EnemySpawnpoint>());
             _stageExits.AddRange(GetComponentsInChildren<StageExit>());
             _stageEntrance = GetComponentInChildren<StageEntrance>();
+            _itemSpawnpoint = GetComponentInChildren<ItemSpawnpoint>();
             _camBoundary = GetComponent<BoxCollider>();
             _levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             
@@ -60,14 +70,37 @@ namespace Stage {
                 }
                 
                 if (StageClearCondition()) {
-                    stageStatus = StageStatus.Cleared;
-                    ClearStage();
-                    GenerateExits();
+                    if (itemStatus == StageItemStatus.NeverSpawned) {
+                        SpawnItem();
+                        OnStageClear?.Invoke(this, EventArgs.Empty);
+                        // ClearStage();
+                    }
+                    if (itemStatus == StageItemStatus.FailedSpawn ||
+                        itemStatus == StageItemStatus.Collected) {
+                        stageStatus = StageStatus.Cleared;
+                        GenerateExits();
+                    }
                 }
                 
             } else if (stageStatus == StageStatus.Cleared) {
                 ReadyForNextStage();
             }
+        }
+
+        private void SpawnItem() {
+            if (IsItemSpawning() && itemStatus == StageItemStatus.NeverSpawned) {
+                ItemManager itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
+                PowerUp powerUp = itemManager.SpawnItem(_itemSpawnpoint.transform.position);
+                powerUp.OnPickup += RemoveItemFromStage;
+                itemStatus = StageItemStatus.Spawned;
+            }
+            else {
+                itemStatus = StageItemStatus.FailedSpawn;
+            }
+        }
+        
+        private void RemoveItemFromStage(object sender, EventArgs e) {
+            itemStatus = StageItemStatus.Collected;
         }
         
         private bool StageClearCondition() {
@@ -91,11 +124,14 @@ namespace Stage {
 
         private void InitializeDifficulty() {
             if (_isDifficultyInitialized) return;
-            
-            if (stageType == StageType.Hard) {
-                numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 1.5f);
-            } else if (stageType == StageType.Easy) {
-                numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.65f);
+
+            switch (stageType) {
+                case StageType.Hard:
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 1.5f);
+                    break;
+                case StageType.Easy:
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.65f);
+                    break;
             }
 
             _isDifficultyInitialized = true;
@@ -165,15 +201,6 @@ namespace Stage {
                 }
             }
         }
-        
-        private void ClearStage() {
-            if (stageType != StageType.Spawn) {
-                _levelManager.IncrementStagesCleared();
-                _levelManager.IncrementRest(5);
-                _levelManager.IncrementShop(35);
-                _levelManager.IncrementSirracha(5);  
-            }
-        }
 
         private void ReadyForNextStage() {
             foreach (StageExit exit in _stageExits) {
@@ -190,7 +217,6 @@ namespace Stage {
             int stagesCleared = _levelManager.GetStagesCleared();
 
             if (stageType == StageType.Boss) {
-                Debug.Log("Exits are all set to SPAWN");
                 foreach (StageExit exit in _stageExits) {
                     exit.SetStageType(StageType.Spawn);
                 }
@@ -199,7 +225,6 @@ namespace Stage {
             else if (currentLevel == 1 && stagesCleared == NumStagesToBossLv1 
                 || currentLevel == 2 && stagesCleared == NumStagesToBossLv2
                 || currentLevel == 3 && stagesCleared == NumStagesToBossLv3) {
-                Debug.Log("Exits are all set to BOSS");
                 foreach (StageExit exit in _stageExits) {
                     exit.SetStageType(StageType.Boss);
                 }
@@ -224,7 +249,6 @@ namespace Stage {
                     if (stageType == StageType.Spawn) {
                         exit.SetStageType(StageType.Medium);
                         skipRegularRoomGen = true;
-                        Debug.Log("Generated a MEDIUM exit");
                     }
                     // Check special stage spawns
                     else if (!didSpecialRoomSpawn) {
@@ -232,19 +256,16 @@ namespace Stage {
                             exit.SetStageType(StageType.Shop);
                             didSpecialRoomSpawn = true;
                             skipRegularRoomGen = true;
-                            Debug.Log("Generated a SHOP exit");
                         }
                         else if (_levelManager.GetRestSpawn()) {
                             exit.SetStageType(StageType.Rest);
                             didSpecialRoomSpawn = true;
                             skipRegularRoomGen = true;
-                            Debug.Log("Generated a REST exit");
                         }
                         else if (_levelManager.GetSirrachaSpawn()) {
                             exit.SetStageType(StageType.Sirracha);
                             didSpecialRoomSpawn = true;
                             skipRegularRoomGen = true;
-                            Debug.Log("Generated a SIR RACHA exit");
                         }
                     }
                     // Check regular stage spawns
@@ -257,28 +278,43 @@ namespace Stage {
                         if (randomStageVal > MediumStageSpawnRate && !didMediumStageSpawn) {
                             exit.SetStageType(StageType.Medium);
                             didMediumStageSpawn = true;
-                            Debug.Log("Generated a MEDIUM exit");
                         }
                         else if (randomStageVal > HardStageSpawnRate && !didHardStageSpawn) {
                             exit.SetStageType(StageType.Hard);
                             didHardStageSpawn = true;
-                            Debug.Log("Generated a HARD exit");
                         }
                         else if (randomStageVal > EasyStageSpawnRate && !didEasyStageSpawn) {
                             exit.SetStageType(StageType.Easy);
                             didEasyStageSpawn = true;
-                            Debug.Log("Generated an EASY exit");
                         }
                         else if (randomStageVal > SurvivalStageSpawnRate && !didSurvivalStageSpawn) {
                             exit.SetStageType(StageType.Survival);
                             didSurvivalStageSpawn = true;
-                            Debug.Log("Generated a SURVIVAL exit");
                         } else {
                             // GG stage generation failed lets go again
                             goto attemptGeneration;  
                         }
                     }
                 }
+            }
+        }
+
+        private bool IsItemSpawning() {
+            int stagesCleared = _levelManager.GetStagesCleared();
+
+            switch (_levelManager.GetLevel()) {
+                case 1 when stagesCleared == Level1ItemStages[0] ||
+                            stagesCleared == Level1ItemStages[1] ||
+                            stagesCleared == Level1ItemStages[2]:
+                case 2 when stagesCleared == Level2ItemStages[0] ||
+                            stagesCleared == Level2ItemStages[1] ||
+                            stagesCleared == Level2ItemStages[2]:
+                case 3 when stagesCleared == Level3ItemStages[0] ||
+                            stagesCleared == Level3ItemStages[1] ||
+                            stagesCleared == Level3ItemStages[2]:
+                    return true;
+                default:
+                    return _levelManager.GetLuckyItemSpawn();
             }
         }
 

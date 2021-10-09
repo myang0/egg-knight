@@ -21,6 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlaceholderEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlaceholderEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Coin.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Enemy.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +43,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Prefabs.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Prefabs.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Player/PlayerControls.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Player/PlayerControls.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -47,7 +56,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/RoomGenerationRNG.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageRNGManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/PlaceholderEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
@@ -55,6 +63,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/PowerUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
       </list>
     </option>
@@ -70,7 +82,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -104,6 +116,7 @@
       <workItem from="1633378681437" duration="759000" />
       <workItem from="1633384566118" duration="21598000" />
       <workItem from="1633472554771" duration="17051000" />
+      <workItem from="1633730554582" duration="12361000" />
     </task>
     <servers />
   </component>
@@ -128,14 +141,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="149" key="SettingsEditor" timestamp="1633397425966">
+    <state x="679" y="133" key="SettingsEditor" timestamp="1633743320409">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="413" y="149" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1633397425966" />
-    <state x="1193" y="261" key="run.anything.popup" timestamp="1633478165420">
+    <state x="679" y="133" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1633743320409" />
+    <state x="1193" y="261" key="run.anything.popup" timestamp="1633744579299">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1633478165420" />
+    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1633744579299" />
     <state x="1199" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1633485547157">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

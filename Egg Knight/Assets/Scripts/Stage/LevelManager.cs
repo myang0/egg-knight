@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -26,6 +27,8 @@ namespace Stage
         [SerializeField] private int restRate;
         [SerializeField] private int sirrachaRate;
         [SerializeField] private int shopRate;
+        [SerializeField] private int luckyItemRate;
+        private bool hasPlayerTakenDamageCurrStage;
         private int _level = 1;
         private const int ShopsPerLevel = 3;
         private GameObject _player;
@@ -39,8 +42,6 @@ namespace Stage
             shopRate = 0;
         }
 
-        // Selects next stage/level based on current stage and the StageType param
-        // Moves player to next stage, initiates stage, and removes stage from list
         public void NextStage(StageType stageType) {
             StageManager stage;
 
@@ -76,7 +77,74 @@ namespace Stage
             }
             
             stage.SetStageType(stageType);
-            SetActiveStage(stage);
+            SetStageActiveStatus(stage);
+            MovePlayerToStage(stage);
+            hasPlayerTakenDamageCurrStage = false;
+            virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = stage.GetCameraBoundary();
+            currentStage = stage;
+            stage.OnStageClear += IncrementRates;
+        }
+
+        private void MovePlayerToStage(StageManager stage) {
+            Vector3 spawnPos = stage.GetSpawnPosition();
+            Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, 2);
+            _player.transform.position = newPos;
+        }
+
+        private void PlayerTookDamage(object sender, EventArgs e) {
+            hasPlayerTakenDamageCurrStage = true;
+        }
+
+        private void IncrementRates(object sender, EventArgs e) {
+            StageType currStageType = currentStage.GetStageType();
+            if (currStageType == StageType.Spawn) return;
+            
+            stagesCleared++;
+            restRate += 5;
+            shopRate += 35;
+
+            switch (currStageType) {
+                case StageType.Hard:
+                    if (!hasPlayerTakenDamageCurrStage) {
+                        luckyItemRate += 5;
+                        sirrachaRate += 10; 
+                    }
+
+                    luckyItemRate += 3;
+                    break;
+                
+                case StageType.Medium:
+                    if (!hasPlayerTakenDamageCurrStage) {
+                        luckyItemRate += 3;
+                        sirrachaRate += 5; 
+                    }
+                    luckyItemRate += 2;
+                    break;
+                
+                case StageType.Easy:
+                    if (!hasPlayerTakenDamageCurrStage) {
+                        luckyItemRate += 1;
+                        sirrachaRate += 1; 
+                    }
+                    luckyItemRate += 1;
+                    break;
+                
+                case StageType.Survival:
+                    if (!hasPlayerTakenDamageCurrStage) {
+                        luckyItemRate += 5;
+                        sirrachaRate += 15; 
+                    }
+                    luckyItemRate += 5;
+                    break;
+                
+                case StageType.Boss:
+                    if (!hasPlayerTakenDamageCurrStage) {
+                        luckyItemRate += 10;
+                        sirrachaRate += 25;
+                    }
+                    luckyItemRate += 5;
+                    break;
+                }
         }
 
         private StageManager LoadRegularStage() {
@@ -174,7 +242,7 @@ namespace Stage
             return stage;
         }
 
-        private void SetActiveStage(StageManager activeStage) {
+        private void SetStageActiveStatus(StageManager activeStage) {
             switch (_level) {
                 case 1: {
                     foreach (StageManager stage in level1Stages) {
@@ -195,13 +263,7 @@ namespace Stage
                     break;
                 }
             }
-            
-            Vector3 spawnPos = activeStage.GetSpawnPosition();
-            Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, 2);
-            _player.transform.position = newPos;
             activeStage.SetStageStatus(StageStatus.Active);
-            virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = activeStage.GetCameraBoundary();
-            currentStage = activeStage;
         }
 
         private void StartAsserts() {
@@ -277,26 +339,14 @@ namespace Stage
             }
             return false;
         }
-    
-        public void IncrementRest(int value) {
-            restRate += value;
-            if (restRate > 100) {
-                restRate = 100;
-            }
-        }
 
-        public void IncrementSirracha(int value) {
-            sirrachaRate += value;
-            if (sirrachaRate > 100) {
-                sirrachaRate = 100;
+        public bool GetLuckyItemSpawn() {
+            int chance = Random.Range(1, 101);
+            if (chance < luckyItemRate) {
+                luckyItemRate = 0;
+                return true;
             }
-        }
-
-        public void IncrementShop(int value) {
-            shopRate += value;
-            if (shopRate > 100) {
-                shopRate = 100;
-            }
+            return false;
         }
 
         public int GetLevel() {
@@ -305,10 +355,6 @@ namespace Stage
         
         public int GetStagesCleared() {
             return stagesCleared;
-        }
-
-        public void IncrementStagesCleared() {
-            stagesCleared++;
         }
 
         public StageManager GetCurrentStage() {
