@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 1131436154947779515, guid: 9e0f14b4c20359143842ac13b774cb58,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1131436154947779515, guid: 9e0f14b4c20359143842ac13b774cb58,
         type: 3}
@@ -207,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 1131436154947779515, guid: 9e0f14b4c20359143842ac13b774cb58,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1131436154947779515, guid: 9e0f14b4c20359143842ac13b774cb58,
         type: 3}
@@ -261,6 +261,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e0f14b4c20359143842ac13b774cb58, type: 3}
+--- !u!1001 &1445187606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1060600742903179065, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_Name
+      value: Raspberry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3114872
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9938304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060600742903179069, guid: 869a76ebb052f9d4885f2697357d35ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 869a76ebb052f9d4885f2697357d35ca, type: 3}
 --- !u!1 &1972209370
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
