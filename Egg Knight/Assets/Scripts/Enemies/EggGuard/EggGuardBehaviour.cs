@@ -11,7 +11,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
   protected override void Awake() {
     EggGuardHealth eggGuardHealth = gameObject.GetComponent<EggGuardHealth>();
     eggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage;
-
+    Health = eggGuardHealth;
     base.Awake();
   }
 

@@ -1,4 +1,6 @@
 using System.Collections;
+using Stage;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class RaspberryBehaviour : EnemyBehaviour {
@@ -14,7 +16,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
   protected override void Awake() {
     RaspberryHealth raspberryHealth = gameObject.GetComponent<RaspberryHealth>();
     raspberryHealth.OnRaspberryStatusDamage += HandleStatusDamage;
-
+    Health = raspberryHealth;
     base.Awake();
   }
 

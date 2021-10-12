@@ -12,7 +12,7 @@ namespace Stage {
     public class StageManager : MonoBehaviour {
         [SerializeField] private StageType stageType;
         [SerializeField] private StageStatus stageStatus;
-        [SerializeField] private List<Enemy> enemiesList;
+        [SerializeField] private List<EnemyBehaviour> enemiesList;
         [SerializeField] private int numEnemiesMax;
         [SerializeField] private int numWavesMax;
         [SerializeField] private int numWavesCurr;
@@ -284,14 +284,14 @@ namespace Stage {
 
         private IEnumerator StartSurvivalTimer() {
             yield return new WaitForSeconds(SurvivalTimer);
-            foreach (Enemy e in enemiesList) {
+            foreach (EnemyBehaviour e in enemiesList) {
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
             numWavesCurr = 1;
         }
         
-        public void RemoveEnemy(Enemy e) {
+        public void RemoveEnemy(EnemyBehaviour e) {
             enemiesList.Remove(e);
         }
 

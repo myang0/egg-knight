@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 
     protected void Die() {
         stageManager = levelManager.GetCurrentStage();
-        stageManager.RemoveEnemy(this);
+        // stageManager.RemoveEnemy(this);
         
         StageType stageType = stageManager.GetStageType();
 

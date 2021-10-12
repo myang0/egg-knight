@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour {
   [SerializeField] protected float _maxHealth;
+  public event EventHandler OnDeath;
   protected float _currentHealth;
 
   protected virtual void Awake() {
@@ -25,6 +27,7 @@ public abstract class Health : MonoBehaviour {
   }
 
   protected virtual void Die() {
+    OnDeath?.Invoke(this, EventArgs.Empty);
     Destroy(gameObject);
   }
 }
