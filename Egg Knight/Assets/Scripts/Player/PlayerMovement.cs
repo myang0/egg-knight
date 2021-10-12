@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour {
   [SerializeField] private float _rollDrag = 3.0f;
   [SerializeField] private float _rollDuration = 0.5f;
 
+  [SerializeField] private float _rollCooldown = 0.25f;
+  private bool _canRoll = true;
+
   public static event EventHandler<RollEventArgs> OnRollBegin;
   public static event EventHandler OnRollEnd;
 
@@ -26,7 +29,9 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   private void HandleRoll(object sender, EventArgs e) {
-    StartCoroutine(Roll());
+    if (_canRoll) {
+      StartCoroutine(Roll());
+    }
   }
 
   IEnumerator Roll() {
@@ -47,5 +52,15 @@ public class PlayerMovement : MonoBehaviour {
     _rb.drag = 0;
 
     OnRollEnd?.Invoke(this, EventArgs.Empty);
+
+    StartCoroutine(RollCooldown());
+  }
+
+  IEnumerator RollCooldown() {
+    _canRoll = false;
+
+    yield return new WaitForSeconds(_rollCooldown);
+
+    _canRoll = true;
   }
 }
