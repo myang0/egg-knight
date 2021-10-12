@@ -1,5 +1,5 @@
 public enum MouseInput {
-  LeftClick,
-  RightClick,
-  MiddleClick
+  LeftClick = 0,
+  RightClick = 1,
+  MiddleClick = 2
 }

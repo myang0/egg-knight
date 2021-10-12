@@ -5,7 +5,11 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler<MovementVectorEventArgs> OnMovement;
 	public static event EventHandler OnMovementKeysPressed;
 	public static event EventHandler OnRightClick;
+
 	public static event EventHandler OnSpaceBarPressed;
+	public static event EventHandler OnLeftClick;
+	public static event EventHandler OnQPress;
+	public static event EventHandler OnEPress;
 
 	private bool _controlsEnabled = true;
 
@@ -34,6 +38,8 @@ public class PlayerControls : MonoBehaviour {
 			RollControls();
 
 			ShootControls();
+			AttackControls();
+			AttackSwitchControls();
 		}
 	}
 
@@ -65,6 +71,20 @@ public class PlayerControls : MonoBehaviour {
 	private void ShootControls() {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			OnSpaceBarPressed?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
+	private void AttackControls() {
+		if (Input.GetMouseButtonDown((int)MouseInput.LeftClick)) {
+			OnLeftClick?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
+	private void AttackSwitchControls() {
+		if (Input.GetKeyDown(KeyCode.Q)) {
+			OnQPress?.Invoke(this, EventArgs.Empty);
+		} else if (Input.GetKeyDown(KeyCode.E)) {
+			OnEPress?.Invoke(this, EventArgs.Empty);
 		}
 	}
 
