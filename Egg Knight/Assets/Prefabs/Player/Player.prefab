@@ -139,6 +139,7 @@ MonoBehaviour:
   _rollSpeed: 10
   _rollDrag: 3
   _rollDuration: 0.5
+  _rollCooldown: 0.25
 --- !u!114 &1278995262712370201
 MonoBehaviour:
   m_ObjectHideFlags: 0
