@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Stage;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public abstract class EnemyBehaviour : MonoBehaviour {
   protected Rigidbody2D _rb;
@@ -10,10 +12,20 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   [SerializeField] protected float _yolkedDuration;
 
+  protected Health Health;
   protected virtual void Awake() {
+    Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
-
+    
     _rb = gameObject.GetComponent<Rigidbody2D>();
+    
+    Health.OnDeath += (sender, eventArgs) => {
+      FindObjectOfType<CoinDrop>().DropCoin(transform.position);
+      GameObject.FindGameObjectWithTag("LevelManager")
+        .GetComponent<LevelManager>()
+        .GetCurrentStage()
+        .RemoveEnemy(this);
+    };
   }
 
   protected virtual void HandleStatusDamage(object sender, EnemyStatusEventArgs e) {

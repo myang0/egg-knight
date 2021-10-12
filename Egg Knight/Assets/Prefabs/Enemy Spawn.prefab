@@ -95,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb5a9f9cdf28c14482ed75fb8ac2406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeholderEnemy: {fileID: 3991882953670540908, guid: cc6849cfb371c814ebcc4bda64f2e826,
+  lv1EggGuard: {fileID: 1131436154947779518, guid: 9e0f14b4c20359143842ac13b774cb58,
     type: 3}
-  lv1EggGuard: {fileID: 0}
   lv1Mushroom: {fileID: 0}
-  lv1Raspberry: {fileID: 0}
+  lv1Raspberry: {fileID: 1060600742903179070, guid: 869a76ebb052f9d4885f2697357d35ca,
+    type: 3}
   lv1Strawberry: {fileID: 0}
