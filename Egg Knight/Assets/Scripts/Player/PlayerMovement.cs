@@ -14,18 +14,26 @@ public class PlayerMovement : MonoBehaviour {
   [SerializeField] private float _rollCooldown = 0.25f;
   private bool _canRoll = true;
 
+  private Vector2 _lastMovementVector;
+
   public static event EventHandler<RollEventArgs> OnRollBegin;
   public static event EventHandler OnRollEnd;
 
   private void Awake() {
     PlayerControls.OnMovement += HandleMovement;
-    PlayerControls.OnRightClick += HandleRoll;
+    PlayerControls.OnSpaceBarPressed += HandleRoll;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
+
+    _lastMovementVector = Vector2.zero;
   }
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
     _rb.velocity = e.vector * _movementSpeed;
+
+    if (e.vector.Equals(Vector2.zero) == false) {
+      _lastMovementVector = e.vector;
+    }
   }
 
   private void HandleRoll(object sender, EventArgs e) {
@@ -35,14 +43,10 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   IEnumerator Roll() {
-    Vector3 mousePosInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-    Vector2 vectorToMouse = VectorHelper.GetVectorToPoint(transform.position, mousePosInWorld);
-
-    _rb.velocity = vectorToMouse * _rollSpeed;
+    _rb.velocity = _lastMovementVector * _rollSpeed;
     _rb.drag = _rollDrag;
 
-    Direction rollDirection = (vectorToMouse.x >= 0) ? Direction.Right : Direction.Left;
+    Direction rollDirection = (_lastMovementVector.x >= 0) ? Direction.Right : Direction.Left;
 
     OnRollBegin?.Invoke(this, new RollEventArgs(_rollDuration, rollDirection));
 

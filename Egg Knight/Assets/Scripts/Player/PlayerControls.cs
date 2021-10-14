@@ -15,8 +15,6 @@ public class PlayerControls : MonoBehaviour {
 
 	private bool _movementKeysDown = false;
 
-	private Vector2 _lastMovementVector = Vector2.zero;
-
 	private void Awake() {
 		PlayerMovement.OnRollBegin += DisableControl;
 		PlayerMovement.OnRollEnd += EnableControl;
@@ -24,7 +22,6 @@ public class PlayerControls : MonoBehaviour {
 
 	private void DisableControl(object sender, RollEventArgs e) {
 		_controlsEnabled = false;
-		_lastMovementVector = Vector2.zero;
 	}
 
 	private void EnableControl(object sender, EventArgs e) {
@@ -55,22 +52,22 @@ public class PlayerControls : MonoBehaviour {
 			0 + (Input.GetKey(KeyCode.S) ? -1 : 0) + (Input.GetKey(KeyCode.W) ? 1 : 0)
 		);
 
-		if (!_lastMovementVector.Equals(movementVector)) {
-			OnMovement?.Invoke(this, new MovementVectorEventArgs(movementVector));
+		if (movementVector.x != 0 && movementVector.y != 0) {
+			movementVector *= 0.8f;
 		}
 
-		_lastMovementVector = movementVector;
+		OnMovement?.Invoke(this, new MovementVectorEventArgs(movementVector));
 	}
 
 	private void RollControls() {
-		if (Input.GetMouseButtonDown((int)MouseInput.RightClick)) {
-			OnRightClick?.Invoke(this, EventArgs.Empty);
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			OnSpaceBarPressed?.Invoke(this, EventArgs.Empty);
 		}
 	}
 
 	private void ShootControls() {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			OnSpaceBarPressed?.Invoke(this, EventArgs.Empty);
+		if (Input.GetMouseButtonDown((int)MouseInput.RightClick)) {
+			OnRightClick?.Invoke(this, EventArgs.Empty);
 		}
 	}
 
