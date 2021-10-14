@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
-  _rollSpeed: 10
+  _rollSpeed: 12
   _rollDrag: 3
   _rollDuration: 0.5
   _rollCooldown: 0.25
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _iFramesDuration: 0.5
 --- !u!70 &1278995263249701425
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

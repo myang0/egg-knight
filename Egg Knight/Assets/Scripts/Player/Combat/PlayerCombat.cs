@@ -9,7 +9,7 @@ public class PlayerCombat : MonoBehaviour {
   private bool _yolkOffCooldown = true;
 
   private void Awake() {
-    PlayerControls.OnSpaceBarPressed += HandleSpaceBarPress;
+    PlayerControls.OnRightClick += HandleSpaceBarPress;
   }
 
   private void HandleSpaceBarPress(object sender, EventArgs e) {
