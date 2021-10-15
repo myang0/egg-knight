@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour {
 
   private Vector2 _lastMovementVector;
 
+  public static event EventHandler OnMovementBegin;
+  public static event EventHandler OnMovementEnd;
+
   public static event EventHandler<RollEventArgs> OnRollBegin;
   public static event EventHandler OnRollEnd;
 
@@ -31,9 +34,13 @@ public class PlayerMovement : MonoBehaviour {
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
     _rb.velocity = e.vector * _movementSpeed;
 
-    if (e.vector.Equals(Vector2.zero) == false) {
-      _lastMovementVector = e.vector;
+    if (e.vector != Vector2.zero) {
+      OnMovementBegin?.Invoke(this, EventArgs.Empty);
+    } else {
+      OnMovementEnd?.Invoke(this, EventArgs.Empty);
     }
+
+    _lastMovementVector = e.vector;
   }
 
   private void HandleRoll(object sender, EventArgs e) {
