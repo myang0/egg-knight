@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1278995262712370199}
   - component: {fileID: 1278995263249701425}
   - component: {fileID: 41139156}
+  - component: {fileID: 1001248177}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -34,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 1278995262712370207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.891847, y: 1.2412083, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bece40a9a07047b40b099a9d093b2a5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c0d250ac32de5b4d8d9dd0ab8bcc483, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,8 +195,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6666667, y: 0.8806667}
+  m_Offset: {x: 0.04, y: -0.23}
+  m_Size: {x: 1.11, y: 1.55}
   m_Direction: 0
 --- !u!114 &41139156
 MonoBehaviour:
@@ -213,3 +214,22 @@ MonoBehaviour:
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
+--- !u!95 &1001248177
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278995262712370207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1d99b72febef8546864b6d9a7e447fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

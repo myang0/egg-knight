@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class PlayerWeaponBase : MonoBehaviour {
   protected Animator _anim;
+  protected SpriteRenderer _sr;
   protected PolygonCollider2D _pCol;
 
   [SerializeField] protected float _damageAmount;
@@ -9,7 +10,11 @@ public abstract class PlayerWeaponBase : MonoBehaviour {
 
   protected void Awake() {
     _anim = gameObject.GetComponent<Animator>();
+    _sr = gameObject.GetComponent<SpriteRenderer>();
     _pCol = gameObject.GetComponent<PolygonCollider2D>();
+
+    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    _sr.flipX = (mousePos.x < transform.position.x);
   }
 
   protected virtual void FixedUpdate() {
