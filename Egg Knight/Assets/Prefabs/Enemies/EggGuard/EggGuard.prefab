@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1131436154947779512}
   - component: {fileID: 1131436154947779514}
   - component: {fileID: 1131436154947779518}
+  - component: {fileID: 54743588201752915}
   m_Layer: 8
   m_Name: EggGuard
   m_TagString: Untagged
@@ -153,3 +154,15 @@ MonoBehaviour:
   _yolkedDuration: 2
   _maxDistanceToAttack: 2
   _attackCooldown: 1.5
+--- !u!114 &54743588201752915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131436154947779509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41de1c1e368c2b248b265f679606a10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

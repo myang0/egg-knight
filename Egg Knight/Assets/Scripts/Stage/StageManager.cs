@@ -88,8 +88,8 @@ namespace Stage {
         private void SpawnItem() {
             if (IsItemSpawning() && itemStatus == StageItemStatus.NeverSpawned) {
                 ItemManager itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
-                PowerUp powerUp = itemManager.SpawnItem(_itemSpawnpoint.transform.position);
-                powerUp.OnPickup += RemoveItemFromStage;
+                BaseItem baseItem = itemManager.SpawnItem(_itemSpawnpoint.transform.position);
+                baseItem.OnPickup += RemoveItemFromStage;
                 itemStatus = StageItemStatus.Spawned;
             }
             else {

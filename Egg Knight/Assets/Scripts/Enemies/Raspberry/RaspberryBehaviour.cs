@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Stage;
 using UnityEngine;
@@ -15,8 +16,26 @@ public class RaspberryBehaviour : EnemyBehaviour {
   protected override void Awake() {
     RaspberryHealth raspberryHealth = gameObject.GetComponent<RaspberryHealth>();
     raspberryHealth.OnRaspberryStatusDamage += HandleStatusDamage;
+
+    EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
+    enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+
     Health = raspberryHealth;
     base.Awake();
+  }
+
+  private void HandleElectrocuted(object sender, EventArgs e) {
+    StartCoroutine(Electrocute());
+  }
+
+  private IEnumerator Electrocute() {
+    _state = RaspberryState.Stunned;
+
+    _rb.velocity = Vector2.zero;
+
+    yield return new WaitForSeconds(StatusConfig.ElectrocuteStunDuration);
+
+    _state = RaspberryState.Fleeing;
   }
 
   private void Update() {

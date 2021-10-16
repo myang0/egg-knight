@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public class ButterKnife : PlayerWeaponBase {
+public class ButterKnife : BasePlayerWeapon {
 
 }

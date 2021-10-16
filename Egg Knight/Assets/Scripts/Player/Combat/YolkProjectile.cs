@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class YolkProjectile : Projectile {
@@ -9,7 +10,7 @@ public class YolkProjectile : Projectile {
     EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
     
     if (enemyHealth != null) {
-      enemyHealth.DamageWithStatus(_damage, StatusCondition.Yolked);
+      enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
     }
 
     StopCoroutine(DespawnTimer());
