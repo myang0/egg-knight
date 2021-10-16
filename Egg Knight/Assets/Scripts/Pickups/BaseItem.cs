@@ -22,12 +22,6 @@ public class BaseItem : MonoBehaviour
             _origY + (Mathf.Sin(Time.time) * 0.15f),
             transform.position.z
         );
-
-        transform.eulerAngles = new Vector3(
-            transform.position.x,
-            _origY + (Mathf.Sin(Time.time) * 25),
-            transform.position.z
-        );
     }
     
     protected virtual void OnTriggerEnter2D(Collider2D other) {

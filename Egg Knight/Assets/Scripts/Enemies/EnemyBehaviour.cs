@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Stage;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -13,6 +14,12 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   [SerializeField] protected float _yolkedDuration;
 
   protected Health Health;
+
+  public event EventHandler OnYolked;
+  public event EventHandler OnFrosted;
+  public event EventHandler OnIgnited;
+  public event EventHandler OnElectrocuted;
+
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
@@ -29,23 +36,27 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected virtual void HandleStatusDamage(object sender, EnemyStatusEventArgs e) {
-    StatusCondition status = e.status;
+    List<StatusCondition> statuses = e.statuses;
 
+    foreach (StatusCondition s in statuses) {
+      HandleStatus(s);
+    }
+  }
+
+  private void HandleStatus(StatusCondition status) {
     switch (status) {
       case StatusCondition.Yolked: {
+        OnYolked?.Invoke(this, EventArgs.Empty);
         StartCoroutine(Yolked());
         break;
       }
       case StatusCondition.Ignited: {
-        Debug.Log("Ignited!");
-        break;
-      }
-      case StatusCondition.Scrambled: {
-        Debug.Log("Scrambled!");
+        OnIgnited?.Invoke(this, EventArgs.Empty);
         break;
       }
       case StatusCondition.Frosted: {
-        Debug.Log("Frosted!");
+        OnFrosted?.Invoke(this, EventArgs.Empty);
+        StartCoroutine(Frosted());
         break;
       }
       case StatusCondition.Electrocuted: {
@@ -63,6 +74,14 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     _currentSpeed = _currentSpeed * 0.5f;
 
     yield return new WaitForSeconds(_yolkedDuration);
+
+    _currentSpeed = _currentSpeed * 2;
+  }
+
+  protected virtual IEnumerator Frosted() {
+    _currentSpeed = _currentSpeed * 0.5f;
+
+    yield return new WaitForSeconds(3);
 
     _currentSpeed = _currentSpeed * 2;
   }

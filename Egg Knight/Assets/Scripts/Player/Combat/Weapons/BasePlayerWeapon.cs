@@ -49,13 +49,13 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     foreach (StatusCondition modifier in _weaponModifiers) {
       int randomNum = Random.Range(0, 100);
 
-      if (randomNum < 5 && !statuses.Contains(modifier)) {
+      if (randomNum < 100 && !statuses.Contains(modifier)) {
         statuses.Add(modifier);
       }
     }
 
     if (statuses.Any()) {
-      // damagewithstatusesandtype
+      enemyHealth.DamageWithStatusesAndType(_damageAmount, statuses, _damageType);
     } else {
       enemyHealth.DamageWithType(_damageAmount, _damageType);
     }
