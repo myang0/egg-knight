@@ -49,7 +49,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     foreach (StatusCondition modifier in _weaponModifiers) {
       int randomNum = Random.Range(0, 100);
       
-      if (randomNum < 100 && !statuses.Contains(modifier)) {
+      if (randomNum < StatusConfig.StatusEffectChance && !statuses.Contains(modifier)) {
         statuses.Add(modifier);
       }
     }

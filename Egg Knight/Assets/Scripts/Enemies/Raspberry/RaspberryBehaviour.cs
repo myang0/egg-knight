@@ -33,7 +33,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
 
     _rb.velocity = Vector2.zero;
 
-    yield return new WaitForSeconds(1);
+    yield return new WaitForSeconds(StatusConfig.ElectrocuteStunDuration);
 
     _state = RaspberryState.Fleeing;
   }

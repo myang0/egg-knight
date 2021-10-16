@@ -27,7 +27,7 @@ public abstract class EnemyHealth : Health {
 
     _isFrosted = true;
 
-    yield return new WaitForSeconds(3);
+    yield return new WaitForSeconds(StatusConfig.FrostDuration);
 
     _isFrosted = false;
   }
@@ -37,19 +37,19 @@ public abstract class EnemyHealth : Health {
   }
 
   protected virtual IEnumerator Ignite() {
-    for (int i = 0; i < 3; i++) {
-      yield return new WaitForSeconds(1);
+    for (int i = 0; i < StatusConfig.IgniteTicks; i++) {
+      yield return new WaitForSeconds(StatusConfig.IgniteTimeBetweenTicks);
 
-      Damage(5);
+      Damage(StatusConfig.IgniteDamage);
     }
   }
 
   protected virtual void HandleElectrocuted(object sender, EventArgs e) {
-    Damage(10);
+    Damage(StatusConfig.ElectrocuteDamage);
   }
 
   public override void Damage(float amount) {
-    base.Damage(amount + ((_isFrosted) ? amount * 0.25f : 0));
+    base.Damage(amount + ((_isFrosted) ? amount * StatusConfig.FrostDamageMultiplier : 0));
   }
 
   public abstract void DamageWithStatuses(float amount, List<StatusCondition> statuses);

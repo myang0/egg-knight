@@ -6,7 +6,6 @@ public class EggGuardBehaviour : EnemyBehaviour {
   [SerializeField] private float _maxDistanceToAttack = 2.0f;
   [SerializeField] private float _attackCooldown = 1.5f;
 
-  private bool _isAttacking = false;
   private EggGuardState _state = EggGuardState.Chasing;
 
   protected override void Awake() {
@@ -28,7 +27,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
     _state = EggGuardState.Stunned;
     _rb.velocity = Vector2.zero;
 
-    yield return new WaitForSeconds(1);
+    yield return new WaitForSeconds(StatusConfig.ElectrocuteStunDuration);
 
     _state = EggGuardState.Chasing;
   }

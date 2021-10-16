@@ -11,8 +11,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   [SerializeField] protected float _maxSpeed;
   protected float _currentSpeed;
 
-  [SerializeField] protected float _yolkedDuration;
-
   protected Health Health;
 
   public event EventHandler OnYolked;
@@ -71,18 +69,18 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected virtual IEnumerator Yolked() {
-    _currentSpeed = _currentSpeed * 0.5f;
+    _currentSpeed = _currentSpeed * StatusConfig.YolkedSpeedModifier;
 
-    yield return new WaitForSeconds(_yolkedDuration);
+    yield return new WaitForSeconds(StatusConfig.YolkedDuration);
 
-    _currentSpeed = _currentSpeed * 2;
+    _currentSpeed = _currentSpeed / StatusConfig.YolkedSpeedModifier;
   }
 
   protected virtual IEnumerator Frosted() {
-    _currentSpeed = _currentSpeed * 0.5f;
+    _currentSpeed = _currentSpeed * StatusConfig.FrostSpeedMultiplier;
 
-    yield return new WaitForSeconds(3);
+    yield return new WaitForSeconds(StatusConfig.FrostDuration);
 
-    _currentSpeed = _currentSpeed * 2;
+    _currentSpeed = _currentSpeed / StatusConfig.FrostSpeedMultiplier;
   }
 }
