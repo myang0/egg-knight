@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerWeaponBase : MonoBehaviour {
+public abstract class BasePlayerWeapon : MonoBehaviour {
   protected Animator _anim;
   protected SpriteRenderer _sr;
   protected PolygonCollider2D _pCol;
+
+  protected List<StatusCondition> _weaponModifiers;
 
   [SerializeField] protected float _damageAmount;
   [SerializeField] protected DamageType _damageType;
@@ -13,8 +16,16 @@ public abstract class PlayerWeaponBase : MonoBehaviour {
     _sr = gameObject.GetComponent<SpriteRenderer>();
     _pCol = gameObject.GetComponent<PolygonCollider2D>();
 
+    _weaponModifiers = new List<StatusCondition>();
+
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     _sr.flipX = (mousePos.x < transform.position.x);
+  }
+
+  public void SetModifiers(List<StatusCondition> modifiers) {
+    foreach (StatusCondition modifier in modifiers) {
+      _weaponModifiers.Add(modifier);
+    }
   }
 
   protected virtual void FixedUpdate() {
@@ -27,8 +38,12 @@ public abstract class PlayerWeaponBase : MonoBehaviour {
     EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
     
     if (enemyHealth != null) {
-      enemyHealth.DamageWithType(_damageAmount, _damageType);
+      DamageEnemy(enemyHealth);
     }
+  }
+
+  protected virtual void DamageEnemy(EnemyHealth enemyHealth) {
+    enemyHealth.DamageWithType(_damageAmount, _damageType);
   }
 
   public virtual void EnableCollider() {

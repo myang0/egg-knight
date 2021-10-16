@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour {
-    [SerializeField] private PowerUp placeholderItem;
+    [SerializeField] private BaseItem placeholderItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class ItemManager : MonoBehaviour {
         
     }
 
-    public PowerUp SpawnItem(Vector3 spawnPos) {
+    public BaseItem SpawnItem(Vector3 spawnPos) {
         // To-do:
         Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, ZcoordinateConsts.Pickup);
         return Instantiate(placeholderItem, newPos, Quaternion.identity);

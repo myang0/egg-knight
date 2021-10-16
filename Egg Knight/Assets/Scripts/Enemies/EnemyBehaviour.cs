@@ -44,6 +44,14 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         Debug.Log("Scrambled!");
         break;
       }
+      case StatusCondition.Frosted: {
+        Debug.Log("Frosted!");
+        break;
+      }
+      case StatusCondition.Electrocuted: {
+        Debug.Log("Electrocuted!");
+        break;
+      }
       default: {
         Debug.Log("Unknown status condition");
         break;
@@ -52,10 +60,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected virtual IEnumerator Yolked() {
-    _currentSpeed = _maxSpeed * 0.5f;
+    _currentSpeed = _currentSpeed * 0.5f;
 
     yield return new WaitForSeconds(_yolkedDuration);
 
-    _currentSpeed = _maxSpeed;
+    _currentSpeed = _currentSpeed * 2;
   }
 }
