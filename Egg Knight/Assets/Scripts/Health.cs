@@ -13,8 +13,6 @@ public abstract class Health : MonoBehaviour {
   public virtual void Damage(float amount) {
     _currentHealth -= amount;
 
-    Debug.Log(_currentHealth);
-
     if (_currentHealth <= 0) {
       Die();
     }

@@ -60,7 +60,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         break;
       }
       case StatusCondition.Electrocuted: {
-        Debug.Log("Electrocuted!");
+        OnElectrocuted?.Invoke(this, EventArgs.Empty);
         break;
       }
       default: {

@@ -7,25 +7,43 @@ public class EggGuardBehaviour : EnemyBehaviour {
   [SerializeField] private float _attackCooldown = 1.5f;
 
   private bool _isAttacking = false;
+  private EggGuardState _state = EggGuardState.Chasing;
 
   protected override void Awake() {
     EggGuardHealth eggGuardHealth = gameObject.GetComponent<EggGuardHealth>();
     eggGuardHealth.OnEggGuardStatusDamage += HandleStatusDamage;
+
+    EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
+    enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+
     Health = eggGuardHealth;
     base.Awake();
+  }
+
+  private void HandleElectrocuted(object sender, EventArgs e) {
+    StartCoroutine(Electrocute());
+  }
+
+  private IEnumerator Electrocute() {
+    _state = EggGuardState.Stunned;
+    _rb.velocity = Vector2.zero;
+
+    yield return new WaitForSeconds(1);
+
+    _state = EggGuardState.Chasing;
   }
 
   private void Update() {
     Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
     float _currentDistance = Vector3.Distance(transform.position, playerPos);
 
-    if ((_currentDistance < _maxDistanceToAttack) && _isAttacking == false) {
+    if ((_currentDistance < _maxDistanceToAttack) && _state == EggGuardState.Chasing) {
       StartCoroutine(AttackPlayer());
     }
   }
 
   private void FixedUpdate() {
-    if (_isAttacking == false) {
+    if (_state == EggGuardState.Chasing) {
       Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
       Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
 
@@ -34,12 +52,12 @@ public class EggGuardBehaviour : EnemyBehaviour {
   }
 
   IEnumerator AttackPlayer() {
-    _isAttacking = true;
+    _state = EggGuardState.Attacking;
 
     _rb.velocity = Vector2.zero;
 
     yield return new WaitForSeconds(_attackCooldown);
 
-    _isAttacking = false;
+    _state = EggGuardState.Chasing;
   }
 }

@@ -8,11 +8,12 @@ public abstract class EnemyHealth : Health {
 
   protected bool _isFrosted = false;
 
-  protected virtual void Awake() {
+  protected override void Awake() {
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
 
     enemyBehaviour.OnFrosted += HandleFrosted;
     enemyBehaviour.OnIgnited += HandleIgnited;
+    enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
     base.Awake();
   }
@@ -41,6 +42,10 @@ public abstract class EnemyHealth : Health {
 
       Damage(5);
     }
+  }
+
+  protected virtual void HandleElectrocuted(object sender, EventArgs e) {
+    Damage(10);
   }
 
   public override void Damage(float amount) {
