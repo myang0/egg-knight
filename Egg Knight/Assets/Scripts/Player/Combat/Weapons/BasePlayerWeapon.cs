@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +44,21 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual void DamageEnemy(EnemyHealth enemyHealth) {
-    enemyHealth.DamageWithType(_damageAmount, _damageType);
+    List<StatusCondition> statuses = new List<StatusCondition>();
+
+    foreach (StatusCondition modifier in _weaponModifiers) {
+      int randomNum = Random.Range(0, 100);
+
+      if (randomNum < 5 && !statuses.Contains(modifier)) {
+        statuses.Add(modifier);
+      }
+    }
+
+    if (statuses.Any()) {
+      // damagewithstatusesandtype
+    } else {
+      enemyHealth.DamageWithType(_damageAmount, _damageType);
+    }
   }
 
   public virtual void EnableCollider() {

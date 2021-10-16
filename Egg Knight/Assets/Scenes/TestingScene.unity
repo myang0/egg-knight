@@ -218,6 +218,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BurntToast
       objectReference: {fileID: 0}
+    - target: {fileID: 787239874702837804, guid: 12c417921c5d04443a77616452c3a1b3,
+        type: 3}
+      propertyPath: Description
+      value: Chance to ignite enemies on hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 787239874702837804, guid: 12c417921c5d04443a77616452c3a1b3,
+        type: 3}
+      propertyPath: DisplayName
+      value: Burnt Toast
+      objectReference: {fileID: 0}
     - target: {fileID: 787239874702837805, guid: 12c417921c5d04443a77616452c3a1b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -548,6 +558,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025473576162614364, guid: 5403edf6b6ea18c459609a249eff6f09,
+        type: 3}
+      propertyPath: Description
+      value: Chance to electrocute enemies on hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025473576162614364, guid: 5403edf6b6ea18c459609a249eff6f09,
+        type: 3}
+      propertyPath: DisplayName
+      value: Electrical Outlet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5403edf6b6ea18c459609a249eff6f09, type: 3}

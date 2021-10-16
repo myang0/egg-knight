@@ -122,4 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b93aa26d380da45b31426ba0a04d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayName: Burnt Toast
+  Description: Chance to ignite enemies on hit
   element: 2
