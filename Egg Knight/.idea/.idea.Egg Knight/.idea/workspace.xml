@@ -22,13 +22,7 @@
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +33,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EnemyBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EnemyBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -70,7 +68,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1z3ZLYFpGUVZKtvEqPq7NriiZqk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,10 +148,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="214" y="96" key="MergeDialog" timestamp="1634537986970">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="214" y="96" key="MergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634537986970" />
+    <state x="1175" y="318" key="MultipleFileMergeDialog" timestamp="1634538005250">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1175" y="318" key="MultipleFileMergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634538005250" />
     <state x="679" y="133" key="SettingsEditor" timestamp="1633743320409">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="679" y="133" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1633743320409" />
+    <state x="1201" y="246" key="git4idea.branch.GitSmartOperationDialog" timestamp="1634537760711">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1201" y="246" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634537760711" />
     <state x="1193" y="261" key="run.anything.popup" timestamp="1633744579299">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

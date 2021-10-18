@@ -223,17 +223,24 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
+          <e p="Config" t="Include">
+            <e p="StatusConfig.cs" t="Include" />
+          </e>
           <e p="Enemies" t="Include">
             <e p="EggGuard" t="Include">
               <e p="EggGuardBehaviour.cs" t="Include" />
               <e p="EggGuardHealth.cs" t="Include" />
+              <e p="EggGuardSpriteHandler.cs" t="Include" />
+              <e p="EggGuardState.cs" t="Include" />
             </e>
             <e p="EnemyBehaviour.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
+            <e p="EnemySpriteHandler.cs" t="Include" />
             <e p="Raspberry" t="Include">
               <e p="RaspberryBehaviour.cs" t="Include" />
               <e p="RaspberryHealth.cs" t="Include" />
               <e p="RaspberryProjectile.cs" t="Include" />
+              <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
             </e>
           </e>
@@ -249,6 +256,7 @@
             <e p="WeaponType.cs" t="Include" />
           </e>
           <e p="Events" t="Include">
+            <e p="ElementalItemEventArgs.cs" t="Include" />
             <e p="EnemyStatusEventArgs.cs" t="Include" />
             <e p="MovementVectorEventArgs.cs" t="Include" />
             <e p="RollEventArgs.cs" t="Include" />
@@ -258,18 +266,19 @@
             <e p="VectorHelper.cs" t="Include" />
           </e>
           <e p="Pickups" t="Include">
+            <e p="BaseItem.cs" t="Include" />
             <e p="Coin.cs" t="Include" />
+            <e p="ElementalItem.cs" t="Include" />
             <e p="ItemManager.cs" t="Include" />
-            <e p="PowerUp.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="Combat" t="Include">
               <e p="PlayerCombat.cs" t="Include" />
               <e p="Weapons" t="Include">
+                <e p="BasePlayerWeapon.cs" t="Include" />
                 <e p="Knife" t="Include">
                   <e p="ButterKnife.cs" t="Include" />
                 </e>
-                <e p="PlayerWeaponBase.cs" t="Include" />
                 <e p="PlayerWeapons.cs" t="Include" />
               </e>
               <e p="YolkProjectile.cs" t="Include" />
