@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1278995262712370199}
   - component: {fileID: 1278995263249701425}
   - component: {fileID: 41139156}
+  - component: {fileID: 3797554797057638554}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -190,7 +191,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -212,3 +213,19 @@ MonoBehaviour:
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
+--- !u!70 &3797554797057638554
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278995262712370207}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.3}
+  m_Size: {x: 0.45, y: 0.25}
+  m_Direction: 1

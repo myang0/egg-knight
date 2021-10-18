@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 public class EggGuardBehaviour : EnemyBehaviour {
   [SerializeField] private float _maxDistanceToAttack = 2.0f;
   [SerializeField] private float _attackCooldown = 1.5f;
 
-  private bool _isAttacking = false;
+  [SerializeField] private bool _isAttacking = false;
 
   protected override void Awake() {
     EggGuardHealth eggGuardHealth = gameObject.GetComponent<EggGuardHealth>();
@@ -26,10 +27,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
 
   private void FixedUpdate() {
     if (_isAttacking == false) {
-      Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-      Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
-
-      _rb.velocity = vectorToPlayer * _currentSpeed;
+      MoveToPlayer();
     }
   }
 
