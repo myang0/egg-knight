@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 
 public class EnemyStatusEventArgs : EventArgs {
-  public StatusCondition status;
+  public List<StatusCondition> statuses;
 
-  public EnemyStatusEventArgs(StatusCondition status) {
-    this.status = status;
+  public EnemyStatusEventArgs(List<StatusCondition> statuses) {
+    this.statuses = statuses;
   }
 }

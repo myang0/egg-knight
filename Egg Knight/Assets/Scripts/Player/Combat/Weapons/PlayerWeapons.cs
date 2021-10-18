@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeapons : MonoBehaviour {
@@ -9,11 +11,17 @@ public class PlayerWeapons : MonoBehaviour {
   private int _currentWeaponIndex = 0;
   private GameObject _currentWeapon;
 
+  private List<StatusCondition> _weaponModifiers;
+
   private void Awake() {
     PlayerControls.OnQPress += SwitchPrevWeapon;
     PlayerControls.OnEPress += SwitchNextWeapon;
 
     PlayerControls.OnLeftClick += HandleAttack;
+
+    ElementalItem.OnElementalItemPickup += AddModifier;
+
+    _weaponModifiers = new List<StatusCondition>();
   }
 
   private void SwitchPrevWeapon(object sender, EventArgs e) {
@@ -30,7 +38,16 @@ public class PlayerWeapons : MonoBehaviour {
 
       _currentWeapon = Instantiate(_weapons[_currentWeaponIndex], transform.position, Quaternion.identity);
       _currentWeapon.transform.eulerAngles = new Vector3(0, 0, rotateAngle);
+
+      if (_weaponModifiers.Any()) {
+        BasePlayerWeapon weapon = _currentWeapon.GetComponent<BasePlayerWeapon>();
+        weapon.SetModifiers(_weaponModifiers);
+      }
     }
+  }
+
+  private void AddModifier(object sender, ElementalItemEventArgs e) {
+    _weaponModifiers.Add(e.status);
   }
 
   private float anglesToMouse() {

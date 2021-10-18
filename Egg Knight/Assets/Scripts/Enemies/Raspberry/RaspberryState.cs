@@ -1,4 +1,5 @@
 public enum RaspberryState {
   Attacking,
-  Fleeing
+  Fleeing,
+  Stunned
 }
