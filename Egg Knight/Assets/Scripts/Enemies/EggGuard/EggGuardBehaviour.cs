@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 public class EggGuardBehaviour : EnemyBehaviour {
@@ -43,10 +44,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
 
   private void FixedUpdate() {
     if (_state == EggGuardState.Chasing) {
-      Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-      Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
-
-      _rb.velocity = vectorToPlayer * _currentSpeed;
+      MoveToPlayer();
     }
   }
 
