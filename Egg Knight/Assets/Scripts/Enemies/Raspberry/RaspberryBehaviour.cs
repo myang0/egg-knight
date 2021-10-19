@@ -21,6 +21,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
     Health = raspberryHealth;
+    isWallCollisionOn = true;
     base.Awake();
   }
 
