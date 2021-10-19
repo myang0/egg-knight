@@ -124,4 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Burnt Toast
   Description: Chance to ignite enemies on hit
+  InventoryKey: 2
   element: 2

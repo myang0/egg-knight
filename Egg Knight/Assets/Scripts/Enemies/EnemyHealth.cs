@@ -6,9 +6,15 @@ using UnityEngine;
 public abstract class EnemyHealth : Health {
   [SerializeField] protected DamageType _weakTo;
 
+  protected PlayerInventory _playerInventory;
+
+  [SerializeField] protected GameObject _healingYolkPrefab;
+
   protected bool _isFrosted = false;
 
   protected override void Awake() {
+    _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
 
     enemyBehaviour.OnFrosted += HandleFrosted;
@@ -59,5 +65,14 @@ public abstract class EnemyHealth : Health {
   public virtual void DamageWithType(float amount, DamageType type) {
     float bonusDamage = (type == _weakTo) ? (amount * 0.5f) : 0;
     Damage(amount + bonusDamage);
+  }
+
+  protected override void Die() {
+    int healRoll = UnityEngine.Random.Range(0, 100);
+    if (healRoll < (5 * _playerInventory.GetItemQuantity(Item.ChefHat))) {
+      Instantiate(_healingYolkPrefab, transform.position, Quaternion.identity);
+    }
+
+    base.Die();
   }
 }

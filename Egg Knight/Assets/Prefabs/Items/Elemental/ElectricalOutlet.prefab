@@ -124,4 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Electrical Outlet
   Description: Chance to electrocute enemies on hit
+  InventoryKey: 1
   element: 4
