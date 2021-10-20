@@ -119,9 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6355635884472251153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b93aa26d380da45b31426ba0a04d0e, type: 3}
+  m_Script: {fileID: 11500000, guid: f8a558a5d8eb9034e82d2e1eae831c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Cracked Egg
-  Description: Chance to yolk enemies on hit
+  Description: Chance to inflict yolked on hit
+  InventoryKey: 3
   element: 0

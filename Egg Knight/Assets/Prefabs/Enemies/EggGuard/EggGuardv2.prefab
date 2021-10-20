@@ -87,6 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 50
   _weakTo: 2
+  _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
+    type: 3}
 --- !u!114 &4090832051791540563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,10 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 2.5
-  _yolkedDuration: 2
   _maxDistanceToAttack: 2
   _attackCooldown: 1.5
-  _isAttacking: 0
 --- !u!114 &4090832051791540569
 MonoBehaviour:
   m_ObjectHideFlags: 0

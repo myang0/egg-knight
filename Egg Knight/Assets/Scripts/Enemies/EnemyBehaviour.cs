@@ -25,6 +25,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private Path _path;
   private int _currentWaypoint;
   private bool _reachedEndOfPath;
+  protected bool isWallCollisionOn;
   private Seeker _seeker;
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
@@ -125,8 +126,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
-      Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+    if (!isWallCollisionOn) {
+      if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
+        Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+      }
     }
   }
 }

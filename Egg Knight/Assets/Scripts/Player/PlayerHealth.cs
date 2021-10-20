@@ -6,10 +6,14 @@ public class PlayerHealth : Health {
   [SerializeField] private float _iFramesDuration;
   private bool _iFramesActive = false;
 
+  private PlayerInventory _inventory;
+
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
 
   protected override void Awake() {
+    _inventory = gameObject.GetComponent<PlayerInventory>();
+
     PlayerMovement.OnRollBegin += HandleRoll;
     PlayerMovement.OnRollEnd += HandleRollEnd;
     
@@ -38,7 +42,16 @@ public class PlayerHealth : Health {
     Physics2D.IgnoreLayerCollision((int)Layers.Player, (int)Layers.EnemyWeapon, false);
   }
 
+  public bool BelowHalfHealth() {
+    return _currentHealth < (_maxHealth / 2.0f);
+  }
+
+  public float CurrentHealthPercentage() {
+    return _currentHealth / _maxHealth;
+  }
+
   public override void Damage(float amount) {
+    amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
 
     if (_currentHealth <= 0) {
@@ -49,6 +62,15 @@ public class PlayerHealth : Health {
   }
 
   protected override void Die() {
+    if (_inventory.GetItemQuantity(Item.SecondYolk) > 0) {
+      _currentHealth = _maxHealth * 0.3f;
+      StartCoroutine(IFramesOnHit());
+
+      _inventory.RemoveItem(Item.SecondYolk);
+
+      return;
+    }
+
     Destroy(gameObject);
   }
 
