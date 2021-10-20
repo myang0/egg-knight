@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapons:
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
-  - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
+  - {fileID: 5632986501908632361, guid: 3cbc9f855431c7749989bcd20c24290e, type: 3}
   - {fileID: 304845315218435310, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
 --- !u!114 &8003586958383023584
 MonoBehaviour:
