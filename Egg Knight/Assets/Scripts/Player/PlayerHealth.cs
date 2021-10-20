@@ -42,6 +42,14 @@ public class PlayerHealth : Health {
     Physics2D.IgnoreLayerCollision((int)Layers.Player, (int)Layers.EnemyWeapon, false);
   }
 
+  public bool BelowHalfHealth() {
+    return _currentHealth < (_maxHealth / 2.0f);
+  }
+
+  public float CurrentHealthPercentage() {
+    return _currentHealth / _maxHealth;
+  }
+
   public override void Damage(float amount) {
     amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;

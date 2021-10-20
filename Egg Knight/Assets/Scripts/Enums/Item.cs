@@ -16,5 +16,5 @@ public enum Item {
   ThirdEye,
   VegetablePeeler,
   FragmentationShell,
-  CrackedEggshell
+  EggShards
 }
