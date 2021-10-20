@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1278995262712370199}
   - component: {fileID: 41139156}
   - component: {fileID: 8003586958383023584}
+  - component: {fileID: 1061767273}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -202,9 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0ef04504f3927458ee6ca6d5bf79d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
-    type: 3}
-  _yolkCooldown: 2
   _eggShardPrefab: {fileID: 5925046488660320518, guid: f7bf3b0049ac9104da1f4f30ed1e9300,
     type: 3}
 --- !u!114 &1278995262712370199
@@ -253,6 +251,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb33a71a4b71ec746abea6eaf4fcc437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1061767273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278995262712370207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782467e8cfbc6e446b90cb5753a72885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
+    type: 3}
+  _yolkCooldown: 2
 --- !u!1 &5295806697458518224
 GameObject:
   m_ObjectHideFlags: 0
