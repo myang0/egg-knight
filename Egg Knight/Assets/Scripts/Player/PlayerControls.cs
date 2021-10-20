@@ -13,11 +13,21 @@ public class PlayerControls : MonoBehaviour {
 
 	private bool _controlsEnabled = true;
 
+	private bool _weaponSwitchingEnabled = true;
+
 	private bool _movementKeysDown = false;
 
 	private void Awake() {
 		PlayerMovement.OnRollBegin += DisableControl;
 		PlayerMovement.OnRollEnd += EnableControl;
+
+		PlayerWeapons.OnWeaponAnimationBegin += (object sender, EventArgs e) => {
+			_weaponSwitchingEnabled = false;
+		};
+
+		BasePlayerWeapon.OnWeaponAnimationEnd += (object sender, EventArgs e) => {
+			_weaponSwitchingEnabled = true;
+		};
 	}
 
 	private void DisableControl(object sender, RollEventArgs e) {
@@ -78,6 +88,10 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void AttackSwitchControls() {
+		if (_weaponSwitchingEnabled == false) {
+			return;
+		}
+
 		if (Input.GetKeyDown(KeyCode.Q)) {
 			OnQPress?.Invoke(this, EventArgs.Empty);
 		} else if (Input.GetKeyDown(KeyCode.E)) {

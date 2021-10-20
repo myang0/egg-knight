@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   [SerializeField] protected float _damageAmount;
   [SerializeField] protected DamageType _damageType;
+
+  public static event EventHandler OnWeaponAnimationEnd;
 
   protected void Awake() {
     _anim = gameObject.GetComponent<Animator>();
@@ -53,7 +56,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual void HealOnHit() {
-    int healRoll = Random.Range(0, 100);
+    int healRoll = UnityEngine.Random.Range(0, 100);
 
     if (healRoll < (25 * _inventory.GetItemQuantity(Item.VampireFangs))) {
       _health.Heal(1);
@@ -64,7 +67,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     List<StatusCondition> statuses = new List<StatusCondition>();
 
     foreach (StatusCondition modifier in _weaponModifiers) {
-      int randomNum = Random.Range(0, 100);
+      int randomNum = UnityEngine.Random.Range(0, 100);
       
       if (randomNum < StatusConfig.StatusEffectChance && !statuses.Contains(modifier)) {
         statuses.Add(modifier);
@@ -87,7 +90,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       totalAmount += (0.5f - _health.CurrentHealthPercentage()) * _inventory.GetItemQuantity(Item.VikingHelmet) * totalAmount;
     }
 
-    int critRoll = Random.Range(0, 100);
+    int critRoll = UnityEngine.Random.Range(0, 100);
 
     if (critRoll < 10 * _inventory.GetItemQuantity(Item.ThirdEye)) {
       totalAmount *= 2;
@@ -106,5 +109,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   public virtual void OnAnimationEnd() {
     Destroy(gameObject);
+
+    OnWeaponAnimationEnd?.Invoke(this, EventArgs.Empty);
   }
 }
