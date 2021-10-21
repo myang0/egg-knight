@@ -50,6 +50,18 @@ public class PlayerHealth : Health {
     return _currentHealth / _maxHealth;
   }
 
+  public bool DamageWillKill(float damage) {
+    return (_currentHealth - damage) <= 0;
+  }
+
+  public void YolkDamage(float amount) {
+    if (DamageWillKill(amount)) {
+      return;
+    }
+
+    _currentHealth -= amount;
+  }
+
   public override void Damage(float amount) {
     amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;

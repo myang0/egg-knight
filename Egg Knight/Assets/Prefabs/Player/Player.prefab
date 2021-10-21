@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 41139156}
   - component: {fileID: 8003586958383023584}
   - component: {fileID: 1061767273}
+  - component: {fileID: 8208799723587694136}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -266,6 +267,19 @@ MonoBehaviour:
   _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
     type: 3}
   _yolkCooldown: 2
+  _yolkHealthCost: 2.5
+--- !u!114 &8208799723587694136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278995262712370207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2166287c0d64aee4b925af0d3eca2854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5295806697458518224
 GameObject:
   m_ObjectHideFlags: 0

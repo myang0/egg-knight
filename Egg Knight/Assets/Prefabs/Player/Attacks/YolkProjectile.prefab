@@ -137,3 +137,7 @@ MonoBehaviour:
   _lifetime: 1.5
   _damage: 5
   _speed: 10
+  _shardPrefab: {fileID: 4603155792962259345, guid: a2591da904c55fb40808d28801f6884b,
+    type: 3}
+  _numShardsOnDespawn: 5
+  _homingSpeed: 200
