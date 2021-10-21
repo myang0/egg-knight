@@ -1,7 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class YolkProjectile : Projectile {
+public class YolkShard : Projectile {
+  protected override void Awake() {
+    int randomAngle = Random.Range(0, 360);
+
+    transform.eulerAngles = new Vector3(0, 0, randomAngle);
+
+    base.Awake();
+  }
+
   protected override void Despawn() {
     Destroy(gameObject);
   }
@@ -10,7 +17,7 @@ public class YolkProjectile : Projectile {
     EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
     
     if (enemyHealth != null) {
-      enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
+      enemyHealth.Damage(_damage);
     }
 
     StopCoroutine(DespawnTimer());
