@@ -56,6 +56,8 @@ public abstract class EnemyHealth : Health {
 
   public override void Damage(float amount) {
     base.Damage(amount + ((_isFrosted) ? amount * StatusConfig.FrostDamageMultiplier : 0));
+
+    Debug.Log(_currentHealth);
   }
 
   public abstract void DamageWithStatuses(float amount, List<StatusCondition> statuses);

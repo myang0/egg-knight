@@ -6,7 +6,6 @@ using UnityEngine;
 public abstract class BasePlayerWeapon : MonoBehaviour {
   protected Animator _anim;
   protected SpriteRenderer _sr;
-  protected PolygonCollider2D _pCol;
 
   protected List<StatusCondition> _weaponModifiers;
 
@@ -21,7 +20,6 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   protected void Awake() {
     _anim = gameObject.GetComponent<Animator>();
     _sr = gameObject.GetComponent<SpriteRenderer>();
-    _pCol = gameObject.GetComponent<PolygonCollider2D>();
 
     _weaponModifiers = new List<StatusCondition>();
 
@@ -45,13 +43,15 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     transform.position = player.position;
   }
 
-  protected virtual void OnTriggerEnter2D(Collider2D collider) {
-    EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
-    
-    if (enemyHealth != null) {
-      HealOnHit();
+  protected void DamageEnemies(Collider2D[] enemies) {
+    foreach (Collider2D enemy in enemies) {
+      EnemyHealth enemyHealth = enemy.gameObject.GetComponent<EnemyHealth>();
 
-      DamageEnemy(enemyHealth);
+      if (enemyHealth != null) {
+        HealOnHit();
+
+        DamageEnemy(enemyHealth);
+      }
     }
   }
 
@@ -99,17 +99,13 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     return totalAmount;
   }
 
-  public virtual void EnableCollider() {
-    _pCol.enabled = true;
-  }
-
-  public virtual void DisableCollider() {
-    _pCol.enabled = false;
-  }
+  public abstract void EnableHitbox();
 
   public virtual void OnAnimationEnd() {
     Destroy(gameObject);
 
     OnWeaponAnimationEnd?.Invoke(this, EventArgs.Empty);
   }
+
+  protected abstract void OnDrawGizmosSelected();
 }
