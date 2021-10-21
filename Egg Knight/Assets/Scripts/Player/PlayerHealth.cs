@@ -8,6 +8,8 @@ public class PlayerHealth : Health {
 
   private PlayerInventory _inventory;
 
+  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthChange;
+
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
 
@@ -47,7 +49,7 @@ public class PlayerHealth : Health {
   }
 
   public float CurrentHealthPercentage() {
-    return _currentHealth / _maxHealth;
+    return ((_currentHealth / _maxHealth) < 0) ? 0 : (_currentHealth / _maxHealth);
   }
 
   public bool DamageWillKill(float damage) {
@@ -60,11 +62,15 @@ public class PlayerHealth : Health {
     }
 
     _currentHealth -= amount;
+
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
   }
 
   public override void Damage(float amount) {
     amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
+
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
 
     if (_currentHealth <= 0) {
       Die();
@@ -98,5 +104,11 @@ public class PlayerHealth : Health {
 
     OnIFramesDisabled?.Invoke(this, EventArgs.Empty);
     _iFramesActive = false;
+  }
+
+  public override void Heal(float amount) {
+    base.Heal(amount);
+
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
   }
 }
