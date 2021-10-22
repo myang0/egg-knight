@@ -9,6 +9,7 @@ public class BaseItem : MonoBehaviour
     public Item InventoryKey;
 
     public static event EventHandler<InventoryAddEventArgs> OnInventoryAdd;
+    public static event EventHandler<ItemTextEventArgs> OnItemTextDisplay;
 
     public event EventHandler OnPickup;
 
@@ -36,6 +37,7 @@ public class BaseItem : MonoBehaviour
 
     protected virtual void PickUp() {
         OnInventoryAdd?.Invoke(this, new InventoryAddEventArgs(InventoryKey));
+        OnItemTextDisplay?.Invoke(this, new ItemTextEventArgs(DisplayName, Description));
         OnPickup?.Invoke(this, EventArgs.Empty);
         
         Destroy(gameObject);
