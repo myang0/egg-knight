@@ -21,8 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/shelf/Uncommitted_changes_before_Merge_at_10_17_2021_11_16_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/shelf/Uncommitted_changes_before_Merge_at_10_17_2021_11_16_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +41,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EnemyBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity Projects/iat410/Egg Knight/Assets/Scripts/Enemies/EnemyBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyIdle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,8 +69,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
+        <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -124,6 +139,7 @@
       <workItem from="1633472554771" duration="17051000" />
       <workItem from="1633730554582" duration="13256000" />
       <workItem from="1634529766476" duration="5520000" />
+      <workItem from="1635023838040" duration="4954000" />
     </task>
     <servers />
   </component>

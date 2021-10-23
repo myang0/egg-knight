@@ -69,6 +69,10 @@ public abstract class EnemyHealth : Health {
     Damage(amount + bonusDamage);
   }
 
+  public bool GetIsHealthDamaged() {
+    return _currentHealth < _maxHealth;
+  }
+
   protected override void Die() {
     int healRoll = UnityEngine.Random.Range(0, 100);
     if (healRoll < (5 * _playerInventory.GetItemQuantity(Item.ChefHat))) {

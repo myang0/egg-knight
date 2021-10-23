@@ -18,8 +18,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public event EventHandler OnFrosted;
   public event EventHandler OnIgnited;
   public event EventHandler OnElectrocuted;
-
   
+  public float maxDistanceToAttack;
+  public float minDistanceToAttack;
+  public float attackCooldownMax;
+  public bool isAttackOffCooldown;
+  public float alertRange = 4f;
+
   private Transform _playerTransform;
   private float nextWaypointDistance = 2f;
   private Path _path;
@@ -32,6 +37,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     _currentSpeed = _maxSpeed;
     
     _rb = gameObject.GetComponent<Rigidbody2D>();
+    isAttackOffCooldown = true;
     
     Health.OnDeath += (sender, eventArgs) => {
       FindObjectOfType<CoinDrop>().DropCoin(transform.position);
@@ -107,7 +113,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     _currentWaypoint = 0;
   }
 
-  protected void MoveToPlayer() {
+  public void MoveToPlayer() {
     if (_path == null) return;
     _reachedEndOfPath = _currentWaypoint >= _path.vectorPath.Count;
     
@@ -124,6 +130,31 @@ public abstract class EnemyBehaviour : MonoBehaviour {
       _currentWaypoint++;
     }
   }
+  
+  public void Flee() {
+    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+    Vector2 vectorFromPlayer = VectorHelper.GetVectorToPoint(playerPos, transform.position);
+
+    _rb.velocity = vectorFromPlayer * _currentSpeed;
+  }
+
+
+  public float GetDistanceToPlayer() {
+    return Vector2.Distance(transform.position, _playerTransform.position);
+  }
+
+  public bool GetIsAttackOffCooldown() {
+    return isAttackOffCooldown;
+  }
+
+  public virtual bool GetIsAttackReady() {
+    return GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown;
+  }
+
+  public bool GetIsInAlertRange() {
+    return GetDistanceToPlayer() < alertRange;
+  }
+  
 
   private void OnCollisionEnter2D(Collision2D other) {
     if (!isWallCollisionOn) {
@@ -132,4 +163,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
       }
     }
   }
+
+  public void Attack() {
+    StartCoroutine(AttackPlayer());
+  }
+
+  protected abstract IEnumerator AttackPlayer();
 }

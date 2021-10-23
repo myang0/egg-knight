@@ -221,6 +221,10 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="EnemyAttack.cs" t="Include" />
+        <e p="EnemyIdle.cs" t="Include" />
+        <e p="MeleeEnemyAlerted.cs" t="Include" />
+        <e p="RangedEnemyAlerted.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -236,6 +240,7 @@
             <e p="EnemyBehaviour.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="EnemySpriteHandler.cs" t="Include" />
+            <e p="EnemyStatusParticles.cs" t="Include" />
             <e p="Raspberry" t="Include">
               <e p="RaspberryBehaviour.cs" t="Include" />
               <e p="RaspberryHealth.cs" t="Include" />
@@ -247,6 +252,7 @@
           <e p="Enums" t="Include">
             <e p="DamageType.cs" t="Include" />
             <e p="Direction.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
             <e p="Layers.cs" t="Include" />
             <e p="MouseInput.cs" t="Include" />
             <e p="StageItemStatus.cs" t="Include" />
@@ -254,39 +260,74 @@
             <e p="StageType.cs" t="Include" />
             <e p="StatusCondition.cs" t="Include" />
             <e p="WeaponType.cs" t="Include" />
+            <e p="YolkUpgradeType.cs" t="Include" />
           </e>
           <e p="Events" t="Include">
+            <e p="BalanceChangeEventArgs.cs" t="Include" />
             <e p="ElementalItemEventArgs.cs" t="Include" />
             <e p="EnemyStatusEventArgs.cs" t="Include" />
+            <e p="InventoryAddEventArgs.cs" t="Include" />
+            <e p="ItemTextEventArgs.cs" t="Include" />
             <e p="MovementVectorEventArgs.cs" t="Include" />
+            <e p="PlayerHealthChangeEventArgs.cs" t="Include" />
             <e p="RollEventArgs.cs" t="Include" />
+            <e p="YolkUpgradeEventArgs.cs" t="Include" />
           </e>
           <e p="Health.cs" t="Include" />
+          <e p="HealthChangeIndicator.cs" t="Include" />
           <e p="Helpers" t="Include">
             <e p="VectorHelper.cs" t="Include" />
           </e>
           <e p="Pickups" t="Include">
             <e p="BaseItem.cs" t="Include" />
             <e p="Coin.cs" t="Include" />
-            <e p="ElementalItem.cs" t="Include" />
+            <e p="Elemental" t="Include">
+              <e p="ElementalItem.cs" t="Include" />
+            </e>
+            <e p="HealingItem.cs" t="Include" />
             <e p="ItemManager.cs" t="Include" />
+            <e p="Offensive" t="Include">
+              <e p="EggShardBehaviour.cs" t="Include" />
+              <e p="EggShards.cs" t="Include" />
+            </e>
+            <e p="Upgrades" t="Include">
+              <e p="Yolk" t="Include">
+                <e p="GoldenYolk.cs" t="Include" />
+                <e p="LeghornShot.cs" t="Include" />
+                <e p="YolkUpgrade.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="Player" t="Include">
             <e p="Combat" t="Include">
               <e p="PlayerCombat.cs" t="Include" />
               <e p="Weapons" t="Include">
                 <e p="BasePlayerWeapon.cs" t="Include" />
+                <e p="DisplayWeapon.cs" t="Include" />
+                <e p="Fork" t="Include">
+                  <e p="TwoProngedFork.cs" t="Include" />
+                </e>
                 <e p="Knife" t="Include">
                   <e p="ButterKnife.cs" t="Include" />
                 </e>
                 <e p="PlayerWeapons.cs" t="Include" />
+                <e p="Spoon" t="Include">
+                  <e p="Spoon.cs" t="Include" />
+                </e>
               </e>
-              <e p="YolkProjectile.cs" t="Include" />
+              <e p="Yolk" t="Include">
+                <e p="YolkManager.cs" t="Include" />
+                <e p="YolkProjectile.cs" t="Include" />
+                <e p="YolkShard.cs" t="Include" />
+                <e p="YolkUpgradeManager.cs" t="Include" />
+              </e>
             </e>
             <e p="PlayerAnimation.cs" t="Include" />
             <e p="PlayerControls.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
+            <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerWallet.cs" t="Include" />
           </e>
           <e p="Projectile.cs" t="Include" />
           <e p="Stage" t="Include">
@@ -297,7 +338,43 @@
             <e p="StageExit.cs" t="Include" />
             <e p="StageManager.cs" t="Include" />
           </e>
+          <e p="UI" t="Include">
+            <e p="HealthBar.cs" t="Include" />
+            <e p="ItemText.cs" t="Include" />
+            <e p="WalletText.cs" t="Include" />
+          </e>
           <e p="ZcoordinateConsts.cs" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
         </e>
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />

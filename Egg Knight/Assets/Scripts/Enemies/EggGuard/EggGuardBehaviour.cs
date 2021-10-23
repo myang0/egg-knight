@@ -4,8 +4,8 @@ using Pathfinding;
 using UnityEngine;
 
 public class EggGuardBehaviour : EnemyBehaviour {
-  [SerializeField] private float _maxDistanceToAttack = 2.0f;
-  [SerializeField] private float _attackCooldown = 1.5f;
+  // [SerializeField] private float _maxDistanceToAttack = 2.0f;
+  // [SerializeField] private float _attackCooldown = 1.5f;
 
   private EggGuardState _state = EggGuardState.Chasing;
 
@@ -15,6 +15,9 @@ public class EggGuardBehaviour : EnemyBehaviour {
 
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+
+    maxDistanceToAttack = 2.0f;
+    attackCooldownMax = 1.5f;
 
     Health = eggGuardHealth;
     base.Awake();
@@ -33,28 +36,28 @@ public class EggGuardBehaviour : EnemyBehaviour {
     _state = EggGuardState.Chasing;
   }
 
-  private void Update() {
-    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-    float _currentDistance = Vector3.Distance(transform.position, playerPos);
-
-    if ((_currentDistance < _maxDistanceToAttack) && _state == EggGuardState.Chasing) {
-      StartCoroutine(AttackPlayer());
-    }
-  }
-
-  private void FixedUpdate() {
-    if (_state == EggGuardState.Chasing) {
-      MoveToPlayer();
-    }
-  }
-
-  IEnumerator AttackPlayer() {
-    _state = EggGuardState.Attacking;
-
+  // private void Update() {
+  //   Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+  //   float _currentDistance = Vector3.Distance(transform.position, playerPos);
+  //
+  //   if ((_currentDistance < maxDistanceToAttack) && _state == EggGuardState.Chasing) {
+  //     StartCoroutine(AttackPlayer());
+  //   }
+  // }
+  //
+  // private void FixedUpdate() {
+  //   if (_state == EggGuardState.Chasing) {
+  //     MoveToPlayer();
+  //   }
+  // }
+  //
+  protected override IEnumerator AttackPlayer() {
+    isAttackOffCooldown = false;
+  
     _rb.velocity = Vector2.zero;
+  
+    yield return new WaitForSeconds(attackCooldownMax);
 
-    yield return new WaitForSeconds(_attackCooldown);
-
-    _state = EggGuardState.Chasing;
+    isAttackOffCooldown = true;
   }
 }
