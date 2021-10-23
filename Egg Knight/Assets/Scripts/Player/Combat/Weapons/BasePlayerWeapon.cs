@@ -17,7 +17,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   public static event EventHandler OnWeaponAnimationEnd;
 
-  protected void Awake() {
+  protected virtual void Awake() {
     _anim = gameObject.GetComponent<Animator>();
     _sr = gameObject.GetComponent<SpriteRenderer>();
 

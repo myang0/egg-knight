@@ -238,11 +238,11 @@ MonoBehaviour:
   _weapons:
   - {fileID: 2312666407832243488, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
   - {fileID: 885423615155747016, guid: 3cbc9f855431c7749989bcd20c24290e, type: 3}
-  - {fileID: 2312666407832243488, guid: 68a81c09b969896458deb39d0434f2df, type: 3}
+  - {fileID: 8968529581004278841, guid: ea00aceeb021c874ea716e5bca69cb5c, type: 3}
   _weaponDisplays:
   - {fileID: 7552109562574449023, guid: 29053d36cc3807b40b792e0d90ac70eb, type: 3}
   - {fileID: 3577784859226745086, guid: 0bdcb929d664f4741a45882733bfe958, type: 3}
-  - {fileID: 7552109562574449023, guid: 29053d36cc3807b40b792e0d90ac70eb, type: 3}
+  - {fileID: 7277857256985042715, guid: c8bafb0e4412751428d8ad758af656e5, type: 3}
 --- !u!114 &8003586958383023584
 MonoBehaviour:
   m_ObjectHideFlags: 0
