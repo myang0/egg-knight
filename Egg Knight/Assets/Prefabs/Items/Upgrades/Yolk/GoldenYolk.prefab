@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8189565246502454864}
   - component: {fileID: 8189565246502454865}
   - component: {fileID: 8189565246502454867}
-  - component: {fileID: 8189565246502454866}
+  - component: {fileID: 448428811580380880}
   m_Layer: 0
   m_Name: GoldenYolk
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 1.01}
   m_EdgeRadius: 0
---- !u!114 &8189565246502454866
+--- !u!114 &448428811580380880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8189565246502454878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722ba390b1752224d938658683bf02f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1efb285987ff12f4ea8172205d5e690b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Golden Yolk
-  Description: Cost to shoot yolk is lessened
+  Description: Decreased cost to shoot yolk
   InventoryKey: 18
   _upgradeKey: 1
+  _healthCostMultiplier: 0.5

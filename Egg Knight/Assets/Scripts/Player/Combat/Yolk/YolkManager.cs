@@ -20,8 +20,6 @@ public class YolkManager : MonoBehaviour {
     _health = gameObject.GetComponent<PlayerHealth>();
 
     _upgrades = gameObject.GetComponent<YolkUpgradeManager>();
-
-    YolkUpgrade.OnYolkUpgradePickup += HandleYolkUpgradeType;
   }
 
   private void HandleRightClick(object sender, EventArgs e) {
@@ -62,20 +60,11 @@ public class YolkManager : MonoBehaviour {
     yolk.SetDirection(direction, angle);
   }
 
-  private void HandleYolkUpgradeType(object sender, YolkUpgradeEventArgs e) {
-    YolkUpgradeType type = e.type;
+  public void MultiplyByCooldown(float multiplier) {
+    _yolkCooldown *= multiplier;
+  }
 
-    switch (type) {
-      case YolkUpgradeType.LeghornShot:
-        _yolkCooldown *= 1.5f;
-        _yolkHealthCost *= 1.5f;
-        break;
-      case YolkUpgradeType.GoldenYolk:
-        _yolkHealthCost /= 2f;
-        break;
-      default:
-        Debug.Log("Unknown upgrade type");
-        break;
-    }
+  public void MultiplyByHealthCost(float multiplier) {
+    _yolkHealthCost *= multiplier;
   }
 }

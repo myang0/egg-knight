@@ -8,9 +8,18 @@ public class YolkUpgrade : BaseItem {
 
   protected override void OnTriggerEnter2D(Collider2D col) {
     if (col.CompareTag("Player")) {
-      OnYolkUpgradePickup?.Invoke(this, new YolkUpgradeEventArgs(_upgradeKey));
-
-      PickUp();
+      YolkPickup();
     }
+  }
+
+  protected void YolkPickup() {
+    OnYolkUpgradePickup?.Invoke(this, new YolkUpgradeEventArgs(_upgradeKey));
+
+    PickUp();
+  }
+
+  protected YolkManager GetYolkManager(Collider2D col) {
+    GameObject playerObject = col.gameObject;
+    return playerObject?.GetComponent<YolkManager>();
   }
 }
