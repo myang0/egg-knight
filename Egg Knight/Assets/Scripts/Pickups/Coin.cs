@@ -5,22 +5,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private int _monetaryValue;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            //todo
-            Debug.Log("Todo: Coin Pickup");
+            GameObject playerObject = other.gameObject;
+            PlayerWallet wallet = playerObject.GetComponent<PlayerWallet>();
+
+            if (wallet != null) {
+                wallet.AddToBalance(_monetaryValue);
+            }
+
             Destroy(gameObject);
         }
     }
