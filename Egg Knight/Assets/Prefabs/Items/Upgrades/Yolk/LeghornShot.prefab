@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7479718057005512937}
   - component: {fileID: 7479718057005512936}
   - component: {fileID: 7479718057005512938}
-  - component: {fileID: 7479718057005512939}
+  - component: {fileID: -326453109930516440}
   m_Layer: 0
   m_Name: LeghornShot
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 1.01}
   m_EdgeRadius: 0
---- !u!114 &7479718057005512939
+--- !u!114 &-326453109930516440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7479718057005512935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722ba390b1752224d938658683bf02f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1706b26c231d4d04da5eb60f0415578d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Leghorn's Shot
   Description: Shoot 3 shots of yolk instead of 1
   InventoryKey: 18
   _upgradeKey: 0
+  _cooldownMultiplier: 1.5
+  _healthCostMultiplier: 1.5
