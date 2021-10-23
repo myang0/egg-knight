@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4090832051791540567}
   - component: {fileID: 4090832051791540563}
   - component: {fileID: 4090832051791540569}
+  - component: {fileID: -2081870724206754303}
+  - component: {fileID: 1703422094630351531}
   m_Layer: 8
   m_Name: EggGuardv2
   m_TagString: Enemy
@@ -134,6 +136,38 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &-2081870724206754303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090832051791540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8a7d2c14d9cc8469196fac48c0c761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yolkParticles: {fileID: 9076346668763775382, guid: cbfb7c6b24e19054685d18ab517daeae,
+    type: 3}
+  _igniteParticles: {fileID: 8300158180747643440, guid: 4ae3b13d5432c704fb2fc0988f7a7daa,
+    type: 3}
+  _frostParticles: {fileID: 5483276771753535537, guid: cb21f79c06ddbd349ae9f0b24f64c495,
+    type: 3}
+  _electrocuteParticles: {fileID: 3428535864611965781, guid: 6a0d5f5f1b372734f89254655542dd90,
+    type: 3}
+--- !u!114 &1703422094630351531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090832051791540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41de1c1e368c2b248b265f679606a10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4884445339543233865
 GameObject:
   m_ObjectHideFlags: 0
