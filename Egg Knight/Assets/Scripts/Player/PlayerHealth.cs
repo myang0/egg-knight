@@ -61,6 +61,8 @@ public class PlayerHealth : Health {
       return;
     }
 
+    SpawnChangeIndicator(amount, Color.yellow);
+
     _currentHealth -= amount;
 
     OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
@@ -69,6 +71,8 @@ public class PlayerHealth : Health {
   public override void Damage(float amount) {
     amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
+
+    SpawnChangeIndicator(amount, Color.red);
 
     OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
 
