@@ -9,15 +9,12 @@ public class EnemyIdle : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         _eBehavior = animator.GetComponent<EnemyBehaviour>();
         _eHealth = animator.GetComponent<EnemyHealth>();
-        GameObject[] enemyObjs = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (var eObj in enemyObjs) {
-            if (eObj != _eBehavior.gameObject) {
-                _otherEnemyBehaviours.Add(eObj.GetComponent<EnemyBehaviour>());
-            }
-        }
+        _eBehavior.isWallCollisionOn = true;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        RemoveDeadEnemiesList();
+        AddNewAliveEnemiesList();
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() ||
             AreNearbyEnemiesAlerted() || AreFewEnemiesAlive()){
@@ -37,10 +34,35 @@ public class EnemyIdle : StateMachineBehaviour {
                 }
             }
         }
+
         return false;
     }
 
+    private void RemoveDeadEnemiesList() {
+        List<EnemyBehaviour> deadEnemies = new List<EnemyBehaviour>();
+
+        foreach (var otherEnemy in _otherEnemyBehaviours) {
+            if (otherEnemy == null) {
+                deadEnemies.Add(otherEnemy);
+            }
+        }
+        
+        foreach (var deadEnemy in deadEnemies) {
+            _otherEnemyBehaviours.Remove(deadEnemy);
+        }
+    }
+
+    private void AddNewAliveEnemiesList() {
+        GameObject[] enemyObjs = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var eObj in enemyObjs) {
+            if (eObj != _eBehavior.gameObject && !_otherEnemyBehaviours.Contains(eObj.GetComponent<EnemyBehaviour>())) {
+                _otherEnemyBehaviours.Add(eObj.GetComponent<EnemyBehaviour>());
+            }
+        }
+    }
+
     private bool AreFewEnemiesAlive() {
-        return _otherEnemyBehaviours.Count < 2;
+        Debug.Log("OTHER ENEMIES COUNT:" + _otherEnemyBehaviours.Count);
+        return _otherEnemyBehaviours.Count < 3;
     }
 }

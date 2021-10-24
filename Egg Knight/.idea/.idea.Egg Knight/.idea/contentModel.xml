@@ -357,6 +357,7 @@
             <e p="HealthBar.cs" t="Include" />
             <e p="ItemText.cs" t="Include" />
             <e p="WalletText.cs" t="Include" />
+            <e p="WaveCounterText.cs" t="Include" />
           </e>
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>

@@ -22,7 +22,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
     minDistanceToAttack = 5;
 
     Health = raspberryHealth;
-    IsWallCollisionOn = true;
+    isWallCollisionOn = true;
     base.Awake();
   }
 

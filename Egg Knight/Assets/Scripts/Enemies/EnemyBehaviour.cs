@@ -34,7 +34,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private Vector2 _wanderDestination;
 
   private Transform _playerTransform;
-  protected bool IsWallCollisionOn;
+  public bool isWallCollisionOn;
   private EnemyMovement _eMovement;
 
   [SerializeField] private Animator alertAnimator;
@@ -180,12 +180,11 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void SetAlertTrigger() {
-    // alertAnimator.SetTrigger("Play");
     alertAnimator.Play("Active",  0, 0f);
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (!IsWallCollisionOn && !isWandering) {
+    if (!isWallCollisionOn && !isWandering) {
       if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
         Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
       }
