@@ -21,6 +21,7 @@ public class EnemyIdle : StateMachineBehaviour {
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() || AreNearbyEnemiesAlerted()){
             animator.SetBool("isAlert", true);
+            _eBehavior.SetAlertTrigger();
         }
         _eBehavior.Wander();
     }

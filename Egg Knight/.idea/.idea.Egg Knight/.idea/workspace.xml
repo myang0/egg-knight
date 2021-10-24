@@ -20,9 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,19 +83,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyWander.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/RangedEnemyChase.cs" />
-        <option value="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyStatusParticles.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
       </list>
     </option>
   </component>
@@ -146,6 +160,7 @@
       <workItem from="1634529766476" duration="5520000" />
       <workItem from="1635023838040" duration="17925000" />
       <workItem from="1635051386567" duration="2392000" />
+      <workItem from="1635112020862" duration="2527000" />
     </task>
     <servers />
   </component>

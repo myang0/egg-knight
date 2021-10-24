@@ -13,7 +13,10 @@ public class RangedEnemyFlee : StateMachineBehaviour
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         if (_eBehavior.isStunned) animator.SetBool("isFleeing", false);
         _eBehavior.Flee();
-        if (_eBehavior.minDistanceToAttack+1 < _eBehavior.GetDistanceToPlayer() || _eBehavior.GetIsAttackReady()) {
+        // if (_eBehavior.minDistanceToAttack+1 < _eBehavior.GetDistanceToPlayer() || _eBehavior.GetIsAttackReady()) {
+        //     animator.SetBool("isFleeing", false);
+        // }
+        if (_eBehavior.isAttackOffCooldown) {
             animator.SetBool("isFleeing", false);
         }
     }

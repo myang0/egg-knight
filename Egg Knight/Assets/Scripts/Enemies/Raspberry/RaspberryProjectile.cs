@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class RaspberryProjectile : Projectile {
   protected override void Despawn() {
@@ -12,7 +13,9 @@ public class RaspberryProjectile : Projectile {
       playerHealth.Damage(_damage);
     }
 
-    StopCoroutine(DespawnTimer());
-    Despawn();
+    if (collider.gameObject.GetComponent<TilemapCollider2D>() != null) {
+      StopCoroutine(DespawnTimer());
+      Despawn();
+    }
   }
 }

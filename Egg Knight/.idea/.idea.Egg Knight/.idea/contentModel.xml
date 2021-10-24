@@ -237,10 +237,13 @@
           </e>
           <e p="Enemies" t="Include">
             <e p="EggGuard" t="Include">
+              <e p="EggGuardAttack.cs" t="Include" />
               <e p="EggGuardBehaviour.cs" t="Include" />
               <e p="EggGuardHealth.cs" t="Include" />
+              <e p="EggGuardSpear.cs" t="Include" />
               <e p="EggGuardSpriteHandler.cs" t="Include" />
               <e p="EggGuardState.cs" t="Include" />
+              <e p="EggGuardWeapons.cs" t="Include" />
             </e>
             <e p="EnemyBehaviour.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
@@ -256,6 +259,9 @@
               <e p="RaspberryProjectile.cs" t="Include" />
               <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
+            </e>
+            <e p="Weapons" t="Include">
+              <e p="BaseEnemyWeapon.cs" t="Include" />
             </e>
           </e>
           <e p="Enums" t="Include">
