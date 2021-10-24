@@ -19,7 +19,8 @@ public class EnemyIdle : StateMachineBehaviour {
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
-        if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() || AreNearbyEnemiesAlerted()){
+        if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() ||
+            AreNearbyEnemiesAlerted() || AreFewEnemiesAlive()){
             animator.SetBool("isAlert", true);
             _eBehavior.SetAlertTrigger();
         }
@@ -37,5 +38,9 @@ public class EnemyIdle : StateMachineBehaviour {
             }
         }
         return false;
+    }
+
+    private bool AreFewEnemiesAlive() {
+        return _otherEnemyBehaviours.Count < 2;
     }
 }
