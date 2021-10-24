@@ -17,7 +17,7 @@ public abstract class Health : MonoBehaviour {
 
     SpawnChangeIndicator(amount, Color.red);
 
-    Debug.Log(_currentHealth);
+    // Debug.Log(_currentHealth);
 
     if (_currentHealth <= 0) {
       Die();

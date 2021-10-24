@@ -21,16 +21,23 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/shelf/Uncommitted_changes_before_Merge_at_10_17_2021_11_16_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/shelf/Uncommitted_changes_before_Merge_at_10_17_2021_11_16_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +48,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyStunned.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EnemyIdle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -68,16 +78,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AstarPath.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyAlerted.cs" />
-        <option value="$PROJECT_DIR$/Assets/EnemyAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyStunned.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyWander.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
+        <option value="$PROJECT_DIR$/Assets/RangedEnemyChase.cs" />
+        <option value="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/EnemyAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
       </list>
     </option>
@@ -139,7 +155,7 @@
       <workItem from="1633472554771" duration="17051000" />
       <workItem from="1633730554582" duration="13256000" />
       <workItem from="1634529766476" duration="5520000" />
-      <workItem from="1635023838040" duration="4954000" />
+      <workItem from="1635023838040" duration="17329000" />
     </task>
     <servers />
   </component>
@@ -176,6 +192,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="679" y="133" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1633743320409" />
+    <state x="1129" y="289" key="Vcs.Push.Dialog.v2" timestamp="1635031901499">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1129" y="289" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1635031901499" />
     <state x="1201" y="246" key="git4idea.branch.GitSmartOperationDialog" timestamp="1634537760711">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

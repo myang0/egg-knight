@@ -11,16 +11,15 @@ public class RangedEnemyAlerted : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
+        _eBehavior.StopMoving();
+        
         if (_eBehavior.GetIsAttackReady()) {
             animator.SetBool("isAttackReady", true);
-        }
-
-        if (_eBehavior.maxDistanceToAttack < _eBehavior.GetDistanceToPlayer()) {
-            _eBehavior.MoveToPlayer();
-        }
-
-        if (_eBehavior.minDistanceToAttack > _eBehavior.GetDistanceToPlayer()) {
-            _eBehavior.Flee();
+        } else if (_eBehavior.maxDistanceToAttack+1 < _eBehavior.GetDistanceToPlayer()) {
+            animator.SetBool("isChasing", true);
+        } else if (_eBehavior.minDistanceToAttack > _eBehavior.GetDistanceToPlayer()) {
+            animator.SetBool("isFleeing", true);
         }
     }
 }

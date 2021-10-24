@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 4477986218612520024}
   - component: {fileID: -363656459392797040}
   - component: {fileID: 1176421552417456974}
+  - component: {fileID: 366707848}
+  - component: {fileID: 366707857}
   m_Layer: 8
   m_Name: Raspberry
   m_TagString: Enemy
@@ -101,7 +103,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -142,12 +144,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 1.5
   maxDistanceToAttack: 0
+  minDistanceToAttack: 0
   attackCooldownMax: 0
   isAttackOffCooldown: 0
+  isInAttackAnimation: 0
+  isStunned: 0
   alertRange: 4
+  isWandering: 0
   _projectilePrefab: {fileID: 6034735207784910516, guid: ed5a11cde5694bb498ad5e2e13af6cd1,
     type: 3}
-  _minDistanceToAttack: 7.5
 --- !u!114 &-2512039594249143463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +178,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.73999995, y: 0.8274999}
+  m_Offset: {x: 0, y: -0.25}
+  m_Size: {x: 1, y: 1.25}
   m_Direction: 0
 --- !u!114 &-363656459392797040
 MonoBehaviour:
@@ -206,7 +211,7 @@ Animator:
   m_GameObject: {fileID: 1060600742903179065}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e50be2ba21b84e4d8b22cdb139a841a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5694bd4e0632e68458c555a6260d3a18, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -215,3 +220,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &366707848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060600742903179065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &366707857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060600742903179065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1

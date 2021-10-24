@@ -11,11 +11,14 @@ public class MeleeEnemyAlerted : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_eBehavior.GetIsAttackReady()) {
+        if (_eBehavior.isStunned) {
+            animator.SetBool("isStunned", true);
+        } 
+        else if (_eBehavior.GetIsAttackReady()) {
             animator.SetBool("isAttackReady", true);
         }
         else {
-            _eBehavior.MoveToPlayer();
+            _eBehavior.Move();
         }
     }
 }

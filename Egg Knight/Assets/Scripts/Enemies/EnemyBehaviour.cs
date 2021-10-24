@@ -5,6 +5,8 @@ using Stage;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Pathfinding;
+using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public abstract class EnemyBehaviour : MonoBehaviour {
   protected Rigidbody2D _rb;
@@ -23,21 +25,25 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public float minDistanceToAttack;
   public float attackCooldownMax;
   public bool isAttackOffCooldown;
-  public float alertRange = 4f;
+  public bool isInAttackAnimation;
+  public bool isStunned;
+  public float alertRange = 5f;
+  
+  public bool isWandering;
+  // private float _unstuckDuration;
+  private Vector2 _wanderDestination;
 
   private Transform _playerTransform;
-  private float nextWaypointDistance = 2f;
-  private Path _path;
-  private int _currentWaypoint;
-  private bool _reachedEndOfPath;
   protected bool isWallCollisionOn;
-  private Seeker _seeker;
+  private EnemyMovement _eMovement;
+  
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
     
     _rb = gameObject.GetComponent<Rigidbody2D>();
     isAttackOffCooldown = true;
+    _eMovement = gameObject.GetComponent<EnemyMovement>();
     
     Health.OnDeath += (sender, eventArgs) => {
       FindObjectOfType<CoinDrop>().DropCoin(transform.position);
@@ -47,14 +53,21 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         .RemoveEnemy(this);
     };
     
-    _seeker = GetComponent<Seeker>();
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
+    InvokeRepeating(nameof(InterruptWander), 0f, 2f);
   }
-  
-  void UpdatePath() {
-    if (_seeker.IsDone()) _seeker.StartPath(_rb.position, _playerTransform.position, OnPathComplete);
+
+  protected void Update() {
+    SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+    spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
   }
+
+  private void InterruptWander() {
+    if (isWandering) {
+      isWandering = false;
+    }
+  }
+
 
   protected virtual void HandleStatusDamage(object sender, EnemyStatusEventArgs e) {
     List<StatusCondition> statuses = e.statuses;
@@ -106,65 +119,86 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
     _currentSpeed = _currentSpeed / StatusConfig.FrostSpeedMultiplier;
   }
-
-  private void OnPathComplete(Path p) {
-    if (p.error) return;
-    _path = p;
-    _currentWaypoint = 0;
-  }
-
-  public void MoveToPlayer() {
-    if (_path == null) return;
-    _reachedEndOfPath = _currentWaypoint >= _path.vectorPath.Count;
-    
-
-    Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-    Vector2 movementForce = direction * _currentSpeed;
-    // Vector2 movementForce = direction * _currentSpeed * Time.deltaTime;
-    
-    _rb.velocity = movementForce;
-    // _rb.AddForce(movementForce);
-
-    float distanceToNextWaypoint = Vector2.Distance(_rb.position, _path.vectorPath[_currentWaypoint]);
-    if (distanceToNextWaypoint < nextWaypointDistance) {
-      _currentWaypoint++;
-    }
-  }
   
-  public void Flee() {
-    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-    Vector2 vectorFromPlayer = VectorHelper.GetVectorToPoint(playerPos, transform.position);
-
-    _rb.velocity = vectorFromPlayer * _currentSpeed;
+  protected IEnumerator Electrocute() {
+    isStunned = true;
+    yield return new WaitForSeconds(StatusConfig.ElectrocuteStunDuration);
+    isStunned = false;
   }
 
+  public void Move() {
+    _eMovement.MoveToPlayer(_currentSpeed);
+  }
+
+  public void Flee() {
+    _eMovement.Flee(_currentSpeed);
+  }
+
+  public void StopMoving() {
+    _rb.velocity = new Vector2(0, 0);
+  }
+
+  public void Wander() {
+    if (isWandering) return;
+    StartCoroutine(WanderIEnumerator());
+  }
+
+  private IEnumerator WanderIEnumerator() {
+    isWandering = true;
+    var position = transform.position;
+    float newLocationX = position.x + Random.Range(-2f, 2f);
+    float newLocationY = position.y + Random.Range(-2f, 2f);
+    _wanderDestination = new Vector2(newLocationX, newLocationY);
+
+    while (Vector2.Distance(transform.position, _wanderDestination) > 0.2 && !isStunned) {
+      if (isStunned || !isWandering) yield break;
+      // if (isStunned || !isWandering || _unstuckDuration > 0) yield break;
+      transform.position = Vector2.MoveTowards(transform.position, _wanderDestination, _maxSpeed/4*Time.deltaTime);
+      yield return null;
+    }
+
+    isWandering = false;
+  }
+
+  // private IEnumerator UnstuckIEnumerator() {
+  //   _unstuckDuration = 1f;
+  //   while (_unstuckDuration > 0) {
+  //     if (isStunned || !isWandering) break;
+  //     _unstuckDuration -= Time.deltaTime;
+  //     _eMovement.MoveToPlayer(_currentSpeed/4);
+  //     yield return null;
+  //   }
+  //
+  //   isWandering = false;
+  //   _unstuckDuration = 0;
+  // }
 
   public float GetDistanceToPlayer() {
     return Vector2.Distance(transform.position, _playerTransform.position);
   }
-
-  public bool GetIsAttackOffCooldown() {
-    return isAttackOffCooldown;
-  }
-
+  
   public virtual bool GetIsAttackReady() {
-    return GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown;
+    return GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown && !isInAttackAnimation;
   }
 
   public bool GetIsInAlertRange() {
     return GetDistanceToPlayer() < alertRange;
   }
-  
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (!isWallCollisionOn) {
+    if (!isWallCollisionOn && !isWandering) {
       if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
         Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
       }
     }
+
+    // if (isWandering && other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")
+    //   || _unstuckDuration == 0) {
+    //   StartCoroutine(UnstuckIEnumerator());
+    // }
   }
 
-  public void Attack() {
+  public virtual void Attack() {
     StartCoroutine(AttackPlayer());
   }
 

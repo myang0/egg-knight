@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelManager
   - Enemy
+  - TilemapCollider
   layers:
   - Default
   - TransparentFX
