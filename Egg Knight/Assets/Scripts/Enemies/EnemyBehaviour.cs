@@ -27,19 +27,19 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool isAttackOffCooldown;
   public bool isInAttackAnimation;
   public bool isStunned;
-  public float alertRange = 5f;
+  public float alertRange;
   
   public bool isWandering;
-  // private float _unstuckDuration;
   private Vector2 _wanderDestination;
 
   private Transform _playerTransform;
-  protected bool isWallCollisionOn;
+  protected bool IsWallCollisionOn;
   private EnemyMovement _eMovement;
   
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
+    alertRange = 6f;
     
     _rb = gameObject.GetComponent<Rigidbody2D>();
     isAttackOffCooldown = true;
@@ -177,7 +177,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (!isWallCollisionOn && !isWandering) {
+    if (!IsWallCollisionOn && !isWandering) {
       if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
         Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
       }
