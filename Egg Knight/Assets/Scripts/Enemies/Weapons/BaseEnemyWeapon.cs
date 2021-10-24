@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public abstract class BaseEnemyWeapon : MonoBehaviour {
+  protected SpriteRenderer _sr;
+
+  protected GameObject _playerObject;
+
+  [SerializeField] protected float _damageAmount;
+
+  protected virtual void Awake() {
+    _sr = gameObject.GetComponent<SpriteRenderer>();
+
+    _playerObject = GameObject.FindGameObjectWithTag("Player");
+
+    Vector3 playerPos = _playerObject.transform.position;
+    _sr.flipX = (playerPos.x < transform.position.x);
+  }
+
+  protected void DamagePlayer(Collider2D player) {
+    PlayerHealth playerHealth = player.gameObject.GetComponent<PlayerHealth>();
+
+    if (playerHealth != null) {
+      playerHealth.Damage(_damageAmount);
+    }
+  }
+
+  public abstract void EnableHitbox();
+
+  public abstract void OnAnimationEnd();
+
+  protected abstract void OnDrawGizmosSelected();
+}

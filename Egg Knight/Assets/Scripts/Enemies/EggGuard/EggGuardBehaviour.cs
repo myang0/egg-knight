@@ -12,7 +12,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
-    maxDistanceToAttack = 2.0f;
+    maxDistanceToAttack = 4f;
     attackCooldownMax = 1.5f;
 
     Health = eggGuardHealth;
