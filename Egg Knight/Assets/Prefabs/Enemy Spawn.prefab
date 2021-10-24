@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lv1EggGuard: {fileID: 4090832051791540563, guid: 7f8038ca233fd7e4fb065299e2657547,
     type: 3}
-  lv1Mushroom: {fileID: 0}
+  lv1Mushroom: {fileID: 3118377129507018818, guid: f6f1d40253f7f1047a88605382e8efc7,
+    type: 3}
   lv1Raspberry: {fileID: 1060600742903179070, guid: 869a76ebb052f9d4885f2697357d35ca,
     type: 3}
   lv1Strawberry: {fileID: 0}

@@ -9,7 +9,6 @@ public class EnemyStatusParticles : MonoBehaviour {
 
   private void Awake() {
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
-
     enemyBehaviour.OnYolked += HandleYolked;
     enemyBehaviour.OnIgnited += HandleIgnited;
     enemyBehaviour.OnFrosted += HandleFrosted;

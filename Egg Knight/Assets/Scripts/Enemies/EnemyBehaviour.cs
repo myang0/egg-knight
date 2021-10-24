@@ -58,8 +58,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected void Update() {
-    SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-    spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
+    if (!isWandering) {
+      SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+      spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
+    }
   }
 
   private void InterruptWander() {
@@ -152,26 +154,15 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
     while (Vector2.Distance(transform.position, _wanderDestination) > 0.2 && !isStunned) {
       if (isStunned || !isWandering) yield break;
-      // if (isStunned || !isWandering || _unstuckDuration > 0) yield break;
       transform.position = Vector2.MoveTowards(transform.position, _wanderDestination, _maxSpeed/4*Time.deltaTime);
+      
+      SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+      spriteRenderer.flipX = transform.position.x - _wanderDestination.x > 0;
       yield return null;
     }
 
     isWandering = false;
   }
-
-  // private IEnumerator UnstuckIEnumerator() {
-  //   _unstuckDuration = 1f;
-  //   while (_unstuckDuration > 0) {
-  //     if (isStunned || !isWandering) break;
-  //     _unstuckDuration -= Time.deltaTime;
-  //     _eMovement.MoveToPlayer(_currentSpeed/4);
-  //     yield return null;
-  //   }
-  //
-  //   isWandering = false;
-  //   _unstuckDuration = 0;
-  // }
 
   public float GetDistanceToPlayer() {
     return Vector2.Distance(transform.position, _playerTransform.position);
@@ -191,11 +182,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
       }
     }
-
-    // if (isWandering && other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")
-    //   || _unstuckDuration == 0) {
-    //   StartCoroutine(UnstuckIEnumerator());
-    // }
   }
 
   public virtual void Attack() {

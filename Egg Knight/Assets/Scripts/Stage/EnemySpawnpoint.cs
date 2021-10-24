@@ -72,7 +72,7 @@ public class EnemySpawnpoint : MonoBehaviour {
 
         if (enemyChance > Lv1MushroomRate) {
             // SpawnEnemy(lv1Mushroom);   
-            return SpawnEnemy(lv1EggGuard);
+            return SpawnEnemy(lv1Mushroom);
         }
 
         if (enemyChance > Lv1RaspberryRate) {
