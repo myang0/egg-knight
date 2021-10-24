@@ -6,6 +6,8 @@ public class PlayerHealth : Health {
   [SerializeField] private float _iFramesDuration;
   private bool _iFramesActive = false;
 
+  private bool _isRolling = false;
+
   private PlayerInventory _inventory;
 
   public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthChange;
@@ -23,10 +25,14 @@ public class PlayerHealth : Health {
   }
 
   private void HandleRoll(object sender, RollEventArgs e) {
+    _isRolling = true;
+
     DisableHitbox();
   }
 
   private void HandleRollEnd(object sender, EventArgs e) {
+    _isRolling = false;
+
     if (_iFramesActive == false) {
       EnableHitbox();
     }
@@ -69,6 +75,10 @@ public class PlayerHealth : Health {
   }
 
   public override void Damage(float amount) {
+    if (_iFramesActive || _isRolling) {
+      return;
+    }
+
     amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
 
