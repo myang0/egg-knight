@@ -1,5 +1,5 @@
 public static class StatusConfig {
-  public static int StatusEffectChance = 5;
+  public static int StatusEffectChance = 10;
 
   public static float YolkedDuration = 2;
   public static float YolkedSpeedModifier = 0.5f;

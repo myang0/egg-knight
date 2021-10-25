@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomBehavior : EnemyBehaviour
-{
+public class MushroomBehavior : EnemyBehaviour {
+    [SerializeField] private float _attackDamage;
+
     protected override void Awake() {
         MushroomHealth mushroomHealth = gameObject.GetComponent<MushroomHealth>();
         mushroomHealth.OnMushroomStatusDamage += HandleStatusDamage;
@@ -22,5 +23,14 @@ public class MushroomBehavior : EnemyBehaviour
 
     protected override IEnumerator AttackPlayer() {
         yield break;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("Player")) {
+            GameObject playerObject = col.gameObject;
+            PlayerHealth playerHealth = playerObject?.GetComponent<PlayerHealth>();
+
+            playerHealth?.Damage(_attackDamage);
+        }
     }
 }

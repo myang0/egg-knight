@@ -67,7 +67,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     List<StatusCondition> statuses = new List<StatusCondition>();
 
     foreach (StatusCondition modifier in _weaponModifiers) {
-      int randomNum = UnityEngine.Random.Range(0, 1);
+      int randomNum = UnityEngine.Random.Range(0, 100);
       
       if (randomNum < StatusConfig.StatusEffectChance && !statuses.Contains(modifier)) {
         statuses.Add(modifier);
