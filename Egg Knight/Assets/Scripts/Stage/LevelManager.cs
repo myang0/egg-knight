@@ -87,7 +87,7 @@ namespace Stage
 
         private void MovePlayerToStage(StageManager stage) {
             Vector3 spawnPos = stage.GetSpawnPosition();
-            Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, 2);
+            Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, ZcoordinateConsts.Character);
             _player.transform.position = newPos;
         }
 
