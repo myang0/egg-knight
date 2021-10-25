@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 9041036350404062236}
   - component: {fileID: 9041036350404062235}
   - component: {fileID: 9041036350404062234}
+  - component: {fileID: 1325959397}
   m_Layer: 0
   m_Name: Caravan
   m_TagString: Untagged
@@ -470,6 +471,33 @@ MonoBehaviour:
   shopItem2: {fileID: 9041036349528809066}
   shopItem3: {fileID: 9041036350549551654}
   itemManager: {fileID: 0}
+  levelManager: {fileID: 0}
+--- !u!61 &1325959397
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041036350404062233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.328125, y: 6.517845}
+    newSize: {x: 9.328125, y: 6.517845}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 15}
+  m_EdgeRadius: 0
 --- !u!1 &9041036350549551653
 GameObject:
   m_ObjectHideFlags: 0

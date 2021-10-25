@@ -1,5 +1,7 @@
 using System;
+using Fungus;
 using UnityEngine;
+using EventHandler = System.EventHandler;
 
 public class PlayerControls : MonoBehaviour {
 	public static event EventHandler<MovementVectorEventArgs> OnMovement;
@@ -48,6 +50,11 @@ public class PlayerControls : MonoBehaviour {
 			AttackControls();
 			AttackSwitchControls();
 		}
+	}
+
+	private bool IsDialogueActive() {
+		SayDialog[] dialogues = FindObjectsOfType<SayDialog>();
+		return dialogues.Length > 0;
 	}
 
 	private void MovementControls() {

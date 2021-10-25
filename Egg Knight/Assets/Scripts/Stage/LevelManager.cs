@@ -28,6 +28,7 @@ namespace Stage
         [SerializeField] private int sirrachaRate;
         [SerializeField] private int shopRate;
         [SerializeField] private int luckyItemRate;
+        public bool isFirstShopVisited = false;
         private bool hasPlayerTakenDamageCurrStage;
         private int _level = 1;
         private const int ShopsPerLevel = 3;
@@ -80,6 +81,7 @@ namespace Stage
             SetStageActiveStatus(stage);
             MovePlayerToStage(stage);
             hasPlayerTakenDamageCurrStage = false;
+            isFirstShopVisited = false;
             virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = stage.GetCameraBoundary();
             currentStage = stage;
             stage.OnStageClear += IncrementRates;
