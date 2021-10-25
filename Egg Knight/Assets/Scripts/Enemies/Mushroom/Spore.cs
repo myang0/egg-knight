@@ -13,10 +13,10 @@ public class Spore : MonoBehaviour {
   private void Awake() {
     _rotationSpeed = Random.Range(-0.1f, 0.1f);
 
-    float randomScale = Random.Range(0.5f, 1.5f);
+    float randomScale = Random.Range(0.5f, 2f);
     transform.localScale = new Vector3(randomScale, randomScale, 1);
 
-    _damage = 7.5f * randomScale;
+    _damage = 5f * randomScale;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
     _rb.velocity = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
