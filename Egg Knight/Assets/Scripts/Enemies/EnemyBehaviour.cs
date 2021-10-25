@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Stage;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -33,8 +34,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private Vector2 _wanderDestination;
 
   private Transform _playerTransform;
-  protected bool IsWallCollisionOn;
+  public bool isWallCollisionOn;
   private EnemyMovement _eMovement;
+
+  [SerializeField] private Animator alertAnimator;
   
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
@@ -176,8 +179,12 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     return GetDistanceToPlayer() < alertRange;
   }
 
+  public void SetAlertTrigger() {
+    alertAnimator.Play("Active",  0, 0f);
+  }
+
   private void OnCollisionEnter2D(Collision2D other) {
-    if (!IsWallCollisionOn && !isWandering) {
+    if (!isWallCollisionOn && !isWandering) {
       if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
         Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
       }

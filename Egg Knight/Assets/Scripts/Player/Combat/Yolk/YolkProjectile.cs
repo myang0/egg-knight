@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class YolkProjectile : Projectile {
   private bool _isHoming = false;
@@ -77,7 +78,9 @@ public class YolkProjectile : Projectile {
       enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
     }
 
-    StopCoroutine(DespawnTimer());
-    Despawn();
+    if (collider.gameObject.GetComponent<TilemapCollider2D>() != null || enemyHealth != null) {
+      StopCoroutine(DespawnTimer());
+      Despawn();
+    }
   }
 }

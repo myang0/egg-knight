@@ -221,15 +221,6 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="EnemyAttack.cs" t="Include" />
-        <e p="EnemyIdle.cs" t="Include" />
-        <e p="EnemyMovement.cs" t="Include" />
-        <e p="EnemyStunned.cs" t="Include" />
-        <e p="EnemyWander.cs" t="Include" />
-        <e p="MeleeEnemyAlerted.cs" t="Include" />
-        <e p="RangedEnemyAlerted.cs" t="Include" />
-        <e p="RangedEnemyChase.cs" t="Include" />
-        <e p="RangedEnemyFlee.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -237,10 +228,13 @@
           </e>
           <e p="Enemies" t="Include">
             <e p="EggGuard" t="Include">
+              <e p="EggGuardAttack.cs" t="Include" />
               <e p="EggGuardBehaviour.cs" t="Include" />
               <e p="EggGuardHealth.cs" t="Include" />
+              <e p="EggGuardSpear.cs" t="Include" />
               <e p="EggGuardSpriteHandler.cs" t="Include" />
               <e p="EggGuardState.cs" t="Include" />
+              <e p="EggGuardWeapons.cs" t="Include" />
             </e>
             <e p="EnemyBehaviour.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
@@ -256,6 +250,9 @@
               <e p="RaspberryProjectile.cs" t="Include" />
               <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
+            </e>
+            <e p="Weapons" t="Include">
+              <e p="BaseEnemyWeapon.cs" t="Include" />
             </e>
           </e>
           <e p="Enums" t="Include">
@@ -281,6 +278,17 @@
             <e p="PlayerHealthChangeEventArgs.cs" t="Include" />
             <e p="RollEventArgs.cs" t="Include" />
             <e p="YolkUpgradeEventArgs.cs" t="Include" />
+          </e>
+          <e p="FSM" t="Include">
+            <e p="EnemyAttack.cs" t="Include" />
+            <e p="EnemyIdle.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
+            <e p="EnemyStunned.cs" t="Include" />
+            <e p="EnemyWander.cs" t="Include" />
+            <e p="MeleeEnemyAlerted.cs" t="Include" />
+            <e p="RangedEnemyAlerted.cs" t="Include" />
+            <e p="RangedEnemyChase.cs" t="Include" />
+            <e p="RangedEnemyFlee.cs" t="Include" />
           </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />
@@ -323,6 +331,7 @@
                 <e p="Spoon" t="Include">
                   <e p="Spoon.cs" t="Include" />
                 </e>
+                <e p="WeaponDisplayPoint.cs" t="Include" />
               </e>
               <e p="Yolk" t="Include">
                 <e p="YolkManager.cs" t="Include" />
@@ -351,6 +360,7 @@
             <e p="HealthBar.cs" t="Include" />
             <e p="ItemText.cs" t="Include" />
             <e p="WalletText.cs" t="Include" />
+            <e p="WaveCounterText.cs" t="Include" />
           </e>
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>

@@ -45,6 +45,8 @@ namespace Stage {
         private static readonly int[] Level3ItemStages = {5, 9, 13};
 
         private const float SurvivalTimer = 30f;
+        private int _survivalTimerCurrent;
+        private WaveCounterText _waveCounterText;
 
         private void Start() {
             _eSpawnpoints.AddRange(GetComponentsInChildren<EnemySpawnpoint>());
@@ -58,6 +60,8 @@ namespace Stage {
             Assert.IsNotNull(_stageEntrance);
             Assert.IsNotNull(_camBoundary);
             Assert.IsNotNull(_levelManager);
+            
+            _waveCounterText = FindObjectOfType<WaveCounterText>();
         }
 
         private void Update() {
@@ -70,6 +74,7 @@ namespace Stage {
                 }
                 
                 if (StageClearCondition()) {
+                    _waveCounterText.ChangeText("");
                     if (itemStatus == StageItemStatus.NeverSpawned) {
                         SpawnItem();
                         OnStageClear?.Invoke(this, EventArgs.Empty);
@@ -180,7 +185,7 @@ namespace Stage {
                 // If stage has enemies in waves
                 else {
                     if (enemiesList.Count == 0 && numWavesCurr != numWavesMax) {
-                        
+                        _waveCounterText.ChangeText("Wave: " + (numWavesCurr+1) + "/" + numWavesMax);
                         for (int i = 0; i < numEnemiesMax; i++) {
                             if (_eSpawnpoints.Count == 0) {
                                 throw new Exception("Attempting to spawn " + (i+1) + "th enemy, but no more spawnpoints available.");
@@ -320,7 +325,12 @@ namespace Stage {
         }
 
         private IEnumerator StartSurvivalTimer() {
-            yield return new WaitForSeconds(SurvivalTimer);
+            _survivalTimerCurrent = (int) SurvivalTimer;
+            while (_survivalTimerCurrent > 0) {
+                yield return new WaitForSeconds(1f);
+                _survivalTimerCurrent -= 1;
+                _waveCounterText.ChangeText("Survive for " + _survivalTimerCurrent + "s");
+            }
             foreach (EnemyBehaviour e in enemiesList) {
                 Destroy(e.gameObject);
             }

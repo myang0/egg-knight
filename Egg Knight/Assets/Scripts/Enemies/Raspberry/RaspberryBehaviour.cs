@@ -7,7 +7,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
   [SerializeField] private GameObject _projectilePrefab;
   
   private int _shotsPerAttack;
-  private int _maxShotsPerAttack = 3;
+  private int _maxShotsPerAttack = 2;
   private float _delayBetweenShots = 0.5f;
 
   protected override void Awake() {
@@ -22,7 +22,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
     minDistanceToAttack = 5;
 
     Health = raspberryHealth;
-    IsWallCollisionOn = true;
+    isWallCollisionOn = true;
     base.Awake();
   }
 
