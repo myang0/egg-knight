@@ -158,6 +158,7 @@ MonoBehaviour:
   isStunned: 0
   alertRange: 5
   isWandering: 0
+  _attackDamage: 7.5
 --- !u!114 &3118377129507018817
 MonoBehaviour:
   m_ObjectHideFlags: 0
