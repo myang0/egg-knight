@@ -221,15 +221,6 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="EnemyAttack.cs" t="Include" />
-        <e p="EnemyIdle.cs" t="Include" />
-        <e p="EnemyMovement.cs" t="Include" />
-        <e p="EnemyStunned.cs" t="Include" />
-        <e p="EnemyWander.cs" t="Include" />
-        <e p="MeleeEnemyAlerted.cs" t="Include" />
-        <e p="RangedEnemyAlerted.cs" t="Include" />
-        <e p="RangedEnemyChase.cs" t="Include" />
-        <e p="RangedEnemyFlee.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -288,6 +279,17 @@
             <e p="RollEventArgs.cs" t="Include" />
             <e p="YolkUpgradeEventArgs.cs" t="Include" />
           </e>
+          <e p="FSM" t="Include">
+            <e p="EnemyAttack.cs" t="Include" />
+            <e p="EnemyIdle.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
+            <e p="EnemyStunned.cs" t="Include" />
+            <e p="EnemyWander.cs" t="Include" />
+            <e p="MeleeEnemyAlerted.cs" t="Include" />
+            <e p="RangedEnemyAlerted.cs" t="Include" />
+            <e p="RangedEnemyChase.cs" t="Include" />
+            <e p="RangedEnemyFlee.cs" t="Include" />
+          </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />
           <e p="Helpers" t="Include">
@@ -329,6 +331,7 @@
                 <e p="Spoon" t="Include">
                   <e p="Spoon.cs" t="Include" />
                 </e>
+                <e p="WeaponDisplayPoint.cs" t="Include" />
               </e>
               <e p="Yolk" t="Include">
                 <e p="YolkManager.cs" t="Include" />

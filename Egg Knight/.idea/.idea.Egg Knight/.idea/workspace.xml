@@ -22,14 +22,30 @@
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Mushroom/MushroomController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Mushroom/MushroomController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyIdle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyAttack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyAttack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyIdle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyIdle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyStunned.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyStunned.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyWander.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyWander.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedFork.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedFork.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedForkHold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedForkHold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyChase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyChase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +56,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyStunned.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyIdle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -76,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyWander.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/RangedEnemyChase.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyAttack.cs" />
@@ -94,6 +105,12 @@
         <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/WeaponDisplayPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
       </list>
     </option>
   </component>
@@ -156,7 +173,7 @@
       <workItem from="1634529766476" duration="5520000" />
       <workItem from="1635023838040" duration="17925000" />
       <workItem from="1635051386567" duration="2392000" />
-      <workItem from="1635112020862" duration="6584000" />
+      <workItem from="1635112020862" duration="9043000" />
     </task>
     <servers />
   </component>

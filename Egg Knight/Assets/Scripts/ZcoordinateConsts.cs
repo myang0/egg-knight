@@ -3,4 +3,5 @@ public class ZcoordinateConsts {
     public const int Pickup = 3;
     public const int Character = 2;
     public const int TilemapCollider = 1;
+    public const int WeaponAttack = 1;
 }

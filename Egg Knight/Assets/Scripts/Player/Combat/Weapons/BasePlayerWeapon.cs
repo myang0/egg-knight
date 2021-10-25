@@ -22,7 +22,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     _sr = gameObject.GetComponent<SpriteRenderer>();
 
     _weaponModifiers = new List<StatusCondition>();
-
+    
     GameObject player = GameObject.FindGameObjectWithTag("Player");
     _health = player.GetComponent<PlayerHealth>();
     _inventory = player.GetComponent<PlayerInventory>();
@@ -38,9 +38,9 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual void FixedUpdate() {
-    Transform player = GameObject.Find("Player").transform;
-
-    transform.position = player.position;
+    Vector3 playerPos = GameObject.Find("Player").transform.position;
+    Vector3 newPos = new Vector3(playerPos.x, playerPos.y, 1);
+    transform.position = newPos;
   }
 
   protected void DamageEnemies(Collider2D[] enemies) {

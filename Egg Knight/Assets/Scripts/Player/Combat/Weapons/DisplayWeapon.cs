@@ -16,6 +16,7 @@ public class DisplayWeapon : MonoBehaviour {
   private void Update() {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-    _sr.flipX = (mousePos.x < _player.position.x);
+    _sr.flipX = true;
+    _sr.flipY = (mousePos.x > _player.position.x);
   }
 }
