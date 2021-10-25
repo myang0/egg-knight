@@ -243,6 +243,7 @@
             <e p="Mushroom" t="Include">
               <e p="MushroomBehavior.cs" t="Include" />
               <e p="MushroomHealth.cs" t="Include" />
+              <e p="MushroomSpriteHandler.cs" t="Include" />
               <e p="Spore.cs" t="Include" />
             </e>
             <e p="Raspberry" t="Include">
