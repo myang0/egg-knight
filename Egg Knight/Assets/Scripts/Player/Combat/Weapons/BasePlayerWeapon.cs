@@ -44,8 +44,11 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected void DamageEnemies(Collider2D[] enemies) {
-    foreach (Collider2D enemy in enemies) {
-      EnemyHealth enemyHealth = enemy.gameObject.GetComponent<EnemyHealth>();
+    GameObject[] enemyObjects = enemies.Select(e => e.gameObject).ToArray();
+    GameObject[] uniqueEnemyObjects = enemyObjects.Distinct().ToArray();
+
+    foreach (GameObject enemyObject in uniqueEnemyObjects) {
+      EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
       if (enemyHealth != null) {
         HealOnHit();

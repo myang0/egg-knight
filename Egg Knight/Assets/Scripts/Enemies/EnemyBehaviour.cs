@@ -127,6 +127,9 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   
   protected IEnumerator Electrocute() {
     isStunned = true;
+
+    StopMoving();
+
     yield return new WaitForSeconds(StatusConfig.ElectrocuteStunDuration);
     isStunned = false;
   }
@@ -140,7 +143,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void StopMoving() {
-    _rb.velocity = new Vector2(0, 0);
+    _rb.velocity = Vector2.zero;
   }
 
   public void Wander() {
