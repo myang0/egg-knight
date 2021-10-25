@@ -8,6 +8,7 @@ public class Spore : MonoBehaviour {
 
   private Rigidbody2D _rb;
   private SpriteRenderer _sr;
+  private float _initialAlpha;
 
   private void Awake() {
     _rotationSpeed = Random.Range(-0.1f, 0.1f);
@@ -21,6 +22,7 @@ public class Spore : MonoBehaviour {
     _rb.velocity = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
 
     _sr = gameObject.GetComponent<SpriteRenderer>();
+    _initialAlpha = _sr.color.a;
 
     StartCoroutine(Despawn());
   }
@@ -47,8 +49,8 @@ public class Spore : MonoBehaviour {
 
     float despawnSpeed = Random.Range(0.01f, 0.05f);
 
-    while (alpha > 0) {
-      alpha -= 0.01f;
+    while (alpha > _initialAlpha/2) {
+      alpha -= 0.005f;
       _sr.color = new Color(r, g, b, alpha);
 
       yield return new WaitForSeconds(despawnSpeed);

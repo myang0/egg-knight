@@ -14,7 +14,7 @@ public class CoinDrop : MonoBehaviour
     [SerializeField] private Coin coin;
     
     private int _coinDropRate = 20;
-    private const float SurvivalDropRateMultiplier = 0.4f;
+    private const float SurvivalDropRateMultiplier = 0.5f;
     private const float EasyDropRateMultiplier = 0.75f;
     private const float HardDropRateMultiplier = 1.2f;
     private void Awake() {

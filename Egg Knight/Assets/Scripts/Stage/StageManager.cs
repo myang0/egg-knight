@@ -37,12 +37,12 @@ namespace Stage {
         private const int SurvivalStageSpawnRate = 0;
 
         private const int NumStagesToBossLv1 = 10;
-        private const int NumStagesToBossLv2 = 12;
-        private const int NumStagesToBossLv3 = 15;
+        private const int NumStagesToBossLv2 = 10;
+        private const int NumStagesToBossLv3 = 12;
 
         private static readonly int[] Level1ItemStages = {3, 7, 11};
-        private static readonly int[] Level2ItemStages = {4, 8, 13};
-        private static readonly int[] Level3ItemStages = {5, 9, 13};
+        private static readonly int[] Level2ItemStages = {3, 7, 11};
+        private static readonly int[] Level3ItemStages = {3, 7, 11};
 
         private const float SurvivalTimer = 30f;
         private int _survivalTimerCurrent;
@@ -74,7 +74,7 @@ namespace Stage {
                 }
                 
                 if (StageClearCondition()) {
-                    _waveCounterText.ChangeText("");
+                    _waveCounterText.SetText("", 0);
                     if (itemStatus == StageItemStatus.NeverSpawned) {
                         SpawnItem();
                         OnStageClear?.Invoke(this, EventArgs.Empty);
@@ -185,7 +185,7 @@ namespace Stage {
                 // If stage has enemies in waves
                 else {
                     if (enemiesList.Count == 0 && numWavesCurr != numWavesMax) {
-                        _waveCounterText.ChangeText("Wave: " + (numWavesCurr+1) + "/" + numWavesMax);
+                        _waveCounterText.SetText("Wave: " + (numWavesCurr+1) + "/" + numWavesMax, 0);
                         for (int i = 0; i < numEnemiesMax; i++) {
                             if (_eSpawnpoints.Count == 0) {
                                 throw new Exception("Attempting to spawn " + (i+1) + "th enemy, but no more spawnpoints available.");
@@ -327,9 +327,9 @@ namespace Stage {
         private IEnumerator StartSurvivalTimer() {
             _survivalTimerCurrent = (int) SurvivalTimer;
             while (_survivalTimerCurrent > 0) {
+                _waveCounterText.SetText("Survive for " + _survivalTimerCurrent + "s", 0);
                 yield return new WaitForSeconds(1f);
                 _survivalTimerCurrent -= 1;
-                _waveCounterText.ChangeText("Survive for " + _survivalTimerCurrent + "s");
             }
             foreach (EnemyBehaviour e in enemiesList) {
                 Destroy(e.gameObject);

@@ -243,6 +243,7 @@
             <e p="Mushroom" t="Include">
               <e p="MushroomBehavior.cs" t="Include" />
               <e p="MushroomHealth.cs" t="Include" />
+              <e p="Spore.cs" t="Include" />
             </e>
             <e p="Raspberry" t="Include">
               <e p="RaspberryBehaviour.cs" t="Include" />
@@ -348,6 +349,11 @@
             <e p="PlayerWallet.cs" t="Include" />
           </e>
           <e p="Projectile.cs" t="Include" />
+          <e p="Shop" t="Include">
+            <e p="BuyZone.cs" t="Include" />
+            <e p="Caravan.cs" t="Include" />
+            <e p="ShopItem.cs" t="Include" />
+          </e>
           <e p="Stage" t="Include">
             <e p="EnemySpawnpoint.cs" t="Include" />
             <e p="ItemSpawnpoint.cs" t="Include" />

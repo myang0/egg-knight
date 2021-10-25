@@ -101,7 +101,7 @@ namespace Stage
             
             stagesCleared++;
             restRate += 5;
-            shopRate += 35;
+            shopRate += 10;
 
             switch (currStageType) {
                 case StageType.Hard:

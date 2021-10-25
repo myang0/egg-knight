@@ -62,7 +62,6 @@ public class EnemyIdle : StateMachineBehaviour {
     }
 
     private bool AreFewEnemiesAlive() {
-        Debug.Log("OTHER ENEMIES COUNT:" + _otherEnemyBehaviours.Count);
         return _otherEnemyBehaviours.Count < 3;
     }
 }
