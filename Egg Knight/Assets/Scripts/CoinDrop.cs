@@ -14,9 +14,9 @@ public class CoinDrop : MonoBehaviour
     [SerializeField] private Coin coin;
     
     private int _coinDropRate = 20;
-    private const float SurvivalDropRateMultiplier = 0.5f;
-    private const float EasyDropRateMultiplier = 0.75f;
-    private const float HardDropRateMultiplier = 1.2f;
+    private const float SurvivalDropRateMultiplier = 0.75f;
+    private const float EasyDropRateMultiplier = 0.8f;
+    private const float HardDropRateMultiplier = 1.5f;
     private void Awake() {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
     }
@@ -26,7 +26,7 @@ public class CoinDrop : MonoBehaviour
         
         StageType stageType = stageManager.GetStageType();
 
-        _coinDropRate = stageType switch {
+        int tempDropRate = stageType switch {
             StageType.Easy => Mathf.RoundToInt(_coinDropRate * EasyDropRateMultiplier),
             StageType.Hard => Mathf.RoundToInt(_coinDropRate * HardDropRateMultiplier),
             StageType.Survival => Mathf.RoundToInt(_coinDropRate * SurvivalDropRateMultiplier),
@@ -34,7 +34,7 @@ public class CoinDrop : MonoBehaviour
         };
 
         int coinDropChance = Random.Range(1, 101);
-        if (coinDropChance < _coinDropRate) {
+        if (coinDropChance < tempDropRate) {
             Vector3 newPos = new Vector3(enemyPos.x, enemyPos.y, ZcoordinateConsts.Pickup);
             Instantiate(coin, newPos, Quaternion.identity);
         }

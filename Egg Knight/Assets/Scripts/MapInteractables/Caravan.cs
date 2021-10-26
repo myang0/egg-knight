@@ -17,7 +17,7 @@ public class Caravan : MonoBehaviour {
         Vector3 currPos = transform.position;
         transform.position = new Vector3(currPos.x, currPos.y, ZcoordinateConsts.Interactable);
         itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
-        shopItem1.item = itemManager.GetRandomItem();
+        shopItem1.item = itemManager.GetRandomHealingItem();
         shopItem2.item = itemManager.GetRandomItem();
         shopItem3.item = itemManager.GetRandomItem();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();

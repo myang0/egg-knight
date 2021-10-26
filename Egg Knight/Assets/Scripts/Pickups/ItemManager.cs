@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class ItemManager : MonoBehaviour {
     [SerializeField] private List<BaseItem> _items;
     [SerializeField] private List<BaseItem> _cursedItems;
+    [SerializeField] private List<BaseItem> _healingItems;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +42,9 @@ public class ItemManager : MonoBehaviour {
 
     public BaseItem GetRandomItem() {
         return _items[Random.Range(0, _items.Count)];
+    }
+    
+    public BaseItem GetRandomHealingItem() {
+        return _healingItems[Random.Range(0, _healingItems.Count)];
     }
 }

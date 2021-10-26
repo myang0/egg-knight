@@ -111,7 +111,7 @@ namespace Stage
                 case StageType.Hard:
                     if (!hasPlayerTakenDamageCurrStage) {
                         luckyItemRate += 5;
-                        sirrachaRate += 10; 
+                        sirrachaRate += 15; 
                     }
 
                     luckyItemRate += 3;
@@ -120,15 +120,15 @@ namespace Stage
                 case StageType.Medium:
                     if (!hasPlayerTakenDamageCurrStage) {
                         luckyItemRate += 3;
-                        sirrachaRate += 5; 
+                        sirrachaRate += 10; 
                     }
                     luckyItemRate += 2;
                     break;
                 
                 case StageType.Easy:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 1;
-                        sirrachaRate += 1; 
+                        luckyItemRate += 2;
+                        sirrachaRate += 5; 
                     }
                     luckyItemRate += 1;
                     break;
@@ -138,7 +138,7 @@ namespace Stage
                         luckyItemRate += 5;
                         sirrachaRate += 15; 
                     }
-                    luckyItemRate += 5;
+                    luckyItemRate += 4;
                     break;
                 
                 case StageType.Boss:
