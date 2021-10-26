@@ -13,6 +13,7 @@ public class YolkManager : MonoBehaviour {
   private PlayerHealth _health;
 
   private YolkUpgradeManager _upgrades;
+  private PlayerCursedInventory _cursedInventory;
 
   private void Awake() {
     PlayerControls.OnRightClick += HandleRightClick;
@@ -20,6 +21,7 @@ public class YolkManager : MonoBehaviour {
     _health = gameObject.GetComponent<PlayerHealth>();
 
     _upgrades = gameObject.GetComponent<YolkUpgradeManager>();
+    _cursedInventory = gameObject.GetComponent<PlayerCursedInventory>();
   }
 
   private void HandleRightClick(object sender, EventArgs e) {
@@ -57,7 +59,11 @@ public class YolkManager : MonoBehaviour {
   private void SpawnYolk(Vector2 direction, float angle) {
     GameObject yolkObject = Instantiate(_yolkPrefab, transform.position, Quaternion.identity);
     YolkProjectile yolk = yolkObject.GetComponent<YolkProjectile>();
+
     yolk.SetDirection(direction, angle);
+    if (_cursedInventory.HasItem(CursedItemType.RottenYolk)) {
+      yolk.MultiplyDamage(2.0f);
+    }
   }
 
   public void MultiplyByCooldown(float multiplier) {

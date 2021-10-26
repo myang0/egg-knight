@@ -20,6 +20,7 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnFrosted += HandleFrosted;
     enemyBehaviour.OnIgnited += HandleIgnited;
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+    enemyBehaviour.OnBleed += HandleBleed;
 
     base.Awake();
   }
@@ -54,10 +55,20 @@ public abstract class EnemyHealth : Health {
     Damage(StatusConfig.ElectrocuteDamage);
   }
 
+  protected virtual void HandleBleed(object sender, EventArgs e) {
+    StartCoroutine(Bleed());
+  }
+
+  protected virtual IEnumerator Bleed() {
+    for (int i = 0; i < StatusConfig.BleedTicks; i++) {
+      yield return new WaitForSeconds(StatusConfig.BleedTimeBetweenTicks);
+
+      Damage(StatusConfig.BleedDamage);
+    }
+  }
+
   public override void Damage(float amount) {
     base.Damage(amount + ((_isFrosted) ? amount * StatusConfig.FrostDamageMultiplier : 0));
-
-    // Debug.Log(_currentHealth);
   }
 
   public abstract void DamageWithStatuses(float amount, List<StatusCondition> statuses);

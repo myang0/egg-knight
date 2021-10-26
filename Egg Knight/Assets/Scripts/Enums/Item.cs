@@ -18,5 +18,6 @@ public enum Item {
   FragmentationShell,
   EggShards,
   YolkUpgrade,
-  HeartYolk
+  HeartYolk,
+  CursedItem
 }

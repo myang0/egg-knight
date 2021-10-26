@@ -78,4 +78,16 @@ public class PlayerMovement : MonoBehaviour {
 
     _canRoll = true;
   }
+
+  public void MultiplyMoveSpeed(float multiplyValue) {
+    _movementSpeed *= multiplyValue;
+  }
+
+  public void MultiplyRollSpeed(float multiplyValue) {
+    _rollSpeed *= multiplyValue;
+  }
+
+  public void MultiplyRollCooldown(float multiplyValue) {
+    _rollCooldown *= multiplyValue;
+  }
 }

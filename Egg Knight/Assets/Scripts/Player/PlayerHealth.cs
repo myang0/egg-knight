@@ -9,6 +9,7 @@ public class PlayerHealth : Health {
   private bool _isRolling = false;
 
   private PlayerInventory _inventory;
+  private PlayerCursedInventory _cursedInventory;
 
   public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthDecrease;
   public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthIncrease;
@@ -18,6 +19,7 @@ public class PlayerHealth : Health {
 
   protected override void Awake() {
     _inventory = gameObject.GetComponent<PlayerInventory>();
+    _cursedInventory = gameObject.GetComponent<PlayerCursedInventory>();
 
     PlayerMovement.OnRollBegin += HandleRoll;
     PlayerMovement.OnRollEnd += HandleRollEnd;
@@ -53,10 +55,6 @@ public class PlayerHealth : Health {
 
   public bool BelowHalfHealth() {
     return _currentHealth < (_maxHealth / 2.0f);
-  }
-
-  public float CurrentHealthPercentage() {
-    return ((_currentHealth / _maxHealth) < 0) ? 0 : (_currentHealth / _maxHealth);
   }
 
   public bool DamageWillKill(float damage) {
@@ -122,8 +120,20 @@ public class PlayerHealth : Health {
   }
 
   public override void Heal(float amount) {
+    float trueAmount = _cursedInventory.HasItem(CursedItemType.RottenYolk) ? amount / 2.0f : amount;
+
     base.Heal(amount);
 
     OnHealthIncrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+  }
+
+  public void RustySwordDamage() {
+    if (CurrentHealthPercentage() >= 0.2f) {
+      _currentHealth -= 1;
+
+      SpawnChangeIndicator(1, Color.red);
+
+      OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    }
   }
 }

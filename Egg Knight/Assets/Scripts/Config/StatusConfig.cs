@@ -15,4 +15,9 @@ public static class StatusConfig {
 
   public static float ElectrocuteStunDuration = 1;
   public static float ElectrocuteDamage = 10;
+
+  public static int BleedTicks = 5;
+  public static float BleedTimeBetweenTicks = 1;
+  public static float BleedDuration = 5;
+  public static float BleedDamage = 2;
 }
