@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class ItemManager : MonoBehaviour {
     [SerializeField] private List<BaseItem> _items;
+    [SerializeField] private List<BaseItem> _cursedItems;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,16 +27,16 @@ public class ItemManager : MonoBehaviour {
 
         return Instantiate(_items[randomItemIndex], newPos, Quaternion.identity);
     }
+    
+    public BaseItem SpawnCursedItem() {
+        Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        Vector3 newPos = new Vector3(playerPos.x, playerPos.y, ZcoordinateConsts.Pickup);
 
-    public BaseItem SpawnItemByName(String itemName, Vector3 spawnPos) {
-        Vector3 newPos = new Vector3(spawnPos.x, spawnPos.y, ZcoordinateConsts.Pickup);
-        foreach (var item in _items) {
-            if (item.DisplayName == itemName) {
-                return Instantiate(item, newPos, Quaternion.identity);
-            }
-        }
-        Debug.Log("Item of name: " + itemName + " not found in ItemManager");
-        return null;
+        int randomItemIndex = Random.Range(0, _cursedItems.Count);
+
+        BaseItem newItem = Instantiate(_cursedItems[randomItemIndex], newPos, Quaternion.identity);
+        _cursedItems.Remove(_cursedItems[randomItemIndex]);
+        return newItem;
     }
 
     public BaseItem GetRandomItem() {

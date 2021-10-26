@@ -7,6 +7,8 @@ TagManager:
   - LevelManager
   - Enemy
   - TilemapCollider
+  - Laser
+  - Grave
   layers:
   - Default
   - TransparentFX

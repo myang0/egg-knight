@@ -1240,7 +1240,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Campfire.cs" t="Include" />
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
             <e p="StatusConfig.cs" t="Include" />
@@ -1311,11 +1310,18 @@
             <e p="RangedEnemyChase.cs" t="Include" />
             <e p="RangedEnemyFlee.cs" t="Include" />
           </e>
-          <e p="Grave.cs" t="Include" />
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />
           <e p="Helpers" t="Include">
             <e p="VectorHelper.cs" t="Include" />
+          </e>
+          <e p="MapInteractables" t="Include">
+            <e p="BuyZone.cs" t="Include" />
+            <e p="Campfire.cs" t="Include" />
+            <e p="Caravan.cs" t="Include" />
+            <e p="Grave.cs" t="Include" />
+            <e p="ShopItem.cs" t="Include" />
+            <e p="SirRachaController.cs" t="Include" />
           </e>
           <e p="Pickups" t="Include">
             <e p="BaseItem.cs" t="Include" />
@@ -1370,11 +1376,6 @@
             <e p="PlayerWallet.cs" t="Include" />
           </e>
           <e p="Projectile.cs" t="Include" />
-          <e p="Shop" t="Include">
-            <e p="BuyZone.cs" t="Include" />
-            <e p="Caravan.cs" t="Include" />
-            <e p="ShopItem.cs" t="Include" />
-          </e>
           <e p="Stage" t="Include">
             <e p="EnemySpawnpoint.cs" t="Include" />
             <e p="ItemSpawnpoint.cs" t="Include" />

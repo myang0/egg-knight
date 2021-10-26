@@ -29,6 +29,7 @@ namespace Stage
         [SerializeField] private int shopRate;
         [SerializeField] private int luckyItemRate;
         public bool isFirstShopVisited = false;
+        public int numSirRachaVisits = 0;
         private bool hasPlayerTakenDamageCurrStage;
         private int _level = 1;
         private const int ShopsPerLevel = 3;
@@ -102,8 +103,9 @@ namespace Stage
             if (currStageType == StageType.Spawn) return;
             
             stagesCleared++;
-            restRate += 100;
+            restRate += 5;
             shopRate += 10;
+            sirrachaRate += 100;
 
             switch (currStageType) {
                 case StageType.Hard:
