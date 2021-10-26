@@ -10,7 +10,8 @@ public class PlayerHealth : Health {
 
   private PlayerInventory _inventory;
 
-  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthChange;
+  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthDecrease;
+  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthIncrease;
 
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
@@ -71,7 +72,7 @@ public class PlayerHealth : Health {
 
     _currentHealth -= amount;
 
-    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
   }
 
   public override void Damage(float amount) {
@@ -84,7 +85,7 @@ public class PlayerHealth : Health {
 
     SpawnChangeIndicator(amount, Color.red);
 
-    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
 
     if (_currentHealth <= 0) {
       Die();
@@ -123,6 +124,6 @@ public class PlayerHealth : Health {
   public override void Heal(float amount) {
     base.Heal(amount);
 
-    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthIncrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
   }
 }
