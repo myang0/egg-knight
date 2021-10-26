@@ -102,7 +102,7 @@ namespace Stage
             if (currStageType == StageType.Spawn) return;
             
             stagesCleared++;
-            restRate += 5;
+            restRate += 100;
             shopRate += 10;
 
             switch (currStageType) {
