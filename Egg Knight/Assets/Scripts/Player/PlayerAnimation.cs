@@ -1,4 +1,5 @@
 using System;
+using Stage;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour {
@@ -16,6 +17,8 @@ public class PlayerAnimation : MonoBehaviour {
 
     PlayerMovement.OnMovementBegin += HandleMovement;
     PlayerMovement.OnMovementEnd += HandleStop;
+
+    LevelManager.OnDialogueStart += HandleStop;
 
     PlayerHealth.OnIFramesEnabled += (object sender, EventArgs e) => _iFramesActive = true;
     PlayerHealth.OnIFramesDisabled += (object sender, EventArgs e) => {
@@ -40,12 +43,20 @@ public class PlayerAnimation : MonoBehaviour {
   }
 
   private void HandleMovement(object sender, EventArgs e) {
+    StartMovement();
+  }
+
+  private void HandleStop(object sender, EventArgs e) {
+    StopMovement();
+  }
+
+  private void StartMovement() {
     if (_anim.GetBool("Moving") == false) {
       _anim.SetBool("Moving", true);
     }
   }
 
-  private void HandleStop(object sender, EventArgs e) {
+  private void StopMovement() {
     if (_anim.GetBool("Moving") == true) {
       _anim.SetBool("Moving", false);
     }
