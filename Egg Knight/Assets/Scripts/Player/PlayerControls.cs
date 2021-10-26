@@ -1,3 +1,4 @@
+using Stage;
 using System;
 using Fungus;
 using UnityEngine;
@@ -30,6 +31,9 @@ public class PlayerControls : MonoBehaviour {
 		BasePlayerWeapon.OnWeaponAnimationEnd += (object sender, EventArgs e) => {
 			_weaponSwitchingEnabled = true;
 		};
+
+		LevelManager.OnDialogueStart += (object sender, EventArgs e) => _controlsEnabled = false;
+		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _controlsEnabled = true;
 	}
 
 	private void DisableControl(object sender, RollEventArgs e) {

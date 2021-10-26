@@ -1,4 +1,5 @@
 using System;
+using Stage;
 using System.Collections;
 using UnityEngine;
 
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour {
     _rb = gameObject.GetComponent<Rigidbody2D>();
 
     _lastMovementVector = Vector2.zero;
+
+    LevelManager.OnDialogueStart += (object sender, EventArgs e) => _rb.velocity = Vector2.zero;
+		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _rb.velocity = Vector2.zero;
   }
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {

@@ -35,6 +35,9 @@ namespace Stage
         private const int ShopsPerLevel = 3;
         private GameObject _player;
 
+        public static event EventHandler OnDialogueStart;
+        public static event EventHandler OnDialogueEnd;
+
         void Start() {
             StartAsserts();
 
@@ -363,6 +366,14 @@ namespace Stage
 
         public StageManager GetCurrentStage() {
             return currentStage;
+        }
+
+        public void StartDialogue() {
+            OnDialogueStart.Invoke(this, EventArgs.Empty);
+        }
+
+        public void EndDialogue() {
+            OnDialogueEnd.Invoke(this, EventArgs.Empty);
         }
     }
 }
