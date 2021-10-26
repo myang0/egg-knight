@@ -340,7 +340,6 @@ namespace Stage {
         
         public void RemoveEnemy(EnemyBehaviour e) {
             enemiesList.Remove(e);
-            Debug.Log(enemiesList.Count);
         }
 
         public void SetStageType(StageType newStageType) {
