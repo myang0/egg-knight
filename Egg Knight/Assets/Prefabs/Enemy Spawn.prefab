@@ -101,4 +101,5 @@ MonoBehaviour:
     type: 3}
   lv1Raspberry: {fileID: 1060600742903179070, guid: 869a76ebb052f9d4885f2697357d35ca,
     type: 3}
-  lv1Strawberry: {fileID: 0}
+  lv1Strawberry: {fileID: 6052989419570033560, guid: a05de99e326847a40b744b07ff0c4538,
+    type: 3}
