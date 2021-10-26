@@ -28,14 +28,17 @@ namespace Stage
         [SerializeField] private int sirrachaRate;
         [SerializeField] private int shopRate;
         [SerializeField] private int luckyItemRate;
-        private bool hasPlayerTakenDamageCurrStage;
+        public bool isFirstShopVisited = false;
+        public int numSirRachaVisits = 0;
+        public bool hasPlayerTakenDamageCurrStage;
         private int _level = 1;
         private const int ShopsPerLevel = 3;
         private GameObject _player;
 
         void Start() {
             StartAsserts();
-            
+
+            PlayerHealth.OnHealthDecrease += PlayerTookDamage;
             _player = GameObject.FindGameObjectWithTag("Player");
             restRate = 0;
             sirrachaRate = 0;
@@ -80,6 +83,7 @@ namespace Stage
             SetStageActiveStatus(stage);
             MovePlayerToStage(stage);
             hasPlayerTakenDamageCurrStage = false;
+            isFirstShopVisited = false;
             virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = stage.GetCameraBoundary();
             currentStage = stage;
             stage.OnStageClear += IncrementRates;
@@ -107,7 +111,7 @@ namespace Stage
                 case StageType.Hard:
                     if (!hasPlayerTakenDamageCurrStage) {
                         luckyItemRate += 5;
-                        sirrachaRate += 10; 
+                        sirrachaRate += 15; 
                     }
 
                     luckyItemRate += 3;
@@ -116,15 +120,15 @@ namespace Stage
                 case StageType.Medium:
                     if (!hasPlayerTakenDamageCurrStage) {
                         luckyItemRate += 3;
-                        sirrachaRate += 5; 
+                        sirrachaRate += 10; 
                     }
                     luckyItemRate += 2;
                     break;
                 
                 case StageType.Easy:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 1;
-                        sirrachaRate += 1; 
+                        luckyItemRate += 2;
+                        sirrachaRate += 5; 
                     }
                     luckyItemRate += 1;
                     break;
@@ -134,7 +138,7 @@ namespace Stage
                         luckyItemRate += 5;
                         sirrachaRate += 15; 
                     }
-                    luckyItemRate += 5;
+                    luckyItemRate += 4;
                     break;
                 
                 case StageType.Boss:

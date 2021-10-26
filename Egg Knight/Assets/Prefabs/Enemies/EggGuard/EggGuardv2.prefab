@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 1153923342008368833}
   - component: {fileID: 1293736572}
   - component: {fileID: 4955466421539643985}
-  - component: {fileID: 6881008757909247455}
   m_Layer: 8
   m_Name: EggGuardv2
   m_TagString: Enemy
@@ -156,7 +155,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.15}
@@ -380,32 +379,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spear: {fileID: 3595110931199682577, guid: 4ac7a05c07648a545a926c346828198e, type: 3}
   _heldSpear: {fileID: 8159754638909153633}
---- !u!61 &6881008757909247455
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4090832051791540568}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.825}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.805}
-    newSize: {x: 1.15, y: 1.805}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.15}
-  m_EdgeRadius: 0
 --- !u!1 &8159754638909153633
 GameObject:
   m_ObjectHideFlags: 0

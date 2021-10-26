@@ -17,5 +17,6 @@ public enum Item {
   VegetablePeeler,
   FragmentationShell,
   EggShards,
-  YolkUpgrade
+  YolkUpgrade,
+  HeartYolk
 }

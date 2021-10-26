@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 3118377129507018825}
   - component: {fileID: 3118377129507018824}
   - component: {fileID: 7099807703009182332}
-  - component: {fileID: 1286952251}
   m_Layer: 8
   m_Name: Mushroom
   m_TagString: Enemy
@@ -328,7 +327,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011004686, y: -0.19258308}
@@ -377,29 +376,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353bc8b0e85e8474d8b19a8dfb302259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1286952251
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3118377129507018879}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: -0.88}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.905, y: 2.045}
-    newSize: {x: 3.81, y: 4.09}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.02, y: 0.19}
-  m_EdgeRadius: 0

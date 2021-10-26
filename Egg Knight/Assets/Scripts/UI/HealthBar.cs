@@ -5,7 +5,8 @@ public class HealthBar : MonoBehaviour {
   [SerializeField] private Slider _slider;
 
   private void Awake() {
-    PlayerHealth.OnHealthChange += HandleHealthChange;
+    PlayerHealth.OnHealthIncrease += HandleHealthChange;
+    PlayerHealth.OnHealthDecrease += HandleHealthChange;
   }
 
   private void HandleHealthChange(object sender, PlayerHealthChangeEventArgs e) {
