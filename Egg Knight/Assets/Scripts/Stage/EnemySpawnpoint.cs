@@ -28,7 +28,7 @@ public class EnemySpawnpoint : MonoBehaviour {
         Assert.IsNotNull(lv1EggGuard);
         // Assert.IsNotNull(lv1Mushroom);
         Assert.IsNotNull(lv1Raspberry);
-        // Assert.IsNotNull(lv1Strawberry);
+        Assert.IsNotNull(lv1Strawberry);
     }
 
     // Update is called once per frame
@@ -80,8 +80,7 @@ public class EnemySpawnpoint : MonoBehaviour {
         }
 
         if (enemyChance > Lv1StrawberryRate) {
-            // SpawnEnemy(lv1Strawberry);
-            return SpawnEnemy(lv1Raspberry); 
+            return SpawnEnemy(lv1Strawberry);
         }
 
         return null;
