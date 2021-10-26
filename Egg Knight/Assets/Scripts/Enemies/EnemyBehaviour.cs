@@ -21,6 +21,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public event EventHandler OnFrosted;
   public event EventHandler OnIgnited;
   public event EventHandler OnElectrocuted;
+  public event EventHandler OnBleed;
   
   public float maxDistanceToAttack;
   public float minDistanceToAttack;
@@ -100,6 +101,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
       }
       case StatusCondition.Electrocuted: {
         OnElectrocuted?.Invoke(this, EventArgs.Empty);
+        break;
+      }
+      case StatusCondition.Bleeding: {
+        OnBleed?.Invoke(this, EventArgs.Empty);
         break;
       }
       default: {

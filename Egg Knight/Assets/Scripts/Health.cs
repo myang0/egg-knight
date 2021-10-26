@@ -45,4 +45,15 @@ public abstract class Health : MonoBehaviour {
       changeIndicator?.Initialize(value, color);
     }
   }
+
+  public float CurrentHealthPercentage() {
+    return ((_currentHealth / _maxHealth) < 0) ? 0 : (_currentHealth / _maxHealth);
+  }
+
+  public virtual void AddToMaxHealth(float addValue) {
+    float origPercent = CurrentHealthPercentage();
+
+    _maxHealth += addValue;
+    _currentHealth = _maxHealth * origPercent;
+  }
 }

@@ -83,4 +83,8 @@ public class YolkProjectile : Projectile {
       Despawn();
     }
   }
+
+  public void MultiplyDamage(float multiplyAmount) {
+    _damage *= multiplyAmount;
+  }
 }
