@@ -17,9 +17,8 @@ namespace Stage {
         [SerializeField] private int numWavesMax;
         [SerializeField] private int numWavesCurr;
         [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
-        public event EventHandler OnStageStart;
-
         public event EventHandler OnStageClear;
+        public event EventHandler OnStageStart;
 
         private StageEntrance _stageEntrance;
         private ItemSpawnpoint _itemSpawnpoint;
@@ -73,7 +72,7 @@ namespace Stage {
                     
                 }
                 
-                if (StageClearCondition()) {
+                if (IsStageCleared()) {
                     _waveCounterText.SetText("", 0);
                     if (itemStatus == StageItemStatus.NeverSpawned) {
                         SpawnItem();
@@ -106,12 +105,12 @@ namespace Stage {
             itemStatus = StageItemStatus.Collected;
         }
         
-        private bool StageClearCondition() {
+        private bool IsStageCleared() {
             switch (stageType) {
                 case StageType.Rest:
                 case StageType.Shop:
                 case StageType.Sirracha:
-                case StageType.Spawn:
+                case StageType.Spawn:   
                     return true;
                 case StageType.Medium:
                 case StageType.Hard:

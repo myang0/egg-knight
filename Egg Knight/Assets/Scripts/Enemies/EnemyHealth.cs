@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class EnemyHealth : Health {
   [SerializeField] protected DamageType _weakTo;
+  [SerializeField] protected DamageType _immuneTo;
+  [SerializeField] protected DamageType _immuneTo2;
 
   protected PlayerInventory _playerInventory;
 
@@ -77,7 +79,12 @@ public abstract class EnemyHealth : Health {
 
   public virtual void DamageWithType(float amount, DamageType type) {
     float bonusDamage = (type == _weakTo) ? (amount * 0.5f) : 0;
-    Damage(amount + bonusDamage);
+    if (type == _immuneTo || type == _immuneTo2) {
+      Damage(0);
+    }
+    else {
+      Damage(amount + bonusDamage);
+    }
   }
 
   public bool GetIsHealthDamaged() {

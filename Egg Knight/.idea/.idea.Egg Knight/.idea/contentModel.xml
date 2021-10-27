@@ -1244,6 +1244,7 @@
           <e p="Config" t="Include">
             <e p="StatusConfig.cs" t="Include" />
           </e>
+          <e p="Eggitha.cs" t="Include" />
           <e p="Enemies" t="Include">
             <e p="EggGuard" t="Include">
               <e p="EggGuardAttack.cs" t="Include" />
@@ -1271,11 +1272,22 @@
               <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
             </e>
+            <e p="Strawberry" t="Include">
+              <e p="StrawberryBehaviour.cs" t="Include" />
+              <e p="StrawberryHealth.cs" t="Include" />
+              <e p="StrawberryProjectile.cs" t="Include" />
+              <e p="StrawberrySpriteHandler.cs" t="Include" />
+            </e>
+            <e p="TrainingDummy" t="Include">
+              <e p="TrainingDummyBehavior.cs" t="Include" />
+              <e p="TrainingDummyHealth.cs" t="Include" />
+            </e>
             <e p="Weapons" t="Include">
               <e p="BaseEnemyWeapon.cs" t="Include" />
             </e>
           </e>
           <e p="Enums" t="Include">
+            <e p="CursedItemType.cs" t="Include" />
             <e p="DamageType.cs" t="Include" />
             <e p="Direction.cs" t="Include" />
             <e p="Item.cs" t="Include" />
@@ -1290,6 +1302,7 @@
           </e>
           <e p="Events" t="Include">
             <e p="BalanceChangeEventArgs.cs" t="Include" />
+            <e p="CursedItemEventArgs.cs" t="Include" />
             <e p="ElementalItemEventArgs.cs" t="Include" />
             <e p="EnemyStatusEventArgs.cs" t="Include" />
             <e p="InventoryAddEventArgs.cs" t="Include" />
@@ -1326,6 +1339,11 @@
           <e p="Pickups" t="Include">
             <e p="BaseItem.cs" t="Include" />
             <e p="Coin.cs" t="Include" />
+            <e p="Cursed" t="Include">
+              <e p="CursedItem.cs" t="Include" />
+              <e p="RottenYolk.cs" t="Include" />
+              <e p="TornCape.cs" t="Include" />
+            </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />
             </e>
@@ -1370,6 +1388,7 @@
             </e>
             <e p="PlayerAnimation.cs" t="Include" />
             <e p="PlayerControls.cs" t="Include" />
+            <e p="PlayerCursedInventory.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />

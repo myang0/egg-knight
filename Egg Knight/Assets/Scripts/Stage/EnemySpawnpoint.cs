@@ -19,9 +19,14 @@ public class EnemySpawnpoint : MonoBehaviour {
     private const int Lv1RaspberryRate = 20;
     private const int Lv1StrawberryRate = 0;
 
+    public SpriteRenderer sr;
+
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         StartAsserts();
+        sr = GetComponent<SpriteRenderer>();
+        var color = sr.color;
+        sr.color = new Color(color.r, color.g, color.b, 0);
     }
 
     private void StartAsserts() {
