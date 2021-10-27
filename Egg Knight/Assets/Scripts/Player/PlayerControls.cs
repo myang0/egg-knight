@@ -15,6 +15,7 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler OnEPress;
 
 	private bool _controlsEnabled = true;
+	private bool _dialogueDisabled = true;
 
 	private bool _weaponSwitchingEnabled = true;
 
@@ -32,8 +33,8 @@ public class PlayerControls : MonoBehaviour {
 			_weaponSwitchingEnabled = true;
 		};
 
-		LevelManager.OnDialogueStart += (object sender, EventArgs e) => _controlsEnabled = false;
-		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _controlsEnabled = true;
+		LevelManager.OnDialogueStart += (object sender, EventArgs e) => _dialogueDisabled = false;
+		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _dialogueDisabled = true;
 	}
 
 	private void DisableControl(object sender, RollEventArgs e) {
@@ -45,7 +46,7 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (_controlsEnabled) {
+		if (_controlsEnabled && _dialogueDisabled) {
 			MovementControls();
 
 			RollControls();
