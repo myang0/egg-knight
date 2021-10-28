@@ -93,7 +93,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     float totalAmount = originalAmount;
 
     if (_health.BelowHalfHealth() && _inventory.ItemInInventory(Item.VikingHelmet)) {
-      totalAmount += (0.5f - _health.CurrentHealthPercentage()) * _inventory.GetItemQuantity(Item.VikingHelmet) * totalAmount;
+      totalAmount += (0.5f - _health.CurrentHealthPercentage()) * _inventory.GetItemQuantity(Item.VikingHelmet) * totalAmount * 2;
     }
 
     return totalAmount;
