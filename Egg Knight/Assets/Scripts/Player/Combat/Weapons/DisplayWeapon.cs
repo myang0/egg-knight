@@ -13,7 +13,7 @@ public class DisplayWeapon : MonoBehaviour {
     _player = GameObject.Find("Player").transform;
   }
 
-  private void Update() {
+  private void FixedUpdate() {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     _sr.flipX = true;

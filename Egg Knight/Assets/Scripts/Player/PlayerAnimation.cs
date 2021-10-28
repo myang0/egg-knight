@@ -62,7 +62,7 @@ public class PlayerAnimation : MonoBehaviour {
     }
   }
 
-  private void Update() {
+  private void FixedUpdate() {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     _sr.flipX = (mousePos.x < transform.position.x);
@@ -72,9 +72,7 @@ public class PlayerAnimation : MonoBehaviour {
 
       _sr.color = new Color(1, 1, 1, (alpha == 1) ? 0.25f : 1);
     }
-  }
 
-  private void FixedUpdate() {
     if (_isRolling) {
       transform.Rotate(0, 0, _anglesPerFrame);
     }
