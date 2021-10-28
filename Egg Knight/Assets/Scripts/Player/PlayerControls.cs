@@ -14,16 +14,19 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler OnQPress;
 	public static event EventHandler OnEPress;
 
-	private bool _controlsEnabled = true;
+	public static event EventHandler OnEscPress;
+
+	private bool _notRolling = true;
 	private bool _dialogueDisabled = true;
+	private bool _gameRunning = true;
 
 	private bool _weaponSwitchingEnabled = true;
 
 	private bool _movementKeysDown = false;
 
 	private void Awake() {
-		PlayerMovement.OnRollBegin += DisableControl;
-		PlayerMovement.OnRollEnd += EnableControl;
+		PlayerMovement.OnRollBegin += (object sender, RollEventArgs e) => _notRolling = false;
+		PlayerMovement.OnRollEnd += (object sender, EventArgs e) => _notRolling = true;
 
 		PlayerWeapons.OnWeaponAnimationBegin += (object sender, EventArgs e) => {
 			_weaponSwitchingEnabled = false;
@@ -35,18 +38,15 @@ public class PlayerControls : MonoBehaviour {
 
 		LevelManager.OnDialogueStart += (object sender, EventArgs e) => _dialogueDisabled = false;
 		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _dialogueDisabled = true;
-	}
 
-	private void DisableControl(object sender, RollEventArgs e) {
-		_controlsEnabled = false;
-	}
-
-	private void EnableControl(object sender, EventArgs e) {
-		_controlsEnabled = true;
+		PauseScreen.OnGamePaused += (object sender, EventArgs e) => _gameRunning = false;
+		PauseScreen.OnGameResumed += (object sender, EventArgs e) => _gameRunning = true;
 	}
 
 	private void Update() {
-		if (_controlsEnabled && _dialogueDisabled) {
+		EscPress();
+
+		if (ControlsEnabled()) {
 			MovementControls();
 
 			RollControls();
@@ -57,9 +57,8 @@ public class PlayerControls : MonoBehaviour {
 		}
 	}
 
-	private bool IsDialogueActive() {
-		SayDialog[] dialogues = FindObjectsOfType<SayDialog>();
-		return dialogues.Length > 0;
+	private bool ControlsEnabled() {
+		return (_notRolling && _dialogueDisabled && _gameRunning);
 	}
 
 	private void MovementControls() {
@@ -79,6 +78,12 @@ public class PlayerControls : MonoBehaviour {
 		}
 
 		OnMovement?.Invoke(this, new MovementVectorEventArgs(movementVector));
+	}
+
+	private bool MovementKeysPressed() {
+		return (
+			Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)
+		);
 	}
 
 	private void RollControls() {
@@ -111,9 +116,9 @@ public class PlayerControls : MonoBehaviour {
 		}
 	}
 
-	private bool MovementKeysPressed() {
-		return (
-			Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)
-		);
+	private void EscPress() {
+		if (Input.GetKey(KeyCode.Escape)) {
+			OnEscPress?.Invoke(this, EventArgs.Empty);
+		}
 	}
 }

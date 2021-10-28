@@ -9,7 +9,7 @@ public class WeaponDisplayPoint : MonoBehaviour {
     private const float Y = -0.55f;
     private const float Z = 1;
 
-    private void Update() {
+    private void FixedUpdate() {
         _player = GameObject.Find("Player").transform;
         Vector3 playerPos = _player.position;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
