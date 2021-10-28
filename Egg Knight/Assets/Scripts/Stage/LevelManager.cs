@@ -109,6 +109,7 @@ namespace Stage
             stagesCleared++;
             restRate += 5;
             shopRate += 10;
+            sirrachaRate += 1;
 
             switch (currStageType) {
                 case StageType.Hard:
@@ -146,10 +147,11 @@ namespace Stage
                 
                 case StageType.Boss:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 10;
-                        sirrachaRate += 25;
+                        luckyItemRate += 100;
+                        sirrachaRate += 100;
                     }
                     luckyItemRate += 5;
+                    sirrachaRate += 5;
                     break;
                 }
         }
