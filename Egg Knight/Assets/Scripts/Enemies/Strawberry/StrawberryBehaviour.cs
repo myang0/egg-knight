@@ -5,9 +5,9 @@ using Stage;
 using UnityEngine;
 
 public class StrawberryBehaviour : EnemyBehaviour {
-  [SerializeField] private GameObject _projectilePrefab;
+  [SerializeField] private Transform _shootPoint;
 
-  [SerializeField] private float _delayBetweenShots;
+  [SerializeField] private GameObject _projectilePrefab;
 
   private List<Vector2> _projectileVectors;
 
@@ -36,25 +36,21 @@ public class StrawberryBehaviour : EnemyBehaviour {
     StartCoroutine(Electrocute());
   }
 
-  public override void Attack() {
-    StartCoroutine(AttackPlayer());
-  }
-
   protected override IEnumerator AttackPlayer() {
     _rb.velocity = Vector2.zero;
 
-    while (true) {
-      for (int i = 0; i < _projectileVectors.Count; i++) {
-        GameObject projectileObject = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
-        StrawberryProjectile projectile = projectileObject?.GetComponent<StrawberryProjectile>();
+    yield break;
+  }
 
-        Vector2 direction = _projectileVectors[i];
-        projectile.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
+  public void ShootProjectiles() {
+    for (int i = 0; i < _projectileVectors.Count; i++) {
+      GameObject projectileObject = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.identity);
+      StrawberryProjectile projectile = projectileObject?.GetComponent<StrawberryProjectile>();
 
-        _projectileVectors[i] = Quaternion.Euler(0, 0, 45) * direction;
-      }
+      Vector2 direction = _projectileVectors[i];
+      projectile.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
 
-      yield return new WaitForSeconds(_delayBetweenShots);
+      _projectileVectors[i] = Quaternion.Euler(0, 0, 45) * direction;
     }
   }
 }
