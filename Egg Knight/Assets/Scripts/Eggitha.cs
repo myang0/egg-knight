@@ -124,7 +124,7 @@ public class Eggitha : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || other.isTrigger) return;
         
         if (tutorialState == TutorialState.NotStarted) BeginPreLore();
         if (tutorialState == TutorialState.PreLore) {

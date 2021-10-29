@@ -25,11 +25,11 @@ public class Caravan : MonoBehaviour {
     }
 
     private void Update() {
-        if (shopItem1 == shopItem2) {
+        if (shopItem1.item == shopItem2.item) {
             shopItem2.item = itemManager.GetRandomItem();
         }
 
-        if (shopItem2 == shopItem3) {
+        if (shopItem2.item == shopItem3.item) {
             shopItem3.item = itemManager.GetRandomItem();
         }
     }

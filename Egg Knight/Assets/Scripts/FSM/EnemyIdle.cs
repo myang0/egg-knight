@@ -1,27 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Stage;
 using UnityEngine;
 
 public class EnemyIdle : StateMachineBehaviour {
     private EnemyBehaviour _eBehavior;
     private EnemyHealth _eHealth;
     private List<EnemyBehaviour> _otherEnemyBehaviours = new List<EnemyBehaviour>();
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         _eBehavior = animator.GetComponent<EnemyBehaviour>();
         _eHealth = animator.GetComponent<EnemyHealth>();
         _eBehavior.isWallCollisionOn = true;
+        SetAlertIfSurvival(animator);
     }
 
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         RemoveDeadEnemiesList();
         AddNewAliveEnemiesList();
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
-        if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() ||
-            AreNearbyEnemiesAlerted() || AreFewEnemiesAlive()){
+        if (_eBehavior.GetIsInAlertRange() || _eHealth.GetIsHealthDamaged() || AreNearbyEnemiesAlerted()){
             animator.SetBool("isAlert", true);
             _eBehavior.SetAlertTrigger();
         }
         _eBehavior.Wander();
+    }
+
+    private void SetAlertIfSurvival(Animator animator) {
+        LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        StageManager stageManager = levelManager.GetCurrentStage();
+        if (stageManager.GetStageType() == StageType.Survival) {
+            animator.SetBool("isAlert", true);
+            _eBehavior.SetAlertTrigger();
+        }
     }
     
     private bool AreNearbyEnemiesAlerted() {

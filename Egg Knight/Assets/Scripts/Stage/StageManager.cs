@@ -30,9 +30,9 @@ namespace Stage {
         private bool _isStageInitialized;
 
         // 100% - _% = Actual Spawn Rate
-        private const int MediumStageSpawnRate = 50;
-        private const int HardStageSpawnRate = 30;
-        private const int EasyStageSpawnRate = 10;
+        private const int MediumStageSpawnRate = 98;
+        private const int HardStageSpawnRate = 98;
+        private const int EasyStageSpawnRate = 98;
         private const int SurvivalStageSpawnRate = 0;
 
         private const int NumStagesToBossLv1 = 10;
@@ -134,6 +134,9 @@ namespace Stage {
                 case StageType.Easy:
                     numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.65f);
                     break;
+                case StageType.Survival:
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.5f);
+                    break;
             }
             
             //todo: this will call pizza delivery 
@@ -144,11 +147,7 @@ namespace Stage {
 
         private void SpawnEnemies() {
             if (stageType == StageType.Survival) {
-                int survivalEnemiesMax = numEnemiesMax;
-                // Reduce max enemies on survival if it is not wave based
-                if (numWavesMax == 0) survivalEnemiesMax = Mathf.RoundToInt(survivalEnemiesMax * 0.8f);
-                
-                if (numWavesCurr == 1 && numWavesMax == 1 || enemiesList.Count >= survivalEnemiesMax) return;
+                if (numWavesCurr == 1 && numWavesMax == 1 || enemiesList.Count > numEnemiesMax) return;
                 
                 int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
                 EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
