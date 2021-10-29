@@ -62,6 +62,7 @@ public class Eggitha : MonoBehaviour {
         GetComponent<CircleCollider2D>().radius = 2.5f;
         ShowEggitha();
         tutorialState = TutorialState.PreLore;
+        _waveCounterText.SetText("", 0);
         Fungus.Flowchart.BroadcastFungusMessage ("Intro");
     }
 

@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb5a9f9cdf28c14482ed75fb8ac2406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnParachute: {fileID: 7430704227742162638, guid: 6d8c4275e83aedb4e9eb0a26818cff41,
+    type: 3}
   lv1EggGuard: {fileID: 4090832051791540563, guid: 7f8038ca233fd7e4fb065299e2657547,
     type: 3}
   lv1Mushroom: {fileID: 3118377129507018818, guid: f6f1d40253f7f1047a88605382e8efc7,
@@ -103,3 +105,4 @@ MonoBehaviour:
     type: 3}
   lv1Strawberry: {fileID: 6052989419570033560, guid: a05de99e326847a40b744b07ff0c4538,
     type: 3}
+  sr: {fileID: 0}
