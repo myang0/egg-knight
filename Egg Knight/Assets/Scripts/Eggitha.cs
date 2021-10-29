@@ -23,16 +23,13 @@ public class Eggitha : MonoBehaviour {
     public bool hasMovedLeft;
     public bool hasMovedRight;
     public bool hasRolled;
-    public List<EnemyBehaviour> enemies = new List<EnemyBehaviour>();
+    public List<TrainingDummyBehavior> dummies = new List<TrainingDummyBehavior>();
 
     // Start is called before the first frame update
     void Awake() {
         _sr = GetComponent<SpriteRenderer>();
         _waveCounterText = FindObjectOfType<WaveCounterText>();
-        HideEggitha();
-        foreach (var enemy in enemies) {
-            enemy.gameObject.SetActive(false);
-        }
+        _sr.color = new Color(255, 255, 255, 0);
     }
 
     // Update is called once per frame
@@ -53,8 +50,8 @@ public class Eggitha : MonoBehaviour {
         }
 
         else if (tutorialState == TutorialState.Attack) {
-            if (enemies.Count == 0) StartCoroutine(DelayBeginPreComplete());
-            else if (enemies[0] == null) enemies.Remove(enemies[0]);
+            if (dummies.Count == 0) StartCoroutine(DelayBeginPreComplete());
+            else if (dummies[0] == null) dummies.Remove(dummies[0]);
         }
     }
 
@@ -96,8 +93,8 @@ public class Eggitha : MonoBehaviour {
 
     private void BeginAttack() {
         tutorialState = TutorialState.Attack;
-        foreach (var enemy in enemies) {
-            enemy.gameObject.SetActive(true);
+        foreach (var dummy in dummies) {
+            dummy.RevealSelf();
         }
         _waveCounterText.SetText("Left click to attack! Press Q and E to swap weapons! Right click to fire yolk!", 0);
     }
@@ -146,12 +143,30 @@ public class Eggitha : MonoBehaviour {
     }
 
     private void HideEggitha() {
-        var color = _sr.color;
-        _sr.color = new Color(color.r, color.b, color.g, 0);
+        StartCoroutine(DecreaseEggithaAlpha());
     }
 
     private void ShowEggitha() {
+        StartCoroutine(IncreaseEggithaAlpha());
+    }
+
+    private IEnumerator IncreaseEggithaAlpha() {
         var color = _sr.color;
-        _sr.color = new Color(color.r, color.b, color.g, 1);
+        float newAlpha = color.a;
+        while (newAlpha < 1) {
+            newAlpha += 0.0015f;
+            _sr.color = new Color(color.r, color.b, color.g, newAlpha);
+            yield return null;
+        }
+    }
+    
+    private IEnumerator DecreaseEggithaAlpha() {
+        var color = _sr.color;
+        float newAlpha = color.a;
+        while (newAlpha > 0) {
+            newAlpha -= 0.002f;
+            _sr.color = new Color(color.r, color.b, color.g, newAlpha);
+            yield return null;
+        }
     }
 }
