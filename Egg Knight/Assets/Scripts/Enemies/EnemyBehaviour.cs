@@ -130,7 +130,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     _currentSpeed = _currentSpeed / StatusConfig.FrostSpeedMultiplier;
   }
   
-  protected IEnumerator Electrocute() {
+  protected virtual IEnumerator Electrocute() {
     isStunned = true;
 
     StopMoving();
@@ -188,7 +188,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void SetAlertTrigger() {
-    alertAnimator.Play("Active",  0, 0f);
+    alertAnimator?.Play("Active",  0, 0f);
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
