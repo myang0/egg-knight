@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +91,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/ItemSpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/StartGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ExitGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
       </list>
     </option>
   </component>
@@ -162,7 +161,7 @@
       <workItem from="1635112020862" duration="10103000" />
       <workItem from="1635135823593" duration="6151000" />
       <workItem from="1635279275053" duration="10269000" />
-      <workItem from="1635464006833" duration="4207000" />
+      <workItem from="1635464006833" duration="7193000" />
     </task>
     <servers />
   </component>

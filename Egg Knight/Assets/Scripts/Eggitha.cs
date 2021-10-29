@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Eggitha : MonoBehaviour {
     public enum TutorialState {
-        NotStarted,  
+        NotStarted,
+        PreLore,
+        Lore,
         PreMovement,
         Movement,
         PreAttack,
@@ -45,16 +47,32 @@ public class Eggitha : MonoBehaviour {
             if (hasMovedUp && hasMovedDown && hasMovedLeft && hasMovedRight && hasRolled)
                 StartCoroutine(DelayBeginPreAttack());
         }
+        
+        else if (tutorialState == TutorialState.PreLore && Input.GetKey(KeyCode.F)) {
+            BeginLore();
+        }
 
-        if (tutorialState == TutorialState.Attack) {
+        else if (tutorialState == TutorialState.Attack) {
             if (enemies.Count == 0) StartCoroutine(DelayBeginPreComplete());
             else if (enemies[0] == null) enemies.Remove(enemies[0]);
         }
     }
 
+    private void BeginPreLore() {
+        GetComponent<CircleCollider2D>().radius = 2.5f;
+        ShowEggitha();
+        tutorialState = TutorialState.PreLore;
+        Fungus.Flowchart.BroadcastFungusMessage ("Intro");
+    }
+
+    private void BeginLore() {
+        tutorialState = TutorialState.Lore;
+        _waveCounterText.SetText("", 0);
+        Fungus.Flowchart.BroadcastFungusMessage ("TalkToEggitha");
+    }
+
     private void BeginPreMovement() {
         tutorialState = TutorialState.PreMovement;
-        ShowEggitha();
         Fungus.Flowchart.BroadcastFungusMessage ("MovementTutorial");
         _waveCounterText.SetText("", 0);
     }
@@ -106,8 +124,17 @@ public class Eggitha : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player") && tutorialState == TutorialState.NotStarted) {
-            BeginPreMovement();
+        if (!other.CompareTag("Player")) return;
+        
+        if (tutorialState == TutorialState.NotStarted) BeginPreLore();
+        if (tutorialState == TutorialState.PreLore) {
+            _waveCounterText.SetText("Press F to speak to Queen Eggitha", 0);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (tutorialState == TutorialState.PreLore) {
+            _waveCounterText.SetText("", 0);
         }
     }
 
