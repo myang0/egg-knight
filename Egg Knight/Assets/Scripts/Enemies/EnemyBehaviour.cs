@@ -22,7 +22,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public event EventHandler OnIgnited;
   public event EventHandler OnElectrocuted;
   public event EventHandler OnBleed;
-  
+
   public float maxDistanceToAttack;
   public float minDistanceToAttack;
   public float attackCooldownMax;
@@ -30,7 +30,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool isInAttackAnimation;
   public bool isStunned;
   public float alertRange;
-  
+
   public bool isWandering;
   private Vector2 _wanderDestination;
 
@@ -39,24 +39,29 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private EnemyMovement _eMovement;
 
   [SerializeField] private Animator alertAnimator;
-  
+
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
     alertRange = 6f;
-    
+
     _rb = gameObject.GetComponent<Rigidbody2D>();
     isAttackOffCooldown = true;
     _eMovement = gameObject.GetComponent<EnemyMovement>();
-    
+
+    Health.OnPreDeath += (sender, args) => {
+      StartCoroutine(FadeOutDeath());
+    };
+
     Health.OnDeath += (sender, eventArgs) => {
+      StopCoroutine(FadeOutDeath());
       FindObjectOfType<CoinDrop>().DropCoin(transform.position);
       GameObject.FindGameObjectWithTag("LevelManager")
         .GetComponent<LevelManager>()
         .GetCurrentStage()
         .RemoveEnemy(this);
     };
-    
+
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     InvokeRepeating(nameof(InterruptWander), 0f, 2f);
   }
@@ -65,6 +70,18 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     if (!isWandering) {
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
+    }
+  }
+
+  private IEnumerator FadeOutDeath() {
+    Quaternion newRotation = Quaternion.Euler(0, 0, 90);
+    SpriteRenderer sr = GetComponent<SpriteRenderer>();
+    while (sr.color.a > 0) {
+      transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
+      var color = sr.color;
+      float newAlpha = color.a -= 0.001f;
+      sr.color = new Color(color.r, color.g, color.b, newAlpha);
+      yield return null;
     }
   }
 
