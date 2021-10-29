@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,24 +37,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Editor/LuaScriptedImporter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/24/04950972/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyStatusParticles.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/RangedEnemyAlerted.cs" />
-        <option value="$PROJECT_DIR$/Assets/RangedEnemyFlee.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" />
@@ -88,17 +85,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/DamageType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/ItemSpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/StartGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ExitGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs" />
+        <option value="$PROJECT_DIR$/Assets/SpawnEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ParachuteParticles.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ParachuteParticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
       </list>
     </option>
   </component>
@@ -164,7 +167,7 @@
       <workItem from="1635112020862" duration="10103000" />
       <workItem from="1635135823593" duration="6151000" />
       <workItem from="1635279275053" duration="10269000" />
-      <workItem from="1635464006833" duration="9236000" />
+      <workItem from="1635464006833" duration="18005000" />
     </task>
     <servers />
   </component>
@@ -197,10 +200,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1175" y="318" key="MultipleFileMergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634538005250" />
-    <state x="1204" y="273" key="RiderGenerateDialog" timestamp="1635279408674">
+    <state x="1204" y="273" key="RiderGenerateDialog" timestamp="1635494403424">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1204" y="273" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1635279408674" />
+    <state x="1204" y="273" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1635494403424" />
     <state x="679" y="133" key="SettingsEditor" timestamp="1635284728113">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
