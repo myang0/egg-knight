@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class RaspberryBehaviour : EnemyBehaviour {
   [SerializeField] private GameObject _projectilePrefab;
+
+  [SerializeField] private Transform _shootPoint;
   
   private int _shotsPerAttack;
   private int _maxShotsPerAttack = 2;
-  private float _delayBetweenShots = 0.5f;
 
   protected override void Awake() {
     RaspberryHealth raspberryHealth = gameObject.GetComponent<RaspberryHealth>();
@@ -27,12 +28,13 @@ public class RaspberryBehaviour : EnemyBehaviour {
   }
 
   private void HandleElectrocuted(object sender, EventArgs e) {
+    _shotsPerAttack = _maxShotsPerAttack;
+
     StartCoroutine(Electrocute());
   }
 
   public override void Attack() {
     StartCoroutine(AttackPlayer());
-    StartCoroutine(AttackCooldown());
   }
 
   private IEnumerator AttackCooldown() {
@@ -46,25 +48,27 @@ public class RaspberryBehaviour : EnemyBehaviour {
 
     isInAttackAnimation = true;
     _shotsPerAttack = _maxShotsPerAttack;
-    while (_shotsPerAttack > 0) {
-      if (isStunned) {
-        _shotsPerAttack = 0;
-        break;
-      }
-      
-      yield return new WaitForSeconds(_delayBetweenShots);
-      
-      Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-      Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
-      
-      GameObject projectileObject = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
-      RaspberryProjectile projectile = projectileObject.GetComponent<RaspberryProjectile>();
-      projectile.SetDirection(vectorToPlayer, 0);
+    
+    yield break;
+  }
 
-      _shotsPerAttack--;
-      yield return null;
+  public void ShootProjectile() {
+    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+    Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
+    
+    GameObject projectileObject = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.identity);
+    RaspberryProjectile projectile = projectileObject.GetComponent<RaspberryProjectile>();
+    projectile.SetDirection(vectorToPlayer, 0);
+
+    CountShots();
+  }
+
+  private void CountShots() {
+    _shotsPerAttack--;
+
+    if (_shotsPerAttack <= 0) {
+      isInAttackAnimation = false;
+      StartCoroutine(AttackCooldown());
     }
-
-    isInAttackAnimation = false;
   }
 }
