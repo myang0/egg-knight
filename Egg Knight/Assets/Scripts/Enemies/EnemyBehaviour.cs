@@ -52,8 +52,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     _eMovement = gameObject.GetComponent<EnemyMovement>();
 
     Health.OnPreDeath += (sender, args) => {
-      isDead = true;
-      GetComponent<Collider2D>().enabled = false;
       StartCoroutine(FadeOutDeath());
     };
 
@@ -77,9 +75,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     }
   }
 
-  private IEnumerator FadeOutDeath() {
+  public IEnumerator FadeOutDeath() {
+    isDead = true;
+    GetComponent<Collider2D>().enabled = false;
+    
     Quaternion newRotation = Quaternion.Euler(0, 0, 90);
     SpriteRenderer sr = GetComponent<SpriteRenderer>();
+    
     while (sr.color.a > 0) {
       transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
       var color = sr.color;

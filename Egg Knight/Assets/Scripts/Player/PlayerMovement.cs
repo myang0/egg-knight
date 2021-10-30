@@ -90,24 +90,4 @@ public class PlayerMovement : MonoBehaviour {
   public void MultiplyRollCooldown(float multiplyValue) {
     _rollCooldown *= multiplyValue;
   }
-  
-  // private void OnCollisionEnter2D(Collision2D other) {
-  //   if (other.collider.CompareTag("Enemy")) {
-  //     if (other.collider.GetComponent<EnemyBehaviour>().isDead) {
-  //       Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
-  //     }
-  //   }
-  // }
-  //
-  // private void OnCollisionStay2D(Collision2D other) {
-  //   if (other.collider.CompareTag("Enemy")) {
-  //     if (other.collider.GetComponent<EnemyBehaviour>().isDead) {
-  //       Debug.Log("DEAD");
-  //       Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
-  //     }
-  //     else {
-  //       Debug.Log("NOT DEAD");
-  //     }
-  //   }
-  // }
 }

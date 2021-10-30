@@ -341,6 +341,11 @@ namespace Stage {
                 _survivalTimerCurrent -= 1;
             }
             foreach (EnemyBehaviour e in enemiesList) {
+                StartCoroutine(e.FadeOutDeath());
+            }
+            yield return new WaitForSeconds(1.5f);
+            foreach (EnemyBehaviour e in enemiesList) {
+                StopCoroutine(e.FadeOutDeath());
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
