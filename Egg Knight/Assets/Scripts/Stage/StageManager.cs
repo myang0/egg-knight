@@ -13,6 +13,8 @@ namespace Stage {
         [SerializeField] private StageType stageType;
         [SerializeField] private StageStatus stageStatus;
         [SerializeField] private List<EnemyBehaviour> enemiesList;
+        //Use enemyCount instead of enemiesList.Count because enemy spawns are delayed
+        public int enemyCount;
         [SerializeField] private int numEnemiesMax;
         [SerializeField] private int numWavesMax;
         [SerializeField] private int numWavesCurr;
@@ -30,9 +32,9 @@ namespace Stage {
         private bool _isStageInitialized;
 
         // 100% - _% = Actual Spawn Rate
-        private const int MediumStageSpawnRate = 98;
-        private const int HardStageSpawnRate = 98;
-        private const int EasyStageSpawnRate = 98;
+        private const int MediumStageSpawnRate = 40;
+        private const int HardStageSpawnRate = 20;
+        private const int EasyStageSpawnRate = 10;
         private const int SurvivalStageSpawnRate = 0;
 
         private const int NumStagesToBossLv1 = 10;
@@ -116,7 +118,7 @@ namespace Stage {
                 case StageType.Hard:
                 case StageType.Easy:
                 case StageType.Boss:
-                    return enemiesList.Count == 0 && numWavesCurr == numWavesMax;
+                    return enemyCount == 0 && numWavesCurr == numWavesMax;
                 case StageType.Survival:
                     return numWavesCurr == 1 && numWavesMax == 1;
             }
@@ -147,11 +149,15 @@ namespace Stage {
 
         private void SpawnEnemies() {
             if (stageType == StageType.Survival) {
-                if (numWavesCurr == 1 && numWavesMax == 1 || enemiesList.Count > numEnemiesMax) return;
-                
-                int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
-                EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
-                enemiesList.Add(spawn.SpawnEnemy(_levelManager.GetLevel()));
+                if (numWavesCurr == 1 && numWavesMax == 1 || enemyCount >= numEnemiesMax) return;
+                // if (numWavesCurr == 1 && numWavesMax == 1 || enemiesList.Count > numEnemiesMax) return;
+
+                if (enemyCount < numEnemiesMax - 3) {
+                    StartCoroutine(DelayedEnemySpawn());
+                }
+                else {
+                    RegularEnemySpawn();
+                }
 
                 if (numWavesMax != 1) {
                     StartCoroutine(StartSurvivalTimer());
@@ -169,12 +175,7 @@ namespace Stage {
                             throw new Exception("Attempting to spawn " + (i+1) + "th enemy, but no more spawnpoints available.");
                         }
                         
-                        int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
-                        EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
-                        enemiesList.Add(spawn.SpawnEnemy(_levelManager.GetLevel()));
-                        
-                        // Remove used spawnpoint to prevent enemies spawning in same spot
-                        _eSpawnpoints.Remove(spawn);
+                        _eSpawnpoints.Remove(RegularEnemySpawn());
                     }
                     
                     numWavesCurr++;
@@ -182,19 +183,13 @@ namespace Stage {
                 }
                 // If stage has enemies in waves
                 else {
-                    if (enemiesList.Count == 0 && numWavesCurr != numWavesMax) {
+                    if (enemyCount == 0 && numWavesCurr != numWavesMax) {
                         _waveCounterText.SetText("Wave: " + (numWavesCurr+1) + "/" + numWavesMax, 0);
                         for (int i = 0; i < numEnemiesMax; i++) {
                             if (_eSpawnpoints.Count == 0) {
                                 throw new Exception("Attempting to spawn " + (i+1) + "th enemy, but no more spawnpoints available.");
                             }
-                            
-                            int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
-                            EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
-                            enemiesList.Add(spawn.SpawnEnemy(_levelManager.GetLevel()));
-                            
-                            // Remove used spawnpoint to prevent enemies spawning in same spot
-                            _eSpawnpoints.Remove(spawn);
+                            _eSpawnpoints.Remove(RegularEnemySpawn());
                         }
                         
                         // Clear spawnpoint list and re-add to it for next wave
@@ -204,6 +199,22 @@ namespace Stage {
                     }
                 }
             }
+        }
+
+        private EnemySpawnpoint RegularEnemySpawn() {
+            int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
+            EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
+            spawn.SpawnEnemy();
+            enemyCount++;
+            return spawn;
+        }
+
+        private IEnumerator DelayedEnemySpawn() {
+            enemyCount++;
+            yield return new WaitForSeconds(2f);
+            int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
+            EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
+            spawn.SpawnEnemy();
         }
 
         private void ReadyForNextStage() {
@@ -330,6 +341,11 @@ namespace Stage {
                 _survivalTimerCurrent -= 1;
             }
             foreach (EnemyBehaviour e in enemiesList) {
+                StartCoroutine(e.FadeOutDeath());
+            }
+            yield return new WaitForSeconds(1.5f);
+            foreach (EnemyBehaviour e in enemiesList) {
+                StopCoroutine(e.FadeOutDeath());
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
@@ -338,6 +354,11 @@ namespace Stage {
         
         public void RemoveEnemy(EnemyBehaviour e) {
             enemiesList.Remove(e);
+            enemyCount--;
+        }
+
+        public void AddEnemy(EnemyBehaviour e) {
+            enemiesList.Add(e);
         }
 
         public void SetStageType(StageType newStageType) {

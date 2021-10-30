@@ -12,6 +12,7 @@ public class EnemyAttack : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (_eBehavior.isDead) animator.SetTrigger("triggerDead");
         _eBehavior.StopMoving();
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         if (_eBehavior.isStunned) animator.SetBool("isAttackReady", false);

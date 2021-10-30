@@ -44,7 +44,7 @@ public class RaspberryBehaviour : EnemyBehaviour {
   }
 
   protected override IEnumerator AttackPlayer() {
-    _rb.velocity = Vector2.zero;
+    rb.velocity = Vector2.zero;
 
     isInAttackAnimation = true;
     _shotsPerAttack = _maxShotsPerAttack;

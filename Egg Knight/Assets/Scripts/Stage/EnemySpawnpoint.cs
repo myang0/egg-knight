@@ -7,131 +7,17 @@ using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 public class EnemySpawnpoint : MonoBehaviour {
-    // [SerializeField] private Enemy placeholderEnemy;
-    [SerializeField] private EnemyBehaviour lv1EggGuard;
-    [SerializeField] private EnemyBehaviour lv1Mushroom;
-    [SerializeField] private EnemyBehaviour lv1Raspberry;
-    [SerializeField] private EnemyBehaviour lv1Strawberry;
+    public SpawnParachute spawnParachute;
+    private SpriteRenderer _sr;
 
-    // Spawn Rates
-    private const int Lv1EggGuardRate = 70;
-    private const int Lv1MushroomRate = 45;
-    private const int Lv1RaspberryRate = 20;
-    private const int Lv1StrawberryRate = 0;
-
-    public SpriteRenderer sr;
-
-    // Start is called before the first frame update
     void Awake() {
-        StartAsserts();
-        sr = GetComponent<SpriteRenderer>();
-        var color = sr.color;
-        sr.color = new Color(color.r, color.g, color.b, 0);
+        _sr = GetComponent<SpriteRenderer>();
+        var color = _sr.color;
+        _sr.color = new Color(color.r, color.g, color.b, 0);
     }
-
-    private void StartAsserts() {
-        Assert.IsNotNull(lv1EggGuard);
-        // Assert.IsNotNull(lv1Mushroom);
-        Assert.IsNotNull(lv1Raspberry);
-        Assert.IsNotNull(lv1Strawberry);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public EnemyBehaviour SpawnEnemy(int level) {
-        switch (level) {
-            case 1:
-                // return SpawnEnemy(placeholderEnemy);
-                return SpawnLevel1();   
-            case 2:
-                // return SpawnEnemy(placeholderEnemy);
-                return SpawnLevel1();   
-                //return SpawnLevel2();
-            case 3:
-                // return SpawnEnemy(placeholderEnemy);
-                return SpawnLevel1();   
-                //return SpawnLevel3();
-            default:
-                throw new Exception("Attempting to spawn an enemy in level >3???");
-        }
-    }
-
-    private EnemyBehaviour SpawnEnemy(EnemyBehaviour enemy) {
-        Debug.Log("SPAWNING");
+    public void SpawnEnemy() {
         Vector3 oldPos = transform.position;
-        Vector3 newPos = new Vector3(oldPos.x, oldPos.y, ZcoordinateConsts.Character);
-        EnemyBehaviour newEnemy = Instantiate(enemy, newPos, Quaternion.identity);
-        return newEnemy;
-    }
-
-    private EnemyBehaviour SpawnLevel1() {
-        int enemyChance = Random.Range(1, 101);
-        
-        if (enemyChance > Lv1EggGuardRate) {
-            return SpawnEnemy(lv1EggGuard);
-        }
-
-        if (enemyChance > Lv1MushroomRate) {
-            // SpawnEnemy(lv1Mushroom);   
-            return SpawnEnemy(lv1Mushroom);
-        }
-
-        if (enemyChance > Lv1RaspberryRate) {
-            return SpawnEnemy(lv1Raspberry);         
-        }
-
-        if (enemyChance > Lv1StrawberryRate) {
-            return SpawnEnemy(lv1Strawberry);
-        }
-
-        return null;
-    }
-    
-    private EnemyBehaviour SpawnLevel2() {
-        int enemyChance = Random.Range(1, 101);
-        
-        if (enemyChance > Lv1EggGuardRate) {
-            return SpawnEnemy(null);        
-        }
-
-        if (enemyChance > Lv1MushroomRate) {
-            return SpawnEnemy(null); 
-        }
-
-        if (enemyChance > Lv1RaspberryRate) {
-            return SpawnEnemy(null); 
-        }
-
-        if (enemyChance > Lv1StrawberryRate) {
-            return SpawnEnemy(null); 
-        }
-
-        return null;
-    }
-    
-    private EnemyBehaviour SpawnLevel3() {
-        int enemyChance = Random.Range(1, 101);
-        
-        if (enemyChance > Lv1EggGuardRate) {
-            return SpawnEnemy(null); 
-        }
-
-        if (enemyChance > Lv1MushroomRate) {
-            return SpawnEnemy(null); 
-        }
-
-        if (enemyChance > Lv1RaspberryRate) {
-            return SpawnEnemy(null); 
-        }
-
-        if (enemyChance > Lv1StrawberryRate) {
-            return SpawnEnemy(null); 
-        }
-
-        return null;
+        Vector3 newPos = new Vector3(oldPos.x, oldPos.y, ZcoordinateConsts.Interactable);
+        Instantiate(spawnParachute, newPos, Quaternion.identity);
     }
 }

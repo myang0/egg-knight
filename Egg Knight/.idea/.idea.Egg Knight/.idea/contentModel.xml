@@ -1272,6 +1272,7 @@
               <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
             </e>
+            <e p="SpawnParachute.cs" t="Include" />
             <e p="Strawberry" t="Include">
               <e p="StrawberryBehaviour.cs" t="Include" />
               <e p="StrawberryHealth.cs" t="Include" />
@@ -1314,6 +1315,7 @@
           </e>
           <e p="FSM" t="Include">
             <e p="EnemyAttack.cs" t="Include" />
+            <e p="EnemyDeadState.cs" t="Include" />
             <e p="EnemyIdle.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="EnemyStunned.cs" t="Include" />
@@ -1322,6 +1324,7 @@
             <e p="RangedEnemyAlerted.cs" t="Include" />
             <e p="RangedEnemyChase.cs" t="Include" />
             <e p="RangedEnemyFlee.cs" t="Include" />
+            <e p="SpawnEnemy.cs" t="Include" />
           </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />

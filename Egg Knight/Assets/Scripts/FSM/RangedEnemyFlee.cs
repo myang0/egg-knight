@@ -10,6 +10,7 @@ public class RangedEnemyFlee : StateMachineBehaviour
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (_eBehavior.isDead) animator.SetTrigger("triggerDead");
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         if (_eBehavior.isStunned) animator.SetBool("isFleeing", false);
         _eBehavior.Flee();

@@ -78,6 +78,8 @@ public abstract class EnemyHealth : Health {
   public abstract void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type);
 
   public virtual void DamageWithType(float amount, DamageType type) {
+    if (_currentHealth <= 0) return;
+    
     float bonusDamage = (type == _weakTo) ? (amount * 0.5f) : 0;
     if (type == _immuneTo || type == _immuneTo2) {
       Damage(0);

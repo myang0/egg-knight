@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour {
   [SerializeField] protected float _maxHealth;
   public event EventHandler OnDeath;
+  public event EventHandler OnPreDeath;
   protected float _currentHealth;
 
   [SerializeField] protected GameObject _changeIndicatorPrefab;
@@ -33,6 +35,14 @@ public abstract class Health : MonoBehaviour {
   }
 
   protected virtual void Die() {
+    OnPreDeath?.Invoke(this, EventArgs.Empty);
+    StartCoroutine(DelayedDeath());
+    // OnDeath?.Invoke(this, EventArgs.Empty);
+    // Destroy(gameObject);
+  }
+
+  private IEnumerator DelayedDeath() {
+    yield return new WaitForSeconds(1.5f);
     OnDeath?.Invoke(this, EventArgs.Empty);
     Destroy(gameObject);
   }

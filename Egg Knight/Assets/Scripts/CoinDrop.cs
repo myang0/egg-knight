@@ -40,7 +40,7 @@ public class CoinDrop : MonoBehaviour
 
         int coinDropChance = Random.Range(1, 101);
         if (coinDropChance < tempDropRate) {
-            Vector3 newPos = new Vector3(enemyPos.x, enemyPos.y, ZcoordinateConsts.Pickup);
+            Vector3 newPos = new Vector3(enemyPos.x, enemyPos.y, ZcoordinateConsts.Character);
             Instantiate(coin, newPos, Quaternion.identity);
         }
     }
