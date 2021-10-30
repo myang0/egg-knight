@@ -30,6 +30,9 @@ public class Eggitha : MonoBehaviour {
         _sr = GetComponent<SpriteRenderer>();
         _waveCounterText = FindObjectOfType<WaveCounterText>();
         _sr.color = new Color(255, 255, 255, 0);
+        foreach (var dummy in dummies) {
+            dummy.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -94,6 +97,7 @@ public class Eggitha : MonoBehaviour {
     private void BeginAttack() {
         tutorialState = TutorialState.Attack;
         foreach (var dummy in dummies) {
+            dummy.gameObject.SetActive(true);
             dummy.RevealSelf();
         }
         _waveCounterText.SetText("Left click to attack! Press Q and E to swap weapons! Right click to fire yolk!", 0);
@@ -114,6 +118,9 @@ public class Eggitha : MonoBehaviour {
         tutorialState = TutorialState.Complete;
         GetComponent<BoxCollider2D>().isTrigger = true;
         HideEggitha();
+        foreach (var dummy in dummies) {
+            if (dummy) Destroy(dummy.gameObject);
+        }
     }
 
     private void BeginRush() {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using Stage;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,7 +11,7 @@ using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public abstract class EnemyBehaviour : MonoBehaviour {
-  protected Rigidbody2D _rb;
+  public Rigidbody2D rb;
 
   [SerializeField] protected float _maxSpeed;
   protected float _currentSpeed;
@@ -39,22 +40,24 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private EnemyMovement _eMovement;
 
   [SerializeField] private Animator alertAnimator;
+  public bool isDead;
 
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
     alertRange = 6f;
 
-    _rb = gameObject.GetComponent<Rigidbody2D>();
+    rb = gameObject.GetComponent<Rigidbody2D>();
     isAttackOffCooldown = true;
     _eMovement = gameObject.GetComponent<EnemyMovement>();
 
     Health.OnPreDeath += (sender, args) => {
+      isDead = true;
+      GetComponent<Collider2D>().enabled = false;
       StartCoroutine(FadeOutDeath());
     };
 
     Health.OnDeath += (sender, eventArgs) => {
-      StopCoroutine(FadeOutDeath());
       FindObjectOfType<CoinDrop>().DropCoin(transform.position);
       GameObject.FindGameObjectWithTag("LevelManager")
         .GetComponent<LevelManager>()
@@ -67,6 +70,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected void Update() {
+    if (isDead) return;
     if (!isWandering) {
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
@@ -165,7 +169,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void StopMoving() {
-    _rb.velocity = Vector2.zero;
+    rb.velocity = Vector2.zero;
   }
 
   public void Wander() {
@@ -209,11 +213,15 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
-    if (!isWallCollisionOn && !isWandering) {
-      if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
-        Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
-      }
+    if (!isWallCollisionOn && !isWandering && other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
+      Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
     }
+
+    // if (other.collider.CompareTag("Enemy")) {
+    //   if (other.collider.GetComponent<EnemyBehaviour>().isDead) {
+    //     Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+    //   }
+    // }
   }
 
   public virtual void Attack() {

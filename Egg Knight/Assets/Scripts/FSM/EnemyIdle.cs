@@ -15,6 +15,7 @@ public class EnemyIdle : StateMachineBehaviour {
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (_eBehavior.isDead) animator.SetTrigger("triggerDead");
         RemoveDeadEnemiesList();
         AddNewAliveEnemiesList();
         if (_eBehavior.isStunned) animator.SetBool("isStunned", true);

@@ -37,7 +37,7 @@ public class StrawberryBehaviour : EnemyBehaviour {
   }
 
   protected override IEnumerator AttackPlayer() {
-    _rb.velocity = Vector2.zero;
+    rb.velocity = Vector2.zero;
 
     yield break;
   }

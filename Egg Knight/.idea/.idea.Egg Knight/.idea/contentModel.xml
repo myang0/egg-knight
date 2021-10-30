@@ -1315,6 +1315,7 @@
           </e>
           <e p="FSM" t="Include">
             <e p="EnemyAttack.cs" t="Include" />
+            <e p="EnemyDeadState.cs" t="Include" />
             <e p="EnemyIdle.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="EnemyStunned.cs" t="Include" />

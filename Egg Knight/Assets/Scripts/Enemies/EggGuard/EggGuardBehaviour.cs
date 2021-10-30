@@ -27,7 +27,7 @@ public class EggGuardBehaviour : EnemyBehaviour {
     isAttackOffCooldown = false;
     isInAttackAnimation = true;
   
-    _rb.velocity = Vector2.zero;
+    rb.velocity = Vector2.zero;
   
     yield return new WaitForSeconds(attackCooldownMax);
 

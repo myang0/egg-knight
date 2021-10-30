@@ -12,9 +12,8 @@ public class MeleeEnemyAlerted : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_eBehavior.isStunned) {
-            animator.SetBool("isStunned", true);
-        } 
+        if (_eBehavior.isDead) animator.SetTrigger("triggerDead");
+        if (_eBehavior.isStunned) animator.SetBool("isStunned", true);
         else if (_eBehavior.GetIsAttackReady()) {
             animator.SetBool("isAttackReady", true);
         }

@@ -20,9 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Alert Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Alert Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Egg Guard/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Mushroom/MushroomController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Mushroom/MushroomController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Raspberry/controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Strawberry/StrawberryController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Strawberry/StrawberryController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyStunned.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyStunned.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/MeleeEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/MeleeEnemyAlerted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyAlerted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyAlerted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyChase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyChase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyFlee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyFlee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/MeleeEnemyAlerted.cs" />
-        <option value="$PROJECT_DIR$/Assets/WeaponDisplayPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Shop Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/BaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/BuyZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shop/ShopItem.cs" />
@@ -76,15 +88,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/HealingBaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/DamageType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/ItemSpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/StartGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ExitGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs" />
         <option value="$PROJECT_DIR$/Assets/SpawnEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnEnemy.cs" />
@@ -95,9 +104,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/MeleeEnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyAlerted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyStunned.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyFlee.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyChase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyDeadState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
       </list>
     </option>
   </component>
@@ -164,7 +184,7 @@
       <workItem from="1635135823593" duration="6151000" />
       <workItem from="1635279275053" duration="10269000" />
       <workItem from="1635464006833" duration="18005000" />
-      <workItem from="1635547474611" duration="3040000" />
+      <workItem from="1635547474611" duration="6257000" />
     </task>
     <servers />
   </component>
@@ -189,6 +209,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="959" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635551269657">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="959" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1635551269657" />
     <state x="214" y="96" key="MergeDialog" timestamp="1634537986970">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
