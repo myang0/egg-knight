@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +13,9 @@ public class BroccoliIdle : StateMachineBehaviour {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
     _anim = animator;
+
+    Rigidbody2D rb = animator.GetComponent<Rigidbody2D>();
+    rb.velocity = Vector2.zero;
 
     _bStateManager.StartIdle();
     _bStateManager.OnIdleEnd += HandleIdleEnd;

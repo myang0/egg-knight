@@ -46,4 +46,42 @@ public class BroccoliStateManager : MonoBehaviour {
 
     OnSpinEnd?.Invoke(this, EventArgs.Empty);
   }
+
+  public void StartWalk() {
+    StartCoroutine(Walk());
+  }
+
+  private IEnumerator Walk() {
+    Debug.Log(_walkTime);
+
+    yield return new WaitForSeconds(_walkTime);
+
+    Debug.Log("end");
+
+    OnWalkEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  public void StartParry() {
+    StartCoroutine(Parry());
+  }
+
+  public void StopParry() {
+    StopCoroutine(Parry());
+  }
+
+  private IEnumerator Parry() {
+    yield return new WaitForSeconds(_parryTime);
+
+    OnParryEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  public void StartCharge() {
+    StartCoroutine(Charge());
+  }
+
+  private IEnumerator Charge() {
+    yield return new WaitForSeconds(_chargeTime);
+
+    OnChargeEnd?.Invoke(this, EventArgs.Empty);
+  }
 }

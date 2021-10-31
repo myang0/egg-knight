@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BroccoliSpin : StateMachineBehaviour {
+public class BroccoliWalk : StateMachineBehaviour {
   private BroccoliStateManager _bStateManager;
 
   private Rigidbody2D _rb;
@@ -11,16 +11,14 @@ public class BroccoliSpin : StateMachineBehaviour {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
     _rb = animator.GetComponent<Rigidbody2D>();
-
     _anim = animator;
-    _anim.SetBool("IsSpinning", true);
 
-    _bStateManager.StartSpin();
-    _bStateManager.OnSpinEnd += HandleSpinEnd;
+    _bStateManager.StartWalk();
+    _bStateManager.OnWalkEnd += HandleWalkEnd;
   }
 
-  private void HandleSpinEnd(object sender, EventArgs e) {
+  private void HandleWalkEnd(object sender, EventArgs e) {
     _rb.velocity = Vector2.zero;
-    _anim.SetBool("IsSpinning", false);
+    _anim.SetBool("IsWalking", false);
   }
 }
