@@ -221,12 +221,12 @@ PrefabInstance:
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.56
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
@@ -282,6 +282,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505911296, guid: 2e36deb3e90e0ed4f9f43eae435fce60, type: 3}
+      propertyPath: _greatSlashPrefab
+      value: 
+      objectReference: {fileID: 6921622868308280127, guid: 95802ae86144b8e41937a21f56917d30,
+        type: 3}
+    - target: {fileID: 505911296, guid: 2e36deb3e90e0ed4f9f43eae435fce60, type: 3}
+      propertyPath: _playerLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7661167815159370439, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
         type: 3}
       propertyPath: m_Name
@@ -295,12 +304,12 @@ PrefabInstance:
     - target: {fileID: 7661167815159373114, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.18
+      value: 5.53
       objectReference: {fileID: 0}
     - target: {fileID: 7661167815159373114, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 7661167815159373114, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
         type: 3}
@@ -341,11 +350,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661167815159373115, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
-        type: 3}
-      propertyPath: _spinTime
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e36deb3e90e0ed4f9f43eae435fce60, type: 3}
