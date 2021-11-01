@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    [SerializeField] private GameObject _coinParticles;
     [SerializeField] private int _monetaryValue;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             GameObject playerObject = other.gameObject;
-            PlayerWallet wallet = playerObject.GetComponent<PlayerWallet>();
+            PlayerWallet wallet = playerObject?.GetComponent<PlayerWallet>();
 
-            if (wallet != null) {
-                wallet.AddToBalance(_monetaryValue);
+            wallet?.AddToBalance(_monetaryValue);
+
+            if (_coinParticles != null) {
+                Instantiate(_coinParticles, transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);
