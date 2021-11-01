@@ -12,6 +12,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   protected PlayerHealth _health;
   protected PlayerInventory _inventory;
   protected PlayerCursedInventory _cursedInventory;
+  protected PlayerWallet _wallet;
 
   [SerializeField] protected float _damageAmount;
   [SerializeField] protected DamageType _damageType;
@@ -25,9 +26,11 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     _weaponModifiers = new List<StatusCondition>();
     
     GameObject player = GameObject.FindGameObjectWithTag("Player");
+
     _health = player.GetComponent<PlayerHealth>();
     _inventory = player.GetComponent<PlayerInventory>();
     _cursedInventory = player.GetComponent<PlayerCursedInventory>();
+    _wallet = player.GetComponent<PlayerWallet>();
 
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     _sr.flipX = (mousePos.x < transform.position.x);
@@ -79,7 +82,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float amountAfterRage = AddRageDamage(_damageAmount);
+    float amountAfterCoins = AddCoinDamage(_damageAmount);
+    float amountAfterRage = AddRageDamage(amountAfterCoins);
     float totalAmount = HandleCrits(amountAfterRage, statuses);
 
     if (statuses.Any()) {
@@ -87,6 +91,16 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     } else {
       enemyHealth.DamageWithType(totalAmount, _damageType);
     }
+  }
+
+  protected virtual float AddCoinDamage(float originalAmount) {
+    float totalAmount = originalAmount;
+
+    if (_inventory.ItemInInventory(Item.GoldChainNecklace)) {
+      totalAmount += (originalAmount * _wallet.GetBalance() * 0.02f);
+    }
+
+    return totalAmount;
   }
 
   protected virtual float AddRageDamage(float originalAmount) {

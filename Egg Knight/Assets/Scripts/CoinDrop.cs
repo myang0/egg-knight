@@ -16,8 +16,15 @@ public class CoinDrop : MonoBehaviour
     private int _coinDropRate = 20;
     private const float EasyDropRateMultiplier = 0.8f;
     private const float HardDropRateMultiplier = 1.5f;
+
     private void Awake() {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+
+        GoldChainNecklace.OnPickup += HandleDropRateChange;
+    }
+
+    private void HandleDropRateChange(object sender, CoinRateChangeEventArgs e) {
+        _coinDropRate += (int)e.rate;
     }
     
     public void DropCoin(Vector3 enemyPos) {
