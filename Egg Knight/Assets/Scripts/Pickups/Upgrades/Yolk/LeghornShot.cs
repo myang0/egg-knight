@@ -11,7 +11,7 @@ public class LeghornShot : YolkUpgrade {
 
       if (yolkManager != null) {
         yolkManager.MultiplyByCooldown(_cooldownMultiplier);
-        yolkManager.MultiplyByHealthCost(_healthCostMultiplier);
+        yolkManager.MultiplyByPercentCost(_healthCostMultiplier);
       }
 
       YolkPickup();

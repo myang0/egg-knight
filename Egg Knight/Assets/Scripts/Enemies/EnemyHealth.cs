@@ -9,13 +9,19 @@ public abstract class EnemyHealth : Health {
   [SerializeField] protected DamageType _immuneTo2;
 
   protected PlayerInventory _playerInventory;
+  protected PlayerCursedInventory _cursedInventory;
+  protected YolkUpgradeManager _yolkUpgrades;
 
   [SerializeField] protected GameObject _healingYolkPrefab;
 
   protected bool _isFrosted = false;
 
   protected override void Awake() {
-    _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+    GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+    _playerInventory = playerObject.GetComponent<PlayerInventory>();
+    _cursedInventory = playerObject.GetComponent<PlayerCursedInventory>();
+    _yolkUpgrades = playerObject.GetComponent<YolkUpgradeManager>();
 
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
 
@@ -23,6 +29,7 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnIgnited += HandleIgnited;
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
     enemyBehaviour.OnBleed += HandleBleed;
+    enemyBehaviour.OnYolked += HandleYolked;
 
     base.Awake();
   }
@@ -66,6 +73,23 @@ public abstract class EnemyHealth : Health {
       yield return new WaitForSeconds(StatusConfig.BleedTimeBetweenTicks);
 
       Damage(StatusConfig.BleedDamage);
+    }
+  }
+
+  protected virtual void HandleYolked(object sender, EventArgs e) {
+    if (_yolkUpgrades.HasUpgrade(YolkUpgradeType.Salmonella)) {
+      StartCoroutine(Yolked());
+    }
+  }
+
+  protected virtual IEnumerator Yolked() {
+    float origDamage = StatusConfig.SalmonellaDamage;
+    float salmonellaDamage = (_cursedInventory.HasItem(CursedItemType.RottenYolk)) ? (origDamage * 2) : origDamage;
+
+    for (int i = 0; i < StatusConfig.SalmonellaTicks; i++) {
+      yield return new WaitForSeconds(StatusConfig.SalmonellaTimeBetweenTicks);
+
+      Damage(salmonellaDamage);
     }
   }
 

@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd82366952c7ee4297c85f071dc8b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   _maxSpeed: 1.5
   maxDistanceToAttack: 0
   minDistanceToAttack: 0
@@ -259,6 +260,7 @@ MonoBehaviour:
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 804755781}
+  isDead: 0
   _projectilePrefab: {fileID: 6034735207784910516, guid: ed5a11cde5694bb498ad5e2e13af6cd1,
     type: 3}
   _shootPoint: {fileID: 1875781547861553139}
@@ -309,6 +311,8 @@ MonoBehaviour:
   _frostParticles: {fileID: 5483276771753535537, guid: cb21f79c06ddbd349ae9f0b24f64c495,
     type: 3}
   _electrocuteParticles: {fileID: 3428535864611965781, guid: 6a0d5f5f1b372734f89254655542dd90,
+    type: 3}
+  _bleedParticles: {fileID: 350271996582760256, guid: ab9b8c45bca986a4aaac8babc912872f,
     type: 3}
 --- !u!95 &1176421552417456974
 Animator:

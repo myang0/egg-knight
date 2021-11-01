@@ -9,7 +9,7 @@ public class YolkManager : MonoBehaviour {
   [SerializeField] private float _yolkCooldown = 2.0f;
   private bool _yolkOffCooldown = true;
 
-  [SerializeField] private float _yolkHealthCost = 2.5f;
+  [SerializeField] private float _yolkPercentCost = 0.025f;
   private PlayerHealth _health;
 
   private YolkUpgradeManager _upgrades;
@@ -26,11 +26,13 @@ public class YolkManager : MonoBehaviour {
 
   private void HandleRightClick(object sender, EventArgs e) {
     if (_yolkOffCooldown) {
-      if (_health.DamageWillKill(_yolkHealthCost)) {
+      float yolkDamage = _health.CurrentHealth * _yolkPercentCost;
+
+      if (_health.DamageWillKill(yolkDamage)) {
         return;
       }
 
-      _health.YolkDamage(_yolkHealthCost);
+      _health.YolkDamage(yolkDamage);
       StartCoroutine(ShootYolk());
     }
   }
@@ -70,7 +72,7 @@ public class YolkManager : MonoBehaviour {
     _yolkCooldown *= multiplier;
   }
 
-  public void MultiplyByHealthCost(float multiplier) {
-    _yolkHealthCost *= multiplier;
+  public void MultiplyByPercentCost(float multiplier) {
+    _yolkPercentCost *= multiplier;
   }
 }
