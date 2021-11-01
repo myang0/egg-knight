@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour {
     PlayerHealth.OnHealthDecrease += HandleHealthChange;
   }
 
-  private void HandleHealthChange(object sender, PlayerHealthChangeEventArgs e) {
+  private void HandleHealthChange(object sender, HealthChangeEventArgs e) {
     _slider.value = e.newPercent;
   }
 }

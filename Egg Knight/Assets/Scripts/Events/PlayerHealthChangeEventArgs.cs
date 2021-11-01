@@ -1,9 +1,9 @@
 using System;
 
-public class PlayerHealthChangeEventArgs : EventArgs {
+public class HealthChangeEventArgs : EventArgs {
   public float newPercent;
 
-  public PlayerHealthChangeEventArgs(float percent) {
+  public HealthChangeEventArgs(float percent) {
     this.newPercent = percent;
   }
 }
