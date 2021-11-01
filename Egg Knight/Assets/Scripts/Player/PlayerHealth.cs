@@ -11,8 +11,8 @@ public class PlayerHealth : Health {
   private PlayerInventory _inventory;
   private PlayerCursedInventory _cursedInventory;
 
-  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthDecrease;
-  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthIncrease;
+  public static event EventHandler<HealthChangeEventArgs> OnHealthDecrease;
+  public static event EventHandler<HealthChangeEventArgs> OnHealthIncrease;
 
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
@@ -70,7 +70,7 @@ public class PlayerHealth : Health {
 
     _currentHealth -= amount;
 
-    OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
   }
 
   public override void Damage(float amount) {
@@ -83,7 +83,7 @@ public class PlayerHealth : Health {
 
     SpawnChangeIndicator(amount, Color.red);
 
-    OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
 
     if (_currentHealth <= 0) {
       Die();
@@ -124,7 +124,7 @@ public class PlayerHealth : Health {
 
     base.Heal(amount);
 
-    OnHealthIncrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
   }
 
   public void RustySwordDamage() {
@@ -133,7 +133,7 @@ public class PlayerHealth : Health {
 
       SpawnChangeIndicator(1, Color.red);
 
-      OnHealthDecrease?.Invoke(this, new PlayerHealthChangeEventArgs(CurrentHealthPercentage()));
+      OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     }
   }
 }

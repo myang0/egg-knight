@@ -5,6 +5,9 @@ using UnityEngine;
 public class BroccoliHealth : EnemyHealth {
   public event EventHandler<EnemyStatusEventArgs> OnBroccoliStatusDamage;
 
+  public static event EventHandler<HealthChangeEventArgs> OnBroccoliDamage;
+  public static event EventHandler OnBroccoliDeath;
+
   private Animator _anim;
 
   protected override void Awake() {
@@ -20,7 +23,13 @@ public class BroccoliHealth : EnemyHealth {
       return;
     }
 
+    OnBroccoliDamage?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     base.Damage(amount);
+  }
+
+  protected override void Die() {
+    OnBroccoliDeath?.Invoke(this, EventArgs.Empty);
+    base.Die();
   }
 
   public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
