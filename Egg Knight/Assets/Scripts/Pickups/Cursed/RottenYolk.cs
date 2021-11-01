@@ -9,7 +9,7 @@ public class RottenYolk : CursedItem {
       GameObject pObject = col.gameObject;
 
       YolkManager yolkManager = pObject?.GetComponent<YolkManager>();
-      yolkManager?.MultiplyByHealthCost(_yolkCostMultiplier);
+      yolkManager?.MultiplyByPercentCost(_yolkCostMultiplier);
 
       CursedItemPickup();
     }

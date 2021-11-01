@@ -6,7 +6,11 @@ public abstract class Health : MonoBehaviour {
   [SerializeField] protected float _maxHealth;
   public event EventHandler OnDeath;
   public event EventHandler OnPreDeath;
+
   protected float _currentHealth;
+  public float CurrentHealth {
+    get => _currentHealth;
+  }
 
   [SerializeField] protected GameObject _changeIndicatorPrefab;
 

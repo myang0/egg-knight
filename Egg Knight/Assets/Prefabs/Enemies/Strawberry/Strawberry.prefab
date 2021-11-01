@@ -211,6 +211,8 @@ MonoBehaviour:
     type: 3}
   _electrocuteParticles: {fileID: 3428535864611965781, guid: 6a0d5f5f1b372734f89254655542dd90,
     type: 3}
+  _bleedParticles: {fileID: 350271996582760256, guid: ab9b8c45bca986a4aaac8babc912872f,
+    type: 3}
 --- !u!114 &6052989419570033560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39119e43dcb99545b19128116a856e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   _maxSpeed: 1
   maxDistanceToAttack: 0
   minDistanceToAttack: 0
@@ -234,6 +237,7 @@ MonoBehaviour:
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 6052989420728253035}
+  isDead: 0
   _shootPoint: {fileID: 6475972150747161611}
   _projectilePrefab: {fileID: 825129362731886390, guid: b65c49dbf11593047a4cbffe54405747,
     type: 3}

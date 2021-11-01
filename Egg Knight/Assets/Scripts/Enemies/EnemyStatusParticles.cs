@@ -6,6 +6,7 @@ public class EnemyStatusParticles : MonoBehaviour {
   [SerializeField] private GameObject _igniteParticles;
   [SerializeField] private GameObject _frostParticles;
   [SerializeField] private GameObject _electrocuteParticles;
+  [SerializeField] private GameObject _bleedParticles;
 
   private void Awake() {
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
@@ -13,6 +14,7 @@ public class EnemyStatusParticles : MonoBehaviour {
     enemyBehaviour.OnIgnited += HandleIgnited;
     enemyBehaviour.OnFrosted += HandleFrosted;
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+    enemyBehaviour.OnBleed += HandleBleed;
   }
 
   private void HandleYolked(object sender, EventArgs e) {
@@ -36,6 +38,12 @@ public class EnemyStatusParticles : MonoBehaviour {
   private void HandleElectrocuted(object sender, EventArgs e) {
     if (_electrocuteParticles != null) {
       Instantiate(_electrocuteParticles, transform.position, Quaternion.identity);
+    }
+  }
+
+  private void HandleBleed(object sender, EventArgs e) {
+    if (_bleedParticles != null) {
+      Instantiate(_bleedParticles, transform.position, Quaternion.identity);
     }
   }
 }

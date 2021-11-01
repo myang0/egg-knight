@@ -9,7 +9,7 @@ public class GoldenYolk : YolkUpgrade {
       YolkManager yolkManager = GetYolkManager(col);
 
       if (yolkManager != null) {
-        yolkManager.MultiplyByHealthCost(_healthCostMultiplier);
+        yolkManager.MultiplyByPercentCost(_healthCostMultiplier);
       }
 
       YolkPickup();

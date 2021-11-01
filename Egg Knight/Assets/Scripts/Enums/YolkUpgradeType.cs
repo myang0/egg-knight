@@ -2,5 +2,6 @@ public enum YolkUpgradeType {
   LeghornShot,
   GoldenYolk,
   SmartYolk,
-  ShellShot
+  ShellShot,
+  Salmonella
 }

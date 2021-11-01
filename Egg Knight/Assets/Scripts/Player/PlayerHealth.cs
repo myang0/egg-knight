@@ -78,7 +78,7 @@ public class PlayerHealth : Health {
       return;
     }
 
-    amount = amount - (0.05f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
+    amount = amount - (0.1f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
 
     SpawnChangeIndicator(amount, Color.red);
