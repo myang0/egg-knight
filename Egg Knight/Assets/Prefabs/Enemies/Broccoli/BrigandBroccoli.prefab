@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381452803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.75, z: 0}
+  m_LocalPosition: {x: -2, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793646470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.75, y: -0.3, z: 0}
+  m_LocalPosition: {x: -3.25, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011052650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.75, z: 0}
+  m_LocalPosition: {x: 2, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}
@@ -420,7 +420,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
+  m_Mass: 3000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -442,7 +442,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -453,7 +453,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.51, y: 2.6133332}
+  m_Size: {x: 1.06, y: 2.46}
   m_EdgeRadius: 0
 --- !u!114 &505911296
 MonoBehaviour:
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftWalkAttackPoint: {fileID: 381452804}
   _rightWalkAttackPoint: {fileID: 1011052651}
-  _walkAttackRange: 1.25
+  _walkAttackRange: 1.5
   _walkAttackDamage: 10
   _playerLayer:
     serializedVersion: 2
@@ -482,7 +482,7 @@ MonoBehaviour:
   _rightSpinAttackPoint: {fileID: 4704387955560580585}
   _spinAttackDamage: 10
   _middleSpinAttackRange: 1.85
-  _sideSpinAttackRange: 0.98
+  _sideSpinAttackRange: 1.25
   _boomerangBladePrefab: {fileID: 8598253601163690648, guid: 474da190fb5d603458f3430c1f99b756,
     type: 3}
   _greatSlashPrefab: {fileID: 6921622868308280127, guid: 95802ae86144b8e41937a21f56917d30,
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7697024850751781804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.75, y: -0.3, z: 0}
+  m_LocalPosition: {x: 3.25, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}

@@ -6,6 +6,6 @@ public class BroccoliSlash : StateMachineBehaviour {
   }
 
   private void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {
-    Debug.Log(animator.GetBool("IsParrying"));
+    
   }
 }
