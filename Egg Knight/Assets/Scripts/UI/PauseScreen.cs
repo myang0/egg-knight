@@ -27,7 +27,7 @@ public class PauseScreen : MonoBehaviour {
   }
 
   private void OnDestroy() {
-    PlayerControls.OnEscPress -= HandleEscPress;
+    UIControls.OnEscPress -= HandleEscPress;
     ResumeButton.OnResumeButtonPressed -= HandleResumeButtonPressed;
   }
 }

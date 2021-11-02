@@ -60,4 +60,11 @@ public class BroccoliIdle : StateMachineBehaviour {
       _anim.SetBool("IsChargingThrow", true);
     }
   }
+
+  private void OnDestroy() {
+    if (_subscribers > 0) {
+      _bStateManager.OnIdleEnd -= HandleIdleEnd;
+      _subscribers = 0;
+    }
+  }
 }

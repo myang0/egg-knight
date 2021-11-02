@@ -24,4 +24,11 @@ public class BroccoliChargeSlash : StateMachineBehaviour {
   private void HandleChargeEnd(object sender, EventArgs e) {
     _anim.SetBool("IsChargingSlash", false);
   }
+
+  private void OnDestroy() {
+    if (_subscribers > 0) {
+      _bStateManager.OnChargeEnd -= HandleChargeEnd;
+      _subscribers = 0;
+    }
+  }
 }

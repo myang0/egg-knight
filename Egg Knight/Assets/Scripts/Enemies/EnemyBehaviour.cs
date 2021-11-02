@@ -51,17 +51,8 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     isAttackOffCooldown = true;
     _eMovement = gameObject.GetComponent<EnemyMovement>();
 
-    Health.OnPreDeath += (sender, args) => {
-      StartCoroutine(FadeOutDeath());
-    };
-
-    Health.OnDeath += (sender, eventArgs) => {
-      FindObjectOfType<CoinDrop>().DropCoin(transform.position);
-      GameObject.FindGameObjectWithTag("LevelManager")
-        .GetComponent<LevelManager>()
-        .GetCurrentStage()
-        .RemoveEnemy(this);
-    };
+    Health.OnPreDeath += HandlePreDeath;
+    Health.OnDeath += HandleDeath;
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     InvokeRepeating(nameof(InterruptWander), 0f, 2f);
@@ -73,6 +64,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
     }
+  }
+
+  private void HandlePreDeath(object sender, EventArgs e) {
+    StartCoroutine(FadeOutDeath());
   }
 
   public IEnumerator FadeOutDeath() {
@@ -89,6 +84,14 @@ public abstract class EnemyBehaviour : MonoBehaviour {
       sr.color = new Color(color.r, color.g, color.b, newAlpha);
       yield return null;
     }
+  }
+
+  private void HandleDeath(object sender, EventArgs e) {
+    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
+    GameObject.FindGameObjectWithTag("LevelManager")
+      .GetComponent<LevelManager>()
+      .GetCurrentStage()
+      .RemoveEnemy(this);
   }
 
   private void InterruptWander() {
@@ -231,4 +234,9 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   protected abstract IEnumerator AttackPlayer();
+
+  private void OnDestroy() {
+    Health.OnPreDeath -= HandlePreDeath;
+    Health.OnDeath -= HandleDeath;
+  }
 }

@@ -29,4 +29,11 @@ public class BroccoliSpin : StateMachineBehaviour {
     _rb.velocity = Vector2.zero;
     _anim.SetBool("IsSpinning", false);
   }
+
+  private void OnDestroy() {
+    if (_subscribers > 0) {
+      _bStateManager.OnSpinEnd -= HandleSpinEnd;
+      _subscribers = 0;
+    }
+  }
 }

@@ -11,7 +11,9 @@ public class PlayerCursedInventory : MonoBehaviour {
   }
 
   private void HandleCursedItemPickup(object sender, CursedItemEventArgs e) {
-    _curseDict.Add(e.type, true);
+    if (HasItem(e.type) == false) {
+      _curseDict.Add(e.type, true);
+    }
   }
 
   public bool HasItem(CursedItemType key) {
@@ -19,6 +21,8 @@ public class PlayerCursedInventory : MonoBehaviour {
   }
 
   private void OnDestroy() {
+    _curseDict = new Dictionary<CursedItemType, bool>();
+
     CursedItem.OnCursedItemPickup -= HandleCursedItemPickup;
   }
 }
