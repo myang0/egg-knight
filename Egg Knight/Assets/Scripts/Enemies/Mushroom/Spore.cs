@@ -8,6 +8,8 @@ public class Spore : MonoBehaviour {
 
   private Rigidbody2D _rb;
   private SpriteRenderer _sr;
+  private Collider2D _collider;
+
   private float _initialAlpha;
 
   private void Awake() {
@@ -16,7 +18,7 @@ public class Spore : MonoBehaviour {
     float randomScale = Random.Range(0.5f, 2f);
     transform.localScale = new Vector3(randomScale, randomScale, 1);
 
-    _damage = 5f * randomScale;
+    _damage = 4f * randomScale;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
     _rb.velocity = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
@@ -24,7 +26,9 @@ public class Spore : MonoBehaviour {
     _sr = gameObject.GetComponent<SpriteRenderer>();
     _initialAlpha = _sr.color.a;
 
-    StartCoroutine(Despawn());
+    _collider = GetComponent<Collider2D>();
+
+    StartCoroutine(Fade());
   }
 
   private void Update() {
@@ -40,7 +44,7 @@ public class Spore : MonoBehaviour {
     }
   }
 
-  private IEnumerator Despawn() {
+  private IEnumerator Fade() {
     float r = _sr.color.r;
     float g = _sr.color.g;
     float b = _sr.color.b;
@@ -54,6 +58,30 @@ public class Spore : MonoBehaviour {
       _sr.color = new Color(r, g, b, alpha);
 
       yield return new WaitForSeconds(despawnSpeed);
+    }
+
+    StartCoroutine(Despawn());
+  }
+
+  private IEnumerator Despawn() {
+    _collider.enabled = false;
+
+    float r = _sr.color.r;
+    float g = _sr.color.g;
+    float b = _sr.color.b;
+
+    float alpha = _sr.color.a;
+
+    while (alpha > 0) {
+      alpha -= 0.02f;
+      _sr.color = new Color(r, g, b, alpha);
+
+      float currentScale = transform.localScale.x;
+      if (currentScale > 0) {
+        transform.localScale = (currentScale - 0.02f >= 0) ? new Vector3(currentScale - 0.02f, currentScale - 0.02f, 1) : Vector3.forward;
+      }
+
+      yield return new WaitForSeconds(0.01f);
     }
 
     Destroy(gameObject);

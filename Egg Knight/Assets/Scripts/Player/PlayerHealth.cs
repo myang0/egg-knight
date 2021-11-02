@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health {
   [SerializeField] private float _iFramesDuration;
@@ -102,6 +103,8 @@ public class PlayerHealth : Health {
       return;
     }
 
+    SceneManager.LoadScene(2);
+
     Destroy(gameObject);
   }
 
@@ -122,7 +125,7 @@ public class PlayerHealth : Health {
   public override void Heal(float amount) {
     float trueAmount = _cursedInventory.HasItem(CursedItemType.RottenYolk) ? amount / 2.0f : amount;
 
-    base.Heal(amount);
+    base.Heal(trueAmount);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
   }
