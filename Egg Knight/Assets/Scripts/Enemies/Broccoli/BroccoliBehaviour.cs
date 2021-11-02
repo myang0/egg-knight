@@ -5,12 +5,7 @@ using UnityEngine;
 public class BroccoliBehaviour : EnemyBehaviour {
   [SerializeField] private float _meleeDistance;
 
-  private string _name = "Brigand Broccoli";
-  public static event EventHandler<BossSpawnEventArgs> OnBroccoliSpawn;
-
   protected override void Awake() {
-    OnBroccoliSpawn?.Invoke(this, new BossSpawnEventArgs(_name));
-
     BroccoliHealth broccoliHealth = gameObject.GetComponent<BroccoliHealth>();
     broccoliHealth.OnBroccoliStatusDamage += HandleStatusDamage;
 

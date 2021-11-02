@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine;
 
 public class BroccoliStateManager : MonoBehaviour {
-  [SerializeField] private float _idleTime;
+  [SerializeField] private float _initialIdleTime;
+  private float _currentIdleTime;
   public event EventHandler OnIdleEnd;
 
   [SerializeField] private float _spinTime;
@@ -19,12 +20,17 @@ public class BroccoliStateManager : MonoBehaviour {
   public event EventHandler OnChargeEnd;
 
   private Animator _anim;
+
   private EnemyBehaviour _eBehaviour;
+  private EnemyHealth _eHealth;
 
   private void Awake() {
+    _currentIdleTime = _initialIdleTime;
+
     _anim = GetComponent<Animator>();
 
     _eBehaviour = GetComponent<EnemyBehaviour>();
+    _eHealth = GetComponent<EnemyHealth>();
   }
 
   public void StartIdle() {
@@ -32,9 +38,9 @@ public class BroccoliStateManager : MonoBehaviour {
   }
 
   private IEnumerator Idle() {
-    Debug.Log("idle begin");
+    _currentIdleTime = _eHealth.CurrentHealthPercentage() * _initialIdleTime;
 
-    yield return new WaitForSeconds(_idleTime);
+    yield return new WaitForSeconds(_currentIdleTime);
 
     OnIdleEnd?.Invoke(this, EventArgs.Empty);
   }
