@@ -17,4 +17,8 @@ public class YolkUpgradeManager : MonoBehaviour {
   public bool HasUpgrade(YolkUpgradeType key) {
     return _upgradeDict.ContainsKey(key) && _upgradeDict[key] == true;
   }
+
+  private void OnDestroy() {
+    YolkUpgrade.OnYolkUpgradePickup -= HandleYolkUpgradePickup;
+  }
 }

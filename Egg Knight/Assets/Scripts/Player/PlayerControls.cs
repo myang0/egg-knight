@@ -25,26 +25,21 @@ public class PlayerControls : MonoBehaviour {
 	private bool _movementKeysDown = false;
 
 	private void Awake() {
-		PlayerMovement.OnRollBegin += (object sender, RollEventArgs e) => _notRolling = false;
-		PlayerMovement.OnRollEnd += (object sender, EventArgs e) => _notRolling = true;
+		PlayerMovement.OnRollBegin += HandleRollBegin;
+		PlayerMovement.OnRollEnd += HandleRollEnd;
 
-		PlayerWeapons.OnWeaponAnimationBegin += (object sender, EventArgs e) => {
-			_weaponSwitchingEnabled = false;
-		};
+		PlayerWeapons.OnWeaponAnimationBegin += HandleWeaponAnimBegin;
+		BasePlayerWeapon.OnWeaponAnimationEnd += HandleWeaponAnimEnd;
 
-		BasePlayerWeapon.OnWeaponAnimationEnd += (object sender, EventArgs e) => {
-			_weaponSwitchingEnabled = true;
-		};
+		LevelManager.OnDialogueStart += HandleDialogueBegin;
+		LevelManager.OnDialogueEnd += HandleDialogueEnd;
 
-		LevelManager.OnDialogueStart += (object sender, EventArgs e) => _dialogueDisabled = false;
-		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _dialogueDisabled = true;
-
-		PauseScreen.OnGamePaused += (object sender, EventArgs e) => _gameRunning = false;
-		PauseScreen.OnGameResumed += (object sender, EventArgs e) => _gameRunning = true;
+		PauseScreen.OnGamePaused += HandleGamePaused;
+		PauseScreen.OnGameResumed += HandleGameResumed;
 	}
 
 	private void Update() {
-		EscPress();
+		// EscPress();
 
 		if (ControlsEnabled()) {
 			MovementControls();
@@ -120,5 +115,50 @@ public class PlayerControls : MonoBehaviour {
 		if (Input.GetKey(KeyCode.Escape)) {
 			OnEscPress?.Invoke(this, EventArgs.Empty);
 		}
+	}
+
+	private void HandleRollBegin(object sender, RollEventArgs e) {
+		_notRolling = false;
+	}
+
+	private void HandleRollEnd(object sender, EventArgs e) {
+		_notRolling = true;
+	}
+
+	private void HandleWeaponAnimBegin(object sender, EventArgs e) {
+		_weaponSwitchingEnabled = false;
+	}
+
+	private void HandleWeaponAnimEnd(object sender, EventArgs e) {
+		_weaponSwitchingEnabled = true;
+	}
+
+	private void HandleDialogueBegin(object sender, EventArgs e) {
+		_dialogueDisabled = false;
+	}
+
+	private void HandleDialogueEnd(object sender, EventArgs e) {
+		_dialogueDisabled = true;
+	}
+
+	private void HandleGamePaused(object sender, EventArgs e) {
+		_gameRunning = false;
+	}
+	private void HandleGameResumed(object sender, EventArgs e) {
+		_gameRunning = true;
+	}
+
+	private void OnDestroy() {
+		PlayerMovement.OnRollBegin -= HandleRollBegin;
+		PlayerMovement.OnRollEnd -= HandleRollEnd;
+
+		PlayerWeapons.OnWeaponAnimationBegin -= HandleWeaponAnimBegin;
+		BasePlayerWeapon.OnWeaponAnimationEnd -= HandleWeaponAnimEnd;
+
+		LevelManager.OnDialogueStart -= HandleDialogueBegin;
+		LevelManager.OnDialogueEnd -= HandleDialogueEnd;
+
+		PauseScreen.OnGamePaused -= HandleGamePaused;
+		PauseScreen.OnGameResumed -= HandleGameResumed;
 	}
 }

@@ -17,4 +17,8 @@ public class PlayerCursedInventory : MonoBehaviour {
   public bool HasItem(CursedItemType key) {
     return _curseDict.ContainsKey(key) && _curseDict[key] == true;
   }
+
+  private void OnDestroy() {
+    CursedItem.OnCursedItemPickup -= HandleCursedItemPickup;
+  }
 }

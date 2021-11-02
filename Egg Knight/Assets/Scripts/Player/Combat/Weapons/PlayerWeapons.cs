@@ -30,9 +30,7 @@ public class PlayerWeapons : MonoBehaviour {
 
     ElementalItem.OnElementalItemPickup += AddModifier;
 
-    BasePlayerWeapon.OnWeaponAnimationEnd += (object sender, EventArgs e) => {
-      _currentWeaponDisplay.SetActive(true);
-    };
+    BasePlayerWeapon.OnWeaponAnimationEnd += HandleWeaponAnimEnd;
 
     _weaponModifiers = new List<StatusCondition>();
 
@@ -74,6 +72,10 @@ public class PlayerWeapons : MonoBehaviour {
     _weaponModifiers.Add(e.status);
   }
 
+  private void HandleWeaponAnimEnd(object sender, EventArgs e) {
+    _currentWeaponDisplay.SetActive(true);
+  }
+
   private void DisplayCurrentWeapon() {
     if (_currentWeaponDisplay != null) {
       Destroy(_currentWeaponDisplay);
@@ -93,5 +95,13 @@ public class PlayerWeapons : MonoBehaviour {
     Vector2 vectorToMouse = VectorHelper.GetVectorToPoint(transform.position, mousePosInWorld);
 
     return Vector2.SignedAngle(Vector2.up, vectorToMouse);
+  }
+
+  private void OnDestroy() {
+    PlayerControls.OnQPress -= SwitchPrevWeapon;
+    PlayerControls.OnEPress -= SwitchNextWeapon;
+    PlayerControls.OnLeftClick -= HandleAttack;
+    ElementalItem.OnElementalItemPickup -= AddModifier;
+    BasePlayerWeapon.OnWeaponAnimationEnd -= HandleWeaponAnimEnd;
   }
 }

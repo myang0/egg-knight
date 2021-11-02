@@ -38,4 +38,10 @@ public class BossHealthBar : MonoBehaviour {
     _barIcon?.SetActive(false);
     _nameText?.SetActive(false);
   }
+
+  private void OnDestroy() {
+    LevelManager.OnBroccoliFightBegin -= HandleBossSpawn;
+    BroccoliHealth.OnBroccoliDamage -= HandleHealthChange;
+    BroccoliHealth.OnBroccoliDeath -= HandleBossDeath;
+  }
 }

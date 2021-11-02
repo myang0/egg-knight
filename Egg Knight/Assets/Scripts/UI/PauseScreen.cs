@@ -8,7 +8,7 @@ public class PauseScreen : MonoBehaviour {
   public static event EventHandler OnGameResumed;
 
   public void Awake() {
-    PlayerControls.OnEscPress += HandleEscPress;
+    UIControls.OnEscPress += HandleEscPress;
     ResumeButton.OnResumeButtonPressed += HandleResumeButtonPressed;
   }
 
@@ -24,5 +24,10 @@ public class PauseScreen : MonoBehaviour {
     Time.timeScale = 1;
 
     OnGameResumed?.Invoke(this, EventArgs.Empty);
+  }
+
+  private void OnDestroy() {
+    PlayerControls.OnEscPress -= HandleEscPress;
+    ResumeButton.OnResumeButtonPressed -= HandleResumeButtonPressed;
   }
 }
