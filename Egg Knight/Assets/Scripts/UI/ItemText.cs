@@ -52,4 +52,8 @@ public class ItemText : MonoBehaviour {
       yield return new WaitForSeconds(0.01f);
     }
   }
+
+  private void OnDestroy() {
+    BaseItem.OnItemTextDisplay -= HandleTextChange;
+  }
 }

@@ -14,8 +14,6 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler OnQPress;
 	public static event EventHandler OnEPress;
 
-	public static event EventHandler OnEscPress;
-
 	private bool _notRolling = true;
 	private bool _dialogueDisabled = true;
 	private bool _gameRunning = true;
@@ -39,8 +37,6 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void Update() {
-		// EscPress();
-
 		if (ControlsEnabled()) {
 			MovementControls();
 
@@ -108,12 +104,6 @@ public class PlayerControls : MonoBehaviour {
 			OnQPress?.Invoke(this, EventArgs.Empty);
 		} else if (Input.GetKeyDown(KeyCode.E)) {
 			OnEPress?.Invoke(this, EventArgs.Empty);
-		}
-	}
-
-	private void EscPress() {
-		if (Input.GetKey(KeyCode.Escape)) {
-			OnEscPress?.Invoke(this, EventArgs.Empty);
 		}
 	}
 

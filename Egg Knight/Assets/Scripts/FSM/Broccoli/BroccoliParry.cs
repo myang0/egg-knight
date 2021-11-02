@@ -30,4 +30,11 @@ public class BroccoliParry : StateMachineBehaviour {
   private void HandleParryEnd(object sender, EventArgs e) {
     _anim.SetBool("IsParrying", false);
   }
+
+  private void OnDestroy() {
+    if (_subscribers > 0) {
+      _bStateManager.OnParryEnd -= HandleParryEnd;
+      _subscribers = 0;
+    }
+  }
 }

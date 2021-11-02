@@ -27,4 +27,11 @@ public class BroccoliWalk : StateMachineBehaviour {
     _rb.velocity = Vector2.zero;
     _anim.SetBool("IsWalking", false);
   }
+
+  private void OnDestroy() {
+    if (_subscribers > 0) {
+      _bStateManager.OnWalkEnd -= HandleWalkEnd;
+      _subscribers = 0;
+    }
+  }
 }
