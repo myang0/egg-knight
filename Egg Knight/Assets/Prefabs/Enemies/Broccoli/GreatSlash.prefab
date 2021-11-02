@@ -120,7 +120,7 @@ MonoBehaviour:
   _damageAmount: 15
   _leftAttackPoint: {fileID: 6921622869390162147}
   _rightAttackPoint: {fileID: 6921622868577606388}
-  _attackRange: 2.75
+  _attackRange: 4
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8

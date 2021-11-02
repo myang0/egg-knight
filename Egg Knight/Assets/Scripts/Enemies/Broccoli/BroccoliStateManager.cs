@@ -32,6 +32,8 @@ public class BroccoliStateManager : MonoBehaviour {
   }
 
   private IEnumerator Idle() {
+    Debug.Log("idle begin");
+
     yield return new WaitForSeconds(_idleTime);
 
     OnIdleEnd?.Invoke(this, EventArgs.Empty);
@@ -52,11 +54,7 @@ public class BroccoliStateManager : MonoBehaviour {
   }
 
   private IEnumerator Walk() {
-    Debug.Log(_walkTime);
-
     yield return new WaitForSeconds(_walkTime);
-
-    Debug.Log("end");
 
     OnWalkEnd?.Invoke(this, EventArgs.Empty);
   }

@@ -7,6 +7,8 @@ public class BroccoliSpin : StateMachineBehaviour {
   private Rigidbody2D _rb;
   private Animator _anim;
 
+  private static int _subscribers = 0;
+
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
@@ -16,7 +18,11 @@ public class BroccoliSpin : StateMachineBehaviour {
     _anim.SetBool("IsSpinning", true);
 
     _bStateManager.StartSpin();
-    _bStateManager.OnSpinEnd += HandleSpinEnd;
+
+    if (_subscribers <= 0) {
+      _bStateManager.OnSpinEnd += HandleSpinEnd;
+      _subscribers++;
+    }
   }
 
   private void HandleSpinEnd(object sender, EventArgs e) {

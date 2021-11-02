@@ -6,14 +6,19 @@ public class BroccoliParry : StateMachineBehaviour {
 
   private Animator _anim;
 
+  private static int _subscribers = 0;
+
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
     _anim = animator;
-    _anim.SetBool("IsParrying", true);
 
     _bStateManager.StartParry();
-    _bStateManager.OnParryEnd += HandleParryEnd;
+
+    if (_subscribers <= 0) {
+      _bStateManager.OnParryEnd += HandleParryEnd;
+      _subscribers++;
+    }
   }
 
   public void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {

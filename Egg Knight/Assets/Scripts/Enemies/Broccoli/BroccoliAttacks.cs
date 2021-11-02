@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BroccoliAttacks : MonoBehaviour {
@@ -13,56 +15,68 @@ public class BroccoliAttacks : MonoBehaviour {
   [SerializeField] private Transform _leftThrowPoint;
   [SerializeField] private Transform _rightThrowPoint;
 
-  [SerializeField] private Transform _spinAttackPoint;
+  [SerializeField] private Transform _leftSpinAttackPoint;
+  [SerializeField] private Transform _middleSpinAttackPoint;
+  [SerializeField] private Transform _rightSpinAttackPoint;
 
-  [SerializeField] private float _spinAttackWidth;
-  [SerializeField] private float _spinAttackHeight;
   [SerializeField] private float _spinAttackDamage;
+  [SerializeField] private float _middleSpinAttackRange;
+  [SerializeField] private float _sideSpinAttackRange;
 
   [SerializeField] private GameObject _boomerangBladePrefab;
 
   [SerializeField] private GameObject _greatSlashPrefab;
 
+  private Transform _playerTransform;
+
   private void Awake() {
-    _playerLayer = LayerMask.NameToLayer("Player");
+    _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
   public void LeftWalkAttack() {
-    Collider2D[] playersInRange = GetPlayersInWalkAttackRange(_leftWalkAttackPoint);
+    Transform attackPoint = IsSpriteFlipped() ? _rightWalkAttackPoint : _leftWalkAttackPoint;
+    Collider2D[] playersInRange = GetPlayersInRange(attackPoint, _walkAttackRange);
 
     if (playersInRange.Length > 0) {
-      DamagePlayer(playersInRange[0]);
+      DamagePlayer(playersInRange[0], _walkAttackDamage);
     }
   }
 
   public void RightWalkAttack() {
-    Collider2D[] playersInRange = GetPlayersInWalkAttackRange(_rightWalkAttackPoint);
+    Transform attackPoint = IsSpriteFlipped() ? _leftWalkAttackPoint : _rightWalkAttackPoint;
+    Collider2D[] playersInRange = GetPlayersInRange(attackPoint, _walkAttackRange);
 
     if (playersInRange.Length > 0) {
-      DamagePlayer(playersInRange[0]);
+      DamagePlayer(playersInRange[0], _walkAttackDamage);
     }
+  }
+
+  private bool IsSpriteFlipped() {
+    return _playerTransform.position.x < transform.position.x;
   }
 
   public void SpinAttack() {
-    Collider2D[] playersInRange = Physics2D.OverlapBoxAll(
-      _spinAttackPoint.position,
-      new Vector2(_spinAttackWidth, _spinAttackHeight),
-      0,
-      _playerLayer
-    );
+    List<Collider2D> playersInLeftRange = GetPlayersInRange(_leftSpinAttackPoint, _sideSpinAttackRange).ToList();
+    List<Collider2D> playersInMiddleRange = GetPlayersInRange(_middleSpinAttackPoint, _middleSpinAttackRange).ToList();
+    List<Collider2D> playersInRightRange = GetPlayersInRange(_rightSpinAttackPoint, _sideSpinAttackRange).ToList();
+
+    Collider2D[] playersInRange = playersInLeftRange
+      .Union(playersInMiddleRange)
+      .Union(playersInRightRange)
+      .ToArray();
 
     if (playersInRange.Length > 0) {
-      DamagePlayer(playersInRange[0]);
+      DamagePlayer(playersInRange[0], _spinAttackDamage);
     }
   }
 
-  private Collider2D[] GetPlayersInWalkAttackRange(Transform attackPoint) {
-    return Physics2D.OverlapCircleAll(attackPoint.position, _walkAttackRange, _playerLayer);
+  private Collider2D[] GetPlayersInRange(Transform attackPoint, float attackRange) {
+    return Physics2D.OverlapCircleAll(attackPoint.position, attackRange, _playerLayer);
   }
 
-  private void DamagePlayer(Collider2D player) {
+  private void DamagePlayer(Collider2D player, float damage) {
     PlayerHealth playerHealth = player.gameObject.GetComponent<PlayerHealth>();
-    playerHealth?.Damage(_walkAttackDamage);
+    playerHealth?.Damage(damage);
   }
 
   public void ThrowBlades() {
@@ -90,6 +104,8 @@ public class BroccoliAttacks : MonoBehaviour {
     Gizmos.DrawWireSphere(_leftWalkAttackPoint.position, _walkAttackRange);
     Gizmos.DrawWireSphere(_rightWalkAttackPoint.position, _walkAttackRange);
 
-    Gizmos.DrawWireCube(_spinAttackPoint.position, new Vector3(_spinAttackWidth, _spinAttackHeight, 1));
+    Gizmos.DrawWireSphere(_leftSpinAttackPoint.position, _sideSpinAttackRange);
+    Gizmos.DrawWireSphere(_middleSpinAttackPoint.position, _middleSpinAttackRange);
+    Gizmos.DrawWireSphere(_rightSpinAttackPoint.position, _sideSpinAttackRange);
   }
 }

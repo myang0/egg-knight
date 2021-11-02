@@ -7,6 +7,8 @@ public class BroccoliWalk : StateMachineBehaviour {
   private Rigidbody2D _rb;
   private Animator _anim;
 
+  private static int _subscribers = 0;
+
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
@@ -14,7 +16,11 @@ public class BroccoliWalk : StateMachineBehaviour {
     _anim = animator;
 
     _bStateManager.StartWalk();
-    _bStateManager.OnWalkEnd += HandleWalkEnd;
+
+    if (_subscribers <= 0) {
+      _bStateManager.OnWalkEnd += HandleWalkEnd;
+      _subscribers++;
+    }
   }
 
   private void HandleWalkEnd(object sender, EventArgs e) {
