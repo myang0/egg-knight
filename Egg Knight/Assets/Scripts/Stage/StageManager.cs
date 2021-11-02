@@ -117,8 +117,9 @@ namespace Stage {
                 case StageType.Medium:
                 case StageType.Hard:
                 case StageType.Easy:
-                case StageType.Boss:
                     return enemyCount == 0 && numWavesCurr == numWavesMax;
+                case StageType.Boss:
+                    return enemiesList.Count == 0 && numWavesCurr == numWavesMax;
                 case StageType.Survival:
                     return numWavesCurr == 1 && numWavesMax == 1;
             }
