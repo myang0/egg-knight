@@ -10,7 +10,6 @@ public class BroccoliParry : StateMachineBehaviour {
     _bStateManager = animator.GetComponent<BroccoliStateManager>();
 
     _anim = animator;
-    _anim.SetBool("IsParrying", true);
 
     _bStateManager.StartParry();
     _bStateManager.OnParryEnd += HandleParryEnd;
