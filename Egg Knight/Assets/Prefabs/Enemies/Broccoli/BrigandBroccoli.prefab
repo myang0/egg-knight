@@ -390,7 +390,7 @@ MonoBehaviour:
   _spinTime: 6
   _walkTime: 5
   _parryTime: 2
-  _chargeTime: 2
+  _chargeTime: 1
 --- !u!114 &7661167815159373118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   _longDistanceThreshold: 20
   _shortDistanceThreshold: 5
   _minSpinMoveSpeed: 2.5
-  _maxSpinMoveSpeed: 20
+  _maxSpinMoveSpeed: 25
   _walkMoveSpeed: 2.75
 --- !u!50 &7661167815159373119
 Rigidbody2D:

@@ -342,15 +342,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7661167815159373115, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
-        type: 3}
-      propertyPath: _chargeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661167815159373118, guid: 2e36deb3e90e0ed4f9f43eae435fce60,
-        type: 3}
-      propertyPath: _maxSpinMoveSpeed
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e36deb3e90e0ed4f9f43eae435fce60, type: 3}
