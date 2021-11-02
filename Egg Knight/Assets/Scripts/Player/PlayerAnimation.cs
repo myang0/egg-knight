@@ -20,11 +20,8 @@ public class PlayerAnimation : MonoBehaviour {
 
     LevelManager.OnDialogueStart += HandleStop;
 
-    PlayerHealth.OnIFramesEnabled += (object sender, EventArgs e) => _iFramesActive = true;
-    PlayerHealth.OnIFramesDisabled += (object sender, EventArgs e) => {
-      _iFramesActive = false;
-      _sr.color = new Color(1, 1, 1, 1);
-    };
+    PlayerHealth.OnIFramesEnabled += HandleOnIFramesEnabled;
+    PlayerHealth.OnIFramesDisabled += HandleOnIFramesDisabled;
 
     _sr = gameObject.GetComponent<SpriteRenderer>();
     _anim = gameObject.GetComponent<Animator>();
@@ -50,13 +47,30 @@ public class PlayerAnimation : MonoBehaviour {
     StopMovement();
   }
 
+  private void HandleOnIFramesEnabled(object sender, EventArgs e) {
+    _iFramesActive = true;
+  }
+
+  private void HandleOnIFramesDisabled(object sender, EventArgs e) {
+    _iFramesActive = false;
+    _sr.color = new Color(1, 1, 1, 1);
+  }
+
   private void StartMovement() {
+    if (_anim == null) {
+      return;
+    }
+
     if (_anim.GetBool("Moving") == false) {
       _anim.SetBool("Moving", true);
     }
   }
 
   private void StopMovement() {
+    if (_anim == null) {
+      return;
+    }
+
     if (_anim.GetBool("Moving") == true) {
       _anim.SetBool("Moving", false);
     }
@@ -76,5 +90,15 @@ public class PlayerAnimation : MonoBehaviour {
     if (_isRolling) {
       transform.Rotate(0, 0, _anglesPerFrame);
     }
+  }
+
+  private void OnDestroy() {
+    PlayerMovement.OnRollBegin -= HandleRollBegin;
+    PlayerMovement.OnRollEnd -= HandleRollEnd;
+    PlayerMovement.OnMovementBegin -= HandleMovement;
+    PlayerMovement.OnMovementEnd -= HandleStop;
+    LevelManager.OnDialogueStart -= HandleStop;
+    PlayerHealth.OnIFramesEnabled -= HandleOnIFramesEnabled;
+    PlayerHealth.OnIFramesDisabled -= HandleOnIFramesDisabled;
   }
 }

@@ -32,4 +32,8 @@ public class PlayerCombat : MonoBehaviour {
       Instantiate(_eggShardPrefab, transform.position, Quaternion.identity);
     }
   }
+
+  private void OnDestroy() {
+    EggShards.OnEggShardsPickup -= HandleEggShards;
+  }
 }

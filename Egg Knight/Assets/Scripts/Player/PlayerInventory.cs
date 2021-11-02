@@ -34,4 +34,8 @@ public class PlayerInventory : MonoBehaviour {
   public int GetItemQuantity(Item key) {
     return ItemInInventory(key) ? _inventory[key] : 0;
   }
+
+  private void OnDestroy() {
+    BaseItem.OnInventoryAdd -= AddItem;
+  }
 }

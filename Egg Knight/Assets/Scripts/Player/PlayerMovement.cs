@@ -31,11 +31,15 @@ public class PlayerMovement : MonoBehaviour {
 
     _lastMovementVector = Vector2.zero;
 
-    LevelManager.OnDialogueStart += (object sender, EventArgs e) => _rb.velocity = Vector2.zero;
-		LevelManager.OnDialogueEnd += (object sender, EventArgs e) => _rb.velocity = Vector2.zero;
+    LevelManager.OnDialogueStart += HandleDialogueChange;
+		LevelManager.OnDialogueEnd += HandleDialogueChange;
   }
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
+    if (_rb == null) {
+      return;
+    }
+
     _rb.velocity = e.vector * _movementSpeed;
 
     if (e.vector != Vector2.zero) {
@@ -54,6 +58,10 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   IEnumerator Roll() {
+    if (_rb == null) {
+      yield break;
+    }
+
     _rb.velocity = _lastMovementVector * _rollSpeed;
     _rb.drag = _rollDrag;
 
@@ -79,6 +87,10 @@ public class PlayerMovement : MonoBehaviour {
     _canRoll = true;
   }
 
+  private void HandleDialogueChange(object sender, EventArgs e) {
+    _rb.velocity = Vector2.zero;
+  }
+
   public void MultiplyMoveSpeed(float multiplyValue) {
     _movementSpeed *= multiplyValue;
   }
@@ -89,5 +101,12 @@ public class PlayerMovement : MonoBehaviour {
 
   public void MultiplyRollCooldown(float multiplyValue) {
     _rollCooldown *= multiplyValue;
+  }
+
+  private void OnDestroy() {
+    PlayerControls.OnMovement -= HandleMovement;
+    PlayerControls.OnSpaceBarPressed -= HandleRoll;
+    LevelManager.OnDialogueStart -= HandleDialogueChange;
+		LevelManager.OnDialogueEnd -= HandleDialogueChange;
   }
 }

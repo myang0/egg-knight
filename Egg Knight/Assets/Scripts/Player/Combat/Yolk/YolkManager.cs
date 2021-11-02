@@ -75,4 +75,8 @@ public class YolkManager : MonoBehaviour {
   public void MultiplyByPercentCost(float multiplier) {
     _yolkPercentCost *= multiplier;
   }
+
+  private void OnDestroy() {
+    PlayerControls.OnRightClick -= HandleRightClick;
+  }
 }

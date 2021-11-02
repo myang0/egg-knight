@@ -136,4 +136,9 @@ public class PlayerHealth : Health {
       OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     }
   }
+
+  private void OnDestroy() {
+    PlayerMovement.OnRollBegin -= HandleRoll;
+    PlayerMovement.OnRollEnd -= HandleRollEnd;
+  }
 }
