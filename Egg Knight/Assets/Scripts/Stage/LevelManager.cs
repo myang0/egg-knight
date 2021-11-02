@@ -38,6 +38,10 @@ namespace Stage
         public static event EventHandler OnDialogueStart;
         public static event EventHandler OnDialogueEnd;
 
+        private string _level1BossName = "Brigand Broccoli";
+        public static event EventHandler<BossSpawnEventArgs> OnBroccoliFightBegin;
+        public static event EventHandler OnBroccoliFightEnd;
+
         void Start() {
             StartAsserts();
 
@@ -376,6 +380,17 @@ namespace Stage
 
         public void EndDialogue() {
             OnDialogueEnd.Invoke(this, EventArgs.Empty);
+        }
+
+        public void BeginBroccoliFight() {
+            GameObject broccoliObject = GameObject.Find("BrigandBroccoli");
+            broccoliObject.GetComponent<Animator>().SetBool("IsActive", true);
+
+            OnBroccoliFightBegin?.Invoke(this, new BossSpawnEventArgs(_level1BossName));
+        }
+
+        public void EndBroccoliFight() {
+
         }
     }
 }

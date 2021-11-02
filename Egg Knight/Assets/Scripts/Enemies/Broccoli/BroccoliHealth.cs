@@ -29,6 +29,8 @@ public class BroccoliHealth : EnemyHealth {
 
   protected override void Die() {
     OnBroccoliDeath?.Invoke(this, EventArgs.Empty);
+    Fungus.Flowchart.BroadcastFungusMessage("BrigandBroccoliEnd");
+    _anim.Play("Dead");
     base.Die();
   }
 

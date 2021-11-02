@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381452803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -0.75, z: 0}
+  m_LocalPosition: {x: -2, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011052650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -0.75, z: 0}
+  m_LocalPosition: {x: 2, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7661167815159373114}
@@ -231,6 +231,8 @@ GameObject:
   - component: {fileID: 505911304}
   - component: {fileID: 505911296}
   - component: {fileID: 1111544623}
+  - component: {fileID: 1513451022818137773}
+  - component: {fileID: 2041266772457052460}
   m_Layer: 8
   m_Name: BrigandBroccoli
   m_TagString: Enemy
@@ -340,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4f8e987ac00ba4dada3acf4fd3b3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 500
+  _maxHealth: 1000
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
   _weakTo: 0
@@ -386,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776ee1b20dbff224fb0cca3cef5913b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idleTime: 1.5
+  _initialIdleTime: 3
   _spinTime: 6
   _walkTime: 5
   _parryTime: 2
@@ -442,18 +444,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0}
+  m_Offset: {x: -0.13, y: -0.88}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.3666666, y: 2.5166667}
+    oldSize: {x: 3.1555555, y: 3.3555555}
     newSize: {x: 3.012, y: 3.136}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.06, y: 2.46}
+  m_Size: {x: 1.23, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &505911296
 MonoBehaviour:
@@ -469,7 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftWalkAttackPoint: {fileID: 381452804}
   _rightWalkAttackPoint: {fileID: 1011052651}
-  _walkAttackRange: 1.5
+  _walkAttackRange: 1.75
   _walkAttackDamage: 10
   _playerLayer:
     serializedVersion: 2
@@ -509,6 +511,45 @@ MonoBehaviour:
     type: 3}
   _bleedParticles: {fileID: 350271996582760256, guid: ab9b8c45bca986a4aaac8babc912872f,
     type: 3}
+--- !u!114 &1513451022818137773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661167815159370439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df80f7e9c6b9ac44b13879306ac4efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activationCollider: {fileID: 2041266772457052460}
+--- !u!61 &2041266772457052460
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661167815159370439}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.1555555, y: 3.3555555}
+    newSize: {x: 3.012, y: 3.136}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35, y: 15}
+  m_EdgeRadius: 0
 --- !u!1 &7697024850751781804
 GameObject:
   m_ObjectHideFlags: 0

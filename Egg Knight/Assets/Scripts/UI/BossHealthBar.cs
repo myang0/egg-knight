@@ -1,4 +1,5 @@
 using System;
+using Stage;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,7 +14,7 @@ public class BossHealthBar : MonoBehaviour {
   [SerializeField] private GameObject _nameText;
 
   private void Awake() {
-    BroccoliBehaviour.OnBroccoliSpawn += HandleBossSpawn;
+    LevelManager.OnBroccoliFightBegin += HandleBossSpawn;
     BroccoliHealth.OnBroccoliDamage += HandleHealthChange;
     BroccoliHealth.OnBroccoliDeath += HandleBossDeath;
   }
