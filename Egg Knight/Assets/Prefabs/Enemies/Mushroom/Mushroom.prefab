@@ -266,7 +266,7 @@ MonoBehaviour:
   isWallCollisionOn: 0
   alertAnimator: {fileID: 1361924306}
   isDead: 0
-  _attackDamage: 7.5
+  _attackDamage: 5
 --- !u!114 &3118377129507018817
 MonoBehaviour:
   m_ObjectHideFlags: 0
