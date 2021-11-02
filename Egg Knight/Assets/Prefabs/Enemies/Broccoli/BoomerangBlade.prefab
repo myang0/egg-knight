@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8598253601163690629}
   - component: {fileID: 8598253601163690628}
   - component: {fileID: 8598253601163690627}
-  m_Layer: 0
+  - component: {fileID: 201744733}
+  m_Layer: 12
   m_Name: BoomerangBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d48ef9e57ada3ac47b79819525c60f4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92dace93e8c876c44945dc5f7033a340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +122,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8233333
+  m_Radius: 2.036
 --- !u!114 &8598253601163690627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +136,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
+--- !u!95 &201744733
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598253601163690648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77d8167b463aac643920b73d324a77e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

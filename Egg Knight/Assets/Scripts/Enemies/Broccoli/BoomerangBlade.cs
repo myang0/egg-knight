@@ -35,7 +35,7 @@ public class BoomerangBlade : MonoBehaviour {
   private IEnumerator DisableCollider() {
     _collider.enabled = false;
 
-    yield return new WaitForSeconds(0.25f);
+    yield return new WaitForSeconds(0.5f);
 
     _collider.enabled = true;
   }
@@ -47,8 +47,6 @@ public class BoomerangBlade : MonoBehaviour {
   }
 
   private void FixedUpdate() {
-    transform.Rotate(0, 0, 5f);
-
     if (_isReturning) {
       _speedMultiplier -= 0.0375f;
       _rb.velocity = _origVelocity * _speedMultiplier;
@@ -65,7 +63,9 @@ public class BoomerangBlade : MonoBehaviour {
 
     if (bHealth != null) {
       Animator bAnim = other.GetComponent<Animator>();
-      bAnim.SetBool("IsThrowing", false);
+      if (bAnim.GetBool("IsThrowing")) {
+        bAnim.SetBool("IsThrowing", false);
+      }
 
       Destroy(gameObject);
     }
