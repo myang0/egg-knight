@@ -5,7 +5,7 @@ public static class StatusConfig {
   public static float YolkedSpeedModifier = 0.5f;
   public static float SalmonellaTimeBetweenTicks = 1;
   public static float SalmonellaTicks = 3;
-  public static float SalmonellaDamage = 2;
+  public static float SalmonellaDamage = 3;
 
   public static int IgniteTicks = 3;
   public static float IgniteTimeBetweenTicks = 1;

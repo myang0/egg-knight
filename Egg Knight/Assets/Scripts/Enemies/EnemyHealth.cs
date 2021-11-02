@@ -119,7 +119,7 @@ public abstract class EnemyHealth : Health {
 
   protected override void Die() {
     int healRoll = UnityEngine.Random.Range(0, 100);
-    if (healRoll < (5 * _playerInventory.GetItemQuantity(Item.ChefHat))) {
+    if (healRoll < (10 * _playerInventory.GetItemQuantity(Item.ChefHat))) {
       Instantiate(_healingYolkPrefab, transform.position, Quaternion.identity);
     }
 

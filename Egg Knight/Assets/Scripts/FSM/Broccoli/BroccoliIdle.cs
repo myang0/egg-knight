@@ -9,6 +9,7 @@ public class BroccoliIdle : StateMachineBehaviour {
   private Animator _anim;
 
   private static int _subscribers = 0;
+  private static BroccoliMeleeAttack _lastUsedAttack = BroccoliMeleeAttack.Walk;
 
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _bBehaviour = animator.GetComponent<EnemyBehaviour>() as BroccoliBehaviour;
@@ -40,15 +41,40 @@ public class BroccoliIdle : StateMachineBehaviour {
   }
 
   private void ChooseCloseRangeAttack() {
-    float attackRoll = Random.Range(0f, 1f);
+    BroccoliMeleeAttack currentAttack = _lastUsedAttack;
 
-    if (attackRoll < 0.33f) {
-      _anim.SetBool("IsWalking", true);
-    } else if (attackRoll >= 0.33f && attackRoll < 0.66f) {
-      _anim.SetBool("IsChargingSlash", true);
-    } else {
-      _anim.SetBool("IsParrying", true);
+    while (currentAttack == _lastUsedAttack) {
+      float attackRoll = Random.Range(0f, 1f);
+
+      if (attackRoll < 0.33f) {
+        currentAttack = BroccoliMeleeAttack.Walk;
+      } else if (attackRoll >= 0.33f && attackRoll < 0.66f) {
+        currentAttack = BroccoliMeleeAttack.Slash;
+      } else {
+        currentAttack = BroccoliMeleeAttack.Parry;
+      }
     }
+
+    switch (currentAttack) {
+      case BroccoliMeleeAttack.Walk: {
+        _anim.SetBool("IsWalking", true);
+        break;
+      }
+      case BroccoliMeleeAttack.Slash: {
+        _anim.SetBool("IsChargingSlash", true);
+        break;
+      }
+      case BroccoliMeleeAttack.Parry: {
+        _anim.SetBool("IsParrying", true);
+        break;
+      }
+      default: {
+        Debug.LogError("Unkown melee attack");
+        break;
+      }
+    }
+
+    _lastUsedAttack = currentAttack;
   }
 
   private void ChooseLongRangeAttack() {
@@ -66,5 +92,7 @@ public class BroccoliIdle : StateMachineBehaviour {
       _bStateManager.OnIdleEnd -= HandleIdleEnd;
       _subscribers = 0;
     }
+
+    _lastUsedAttack = BroccoliMeleeAttack.Walk;
   }
 }

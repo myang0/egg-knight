@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Second Yolk
-  Description: A second chance
+  Description: Revive on death
   InventoryKey: 6

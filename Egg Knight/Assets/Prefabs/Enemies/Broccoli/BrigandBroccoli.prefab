@@ -407,9 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _longDistanceThreshold: 20
   _shortDistanceThreshold: 5
-  _minSpinMoveSpeed: 2.5
+  _minSpinMoveSpeed: 3
   _maxSpinMoveSpeed: 25
-  _walkMoveSpeed: 2.75
+  _walkMoveSpeed: 3.5
 --- !u!50 &7661167815159373119
 Rigidbody2D:
   serializedVersion: 4
