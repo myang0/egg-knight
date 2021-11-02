@@ -271,8 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
     type: 3}
-  _yolkCooldown: 2
-  _yolkPercentCost: 0.025
+  _yolkCooldown: 1
+  _yolkPercentCost: 0.02
 --- !u!114 &8208799723587694136
 MonoBehaviour:
   m_ObjectHideFlags: 0
