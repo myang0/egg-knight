@@ -1246,6 +1246,15 @@
           </e>
           <e p="Eggitha.cs" t="Include" />
           <e p="Enemies" t="Include">
+            <e p="Broccoli" t="Include">
+              <e p="BoomerangBlade.cs" t="Include" />
+              <e p="BroccoliAttacks.cs" t="Include" />
+              <e p="BroccoliBehaviour.cs" t="Include" />
+              <e p="BroccoliHealth.cs" t="Include" />
+              <e p="BroccoliMovement.cs" t="Include" />
+              <e p="BroccoliStateManager.cs" t="Include" />
+              <e p="GreatSlash.cs" t="Include" />
+            </e>
             <e p="EggGuard" t="Include">
               <e p="EggGuardAttack.cs" t="Include" />
               <e p="EggGuardBehaviour.cs" t="Include" />
@@ -1303,6 +1312,8 @@
           </e>
           <e p="Events" t="Include">
             <e p="BalanceChangeEventArgs.cs" t="Include" />
+            <e p="BossSpawnEventArgs.cs" t="Include" />
+            <e p="CoinRateChangeEventArgs.cs" t="Include" />
             <e p="CursedItemEventArgs.cs" t="Include" />
             <e p="ElementalItemEventArgs.cs" t="Include" />
             <e p="EnemyStatusEventArgs.cs" t="Include" />
@@ -1314,6 +1325,16 @@
             <e p="YolkUpgradeEventArgs.cs" t="Include" />
           </e>
           <e p="FSM" t="Include">
+            <e p="Broccoli" t="Include">
+              <e p="BroccoliChargeSlash.cs" t="Include" />
+              <e p="BroccoliChargeSpin.cs" t="Include" />
+              <e p="BroccoliChargeThrow.cs" t="Include" />
+              <e p="BroccoliIdle.cs" t="Include" />
+              <e p="BroccoliParry.cs" t="Include" />
+              <e p="BroccoliSlash.cs" t="Include" />
+              <e p="BroccoliSpin.cs" t="Include" />
+              <e p="BroccoliWalk.cs" t="Include" />
+            </e>
             <e p="EnemyAttack.cs" t="Include" />
             <e p="EnemyDeadState.cs" t="Include" />
             <e p="EnemyIdle.cs" t="Include" />
@@ -1355,6 +1376,7 @@
             <e p="Offensive" t="Include">
               <e p="EggShardBehaviour.cs" t="Include" />
               <e p="EggShards.cs" t="Include" />
+              <e p="GoldChainNecklace.cs" t="Include" />
             </e>
             <e p="Upgrades" t="Include">
               <e p="Yolk" t="Include">
@@ -1407,6 +1429,7 @@
             <e p="StageManager.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="BossHealthBar.cs" t="Include" />
             <e p="Buttons" t="Include">
               <e p="ExitGameButton.cs" t="Include" />
               <e p="ResumeButton.cs" t="Include" />
