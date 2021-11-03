@@ -71,7 +71,6 @@ namespace Stage {
                     stageType == StageType.Hard || stageType == StageType.Survival) {
                     InitializeStage();
                     SpawnEnemies();
-                    
                 }
                 
                 if (IsStageCleared()) {
@@ -112,7 +111,7 @@ namespace Stage {
                 case StageType.Rest:
                 case StageType.Shop:
                 case StageType.Sirracha:
-                case StageType.Spawn:   
+                case StageType.Spawn:
                     return true;
                 case StageType.Medium:
                 case StageType.Hard:
