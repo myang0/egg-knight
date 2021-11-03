@@ -17,6 +17,10 @@ public class BroccoliHealth : EnemyHealth {
   }
 
   public override void Damage(float amount) {
+    if (_anim.GetBool("IsActive") == false) {
+      return;
+    }
+
     if (_anim.GetBool("IsParrying")) {
       _anim.SetBool("HitDuringParry", true);
       

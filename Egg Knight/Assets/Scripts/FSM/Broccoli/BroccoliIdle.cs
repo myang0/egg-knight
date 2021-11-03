@@ -21,6 +21,8 @@ public class BroccoliIdle : StateMachineBehaviour {
       _anim.SetBool(parameter.name, false);
     }
 
+    _anim.SetBool("IsActive", true);
+
     Rigidbody2D rb = animator.GetComponent<Rigidbody2D>();
     rb.velocity = Vector2.zero;
 

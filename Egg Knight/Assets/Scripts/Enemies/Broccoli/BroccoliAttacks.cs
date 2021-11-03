@@ -29,6 +29,8 @@ public class BroccoliAttacks : MonoBehaviour {
 
   private Transform _playerTransform;
 
+  [SerializeField] private float _contactDamage;
+
   private void Awake() {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -95,6 +97,13 @@ public class BroccoliAttacks : MonoBehaviour {
   public void GreatSlash() {
     if (_greatSlashPrefab != null) {
       Instantiate(_greatSlashPrefab, transform.position, Quaternion.identity);
+    }
+  }
+
+  private void OnCollisionEnter2D(Collision2D other) {
+    if (other.gameObject.CompareTag("Player")) {
+      PlayerHealth pHealth = other.gameObject.GetComponent<PlayerHealth>();
+      pHealth?.Damage(_contactDamage);
     }
   }
 

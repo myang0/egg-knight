@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776ee1b20dbff224fb0cca3cef5913b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialIdleTime: 3
+  _initialIdleTime: 2
   _spinTime: 6
   _walkTime: 5
   _parryTime: 2
@@ -409,7 +409,7 @@ MonoBehaviour:
   _shortDistanceThreshold: 5
   _minSpinMoveSpeed: 3
   _maxSpinMoveSpeed: 25
-  _walkMoveSpeed: 3
+  _walkMoveSpeed: 3.5
 --- !u!50 &7661167815159373119
 Rigidbody2D:
   serializedVersion: 4
@@ -489,6 +489,7 @@ MonoBehaviour:
     type: 3}
   _greatSlashPrefab: {fileID: 6921622868308280127, guid: 95802ae86144b8e41937a21f56917d30,
     type: 3}
+  _contactDamage: 7.5
 --- !u!114 &1111544623
 MonoBehaviour:
   m_ObjectHideFlags: 0
