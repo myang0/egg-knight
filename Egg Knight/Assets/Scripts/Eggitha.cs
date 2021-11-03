@@ -23,6 +23,7 @@ public class Eggitha : MonoBehaviour {
     public bool hasMovedLeft;
     public bool hasMovedRight;
     public bool hasRolled;
+    public bool playerInRange;
     public List<TrainingDummyBehavior> dummies = new List<TrainingDummyBehavior>();
 
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class Eggitha : MonoBehaviour {
                 StartCoroutine(DelayBeginPreAttack());
         }
         
-        else if (tutorialState == TutorialState.PreLore && Input.GetKey(KeyCode.F)) {
+        else if (tutorialState == TutorialState.PreLore && Input.GetKey(KeyCode.F) && playerInRange) {
             BeginLore();
         }
 
@@ -134,12 +135,14 @@ public class Eggitha : MonoBehaviour {
         if (tutorialState == TutorialState.NotStarted) BeginPreLore();
         if (tutorialState == TutorialState.PreLore) {
             _waveCounterText.SetText("Press F to speak to Queen Eggitha", 0);
+            playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (tutorialState == TutorialState.PreLore) {
             _waveCounterText.SetText("", 0);
+            playerInRange = false;
         }
     }
 

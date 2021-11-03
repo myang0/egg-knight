@@ -1248,6 +1248,7 @@
           <e p="Enemies" t="Include">
             <e p="Broccoli" t="Include">
               <e p="BoomerangBlade.cs" t="Include" />
+              <e p="BroccoliActivator.cs" t="Include" />
               <e p="BroccoliAttacks.cs" t="Include" />
               <e p="BroccoliBehaviour.cs" t="Include" />
               <e p="BroccoliHealth.cs" t="Include" />
@@ -1297,6 +1298,7 @@
             </e>
           </e>
           <e p="Enums" t="Include">
+            <e p="BroccoliMeleeAttack.cs" t="Include" />
             <e p="CursedItemType.cs" t="Include" />
             <e p="DamageType.cs" t="Include" />
             <e p="Direction.cs" t="Include" />
@@ -1329,6 +1331,7 @@
               <e p="BroccoliChargeSlash.cs" t="Include" />
               <e p="BroccoliChargeSpin.cs" t="Include" />
               <e p="BroccoliChargeThrow.cs" t="Include" />
+              <e p="BroccoliDead.cs" t="Include" />
               <e p="BroccoliIdle.cs" t="Include" />
               <e p="BroccoliParry.cs" t="Include" />
               <e p="BroccoliSlash.cs" t="Include" />
@@ -1432,12 +1435,14 @@
             <e p="BossHealthBar.cs" t="Include" />
             <e p="Buttons" t="Include">
               <e p="ExitGameButton.cs" t="Include" />
+              <e p="RestartGameButton.cs" t="Include" />
               <e p="ResumeButton.cs" t="Include" />
             </e>
             <e p="HealthBar.cs" t="Include" />
             <e p="ItemText.cs" t="Include" />
             <e p="PauseScreen.cs" t="Include" />
             <e p="TitleMenu.cs" t="Include" />
+            <e p="UIControls.cs" t="Include" />
             <e p="WalletText.cs" t="Include" />
             <e p="WaveCounterText.cs" t="Include" />
           </e>
