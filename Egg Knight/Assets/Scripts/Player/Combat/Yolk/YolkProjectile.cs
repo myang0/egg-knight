@@ -78,7 +78,7 @@ public class YolkProjectile : Projectile {
       enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
     }
 
-    if (collider.gameObject.GetComponent<TilemapCollider2D>() != null || enemyHealth != null) {
+    if (collider.gameObject.layer == LayerMask.NameToLayer("Obstacle") || enemyHealth != null) {
       StopCoroutine(DespawnTimer());
       Despawn();
     }

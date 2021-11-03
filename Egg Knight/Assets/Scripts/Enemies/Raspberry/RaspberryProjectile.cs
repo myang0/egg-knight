@@ -13,7 +13,7 @@ public class RaspberryProjectile : Projectile {
       playerHealth.Damage(_damage);
     }
 
-    if (collider.gameObject.GetComponent<TilemapCollider2D>() != null || playerHealth != null) {
+    if (collider.gameObject.layer == LayerMask.NameToLayer("Obstacle") || playerHealth != null) {
       StopCoroutine(DespawnTimer());
       Despawn();
     }
