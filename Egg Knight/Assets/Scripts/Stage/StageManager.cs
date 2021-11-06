@@ -49,7 +49,7 @@ namespace Stage {
         private int _survivalTimerCurrent;
         private WaveCounterText _waveCounterText;
 
-        private void Start() {
+        private void Awake() {
             _eSpawnpoints.AddRange(GetComponentsInChildren<EnemySpawnpoint>());
             _stageExits.AddRange(GetComponentsInChildren<StageExit>());
             _stageEntrance = GetComponentInChildren<StageEntrance>();

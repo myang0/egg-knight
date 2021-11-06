@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Tree_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Tree_1.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,11 +94,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BossIntro.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BossIntroText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
       </list>
     </option>
   </component>
@@ -170,7 +170,8 @@
       <workItem from="1635547474611" duration="7419000" />
       <workItem from="1635820087345" duration="2576000" />
       <workItem from="1635916257731" duration="122000" />
-      <workItem from="1635926996712" duration="1393000" />
+      <workItem from="1635926996712" duration="1394000" />
+      <workItem from="1636174995343" duration="836000" />
     </task>
     <servers />
   </component>
