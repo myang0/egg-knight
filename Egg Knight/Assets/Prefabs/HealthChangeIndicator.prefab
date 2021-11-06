@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46fbd92c4d0e3744a4990b9d0131ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minFontSize: 16
+  _minFontSize: 32
   _maxFontSize: 128
 --- !u!50 &915490403410600337
 Rigidbody2D:

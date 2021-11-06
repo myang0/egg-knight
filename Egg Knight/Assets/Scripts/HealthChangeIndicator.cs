@@ -14,6 +14,9 @@ public class HealthChangeIndicator : MonoBehaviour {
     _textmesh = gameObject.GetComponent<TextMesh>();
 
     _rb.AddForce(forceVector * Random.Range(5f, 15f), ForceMode2D.Impulse);
+    
+    var position = transform.position;
+    transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.OverCharacter);
   }
 
   public void Initialize(float value, Color color) {

@@ -13,9 +13,8 @@ public class CoinDrop : MonoBehaviour
     [SerializeField] private StageManager stageManager;
     [SerializeField] private Coin coin;
     
-    private int _coinDropRate = 20;
-    private const float EasyDropRateMultiplier = 0.8f;
-    private const float HardDropRateMultiplier = 1.5f;
+    private int _coinDropRate = 35;
+    private const float HardDropRateMultiplier = 1.25f;
 
     private void Awake() {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
@@ -32,18 +31,9 @@ public class CoinDrop : MonoBehaviour
         
         StageType stageType = stageManager.GetStageType();
 
-        int tempDropRate;
-        switch (stageType) {
-            case StageType.Easy:
-                tempDropRate = Mathf.RoundToInt(_coinDropRate * EasyDropRateMultiplier);
-                break;
-            case StageType.Hard:
-                tempDropRate = Mathf.RoundToInt(_coinDropRate * HardDropRateMultiplier);
-                break;
-            default:
-                tempDropRate = _coinDropRate;
-                break;
-        }
+        int tempDropRate = _coinDropRate;
+        if (stageType == StageType.Hard)
+            tempDropRate = Mathf.RoundToInt(_coinDropRate * HardDropRateMultiplier);
 
         int coinDropChance = Random.Range(1, 101);
         if (coinDropChance < tempDropRate) {

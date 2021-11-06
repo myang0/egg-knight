@@ -76,7 +76,9 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     
     Quaternion newRotation = Quaternion.Euler(0, 0, 90);
     SpriteRenderer sr = GetComponent<SpriteRenderer>();
-    
+    var newPos = transform.position;
+    transform.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
+
     while (sr.color.a > 0) {
       transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
       var color = sr.color;

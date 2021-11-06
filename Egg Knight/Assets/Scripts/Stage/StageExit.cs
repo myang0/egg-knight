@@ -14,6 +14,8 @@ namespace Stage {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             _isExitInUse = false;
+            var position = transform.position;
+            transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.Object);
         }
 
         private void OnTriggerEnter2D(Collider2D other) {

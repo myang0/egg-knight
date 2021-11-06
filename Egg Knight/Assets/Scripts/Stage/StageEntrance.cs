@@ -7,7 +7,8 @@ namespace Stage
 
         void Start()
         {
-
+            var position = transform.position;
+            transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.Object);
         }
 
         void Update()

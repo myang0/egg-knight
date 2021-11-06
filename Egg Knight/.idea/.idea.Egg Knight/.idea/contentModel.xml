@@ -1355,10 +1355,14 @@
           <e p="Helpers" t="Include">
             <e p="VectorHelper.cs" t="Include" />
           </e>
-          <e p="MapInteractables" t="Include">
+          <e p="MapEntities" t="Include">
             <e p="BuyZone.cs" t="Include" />
             <e p="Campfire.cs" t="Include" />
             <e p="Caravan.cs" t="Include" />
+            <e p="DeadTree" t="Include">
+              <e p="DeadTreeBehavior.cs" t="Include" />
+              <e p="DeadTreeHealth.cs" t="Include" />
+            </e>
             <e p="Grave.cs" t="Include" />
             <e p="ShopItem.cs" t="Include" />
             <e p="SirRachaController.cs" t="Include" />

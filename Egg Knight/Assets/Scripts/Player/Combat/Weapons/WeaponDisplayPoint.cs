@@ -7,7 +7,6 @@ public class WeaponDisplayPoint : MonoBehaviour {
     private const float LeftX = -0.38f;
     private const float RightX = 0.38f;
     private const float Y = -0.55f;
-    private const float Z = 1;
 
     private void FixedUpdate() {
         _player = GameObject.Find("Player").transform;
@@ -15,10 +14,10 @@ public class WeaponDisplayPoint : MonoBehaviour {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (mousePos.x < _player.position.x) {
-            transform.position = new Vector3(LeftX + playerPos.x, Y + playerPos.y, Z);;
+            transform.position = new Vector3(LeftX + playerPos.x, Y + playerPos.y, ZcoordinateConsts.WeaponAttack);
         }
         else {
-            transform.position = new Vector3(RightX + playerPos.x, Y + playerPos.y, Z);
+            transform.position = new Vector3(RightX + playerPos.x, Y + playerPos.y, ZcoordinateConsts.WeaponAttack);
         }
     }
 }

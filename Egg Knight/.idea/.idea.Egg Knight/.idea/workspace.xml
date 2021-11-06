@@ -20,10 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Tree_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Tree_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/BuyZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/BuyZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Campfire.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Campfire.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Caravan.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Grave.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Grave.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/ShopItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/ShopItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageEntrance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageEntrance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/DeadTree.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/DeadTree.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +61,17 @@
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Editor/LuaScriptedImporter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/24/04950972/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shop/Caravan.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScreenFade.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Campfire.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Grave.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapInteractables/SirRachaController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapInteractables/Campfire.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/HealingItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
@@ -89,16 +104,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyChase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyDeadState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BossIntro.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BossIntroText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageEntrance.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
       </list>
     </option>
   </component>
@@ -171,7 +195,7 @@
       <workItem from="1635820087345" duration="2576000" />
       <workItem from="1635916257731" duration="122000" />
       <workItem from="1635926996712" duration="1394000" />
-      <workItem from="1636174995343" duration="836000" />
+      <workItem from="1636174995343" duration="10751000" />
     </task>
     <servers />
   </component>

@@ -44,7 +44,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   protected virtual void FixedUpdate() {
     Vector3 playerPos = GameObject.Find("Player").transform.position;
-    Vector3 newPos = new Vector3(playerPos.x, playerPos.y, 1);
+    Vector3 newPos = new Vector3(playerPos.x, playerPos.y, ZcoordinateConsts.WeaponAttack);
     transform.position = newPos;
   }
 

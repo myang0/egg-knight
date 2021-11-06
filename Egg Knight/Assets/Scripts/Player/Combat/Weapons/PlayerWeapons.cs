@@ -58,7 +58,8 @@ public class PlayerWeapons : MonoBehaviour {
 
       float rotateAngle = anglesToMouse();
       
-      _currentWeapon = Instantiate(_weapons[_currentWeaponIndex], transform.position, Quaternion.identity);
+      var wepPos = new Vector3(transform.position.x, transform.position.y, ZcoordinateConsts.WeaponAttack);
+      _currentWeapon = Instantiate(_weapons[_currentWeaponIndex], wepPos, Quaternion.identity);
       _currentWeapon.transform.eulerAngles = new Vector3(0, 0, rotateAngle);
 
       if (_weaponModifiers.Any()) {
