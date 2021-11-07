@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemGridElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class ItemGridElement : MonoBehaviour, IPointerEnterHandler {
   [SerializeField] private GameObject _imageObject;
+
+  public static event EventHandler<TooltipEnableEventArgs> OnTooltipEnable;
 
   private Image _image;
 
@@ -15,14 +18,13 @@ public class ItemGridElement : MonoBehaviour, IPointerEnterHandler, IPointerExit
   }
 
   public void Initialize(string name, string description, Sprite sprite) {
+    _itemName = name;
+    _itemDescription = description;
+
     _image.sprite = sprite;
   }
 
   public void OnPointerEnter(PointerEventData eventData) {
-    Debug.Log("hovering");
-  }
-
-  public void OnPointerExit(PointerEventData eventData) {
-    Debug.Log("no longer hovering");
+    OnTooltipEnable?.Invoke(this, new TooltipEnableEventArgs(_itemName, _itemDescription));
   }
 }
