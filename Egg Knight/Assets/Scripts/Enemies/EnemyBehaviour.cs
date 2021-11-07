@@ -31,9 +31,10 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool isInAttackAnimation;
   public bool isStunned;
   public float alertRange;
+  public bool isTurningEnabled;
 
   public bool isWandering;
-  private Vector2 _wanderDestination;
+  private Vector3 _wanderDestination;
 
   private Transform _playerTransform;
   public bool isWallCollisionOn;
@@ -55,12 +56,15 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     Health.OnDeath += HandleDeath;
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+    Vector3 pos = transform.position;
+    transform.position = new Vector3(pos.x, pos.y, ZcoordinateConsts.Character);
     InvokeRepeating(nameof(InterruptWander), 0f, 2f);
   }
 
   protected void Update() {
     if (isDead) return;
-    if (!isWandering) {
+    if (!isWandering && isTurningEnabled) {
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
     }
@@ -189,11 +193,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     var position = transform.position;
     float newLocationX = position.x + Random.Range(-2f, 2f);
     float newLocationY = position.y + Random.Range(-2f, 2f);
-    _wanderDestination = new Vector2(newLocationX, newLocationY);
+    
+    transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.Character);
+    _wanderDestination = new Vector3(newLocationX, newLocationY, ZcoordinateConsts.Character);
 
     while (Vector2.Distance(transform.position, _wanderDestination) > 0.2 && !isStunned) {
       if (isStunned || !isWandering) yield break;
-      transform.position = Vector2.MoveTowards(transform.position, _wanderDestination, _maxSpeed/4*Time.deltaTime);
+      transform.position = Vector3.MoveTowards(transform.position, _wanderDestination, _maxSpeed/4*Time.deltaTime);
       
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
       spriteRenderer.flipX = transform.position.x - _wanderDestination.x > 0;
@@ -223,12 +229,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     if (!isWallCollisionOn && !isWandering && other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
       Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
     }
-
-    // if (other.collider.CompareTag("Enemy")) {
-    //   if (other.collider.GetComponent<EnemyBehaviour>().isDead) {
-    //     Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
-    //   }
-    // }
   }
 
   private void OnTriggerExit2D(Collider2D other) {

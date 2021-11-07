@@ -31,6 +31,12 @@ public class DeadTreeBehavior : EnemyBehaviour {
             StartCoroutine(FadeOutDeath());
         };
         
+        isTurningEnabled = false;
+
+        var color = topHalfSR.color;
+        topHalfSR.color = new Color(color.r, color.g, color.b, 0.8f);
+        SR.color = new Color(color.r, color.g, color.b, 0.8f);
+        
         base.Awake();
     }
 

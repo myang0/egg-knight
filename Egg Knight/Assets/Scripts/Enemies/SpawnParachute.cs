@@ -7,10 +7,12 @@ using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 public class SpawnParachute : MonoBehaviour {
-    [SerializeField] private EnemyBehaviour lv1EggGuard;
-    [SerializeField] private EnemyBehaviour lv1Mushroom;
-    [SerializeField] private EnemyBehaviour lv1Raspberry;
-    [SerializeField] private EnemyBehaviour lv1Strawberry;
+    public EnemyBehaviour lv1EggGuard;
+    public EnemyBehaviour lv1Mushroom;
+    public EnemyBehaviour lv1Raspberry;
+    public EnemyBehaviour lv1Strawberry;
+
+    public EnemyBehaviour spawnSpecificEnemy;
     
     // Spawn Rates
     private const int Lv1EggGuardRate = 70;
@@ -32,21 +34,26 @@ public class SpawnParachute : MonoBehaviour {
     public void SpawnEnemy() {
         LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         EnemyBehaviour spawnedEnemy;
-        
-        switch (levelManager.GetLevel()) {
-            case 1:
-                spawnedEnemy = SpawnLevel1();
-                break;
-            case 2:
-                spawnedEnemy = SpawnLevel2();
-                break;
-            case 3:
-                spawnedEnemy = SpawnLevel3();
-                break;
-            default:
-                throw new Exception("Attempting to spawn an enemy in level >3???");
+
+        if (spawnSpecificEnemy == null) {
+            switch (levelManager.GetLevel()) {
+                case 1:
+                    spawnedEnemy = SpawnLevel1();
+                    break;
+                case 2:
+                    spawnedEnemy = SpawnLevel2();
+                    break;
+                case 3:
+                    spawnedEnemy = SpawnLevel3();
+                    break;
+                default:
+                    throw new Exception("Attempting to spawn an enemy in level >3???");
+            }
         }
-        
+        else {
+            spawnedEnemy = InstantiateEnemy(spawnSpecificEnemy);
+        }
+
         GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().GetCurrentStage().AddEnemy(spawnedEnemy);
     }
 
