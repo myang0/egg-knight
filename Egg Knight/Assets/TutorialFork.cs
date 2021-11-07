@@ -10,7 +10,7 @@ public class TutorialFork : StateMachineBehaviour
     private StageManager stage;
     private TutorialRoom tutRoom;
     private bool isEnemySpawned;
-    private GameObject healingYolk;
+    private bool isDialoguePlayed;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         manager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<TutorialManager>();
@@ -18,6 +18,11 @@ public class TutorialFork : StateMachineBehaviour
         tutRoom = manager.TutorialRooms[2];
         tutRoom.OnRoomEnter += StartDialogue;
         PlayerControls.On2Press += SpawnEnemy;
+        TutorialManager.FsmEventHandler += ShowHelpText;
+    }
+
+    private void ShowHelpText(object sender, EventArgs e) {
+        manager.wcText.SetText("Press 2 to swap to your fork! Defeat the strawberry!", 0);
     }
 
     private void SpawnEnemy(object sender, EventArgs e) {
@@ -45,10 +50,14 @@ public class TutorialFork : StateMachineBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().Heal(100);
         Fungus.Flowchart.BroadcastFungusMessage("FinishFork");
         tutRoom.OnRoomEnter = null;
+        TutorialManager.FsmEventHandler -= ShowHelpText;
+        manager.wcText.ResetText();
         PlayerControls.On2Press -= SpawnEnemy;
     }
 
     private void StartDialogue(object sender, EventArgs e) {
+        if (isDialoguePlayed) return;
         Fungus.Flowchart.BroadcastFungusMessage("StartFork");
+        isDialoguePlayed = true;
     }
 }

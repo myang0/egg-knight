@@ -20,7 +20,7 @@ public class TutorialNotStarted : StateMachineBehaviour
 
     private void StartDialogue(object sender, EventArgs e) {
         if (!_isDialogueTriggered) {
-            Fungus.Flowchart.BroadcastFungusMessage("NewIntro");
+            Fungus.Flowchart.BroadcastFungusMessage("StartKnife");
             _isDialogueTriggered = true;
         }
     }

@@ -7,21 +7,26 @@ using UnityEngine;
 public class TutorialYolk : StateMachineBehaviour
 {
     private TutorialManager manager;
-    private StageManager stage;
     private TutorialRoom tutRoom;
     private bool isEnemySpawned;
-    private GameObject healingYolk;
+    private GameObject dummy;
+    private bool isDialoguePlayed;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         manager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<TutorialManager>();
-        stage = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().GetCurrentStage();
-        tutRoom = manager.TutorialRooms[3];
+        tutRoom = manager.TutorialRooms[4];
         tutRoom.OnRoomEnter += StartDialogue;
+        dummy = manager.trainingDummy;
+        TutorialManager.FsmEventHandler += ShowHelpText;
+    }
+
+    private void ShowHelpText(object sender, EventArgs e) {
+        manager.wcText.SetText("Right click to fire yolk! Destroy the suspicious target dummy!", 0);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (isEnemySpawned && stage.enemyCount < 0) {
+        if (dummy == null) {
             animator.SetTrigger("NextRoom");
         }
     }
@@ -32,11 +37,17 @@ public class TutorialYolk : StateMachineBehaviour
             dt.SetInvulnerability(false);
         }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().Heal(100);
-        Fungus.Flowchart.BroadcastFungusMessage("FinishSpoon");
+        Fungus.Flowchart.BroadcastFungusMessage("FinishYolk");
+        TutorialManager.FsmEventHandler -= ShowHelpText;
+        manager.wcText.ResetText();
         tutRoom.OnRoomEnter = null;
+        manager.TutorialRooms[5].OnRoomEnter = null;
     }
 
     private void StartDialogue(object sender, EventArgs e) {
-        Fungus.Flowchart.BroadcastFungusMessage("StartSpoon");
+        if (isDialoguePlayed) return;
+        Fungus.Flowchart.BroadcastFungusMessage("StartYolk");
+        dummy.SetActive(true);
+        isDialoguePlayed = true;
     }
 }

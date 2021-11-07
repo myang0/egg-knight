@@ -12,11 +12,6 @@ public class TutorialRoom : MonoBehaviour {
     public bool isRoomCleared;
     public EventHandler OnRoomEnter;
     public EventHandler OnRoomExit;
-    void Start()
-    {
-        foreach (var dt in deadTrees) dt.SetInvulnerability(true);
-        Assert.IsNotNull(EggithaTransform);
-    }
 
     IEnumerator DelayEnterInvocation() {
         yield return new WaitForSeconds(0.5f);

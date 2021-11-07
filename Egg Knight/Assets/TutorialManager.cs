@@ -13,6 +13,8 @@ public class TutorialManager : MonoBehaviour
     public UnlockWeaponItem forkItem;
     public UnlockWeaponItem spoonItem;
     public GameObject healingYolk;
+    public GameObject trainingDummy;
+    public WaveCounterText wcText;
     
     public static event EventHandler FsmEventHandler;
     

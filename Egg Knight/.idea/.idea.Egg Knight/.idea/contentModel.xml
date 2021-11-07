@@ -1491,6 +1491,7 @@
         <e p="TutorialNotStarted.cs" t="Include" />
         <e p="TutorialRolling.cs" t="Include" />
         <e p="TutorialRoom.cs" t="Include" />
+        <e p="TutorialSkip.cs" t="Include" />
         <e p="TutorialSpoon.cs" t="Include" />
         <e p="TutorialYolk.cs" t="Include" />
         <e p="UnlockWeaponItem.cs" t="Include" />

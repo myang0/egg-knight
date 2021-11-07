@@ -32,6 +32,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
         };
         
         isTurningEnabled = false;
+        SetInvulnerability(isInvulnerable);
 
         var color = topHalfSR.color;
         topHalfSR.color = new Color(color.r, color.g, color.b, 0.8f);

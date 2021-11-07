@@ -25,6 +25,10 @@ public class WaveCounterText : MonoBehaviour
         }
     }
 
+    public void ResetText() {
+        _display.text = "";
+    }
+
     private IEnumerator RemoveTextDelay() {
         yield return new WaitForSeconds(_messageDuration);
         _display.text = "";

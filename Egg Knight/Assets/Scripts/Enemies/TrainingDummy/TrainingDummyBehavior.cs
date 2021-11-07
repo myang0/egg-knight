@@ -14,9 +14,6 @@ public class TrainingDummyBehavior : EnemyBehaviour {
         enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
         Health = trainingDummyHealth;
-        _sr = GetComponent<SpriteRenderer>();
-        _sr.color = new Color(255, 255, 255, 0);
-        
         base.Awake();
     }
 

@@ -33,7 +33,8 @@ public class YolkProjectile : Projectile {
     GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
     foreach(GameObject enemy in allEnemies) {
-      if (Vector3.Distance(transform.position, enemy.transform.position) < maxDistance) {
+      if (Vector3.Distance(transform.position, enemy.transform.position) < maxDistance
+          && enemy.layer == LayerMask.NameToLayer("Enemy")) {
         nearestEnemy = enemy.transform;
       }
     }
@@ -74,7 +75,7 @@ public class YolkProjectile : Projectile {
   protected override void OnTriggerEnter2D(Collider2D collider) {
     EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
     
-    if (enemyHealth != null) {
+    if (enemyHealth != null && collider.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
       enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
     }
 
