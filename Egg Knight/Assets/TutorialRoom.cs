@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 public class TutorialRoom : MonoBehaviour {
     public List<DeadTreeBehavior> deadTrees = new List<DeadTreeBehavior>();
     public Transform EggithaTransform;
-    public Transform EnemySpawnTransform;
+    public Transform EntitySpawnPosTransform;
     public bool isPlayerInside;
     public bool isRoomCleared;
     public EventHandler OnRoomEnter;

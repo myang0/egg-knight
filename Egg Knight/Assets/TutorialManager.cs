@@ -12,6 +12,7 @@ public class TutorialManager : MonoBehaviour
     public SpawnParachute spawnParachute;
     public UnlockWeaponItem forkItem;
     public UnlockWeaponItem spoonItem;
+    public GameObject healingYolk;
     
     public static event EventHandler FsmEventHandler;
     

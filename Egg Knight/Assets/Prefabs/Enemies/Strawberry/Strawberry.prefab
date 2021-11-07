@@ -174,7 +174,7 @@ MonoBehaviour:
   _maxHealth: 30
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
-  _weakTo: 1
+  _weakTo: 0
   _immuneTo: 3
   _immuneTo2: 3
   _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
@@ -235,6 +235,7 @@ MonoBehaviour:
   isStunned: 0
   alertRange: 5
   isTurningEnabled: 1
+  decrementEnemyCountOnDeath: 1
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 6052989420728253035}

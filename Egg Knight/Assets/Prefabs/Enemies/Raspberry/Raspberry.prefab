@@ -258,6 +258,7 @@ MonoBehaviour:
   isStunned: 0
   alertRange: 4
   isTurningEnabled: 1
+  decrementEnemyCountOnDeath: 1
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 804755781}

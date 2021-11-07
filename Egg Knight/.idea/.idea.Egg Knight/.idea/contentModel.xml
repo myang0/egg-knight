@@ -1240,6 +1240,7 @@
             </e>
           </e>
         </e>
+        <e p="HideIfPlayerDamaged.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -1484,10 +1485,14 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="TutorialFork.cs" t="Include" />
         <e p="TutorialKnife.cs" t="Include" />
         <e p="TutorialManager.cs" t="Include" />
         <e p="TutorialNotStarted.cs" t="Include" />
+        <e p="TutorialRolling.cs" t="Include" />
         <e p="TutorialRoom.cs" t="Include" />
+        <e p="TutorialSpoon.cs" t="Include" />
+        <e p="TutorialYolk.cs" t="Include" />
         <e p="UnlockWeaponItem.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
