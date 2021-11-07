@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8025473576162614353}
   - component: {fileID: 8025473576162614355}
   - component: {fileID: 8025473576162614364}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ElectricalOutlet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

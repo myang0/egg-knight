@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4728929440105935660}
   - component: {fileID: 4728929440105935662}
   - component: {fileID: 4728929440105935663}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Salmonella
   m_TagString: Untagged
   m_Icon: {fileID: 0}

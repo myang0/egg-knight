@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8967183169055759854}
   - component: {fileID: 8967183169055759852}
   - component: {fileID: 8967183169055759853}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SmartYolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

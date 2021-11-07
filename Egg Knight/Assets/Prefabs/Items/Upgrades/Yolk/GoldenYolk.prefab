@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8189565246502454865}
   - component: {fileID: 8189565246502454867}
   - component: {fileID: 448428811580380880}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GoldenYolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

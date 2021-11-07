@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3736693433537862690}
   - component: {fileID: 3736693433537862751}
   - component: {fileID: 3736693433537862688}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: VikingHelmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

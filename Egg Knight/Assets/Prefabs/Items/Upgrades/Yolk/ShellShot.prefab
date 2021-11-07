@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6185527603010153475}
   - component: {fileID: 6185527603010153473}
   - component: {fileID: 6185527603010153472}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ShellShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

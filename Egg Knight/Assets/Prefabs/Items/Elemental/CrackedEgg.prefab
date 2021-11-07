@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6355635884472251164}
   - component: {fileID: 6355635884472251155}
   - component: {fileID: 6355635884472251154}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CrackedEgg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

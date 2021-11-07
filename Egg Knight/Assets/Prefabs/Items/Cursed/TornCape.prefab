@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6479073944094127037}
   - component: {fileID: 6479073944094127042}
   - component: {fileID: 6479073944094127039}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TornCape
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7479718057005512936}
   - component: {fileID: 7479718057005512938}
   - component: {fileID: -326453109930516440}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LeghornShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
