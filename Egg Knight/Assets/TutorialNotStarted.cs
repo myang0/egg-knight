@@ -16,8 +16,6 @@ public class TutorialNotStarted : StateMachineBehaviour
         stage = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().GetCurrentStage();
         tutRoom = manager.TutorialRooms[0];
         tutRoom.OnRoomEnter += StartDialogue;
-        Debug.Log(animator.gameObject.name);
-        Debug.Log(animator.gameObject.transform.position);
     }
 
     private void StartDialogue(object sender, EventArgs e) {

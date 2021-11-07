@@ -9,11 +9,15 @@ public class TutorialManager : MonoBehaviour
 {
     public List<TutorialRoom> TutorialRooms = new List<TutorialRoom>();
     public TutorialRoom CurrentRoom;
+    public SpawnParachute spawnParachute;
+    public UnlockWeaponItem forkItem;
+    public UnlockWeaponItem spoonItem;
+    
+    public static event EventHandler FsmEventHandler;
+    
     private SpriteRenderer _sr;
     private WaveCounterText _waveCounterText;
     private bool isPlayerInRange;
-    public SpawnParachute spawnParachute;
-    public static EventHandler FsmEventHandler;
 
     // Start is called before the first frame update
     void Awake() {

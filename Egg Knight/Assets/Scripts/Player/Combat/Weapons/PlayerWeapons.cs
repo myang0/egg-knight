@@ -23,9 +23,12 @@ public class PlayerWeapons : MonoBehaviour {
   public static event EventHandler OnWeaponAnimationBegin;
 
   private void Awake() {
-    PlayerControls.OnQPress += SwitchPrevWeapon;
-    PlayerControls.OnEPress += SwitchNextWeapon;
-
+    // PlayerControls.OnQPress += SwitchPrevWeapon;
+    // PlayerControls.OnEPress += SwitchNextWeapon;
+    PlayerControls.On1Press += SwitchKnife;
+    PlayerControls.On2Press += SwitchFork;
+    PlayerControls.On3Press += SwitchSpoon;
+    
     PlayerControls.OnLeftClick += HandleAttack;
 
     ElementalItem.OnElementalItemPickup += AddModifier;
@@ -97,12 +100,36 @@ public class PlayerWeapons : MonoBehaviour {
 
     return Vector2.SignedAngle(Vector2.up, vectorToMouse);
   }
-
+  
   private void OnDestroy() {
-    PlayerControls.OnQPress -= SwitchPrevWeapon;
-    PlayerControls.OnEPress -= SwitchNextWeapon;
+    PlayerControls.On1Press -= SwitchKnife;
+    PlayerControls.On2Press -= SwitchFork;
+    PlayerControls.On3Press -= SwitchSpoon;
+    // PlayerControls.OnQPress -= SwitchPrevWeapon;
+    // PlayerControls.OnEPress -= SwitchNextWeapon;
     PlayerControls.OnLeftClick -= HandleAttack;
     ElementalItem.OnElementalItemPickup -= AddModifier;
     BasePlayerWeapon.OnWeaponAnimationEnd -= HandleWeaponAnimEnd;
+  }
+  
+  private void SwitchKnife(object sender, EventArgs e) {
+    if (_currentWeaponIndex != 0) {
+      _currentWeaponIndex = 0;
+      DisplayCurrentWeapon();
+    }
+  }
+  
+  private void SwitchFork(object sender, EventArgs e) {
+    if (_currentWeaponIndex != 1) {
+      _currentWeaponIndex = 1;
+      DisplayCurrentWeapon();
+    }
+  }
+  
+  private void SwitchSpoon(object sender, EventArgs e) {
+    if (_currentWeaponIndex != 2) {
+      _currentWeaponIndex = 2;
+      DisplayCurrentWeapon();
+    }
   }
 }

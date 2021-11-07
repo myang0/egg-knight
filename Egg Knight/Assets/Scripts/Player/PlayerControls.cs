@@ -14,11 +14,17 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler OnQPress;
 	public static event EventHandler OnEPress;
 
+	public static event EventHandler On1Press;
+	public static event EventHandler On2Press;
+	public static event EventHandler On3Press;
+
 	private bool _notRolling = true;
 	private bool _dialogueDisabled = true;
 	private bool _gameRunning = true;
 
 	private bool _weaponSwitchingEnabled = true;
+	private bool _forkEnabled = false;
+	private bool _spoonEnabled = false;
 
 	private bool _movementKeysDown = false;
 
@@ -34,6 +40,8 @@ public class PlayerControls : MonoBehaviour {
 
 		PauseScreen.OnGamePaused += HandleGamePaused;
 		PauseScreen.OnGameResumed += HandleGameResumed;
+
+		UnlockWeaponItem.OnPickup += UnlockWeapon;
 	}
 
 	private void Update() {
@@ -99,11 +107,23 @@ public class PlayerControls : MonoBehaviour {
 		if (_weaponSwitchingEnabled == false) {
 			return;
 		}
+		
+		if (Input.GetKeyDown(KeyCode.Alpha1)) On1Press?.Invoke(this, EventArgs.Empty);
+		if (Input.GetKeyDown(KeyCode.Alpha2) && _forkEnabled) On2Press?.Invoke(this, EventArgs.Empty);
+		if (Input.GetKeyDown(KeyCode.Alpha3) && _spoonEnabled) On3Press?.Invoke(this, EventArgs.Empty);
 
-		if (Input.GetKeyDown(KeyCode.Q)) {
-			OnQPress?.Invoke(this, EventArgs.Empty);
-		} else if (Input.GetKeyDown(KeyCode.E)) {
-			OnEPress?.Invoke(this, EventArgs.Empty);
+		// if (Input.GetKeyDown(KeyCode.Q)) {
+		// 	OnQPress?.Invoke(this, EventArgs.Empty);
+		// } else if (Input.GetKeyDown(KeyCode.E)) {
+		// 	OnEPress?.Invoke(this, EventArgs.Empty);
+		// }
+	}
+
+	private void UnlockWeapon(object sender, EventArgs e) {
+		if (!_forkEnabled) {
+			_forkEnabled = true;
+		} else if (!_spoonEnabled) {
+			_spoonEnabled = true;
 		}
 	}
 

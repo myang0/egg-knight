@@ -221,6 +221,7 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="DamagingTerrain.cs" t="Include" />
         <e p="Fungus" t="Include">
           <e p="Docs" t="Include">
             <e p="CHANGELOG.txt" t="Include" />
@@ -1487,6 +1488,7 @@
         <e p="TutorialManager.cs" t="Include" />
         <e p="TutorialNotStarted.cs" t="Include" />
         <e p="TutorialRoom.cs" t="Include" />
+        <e p="UnlockWeaponItem.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
