@@ -10,6 +10,7 @@ public class BaseItem : MonoBehaviour
 
     public static event EventHandler<InventoryAddEventArgs> OnInventoryAdd;
     public static event EventHandler<ItemTextEventArgs> OnItemTextDisplay;
+    public static event EventHandler<ItemDisplayEventArgs> OnItemDisplay;
 
     public event EventHandler OnPickup;
 
@@ -36,8 +37,13 @@ public class BaseItem : MonoBehaviour
     }
 
     protected virtual void PickUp() {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Sprite s = sr.sprite;
+
         OnInventoryAdd?.Invoke(this, new InventoryAddEventArgs(InventoryKey));
         OnItemTextDisplay?.Invoke(this, new ItemTextEventArgs(DisplayName, Description));
+        OnItemDisplay?.Invoke(this, new ItemDisplayEventArgs(DisplayName, Description, s));
+
         OnPickup?.Invoke(this, EventArgs.Empty);
         
         Destroy(gameObject);

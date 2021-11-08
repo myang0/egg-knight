@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 787239874702837794}
   - component: {fileID: 787239874702837795}
   - component: {fileID: 787239874702837804}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BurntToast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

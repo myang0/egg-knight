@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7965060293826282008}
   - component: {fileID: 7965060293826282011}
   - component: {fileID: 7965060293826282010}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EggShardsItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

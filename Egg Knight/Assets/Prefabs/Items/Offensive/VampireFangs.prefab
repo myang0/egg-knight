@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2144059411361360037}
   - component: {fileID: 2144059411361360034}
   - component: {fileID: 2144059411361360035}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: VampireFangs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

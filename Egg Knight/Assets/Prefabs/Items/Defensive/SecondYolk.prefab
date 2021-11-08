@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8447513699967899221}
   - component: {fileID: 8447513699967899050}
   - component: {fileID: 8447513699967899051}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SecondYolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

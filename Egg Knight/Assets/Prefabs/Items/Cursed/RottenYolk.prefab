@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7576353309437815175}
   - component: {fileID: 7576353309437815173}
   - component: {fileID: 3009087022290827439}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RottenYolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

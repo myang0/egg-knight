@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2326677117730336664}
   - component: {fileID: 2326677117730336667}
   - component: {fileID: 2326677117730336676}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HeartYolk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

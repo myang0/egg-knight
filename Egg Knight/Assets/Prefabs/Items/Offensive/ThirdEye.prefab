@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5229495993065062582}
   - component: {fileID: 5229495993065062581}
   - component: {fileID: 5229495993065062580}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ThirdEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
