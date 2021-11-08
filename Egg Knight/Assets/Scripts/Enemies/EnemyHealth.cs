@@ -83,13 +83,10 @@ public abstract class EnemyHealth : Health {
   }
 
   protected virtual IEnumerator Yolked() {
-    float origDamage = StatusConfig.SalmonellaDamage;
-    float salmonellaDamage = (_cursedInventory.HasItem(CursedItemType.RottenYolk)) ? (origDamage * 2) : origDamage;
-
     for (int i = 0; i < StatusConfig.SalmonellaTicks; i++) {
       yield return new WaitForSeconds(StatusConfig.SalmonellaTimeBetweenTicks);
 
-      Damage(salmonellaDamage);
+      Damage(StatusConfig.SalmonellaDamage);
     }
   }
 
@@ -104,7 +101,13 @@ public abstract class EnemyHealth : Health {
   public virtual void DamageWithType(float amount, DamageType type) {
     if (_currentHealth <= 0) return;
     
-    float bonusDamage = (type == _weakTo) ? (amount * 0.5f) : 0;
+    float bonusDamage = 0;
+
+    if (type == _weakTo) {
+      _takingCriticalDamage = true;
+      bonusDamage = (amount * 0.5f);
+    }
+
     if (type == _immuneTo || type == _immuneTo2) {
       Damage(0);
     }

@@ -33,5 +33,6 @@ public class ItemDisplay : MonoBehaviour {
   private void OnDestroy() {
     UIControls.OnTabHold -= HandleTabHold;
     UIControls.OnTabRelease -= HandleTabRelease;
+    BaseItem.OnItemDisplay -= HandleItemDisplay;
   }
 }

@@ -4,12 +4,12 @@ public class ButterKnife : BasePlayerWeapon {
   [SerializeField] private Transform _attackPoint;
   [SerializeField] private float _attackRange;
 
-  [SerializeField] private LayerMask _enemyLayer;
-
   public override void EnableHitbox() {
     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer);
+    Collider2D[] coinsInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _coinLayer);
 
     DamageEnemies(enemiesInRange);
+    CollectCoins(coinsInRange);
   }
 
   protected override void OnDrawGizmosSelected() {

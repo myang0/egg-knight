@@ -12,6 +12,9 @@ public class YolkManager : MonoBehaviour {
   [SerializeField] private float _yolkPercentCost = 0.025f;
   private PlayerHealth _health;
 
+  private float _speedScaling = 1.0f;
+  private float _damageScaling = 1.0f;
+
   private YolkUpgradeManager _upgrades;
   private PlayerCursedInventory _cursedInventory;
 
@@ -62,10 +65,9 @@ public class YolkManager : MonoBehaviour {
     GameObject yolkObject = Instantiate(_yolkPrefab, transform.position, Quaternion.identity);
     YolkProjectile yolk = yolkObject.GetComponent<YolkProjectile>();
 
+    yolk.MultiplySpeed(_speedScaling);
     yolk.SetDirection(direction, angle);
-    if (_cursedInventory.HasItem(CursedItemType.RottenYolk)) {
-      yolk.MultiplyDamage(2.0f);
-    }
+    yolk.MultiplyDamage(_damageScaling);
   }
 
   public void MultiplyByCooldown(float multiplier) {
@@ -74,6 +76,15 @@ public class YolkManager : MonoBehaviour {
 
   public void MultiplyByPercentCost(float multiplier) {
     _yolkPercentCost *= multiplier;
+  }
+
+  public void MultiplyBySpeedScaling(float multiplier) {
+    _speedScaling *= multiplier;
+  }
+
+  public void MultiplyByDamageScaling(float multiplier) {
+    _damageScaling *= multiplier;
+    StatusConfig.SalmonellaDamage *= multiplier;
   }
 
   private void OnDestroy() {

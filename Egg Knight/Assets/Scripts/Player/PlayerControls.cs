@@ -45,13 +45,16 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (_dialogueDisabled && _gameRunning) {
+			AttackControls();
+			ShootControls();
+		}
+
 		if (ControlsEnabled()) {
 			MovementControls();
 
 			RollControls();
 
-			ShootControls();
-			AttackControls();
 			AttackSwitchControls();
 		}
 	}
@@ -92,7 +95,7 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void ShootControls() {
-		if (Input.GetMouseButtonDown((int)MouseInput.RightClick)) {
+		if (Input.GetMouseButton((int)MouseInput.RightClick)) {
 			OnRightClick?.Invoke(this, EventArgs.Empty);
 		}
 	}

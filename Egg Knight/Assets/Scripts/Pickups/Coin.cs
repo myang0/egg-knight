@@ -10,16 +10,19 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            GameObject playerObject = other.gameObject;
-            PlayerWallet wallet = playerObject?.GetComponent<PlayerWallet>();
-
-            wallet?.AddToBalance(_monetaryValue);
-
-            if (_coinParticles != null) {
-                Instantiate(_coinParticles, transform.position, Quaternion.identity);
-            }
-
-            Destroy(gameObject);
+            PickUp(other.gameObject);
         }
+    }
+
+    public void PickUp(GameObject playerObject) {
+        PlayerWallet wallet = playerObject?.GetComponent<PlayerWallet>();
+
+        wallet?.AddToBalance(_monetaryValue);
+
+        if (_coinParticles != null) {
+            Instantiate(_coinParticles, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
     }
 }
