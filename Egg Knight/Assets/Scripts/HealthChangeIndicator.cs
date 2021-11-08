@@ -28,6 +28,8 @@ public class HealthChangeIndicator : MonoBehaviour {
     _textmesh.fontSize = fontSize;
     
     _textmesh.color = color;
+
+    if (value == 0) _textmesh.color = Color.gray;
   }
 
   public void OnAnimationEnd() {

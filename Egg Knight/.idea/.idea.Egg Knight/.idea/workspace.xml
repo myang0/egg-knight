@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialFork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialFork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialKnife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialKnife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialRolling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialRolling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialSpoon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialSpoon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialYolk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialYolk.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" />
@@ -124,6 +109,7 @@
         <option value="$PROJECT_DIR$/Assets/TutorialFork.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialSpoon.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialYolk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
       </list>
     </option>
   </component>
@@ -199,7 +185,7 @@
       <workItem from="1636174995343" duration="11047000" />
       <workItem from="1636236811214" duration="25653000" />
       <workItem from="1636274643734" duration="2966000" />
-      <workItem from="1636317258865" duration="5631000" />
+      <workItem from="1636317258865" duration="7378000" />
     </task>
     <servers />
   </component>
