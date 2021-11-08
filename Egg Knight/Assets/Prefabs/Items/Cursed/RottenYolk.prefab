@@ -101,6 +101,7 @@ MonoBehaviour:
   InventoryKey: 20
   _curseKey: 1
   _yolkCostMultiplier: 0.5
+  _damageMultiplier: 2
 --- !u!61 &3009087022290827439
 BoxCollider2D:
   m_ObjectHideFlags: 0

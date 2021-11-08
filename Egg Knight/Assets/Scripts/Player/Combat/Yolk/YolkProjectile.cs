@@ -28,14 +28,16 @@ public class YolkProjectile : Projectile {
   private Transform GetNearestEnemy() {
     Transform nearestEnemy = null;
 
-    float maxDistance = float.MaxValue;
+    float minDistance = float.MaxValue;
 
     GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
     foreach(GameObject enemy in allEnemies) {
-      if (Vector3.Distance(transform.position, enemy.transform.position) < maxDistance
-          && enemy.layer == LayerMask.NameToLayer("Enemy")) {
+      float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
+
+      if (currentDistance < minDistance && enemy.layer == LayerMask.NameToLayer("Enemy")) {
         nearestEnemy = enemy.transform;
+        minDistance = currentDistance;
       }
     }
 
