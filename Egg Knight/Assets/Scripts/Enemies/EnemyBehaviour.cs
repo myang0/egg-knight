@@ -32,6 +32,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool isStunned;
   public float alertRange;
   public bool isTurningEnabled;
+  public bool decrementEnemyCountOnDeath;
 
   public bool isWandering;
   private Vector3 _wanderDestination;

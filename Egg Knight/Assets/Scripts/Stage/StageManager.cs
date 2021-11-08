@@ -354,7 +354,7 @@ namespace Stage {
         
         public void RemoveEnemy(EnemyBehaviour e) {
             enemiesList.Remove(e);
-            enemyCount--;
+            if (e.decrementEnemyCountOnDeath) enemyCount--;
         }
 
         public void AddEnemy(EnemyBehaviour e) {

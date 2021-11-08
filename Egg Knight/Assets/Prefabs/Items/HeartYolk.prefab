@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3584847b108aeb4da74d068810207b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 40
+  healAmount: 45
 --- !u!58 &2326677117730336667
 CircleCollider2D:
   m_ObjectHideFlags: 0

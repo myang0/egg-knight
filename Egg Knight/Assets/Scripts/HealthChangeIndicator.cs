@@ -16,7 +16,7 @@ public class HealthChangeIndicator : MonoBehaviour {
     _rb.AddForce(forceVector * Random.Range(5f, 15f), ForceMode2D.Impulse);
     
     var position = transform.position;
-    transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.OverCharacter);
+    transform.position = new Vector3(position.x, position.y, ZcoordinateConsts.UIlike);
   }
 
   public void Initialize(float value, Color color) {
@@ -28,6 +28,8 @@ public class HealthChangeIndicator : MonoBehaviour {
     _textmesh.fontSize = fontSize;
     
     _textmesh.color = color;
+
+    if (value == 0) _textmesh.color = Color.gray;
   }
 
   public void OnAnimationEnd() {
