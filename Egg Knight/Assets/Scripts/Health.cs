@@ -8,6 +8,7 @@ public abstract class Health : MonoBehaviour {
   public event EventHandler OnPreDeath;
 
   protected float _currentHealth;
+  public bool isInvulnerable;
   public float CurrentHealth {
     get => _currentHealth;
   }

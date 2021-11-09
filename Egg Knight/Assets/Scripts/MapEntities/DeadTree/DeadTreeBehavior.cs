@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class DeadTreeBehavior : EnemyBehaviour {
@@ -12,6 +13,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
     public Sprite deadTreeSprite;
     public Sprite deadTreeTopSprite;
     public bool isInvulnerable;
+    public BoxCollider2D pathingCollider;
     protected override void Awake() {
         DeadTreeHealth deadTreeHealth = gameObject.GetComponent<DeadTreeHealth>();
         deadTreeHealth.OnDeadTreeStatusDamage += HandleStatusDamage;
@@ -53,13 +55,13 @@ public class DeadTreeBehavior : EnemyBehaviour {
             SR.sprite = normalTreeSprite;
             topHalfSR.sprite = normalTreeTopSprite;
             isInvulnerable = true;
-            gameObject.layer = LayerMask.NameToLayer("Obstacle");
+            Health.isInvulnerable = true;
         }
         else {
             SR.sprite = deadTreeSprite;
             topHalfSR.sprite = deadTreeTopSprite;
             isInvulnerable = false;
-            gameObject.layer = LayerMask.NameToLayer("Enemy");
+            Health.isInvulnerable = false;
         }
     }
 
@@ -71,11 +73,27 @@ public class DeadTreeBehavior : EnemyBehaviour {
         var newPos = topHalf.position;
         topHalf.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
 
+        UpdatePathing();
+
         while (topHalfSR.color.a > 0) {
             var color = topHalfSR.color;
             float newAlpha = color.a -= 0.001f;
             topHalfSR.color = new Color(color.r, color.g, color.b, newAlpha);
             yield return null;
         }
+    }
+
+    private void UpdatePathing() {
+        // BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        // Bounds bounds = pathingCollider.bounds;
+        // var guo = new GraphUpdateObject(bounds);
+        // guo.updatePhysics = true;
+        // guo.setWalkability = true;
+        // AstarPath.active.UpdateGraphs(guo);
+        
+        var graph = AstarPath.active.data.gridGraph;
+        AstarPath.active.Scan();
+
+
     }
 }

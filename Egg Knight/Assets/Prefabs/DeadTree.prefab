@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4847655938113820074}
   - component: {fileID: 7549902502777235022}
   - component: {fileID: 7081195309636579492}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: DeadTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,10 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12bd2b8fe0c0fb4dbb07580077e3a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 45
+  _maxHealth: 60
+  isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
-  _weakTo: 1
+  _weakTo: 3
   _immuneTo: 0
   _immuneTo2: 2
   _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
@@ -129,6 +130,8 @@ MonoBehaviour:
   isInAttackAnimation: 0
   isStunned: 0
   alertRange: 0
+  isTurningEnabled: 0
+  decrementEnemyCountOnDeath: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}
@@ -145,6 +148,7 @@ MonoBehaviour:
   deadTreeTopSprite: {fileID: 4347544937462273523, guid: d54ea2d251f06014f9d9f2b3b4504fbc,
     type: 3}
   isInvulnerable: 0
+  pathingCollider: {fileID: 0}
 --- !u!61 &7549902502777235022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2343456005238847118}
   - component: {fileID: 4663465567052162191}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Top Half of Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}

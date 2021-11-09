@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UIElements;
@@ -28,7 +29,7 @@ namespace Stage {
         private List<EnemySpawnpoint> _eSpawnpoints = new List<EnemySpawnpoint>();
         
         private LevelManager _levelManager;
-        private BoxCollider _camBoundary;
+        public BoxCollider _camBoundary;
         private bool _isStageInitialized;
 
         // 100% - _% = Actual Spawn Rate
@@ -72,7 +73,7 @@ namespace Stage {
                     InitializeStage();
                     SpawnEnemies();
                 }
-                
+
                 if (IsStageCleared()) {
                     _waveCounterText.SetText("", 0);
                     if (itemStatus == StageItemStatus.NeverSpawned) {
@@ -84,7 +85,6 @@ namespace Stage {
                         GenerateExits();
                     }
                 }
-                
             } else if (stageStatus == StageStatus.Cleared) {
                 ReadyForNextStage();
             }

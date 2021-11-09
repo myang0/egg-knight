@@ -20,8 +20,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DamagingTerrain.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DamagingTerrain.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HideIfPlayerDamaged.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HideIfPlayerDamaged.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/Knife/ButterKnife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/Knife/ButterKnife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Cactus.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Cactus.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialFork.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialFork.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialKnife.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialKnife.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialNotStarted.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialRolling.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialRolling.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialRoom.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialRoom.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialSkip.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialSkip.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialSpoon.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialSpoon.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialYolk.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialYolk.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnlockWeaponItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnlockWeaponItem.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,40 +65,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialSpoon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DamagingTerrain.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialFork.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialSkip.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialKnife.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialRolling.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialNotStarted.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/37/3a9a44a3/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/IAT 312 - Antlion Redesign/Assets/Scripts/AntlionBehavior.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/StageItemStatus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/24/04950972/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Editor/LuaScriptedImporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/75/85607e98/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnlockWeaponItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TutorialRoom.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/HideIfPlayerDamaged.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/24/04950972/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/SpawnEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ParachuteParticles.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/ParachuteParticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/SpawnEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/MeleeEnemyAlerted.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/RangedEnemyAlerted.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyStunned.cs" />
@@ -85,7 +103,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageEntrance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
         <option value="$PROJECT_DIR$/Assets/UnlockWeaponItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
@@ -93,14 +110,12 @@
         <option value="$PROJECT_DIR$/Assets/DamagingTerrain.cs" />
         <option value="$PROJECT_DIR$/Assets/HideIfPlayerDamaged.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialSkip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialRoom.cs" />
@@ -110,6 +125,16 @@
         <option value="$PROJECT_DIR$/Assets/TutorialSpoon.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialYolk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
+        <option value="$PROJECT_DIR$/Assets/DamagingTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DamagingTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/Knife/ButterKnife.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
       </list>
     </option>
   </component>
@@ -186,6 +211,7 @@
       <workItem from="1636236811214" duration="25653000" />
       <workItem from="1636274643734" duration="2966000" />
       <workItem from="1636317258865" duration="7378000" />
+      <workItem from="1636405569790" duration="11675000" />
     </task>
     <servers />
   </component>
@@ -294,10 +320,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="679" y="133" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1635284728113" />
-    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog" timestamp="1635280039869">
+    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog" timestamp="1636421368333">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1635280039869" />
+    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1636421368333" />
     <state x="1129" y="289" key="Vcs.Push.Dialog.v2" timestamp="1635031901499">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -306,10 +332,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1201" y="246" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634537760711" />
-    <state x="1193" y="261" key="run.anything.popup" timestamp="1633744579299">
+    <state x="1193" y="261" key="run.anything.popup" timestamp="1636413290322">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1633744579299" />
+    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1636413290322" />
     <state x="1199" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1633485547157">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

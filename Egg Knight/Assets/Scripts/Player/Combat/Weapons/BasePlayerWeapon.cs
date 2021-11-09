@@ -55,7 +55,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     foreach (GameObject enemyObject in uniqueEnemyObjects) {
       EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
-      if (enemyHealth != null) {
+      if (enemyHealth != null && !enemyHealth.isInvulnerable) {
         HealOnHit();
 
         DamageEnemy(enemyHealth);

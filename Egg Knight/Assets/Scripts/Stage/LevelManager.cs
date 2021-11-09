@@ -50,6 +50,7 @@ namespace Stage
             restRate = 0;
             sirrachaRate = 0;
             shopRate = 0;
+            UpdatePathing();
         }
 
         public void NextStage(StageType stageType) {
@@ -93,7 +94,16 @@ namespace Stage
             isFirstShopVisited = false;
             virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = stage.GetCameraBoundary();
             currentStage = stage;
+            UpdatePathing();
             stage.OnStageClear += IncrementRates;
+        }
+
+        private void UpdatePathing() {
+            var graph = AstarPath.active.data.gridGraph;
+            graph.center = currentStage.transform.position;
+            graph.SetDimensions(Mathf.RoundToInt(currentStage._camBoundary.size.x), 
+                Mathf.RoundToInt(currentStage._camBoundary.size.y), 1);
+            AstarPath.active.Scan();
         }
 
         private void MovePlayerToStage(StageManager stage) {
