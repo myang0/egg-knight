@@ -157,3 +157,9 @@ MonoBehaviour:
   _attackPoint: {fileID: 8576726790495408133}
   _attackWidth: 6
   _attackHeight: 4
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 2048
