@@ -36,6 +36,13 @@ public class Spoon : BasePlayerWeapon {
       _obstacleLayer
     );
 
+    Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(
+      _attackPoint.position,
+      new Vector2(_attackWidth, _attackHeight),
+      hitboxAngle,
+      _coinLayer
+    );
+
     List<Collider2D> notHitEnemies = new List<Collider2D>();
 
     foreach (Collider2D enemy in enemiesInRange) {
@@ -53,6 +60,7 @@ public class Spoon : BasePlayerWeapon {
     }
 
     DamageEnemies(notHitEnemies.ToArray());
+    CollectCoins(coinsInRange);
   }
 
   protected override void OnDrawGizmosSelected() {

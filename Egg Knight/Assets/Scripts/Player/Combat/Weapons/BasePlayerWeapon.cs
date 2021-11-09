@@ -9,6 +9,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   protected List<StatusCondition> _weaponModifiers;
 
+  protected GameObject _playerObject;
+
   protected PlayerHealth _health;
   protected PlayerInventory _inventory;
   protected PlayerCursedInventory _cursedInventory;
@@ -16,6 +18,9 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   [SerializeField] protected float _damageAmount;
   [SerializeField] protected DamageType _damageType;
+
+  [SerializeField] protected LayerMask _enemyLayer;
+  [SerializeField] protected LayerMask _coinLayer;
 
   public static event EventHandler OnWeaponAnimationEnd;
 
@@ -25,12 +30,12 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
     _weaponModifiers = new List<StatusCondition>();
     
-    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    _playerObject = GameObject.FindGameObjectWithTag("Player");
 
-    _health = player.GetComponent<PlayerHealth>();
-    _inventory = player.GetComponent<PlayerInventory>();
-    _cursedInventory = player.GetComponent<PlayerCursedInventory>();
-    _wallet = player.GetComponent<PlayerWallet>();
+    _health = _playerObject.GetComponent<PlayerHealth>();
+    _inventory = _playerObject.GetComponent<PlayerInventory>();
+    _cursedInventory = _playerObject.GetComponent<PlayerCursedInventory>();
+    _wallet = _playerObject.GetComponent<PlayerWallet>();
 
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     _sr.flipX = (mousePos.x < transform.position.x);
@@ -43,7 +48,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual void FixedUpdate() {
-    Vector3 playerPos = GameObject.Find("Player").transform.position;
+    Vector3 playerPos = _playerObject.transform.position;
     Vector3 newPos = new Vector3(playerPos.x, playerPos.y, ZcoordinateConsts.WeaponAttack);
     transform.position = newPos;
   }
@@ -60,6 +65,13 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
         DamageEnemy(enemyHealth);
       }
+    }
+  }
+
+  protected void CollectCoins(Collider2D[] coins) {
+    foreach (Collider2D coin in coins) {
+      Coin c = coin.gameObject.GetComponent<Coin>();
+      c.PickUp(_playerObject);
     }
   }
 
@@ -84,7 +96,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
     float amountAfterCoins = AddCoinDamage(_damageAmount);
     float amountAfterRage = AddRageDamage(amountAfterCoins);
-    float totalAmount = HandleCrits(amountAfterRage, statuses);
+    float totalAmount = HandleCrits(amountAfterRage, statuses, enemyHealth);
 
     if (statuses.Any()) {
       enemyHealth.DamageWithStatusesAndType(totalAmount, statuses, _damageType);
@@ -113,7 +125,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     return totalAmount;
   }
 
-  protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses) {
+  protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses, EnemyHealth eHealth) {
     float totalAmount = originalAmount;
 
     int critRoll = UnityEngine.Random.Range(0, 100);
@@ -127,6 +139,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
         _health.RustySwordDamage();
         _statuses.Add(StatusCondition.Bleeding);
       }
+
+      eHealth.TakingCriticalDamage = true;
     }
 
     return totalAmount;

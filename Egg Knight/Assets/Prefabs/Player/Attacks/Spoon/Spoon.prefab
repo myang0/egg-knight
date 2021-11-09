@@ -148,12 +148,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageAmount: 15
   _damageType: 2
-  _attackPoint: {fileID: 8576726790495408133}
-  _attackWidth: 6
-  _attackHeight: 4
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  _obstacleLayer:
+  _coinLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 65536
+  _attackPoint: {fileID: 8576726790495408133}
+  _attackWidth: 6
+  _attackHeight: 4

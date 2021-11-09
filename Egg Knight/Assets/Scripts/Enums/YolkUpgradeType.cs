@@ -3,5 +3,7 @@ public enum YolkUpgradeType {
   GoldenYolk,
   SmartYolk,
   ShellShot,
-  Salmonella
+  Salmonella,
+  RunnyYolk,
+  RocketPoweredYolk
 }

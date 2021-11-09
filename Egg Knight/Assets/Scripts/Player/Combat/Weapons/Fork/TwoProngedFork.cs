@@ -28,8 +28,16 @@ public class TwoProngedFork : BasePlayerWeapon {
     Collider2D[] enemiesHit = new Collider2D[enemiesInRange.Length + obstaclesInRange.Length];
     enemiesInRange.CopyTo(enemiesHit, 0);
     obstaclesInRange.CopyTo(enemiesHit, enemiesInRange.Length);
+    
+    Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(
+      _attackPoint.position,
+      new Vector2(_attackWidth, _attackHeight),
+      hitboxAngle,
+      _coinLayer
+    );
 
     DamageEnemies(enemiesHit);
+    CollectCoins(coinsInRange);
   }
 
   protected override void OnDrawGizmosSelected() {

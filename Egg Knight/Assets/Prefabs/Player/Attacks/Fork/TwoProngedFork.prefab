@@ -118,15 +118,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageAmount: 12.5
   _damageType: 0
-  _attackPoint: {fileID: 8446557267312775294}
-  _attackWidth: 0.75
-  _attackHeight: 5.5
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  _obstacleLayer:
+  _coinLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 65536
+  _attackPoint: {fileID: 8446557267312775294}
+  _attackWidth: 0.75
+  _attackHeight: 5.5
 --- !u!1 &2130744370264184517
 GameObject:
   m_ObjectHideFlags: 0

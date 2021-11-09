@@ -13,6 +13,13 @@ public abstract class Health : MonoBehaviour {
     get => _currentHealth;
   }
 
+  protected bool _takingCriticalDamage = false;
+  public bool TakingCriticalDamage {
+    set {
+      this._takingCriticalDamage = value;
+    }
+  }
+
   [SerializeField] protected GameObject _changeIndicatorPrefab;
 
   protected virtual void Awake() {
@@ -57,7 +64,13 @@ public abstract class Health : MonoBehaviour {
       GameObject changeIndicatorObject = Instantiate(_changeIndicatorPrefab, transform.position, Quaternion.identity);
       HealthChangeIndicator changeIndicator = changeIndicatorObject?.GetComponent<HealthChangeIndicator>();
 
-      changeIndicator?.Initialize(value, color);
+      if (_takingCriticalDamage) {
+        changeIndicator?.InitializeCritical(value);
+      } else {
+        changeIndicator?.Initialize(value, color);
+      }
+
+      _takingCriticalDamage = false;
     }
   }
 
