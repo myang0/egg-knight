@@ -223,7 +223,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void SetAlertTrigger() {
-    alertAnimator?.Play("Active",  0, 0f);
+    alertAnimator?.Play("Active", 0, 0f);
   }
 
   private void OnCollisionEnter2D(Collision2D other) {

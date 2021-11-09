@@ -8,7 +8,6 @@ public class Spoon : BasePlayerWeapon {
   [SerializeField] private float _attackWidth;
   [SerializeField] private float _attackHeight;
 
-  [SerializeField] private LayerMask _enemyLayer;
   [SerializeField] private LayerMask _obstacleLayer;
 
   private List<Collider2D> _hitEnemies;
