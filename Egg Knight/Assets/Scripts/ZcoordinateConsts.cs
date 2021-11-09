@@ -4,7 +4,7 @@ public class ZcoordinateConsts {
     public const int Character = 6;
     public const int TilemapCollider = 7;
     public const int WeaponAttack = 8;
-    public const int Interactable = 7;
+    public const int Interactable = 6;
     public const int OverCharacter = 5;
     public const int UIlike = 1;
 }
