@@ -9,6 +9,7 @@ public class Spoon : BasePlayerWeapon {
   [SerializeField] private float _attackHeight;
 
   [SerializeField] private LayerMask _enemyLayer;
+  [SerializeField] private LayerMask _obstacleLayer;
 
   private List<Collider2D> _hitEnemies;
 
@@ -27,10 +28,24 @@ public class Spoon : BasePlayerWeapon {
       hitboxAngle,
       _enemyLayer
     );
+    
+    Collider2D[] obstaclesInRange = Physics2D.OverlapBoxAll(
+      _attackPoint.position,
+      new Vector2(_attackWidth, _attackHeight),
+      hitboxAngle,
+      _obstacleLayer
+    );
 
     List<Collider2D> notHitEnemies = new List<Collider2D>();
 
     foreach (Collider2D enemy in enemiesInRange) {
+      if (_hitEnemies.Contains(enemy) == false) {
+        _hitEnemies.Add(enemy);
+        notHitEnemies.Add(enemy);
+      }
+    }
+    
+    foreach (Collider2D enemy in obstaclesInRange) {
       if (_hitEnemies.Contains(enemy) == false) {
         _hitEnemies.Add(enemy);
         notHitEnemies.Add(enemy);

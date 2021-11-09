@@ -30,7 +30,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
         topHalf.position = new Vector3(position.x, position.y, ZcoordinateConsts.OverCharacter);
 
         Health.OnPreDeath += (sender, args) => {
-            StartCoroutine(FadeOutDeath());
+            StartCoroutine(FadeOutDeathTopHalf());
         };
         
         isTurningEnabled = false;
@@ -65,7 +65,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
         }
     }
 
-    public IEnumerator FadeOutDeath() {
+    private IEnumerator FadeOutDeathTopHalf() {
         isDead = true;
         GetComponent<Collider2D>().enabled = false;
     
@@ -84,16 +84,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
     }
 
     private void UpdatePathing() {
-        // BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        // Bounds bounds = pathingCollider.bounds;
-        // var guo = new GraphUpdateObject(bounds);
-        // guo.updatePhysics = true;
-        // guo.setWalkability = true;
-        // AstarPath.active.UpdateGraphs(guo);
-        
         var graph = AstarPath.active.data.gridGraph;
         AstarPath.active.Scan();
-
-
     }
 }

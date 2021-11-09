@@ -29,7 +29,7 @@ public class EnemyIdle : StateMachineBehaviour {
     private void SetAlertIfSurvival(Animator animator) {
         LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         StageManager stageManager = levelManager.GetCurrentStage();
-        if (stageManager.GetStageType() == StageType.Survival) {
+        if (stageManager.GetStageType() == StageType.Survival || stageManager.isAutoAggroOnSpawn) {
             animator.SetBool("isAlert", true);
             _eBehavior.SetAlertTrigger();
         }

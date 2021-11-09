@@ -42,6 +42,7 @@ public class PlayerControls : MonoBehaviour {
 		PauseScreen.OnGameResumed += HandleGameResumed;
 
 		UnlockWeaponItem.OnPickup += UnlockWeapon;
+		
 	}
 
 	private void Update() {
@@ -53,6 +54,14 @@ public class PlayerControls : MonoBehaviour {
 			ShootControls();
 			AttackControls();
 			AttackSwitchControls();
+			UnlockAllWeapons();
+		}
+	}
+
+	private void UnlockAllWeapons() {
+		if (Input.GetKey(KeyCode.L)) {
+			_forkEnabled = true;
+			_spoonEnabled = true;
 		}
 	}
 

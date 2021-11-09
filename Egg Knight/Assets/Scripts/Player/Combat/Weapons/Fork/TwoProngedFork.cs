@@ -6,6 +6,7 @@ public class TwoProngedFork : BasePlayerWeapon {
   [SerializeField] private float _attackHeight;
 
   [SerializeField] private LayerMask _enemyLayer;
+  [SerializeField] private LayerMask _obstacleLayer;
 
   public override void EnableHitbox() {
     float hitboxAngle = transform.eulerAngles.z;
@@ -16,8 +17,19 @@ public class TwoProngedFork : BasePlayerWeapon {
       hitboxAngle,
       _enemyLayer
     );
+    
+    Collider2D[] obstaclesInRange = Physics2D.OverlapBoxAll(
+      _attackPoint.position,
+      new Vector2(_attackWidth, _attackHeight),
+      hitboxAngle,
+      _obstacleLayer
+    );
 
-    DamageEnemies(enemiesInRange);
+    Collider2D[] enemiesHit = new Collider2D[enemiesInRange.Length + obstaclesInRange.Length];
+    enemiesInRange.CopyTo(enemiesHit, 0);
+    obstaclesInRange.CopyTo(enemiesHit, enemiesInRange.Length);
+
+    DamageEnemies(enemiesHit);
   }
 
   protected override void OnDrawGizmosSelected() {

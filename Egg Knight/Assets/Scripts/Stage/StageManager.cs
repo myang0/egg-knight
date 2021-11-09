@@ -20,6 +20,7 @@ namespace Stage {
         [SerializeField] private int numWavesMax;
         [SerializeField] private int numWavesCurr;
         [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
+        public bool isAutoAggroOnSpawn;
         public event EventHandler OnStageClear;
         public event EventHandler OnStageStart;
 

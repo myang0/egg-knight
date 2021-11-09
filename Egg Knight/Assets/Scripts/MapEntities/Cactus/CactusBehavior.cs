@@ -20,6 +20,7 @@ public class CactusBehavior : EnemyBehaviour
 
         Health.OnPreDeath += (sender, args) => {
             StartCoroutine(FadeOutDeath());
+            UpdatePathing();
         };
         
         isTurningEnabled = false;
@@ -38,11 +39,16 @@ public class CactusBehavior : EnemyBehaviour
     public void SetInvulnerability(bool invulnerable) {
         if (invulnerable) {
             isInvulnerable = true;
-            gameObject.layer = LayerMask.NameToLayer("Obstacle");
+            Health.isInvulnerable = true;
         }
         else {
             isInvulnerable = false;
-            gameObject.layer = LayerMask.NameToLayer("Enemy");
+            Health.isInvulnerable = false;
         }
+    }
+    
+    private void UpdatePathing() {
+        var graph = AstarPath.active.data.gridGraph;
+        AstarPath.active.Scan();
     }
 }
