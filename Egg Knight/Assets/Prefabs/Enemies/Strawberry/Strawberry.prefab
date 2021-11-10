@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 6052989419570033510}
   - component: {fileID: 6052989419570033562}
   - component: {fileID: 6052989419570033563}
-  - component: {fileID: 6052989419570033561}
   - component: {fileID: 6052989419570033511}
   - component: {fileID: 6052989419570033560}
   - component: {fileID: 6052989419570033566}
   - component: {fileID: -7951124463302879737}
+  - component: {fileID: 2433451606731258009}
   m_Layer: 8
   m_Name: Strawberry
   m_TagString: Enemy
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 30
+  isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
   _weakTo: 0
@@ -179,18 +180,6 @@ MonoBehaviour:
   _immuneTo2: 3
   _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
     type: 3}
---- !u!114 &6052989419570033561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6052989419570033505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78305bad1355f224899ceed526df24a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6052989419570033511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +279,18 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &2433451606731258009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052989419570033505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78305bad1355f224899ceed526df24a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6052989420728253034
 GameObject:
   m_ObjectHideFlags: 0

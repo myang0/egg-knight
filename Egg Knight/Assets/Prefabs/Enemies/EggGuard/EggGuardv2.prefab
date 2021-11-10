@@ -117,11 +117,11 @@ GameObject:
   - component: {fileID: 4090832051791540563}
   - component: {fileID: 4090832051791540569}
   - component: {fileID: -2081870724206754303}
-  - component: {fileID: 1703422094630351531}
   - component: {fileID: 5242728630130018419}
   - component: {fileID: 1153923342008368833}
   - component: {fileID: 1293736572}
   - component: {fileID: 4955466421539643985}
+  - component: {fileID: 477321278597783302}
   m_Layer: 8
   m_Name: EggGuardv2
   m_TagString: Enemy
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 50
+  isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
   _weakTo: 2
@@ -279,18 +280,6 @@ MonoBehaviour:
     type: 3}
   _bleedParticles: {fileID: 350271996582760256, guid: ab9b8c45bca986a4aaac8babc912872f,
     type: 3}
---- !u!114 &1703422094630351531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4090832051791540568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41de1c1e368c2b248b265f679606a10d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &5242728630130018419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -387,6 +376,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spear: {fileID: 3595110931199682577, guid: 4ac7a05c07648a545a926c346828198e, type: 3}
   _heldSpear: {fileID: 8159754638909153633}
+--- !u!114 &477321278597783302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090832051791540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1cc9742c74b624987c7b5de6a2b9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8159754638909153633
 GameObject:
   m_ObjectHideFlags: 0

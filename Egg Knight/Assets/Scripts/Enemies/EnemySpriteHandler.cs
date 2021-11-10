@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public abstract class EnemySpriteHandler : MonoBehaviour {
+public class EnemySpriteHandler : MonoBehaviour {
   protected SpriteRenderer _sr;
 
   protected virtual void Awake() {

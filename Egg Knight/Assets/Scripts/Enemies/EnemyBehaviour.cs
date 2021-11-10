@@ -11,7 +11,7 @@ using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public abstract class EnemyBehaviour : MonoBehaviour {
-  public Rigidbody2D rb;
+  [HideInInspector] public Rigidbody2D rb;
 
   [SerializeField] protected float _maxSpeed;
   protected float _currentSpeed;

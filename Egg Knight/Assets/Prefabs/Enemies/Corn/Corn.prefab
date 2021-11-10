@@ -118,12 +118,12 @@ GameObject:
   - component: {fileID: 5166309169819309425}
   - component: {fileID: 5166309169819309427}
   - component: {fileID: 5166309169819309424}
-  - component: {fileID: 5166309169819309429}
   - component: {fileID: 5166309169819309426}
   - component: {fileID: 5166309169819309428}
+  - component: {fileID: -3109920031517495866}
   m_Layer: 8
   m_Name: Corn
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,18 +311,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &5166309169819309429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5166309169819309418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d3f7e84d824d843b1e98e3049b7db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5166309169819309426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,3 +363,15 @@ MonoBehaviour:
   _kernelPrefab: {fileID: 1362904509219522819, guid: 01a06933d2555de4ba7c62be84445385,
     type: 3}
   _numKernelsPerBurst: 8
+--- !u!114 &-3109920031517495866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166309169819309418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1cc9742c74b624987c7b5de6a2b9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
