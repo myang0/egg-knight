@@ -22,6 +22,8 @@ public class SpawnParachute : MonoBehaviour {
     
     void Awake() {
         StartAsserts();
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, pos.y, ZcoordinateConsts.Pickup);
     }
 
     private void StartAsserts() {

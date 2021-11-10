@@ -119,7 +119,7 @@ namespace Stage {
                 case StageType.Easy:
                     return enemyCount == 0 && numWavesCurr == numWavesMax;
                 case StageType.Boss:
-                    return enemiesList.Count == 0 && numWavesCurr == numWavesMax;
+                    return enemiesList.Count == 0;
                 case StageType.Survival:
                     return numWavesCurr == 1 && numWavesMax == 1;
             }

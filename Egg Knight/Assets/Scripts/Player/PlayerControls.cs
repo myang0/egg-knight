@@ -67,7 +67,12 @@ public class PlayerControls : MonoBehaviour {
 		if (Input.GetKey(KeyCode.K)) {
 			StageManager stage = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>()
 				.GetCurrentStage();
-			if (stage.numWavesMax == 0) {
+
+			if (stage.GetStageType() == StageType.Rest || stage.GetStageType() == StageType.Shop ||
+			    stage.GetStageType() == StageType.Sirracha || stage.GetStageType() == StageType.Spawn) {
+				stage.numWavesCurr = 0;
+			}
+			else if (stage.numWavesMax == 0) {
 				stage.numWavesCurr = 1;
 			}
 			else {

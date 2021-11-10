@@ -62,8 +62,14 @@ namespace Stage
                     stagesCleared = 0;
                 
                     // First stage of list will always be SPAWN
-                    stage = level == 2 ? level2Stages[0] : level3Stages[0];
-                    
+                    if (level == 2) {
+                        stage = level2Stages[0];
+                        level2Stages.Remove(stage);
+                    }
+                    else {
+                        stage = level3Stages[0];
+                        level3Stages.Remove(stage);
+                    }
                     break;
                 
                 case StageType.Boss:
@@ -300,9 +306,9 @@ namespace Stage
             Assert.IsNotNull(level1Sirracha);
             Assert.IsNotNull(level1Rest);
             Assert.IsTrue(level2Stages.Count > 0);
-            // Assert.IsTrue(level2Shops.Count == ShopsPerLevel);
-            // Assert.IsNotNull(level2Sirracha);
-            // Assert.IsNotNull(level2Rest);
+            Assert.IsTrue(level2Shops.Count == ShopsPerLevel);
+            Assert.IsNotNull(level2Sirracha);
+            Assert.IsNotNull(level2Rest);
             // Assert.IsTrue(level3Stages.Count > 0);
             // Assert.IsTrue(level3Shops.Count == ShopsPerLevel);
             // Assert.IsNotNull(level3Sirracha);
@@ -312,7 +318,7 @@ namespace Stage
         
         public bool GetShopSpawn() {
             int chance = Random.Range(1, 101);
-            if (_player.GetComponent<PlayerWallet>().GetBalance() > 4) return false;
+            if (_player.GetComponent<PlayerWallet>().GetBalance() < 4) return false;
 
             switch (level) {
                 case 1:

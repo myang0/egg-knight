@@ -73,6 +73,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   private void HandlePreDeath(object sender, EventArgs e) {
     StartCoroutine(FadeOutDeath());
+    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
   }
 
   public IEnumerator FadeOutDeath() {
@@ -94,7 +95,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void HandleDeath(object sender, EventArgs e) {
-    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
     GameObject.FindGameObjectWithTag("LevelManager")
       .GetComponent<LevelManager>()
       .GetCurrentStage()
