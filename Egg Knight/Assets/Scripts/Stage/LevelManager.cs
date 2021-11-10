@@ -31,7 +31,7 @@ namespace Stage
         public bool isFirstShopVisited = false;
         public int numSirRachaVisits = 0;
         public bool hasPlayerTakenDamageCurrStage;
-        private int _level = 1;
+        public int level = 1;
         private const int ShopsPerLevel = 3;
         private GameObject _player;
 
@@ -58,12 +58,18 @@ namespace Stage
 
             switch (stageType) {
                 case StageType.Spawn:
-                    _level++;
+                    level++;
                     stagesCleared = 0;
                 
                     // First stage of list will always be SPAWN
-                    stage = _level == 2 ? level2Stages[0] : level3Stages[0];
-                    
+                    if (level == 2) {
+                        stage = level2Stages[0];
+                        level2Stages.Remove(stage);
+                    }
+                    else {
+                        stage = level3Stages[0];
+                        level3Stages.Remove(stage);
+                    }
                     break;
                 
                 case StageType.Boss:
@@ -100,9 +106,13 @@ namespace Stage
 
         private void UpdatePathing() {
             var graph = AstarPath.active.data.gridGraph;
-            graph.center = currentStage.transform.position;
+            var stagePos = currentStage.transform.position;
+            var colliderCenter = currentStage._camBoundary.center;
             graph.SetDimensions(Mathf.RoundToInt(currentStage._camBoundary.size.x), 
                 Mathf.RoundToInt(currentStage._camBoundary.size.y), 1);
+            graph.center = new Vector2(stagePos.x + colliderCenter.x, stagePos.y + colliderCenter.y);
+            // Debug.Log("X: " + graph.center.x + ", Y: " + graph.center.y);
+            // graph.center = currentStage.transform.position;
             AstarPath.active.Scan();
         }
 
@@ -172,7 +182,7 @@ namespace Stage
 
         private StageManager LoadRegularStage() {
             StageManager stage;
-            switch (_level) {
+            switch (level) {
                 case 1:
                     stage = level1Stages[Random.Range(0, level1Stages.Count - 1)];
                     Assert.IsTrue(level1Stages.Remove(stage));
@@ -191,7 +201,7 @@ namespace Stage
 
         private StageManager LoadRestStage() {
             StageManager stage;
-            switch (_level) {
+            switch (level) {
                 case 1:
                     stage = level1Rest;
                     level1Rest = null;
@@ -210,7 +220,7 @@ namespace Stage
 
         private StageManager LoadSirrachaStage() {
             StageManager stage;
-            switch (_level) {
+            switch (level) {
                 case 1:
                     stage = level1Sirracha;
                     level1Sirracha = null;
@@ -229,7 +239,7 @@ namespace Stage
 
         private StageManager LoadShopStage() {
             StageManager stage;
-            switch (_level) {
+            switch (level) {
                 case 1:
                     stage = level1Shops[Random.Range(0, level1Shops.Count)];
                     Assert.IsTrue(level1Shops.Remove(stage));
@@ -248,7 +258,7 @@ namespace Stage
 
         private StageManager LoadBossStage() {
             StageManager stage;
-            switch (_level) {
+            switch (level) {
                 case 1:
                     stage = level1Stages[level1Stages.Count - 1];
                     Assert.IsTrue(level1Stages.Remove(stage));
@@ -266,7 +276,7 @@ namespace Stage
         }
 
         private void SetStageActiveStatus(StageManager activeStage) {
-            switch (_level) {
+            switch (level) {
                 case 1: {
                     foreach (StageManager stage in level1Stages) {
                         stage.SetStageStatus(StageStatus.Inactive);
@@ -296,20 +306,21 @@ namespace Stage
             Assert.IsNotNull(level1Sirracha);
             Assert.IsNotNull(level1Rest);
             Assert.IsTrue(level2Stages.Count > 0);
-            // Assert.IsTrue(level2Shops.Count == ShopsPerLevel);
-            // Assert.IsNotNull(level2Sirracha);
-            // Assert.IsNotNull(level2Rest);
+            Assert.IsTrue(level2Shops.Count == ShopsPerLevel);
+            Assert.IsNotNull(level2Sirracha);
+            Assert.IsNotNull(level2Rest);
             // Assert.IsTrue(level3Stages.Count > 0);
             // Assert.IsTrue(level3Shops.Count == ShopsPerLevel);
             // Assert.IsNotNull(level3Sirracha);
             // Assert.IsNotNull(level3Rest);
-            Assert.IsTrue(_level > 0 && _level < 4);
+            Assert.IsTrue(level > 0 && level < 4);
         }
         
         public bool GetShopSpawn() {
             int chance = Random.Range(1, 101);
+            if (_player.GetComponent<PlayerWallet>().GetBalance() < 4) return false;
 
-            switch (_level) {
+            switch (level) {
                 case 1:
                     if (level1Shops.Count == 0) return false;
                     chance = chance * 3 / level1Shops.Count;
@@ -332,7 +343,7 @@ namespace Stage
         }
     
         public bool GetSirrachaSpawn() {
-            switch (_level) {
+            switch (level) {
                 case 1 when level1Sirracha == null:
                 case 2 when level1Sirracha == null:
                 case 3 when level3Sirracha == null:
@@ -348,7 +359,9 @@ namespace Stage
         }
     
         public bool GetRestSpawn() {
-            switch (_level) {
+            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
+            
+            switch (level) {
                 case 1 when level1Rest == null:
                 case 2 when level2Rest == null:
                 case 3 when level3Rest == null:
@@ -373,7 +386,7 @@ namespace Stage
         }
 
         public int GetLevel() {
-            return _level;
+            return level;
         }
         
         public int GetStagesCleared() {

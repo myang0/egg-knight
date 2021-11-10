@@ -1239,6 +1239,7 @@
             </e>
           </e>
         </e>
+        <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -1398,6 +1399,8 @@
               <e p="Yolk" t="Include">
                 <e p="GoldenYolk.cs" t="Include" />
                 <e p="LeghornShot.cs" t="Include" />
+                <e p="RocketPoweredYolk.cs" t="Include" />
+                <e p="RunnyYolk.cs" t="Include" />
                 <e p="YolkUpgrade.cs" t="Include" />
               </e>
             </e>

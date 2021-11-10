@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
   private Rigidbody2D _rb;
 
   [SerializeField] private float _movementSpeed = 5.0f;
+  public float _currentMovementSpeed;
 
   [SerializeField] private float _rollSpeed = 15.0f;
   [SerializeField] private float _rollDrag = 3.0f;
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
   private void Awake() {
     PlayerControls.OnMovement += HandleMovement;
     PlayerControls.OnSpaceBarPressed += HandleRoll;
+    PlayerFootprint.OnSandpitEnter += SandpitSlow;
+    PlayerFootprint.OnSandpitExit += ResetSpeed;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
 
@@ -33,14 +36,26 @@ public class PlayerMovement : MonoBehaviour {
 
     LevelManager.OnDialogueStart += HandleDialogueChange;
 		LevelManager.OnDialogueEnd += HandleDialogueChange;
+
+    _currentMovementSpeed = _movementSpeed;
   }
+
+  private void ResetSpeed(object sender, EventArgs e) {
+    _currentMovementSpeed = _movementSpeed;
+  }
+
+  private void SandpitSlow(object sender, EventArgs e) {
+    _currentMovementSpeed = _currentMovementSpeed * 0.5f;
+  }
+
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
     if (_rb == null) {
       return;
     }
 
-    _rb.velocity = e.vector * _movementSpeed;
+    if (Math.Abs(_currentMovementSpeed - _movementSpeed) > 0.01f) _rb.velocity = e.vector * _currentMovementSpeed;
+    else _rb.velocity = e.vector * _movementSpeed;
 
     if (e.vector != Vector2.zero) {
       OnMovementBegin?.Invoke(this, EventArgs.Empty);

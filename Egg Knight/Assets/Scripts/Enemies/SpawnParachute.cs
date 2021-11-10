@@ -22,6 +22,8 @@ public class SpawnParachute : MonoBehaviour {
     
     void Awake() {
         StartAsserts();
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, pos.y, ZcoordinateConsts.Pickup);
     }
 
     private void StartAsserts() {
@@ -41,7 +43,8 @@ public class SpawnParachute : MonoBehaviour {
                     spawnedEnemy = SpawnLevel1();
                     break;
                 case 2:
-                    spawnedEnemy = SpawnLevel2();
+                    spawnedEnemy = SpawnLevel1();
+                    // spawnedEnemy = SpawnLevel2();
                     break;
                 case 3:
                     spawnedEnemy = SpawnLevel3();

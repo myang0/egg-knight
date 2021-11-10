@@ -73,6 +73,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   private void HandlePreDeath(object sender, EventArgs e) {
     StartCoroutine(FadeOutDeath());
+    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
   }
 
   public IEnumerator FadeOutDeath() {
@@ -94,7 +95,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void HandleDeath(object sender, EventArgs e) {
-    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
     GameObject.FindGameObjectWithTag("LevelManager")
       .GetComponent<LevelManager>()
       .GetCurrentStage()
@@ -233,13 +233,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void OnTriggerExit2D(Collider2D other) {
-    if (other.gameObject.layer == LayerMask.NameToLayer("Floor")) {
-      StartCoroutine(FadeOutDeath());
-      GameObject.FindGameObjectWithTag("LevelManager")
-        .GetComponent<LevelManager>()
-        .GetCurrentStage()
-        .RemoveEnemy(this);
-    }
+    // if (other.gameObject.layer == LayerMask.NameToLayer("Floor")) {
+    //   StartCoroutine(FadeOutDeath());
+    //   GameObject.FindGameObjectWithTag("LevelManager")
+    //     .GetComponent<LevelManager>()
+    //     .GetCurrentStage()
+    //     .RemoveEnemy(this);
+    // }
   }
 
   public virtual void Attack() {
