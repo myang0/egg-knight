@@ -100,9 +100,13 @@ namespace Stage
 
         private void UpdatePathing() {
             var graph = AstarPath.active.data.gridGraph;
-            graph.center = currentStage.transform.position;
+            var stagePos = currentStage.transform.position;
+            var colliderCenter = currentStage._camBoundary.center;
             graph.SetDimensions(Mathf.RoundToInt(currentStage._camBoundary.size.x), 
                 Mathf.RoundToInt(currentStage._camBoundary.size.y), 1);
+            graph.center = new Vector2(stagePos.x + colliderCenter.x, stagePos.y + colliderCenter.y);
+            // Debug.Log("X: " + graph.center.x + ", Y: " + graph.center.y);
+            // graph.center = currentStage.transform.position;
             AstarPath.active.Scan();
         }
 
@@ -308,6 +312,7 @@ namespace Stage
         
         public bool GetShopSpawn() {
             int chance = Random.Range(1, 101);
+            if (_player.GetComponent<PlayerWallet>().GetBalance() > 4) return false;
 
             switch (level) {
                 case 1:
@@ -348,6 +353,8 @@ namespace Stage
         }
     
         public bool GetRestSpawn() {
+            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
+            
             switch (level) {
                 case 1 when level1Rest == null:
                 case 2 when level2Rest == null:

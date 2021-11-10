@@ -1239,6 +1239,7 @@
             </e>
           </e>
         </e>
+        <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">

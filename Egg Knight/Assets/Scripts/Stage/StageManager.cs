@@ -13,12 +13,12 @@ namespace Stage {
     public class StageManager : MonoBehaviour {
         [SerializeField] private StageType stageType;
         [SerializeField] private StageStatus stageStatus;
-        [SerializeField] private List<EnemyBehaviour> enemiesList;
+        [SerializeField] public List<EnemyBehaviour> enemiesList;
         //Use enemyCount instead of enemiesList.Count because enemy spawns are delayed
         public int enemyCount;
         [SerializeField] private int numEnemiesMax;
-        [SerializeField] private int numWavesMax;
-        [SerializeField] private int numWavesCurr;
+        [SerializeField] public int numWavesMax;
+        [SerializeField] public int numWavesCurr;
         [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
         public bool isAutoAggroOnSpawn;
         public event EventHandler OnStageClear;
@@ -26,7 +26,7 @@ namespace Stage {
 
         private StageEntrance _stageEntrance;
         private ItemSpawnpoint _itemSpawnpoint;
-        private List<StageExit> _stageExits = new List<StageExit>();
+        public List<StageExit> stageExits = new List<StageExit>();
         private List<EnemySpawnpoint> _eSpawnpoints = new List<EnemySpawnpoint>();
         
         private LevelManager _levelManager;
@@ -40,11 +40,11 @@ namespace Stage {
         private const int SurvivalStageSpawnRate = 0;
 
         private const int NumStagesToBossLv1 = 10;
-        private const int NumStagesToBossLv2 = 10;
+        private const int NumStagesToBossLv2 = 8;
         private const int NumStagesToBossLv3 = 12;
 
         private static readonly int[] Level1ItemStages = {3, 7, 11};
-        private static readonly int[] Level2ItemStages = {3, 7, 11};
+        private static readonly int[] Level2ItemStages = {3, 6, 9};
         private static readonly int[] Level3ItemStages = {3, 7, 11};
 
         private const float SurvivalTimer = 30f;
@@ -53,13 +53,13 @@ namespace Stage {
 
         private void Awake() {
             _eSpawnpoints.AddRange(GetComponentsInChildren<EnemySpawnpoint>());
-            _stageExits.AddRange(GetComponentsInChildren<StageExit>());
+            stageExits.AddRange(GetComponentsInChildren<StageExit>());
             _stageEntrance = GetComponentInChildren<StageEntrance>();
             _itemSpawnpoint = GetComponentInChildren<ItemSpawnpoint>();
             _camBoundary = GetComponent<BoxCollider>();
             _levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             
-            Assert.IsTrue(_stageExits.Count > 0);
+            Assert.IsTrue(stageExits.Count > 0);
             Assert.IsNotNull(_stageEntrance);
             Assert.IsNotNull(_camBoundary);
             Assert.IsNotNull(_levelManager);
@@ -219,7 +219,7 @@ namespace Stage {
         }
 
         private void ReadyForNextStage() {
-            foreach (StageExit exit in _stageExits) {
+            foreach (StageExit exit in stageExits) {
                 if (exit.GetIsExitInUse()) {
                     _levelManager.NextStage(exit.GetStageType());
                     stageStatus = StageStatus.Inactive;
@@ -233,7 +233,7 @@ namespace Stage {
             int stagesCleared = _levelManager.GetStagesCleared();
 
             if (stageType == StageType.Boss) {
-                foreach (StageExit exit in _stageExits) {
+                foreach (StageExit exit in stageExits) {
                     exit.SetStageType(StageType.Spawn);
                 }
             }
@@ -241,7 +241,7 @@ namespace Stage {
             else if (currentLevel == 1 && stagesCleared == NumStagesToBossLv1 
                 || currentLevel == 2 && stagesCleared == NumStagesToBossLv2
                 || currentLevel == 3 && stagesCleared == NumStagesToBossLv3) {
-                foreach (StageExit exit in _stageExits) {
+                foreach (StageExit exit in stageExits) {
                     exit.SetStageType(StageType.Boss);
                 }
             }
@@ -258,7 +258,7 @@ namespace Stage {
                     didSpecialRoomSpawn = true;
                 }
 
-                foreach (StageExit exit in _stageExits) {
+                foreach (StageExit exit in stageExits) {
                     bool skipRegularRoomGen = false;
                     
                     // Spawn stages will ALWAYS lead to a medium stage
@@ -334,7 +334,7 @@ namespace Stage {
             }
         }
 
-        private IEnumerator StartSurvivalTimer() {
+        public IEnumerator StartSurvivalTimer() {
             _survivalTimerCurrent = (int) SurvivalTimer;
             while (_survivalTimerCurrent > 0) {
                 _waveCounterText.SetText("Survive for " + _survivalTimerCurrent + "s", 0);
@@ -346,10 +346,10 @@ namespace Stage {
             }
             yield return new WaitForSeconds(1.5f);
             foreach (EnemyBehaviour e in enemiesList) {
-                StopCoroutine(e.FadeOutDeath());
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
+            enemyCount = 0;
             numWavesCurr = 1;
         }
         

@@ -58,6 +58,34 @@ public class PlayerControls : MonoBehaviour {
 
 			AttackSwitchControls();
 			UnlockAllWeapons();
+			TeleportToExit();
+			KillAllEnemies();
+		}
+	}
+
+	private void KillAllEnemies() {
+		if (Input.GetKey(KeyCode.K)) {
+			StageManager stage = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>()
+				.GetCurrentStage();
+			if (stage.numWavesMax == 0) {
+				stage.numWavesCurr = 1;
+			}
+			else {
+				StopCoroutine(stage.StartSurvivalTimer());
+				stage.numWavesCurr = stage.numWavesMax;
+			}
+			foreach (var e in stage.enemiesList) {
+				Destroy(e.gameObject);
+			}
+			stage.enemiesList.Clear();
+			stage.enemyCount = 0;
+		}
+	}
+
+	private void TeleportToExit() {
+		if (Input.GetKey(KeyCode.O)) {
+			GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("LevelManager")
+				.GetComponent<LevelManager>().GetCurrentStage().stageExits[0].transform.position;
 		}
 	}
 

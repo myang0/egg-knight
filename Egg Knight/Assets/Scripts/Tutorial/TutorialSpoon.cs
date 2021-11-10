@@ -27,7 +27,7 @@ public class TutorialSpoon : StateMachineBehaviour
     }
     
     private void SpawnEnemy(object sender, EventArgs e) {
-        if (!isEnemySpawned) {
+        if (!isEnemySpawned && tutRoom.isPlayerInside) {
             SpawnParachute spawnParachute = Instantiate(manager.spawnParachute,
                 tutRoom.EntitySpawnPosTransform.position, Quaternion.identity);
             spawnParachute.spawnSpecificEnemy = spawnParachute.lv1Raspberry;

@@ -125,12 +125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3646dbc4a97e1408946367610a61c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 75
+  isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
-  _weakTo: 3
-  _immuneTo: 0
-  _immuneTo2: 2
+  _weakTo: 1
+  _immuneTo: 3
+  _immuneTo2: 3
   _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
     type: 3}
 --- !u!114 &3118920084237337237

@@ -8,6 +8,8 @@ public class Caravan : MonoBehaviour {
     public ShopItem shopItem1;
     public ShopItem shopItem2;
     public ShopItem shopItem3;
+    public ShopItem shopItem4;
+    public ShopItem shopItem5;
 
     public ItemManager itemManager;
     public LevelManager levelManager;
@@ -20,17 +22,28 @@ public class Caravan : MonoBehaviour {
         shopItem1.item = itemManager.GetRandomHealingItem();
         shopItem2.item = itemManager.GetRandomItem();
         shopItem3.item = itemManager.GetRandomItem();
+        shopItem4.item = itemManager.GetRandomItem();
+        shopItem5.item = itemManager.GetRandomItem();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         _hasDialoguePlayed = false;
     }
 
     private void Update() {
-        if (shopItem1.item == shopItem2.item) {
-            shopItem2.item = itemManager.GetRandomItem();
+        if (shopItem1.item == shopItem2.item || shopItem1.item == shopItem3.item ||
+            shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item) {
+            shopItem1.item = itemManager.GetRandomItem();
         }
 
-        if (shopItem2.item == shopItem3.item) {
+        if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item) {
+            shopItem2.item = itemManager.GetRandomItem();
+        }
+        
+        if (shopItem3.item == shopItem4.item || shopItem3.item == shopItem5.item) {
             shopItem3.item = itemManager.GetRandomItem();
+        }
+        
+        if (shopItem4.item == shopItem5.item) {
+            shopItem4.item = itemManager.GetRandomItem();
         }
     }
 
