@@ -4,7 +4,6 @@ public class ButterKnife : BasePlayerWeapon {
   [SerializeField] private Transform _attackPoint;
   [SerializeField] private float _attackRange;
 
-  [SerializeField] private LayerMask _enemyLayer;
   [SerializeField] private LayerMask _obstacleLayer;
 
   public override void EnableHitbox() {

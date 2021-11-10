@@ -5,7 +5,6 @@ public class TwoProngedFork : BasePlayerWeapon {
   [SerializeField] private float _attackWidth;
   [SerializeField] private float _attackHeight;
 
-  [SerializeField] private LayerMask _enemyLayer;
   [SerializeField] private LayerMask _obstacleLayer;
 
   public override void EnableHitbox() {

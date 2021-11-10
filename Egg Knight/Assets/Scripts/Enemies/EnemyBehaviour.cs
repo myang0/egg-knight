@@ -11,7 +11,7 @@ using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public abstract class EnemyBehaviour : MonoBehaviour {
-  public Rigidbody2D rb;
+  [HideInInspector] public Rigidbody2D rb;
 
   [SerializeField] protected float _maxSpeed;
   protected float _currentSpeed;
@@ -223,7 +223,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void SetAlertTrigger() {
-    alertAnimator?.Play("Active",  0, 0f);
+    alertAnimator?.Play("Active", 0, 0f);
   }
 
   private void OnCollisionEnter2D(Collision2D other) {
