@@ -7,6 +7,7 @@ public abstract class EnemyHealth : Health {
   [SerializeField] protected DamageType _weakTo;
   [SerializeField] protected DamageType _immuneTo;
   [SerializeField] protected DamageType _immuneTo2;
+  
 
   protected PlayerInventory _playerInventory;
   protected PlayerCursedInventory _cursedInventory;
@@ -122,7 +123,8 @@ public abstract class EnemyHealth : Health {
 
   protected override void Die() {
     int healRoll = UnityEngine.Random.Range(0, 100);
-    if (healRoll < (10 * _playerInventory.GetItemQuantity(Item.ChefHat))) {
+    if (healRoll < (10 * _playerInventory.GetItemQuantity(Item.ChefHat)) && 
+        !gameObject.GetComponent<EnemyBehaviour>().disableRegularDrops) {
       Instantiate(_healingYolkPrefab, transform.position, Quaternion.identity);
     }
 

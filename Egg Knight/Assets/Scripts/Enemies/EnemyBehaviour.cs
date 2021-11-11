@@ -33,6 +33,8 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public float alertRange;
   public bool isTurningEnabled;
   public bool decrementEnemyCountOnDeath;
+  public bool disableRegularDrops;
+  public bool disableDeathRotation;
 
   public bool isWandering;
   private Vector3 _wanderDestination;
@@ -73,7 +75,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   private void HandlePreDeath(object sender, EventArgs e) {
     StartCoroutine(FadeOutDeath());
-    FindObjectOfType<CoinDrop>().DropCoin(transform.position);
+    if (!disableRegularDrops) FindObjectOfType<CoinDrop>().DropCoin(transform.position);
   }
 
   public IEnumerator FadeOutDeath() {
@@ -86,7 +88,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     transform.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
 
     while (sr.color.a > 0) {
-      transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
+      if (!disableDeathRotation) transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
       var color = sr.color;
       float newAlpha = color.a -= 0.001f;
       sr.color = new Color(color.r, color.g, color.b, newAlpha);

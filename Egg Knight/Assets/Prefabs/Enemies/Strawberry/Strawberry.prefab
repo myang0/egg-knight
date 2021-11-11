@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 6052989419570033560}
   - component: {fileID: 6052989419570033566}
   - component: {fileID: -7951124463302879737}
-  - component: {fileID: 2433451606731258009}
+  - component: {fileID: 7440192685626963084}
   m_Layer: 8
   m_Name: Strawberry
   m_TagString: Enemy
@@ -225,6 +225,8 @@ MonoBehaviour:
   alertRange: 5
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 6052989420728253035}
@@ -279,7 +281,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &2433451606731258009
+--- !u!114 &7440192685626963084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,7 +290,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6052989419570033505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78305bad1355f224899ceed526df24a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6052989420728253034
