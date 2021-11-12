@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class HealingItem : MonoBehaviour {
+public class HealingItem : PickupBase {
   [SerializeField] protected float healAmount;
 
-  private void OnTriggerEnter2D(Collider2D col) {
-    if (col.CompareTag("Player")) {
-      PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
+  // private void OnTriggerEnter2D(Collider2D col) {
+  //   if (col.CompareTag("Player")) {
+  //     PickUp(col.gameObject);
+  //   }
+  // }
 
-      playerHealth.Heal(healAmount);
-
-      Destroy(gameObject);
-    }
+  public override void PickUp(GameObject playerObject) {
+    playerObject.GetComponent<PlayerHealth>().Heal(healAmount);
+    Destroy(gameObject);
   }
 }

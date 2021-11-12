@@ -68,10 +68,10 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
   }
 
-  protected void CollectCoins(Collider2D[] coins) {
-    foreach (Collider2D coin in coins) {
-      Coin c = coin.gameObject.GetComponent<Coin>();
-      c.PickUp(_playerObject);
+  protected void CollectCoins(Collider2D[] pickups) {
+    foreach (Collider2D p in pickups) {
+      PickupBase pickup = p.gameObject.GetComponent<PickupBase>();
+      if (pickup.allowWeaponPickup) pickup.PickUp(_playerObject);
     }
   }
 

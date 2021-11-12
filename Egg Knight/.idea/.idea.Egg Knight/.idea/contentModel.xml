@@ -1239,6 +1239,10 @@
             </e>
           </e>
         </e>
+        <e p="KeyPickup.cs" t="Include" />
+        <e p="LockedWallBehavior.cs" t="Include" />
+        <e p="LockedWallHealth.cs" t="Include" />
+        <e p="PickupBase.cs" t="Include" />
         <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
@@ -1257,12 +1261,16 @@
               <e p="BroccoliStateManager.cs" t="Include" />
               <e p="GreatSlash.cs" t="Include" />
             </e>
+            <e p="Corn" t="Include">
+              <e p="CornBehaviour.cs" t="Include" />
+              <e p="CornHealth.cs" t="Include" />
+              <e p="Kernel.cs" t="Include" />
+            </e>
             <e p="EggGuard" t="Include">
               <e p="EggGuardAttack.cs" t="Include" />
               <e p="EggGuardBehaviour.cs" t="Include" />
               <e p="EggGuardHealth.cs" t="Include" />
               <e p="EggGuardSpear.cs" t="Include" />
-              <e p="EggGuardSpriteHandler.cs" t="Include" />
               <e p="EggGuardState.cs" t="Include" />
               <e p="EggGuardWeapons.cs" t="Include" />
             </e>
@@ -1273,14 +1281,19 @@
             <e p="Mushroom" t="Include">
               <e p="MushroomBehavior.cs" t="Include" />
               <e p="MushroomHealth.cs" t="Include" />
-              <e p="MushroomSpriteHandler.cs" t="Include" />
               <e p="Spore.cs" t="Include" />
+            </e>
+            <e p="Peas" t="Include">
+              <e p="PeaBehaviour.cs" t="Include" />
+              <e p="PeaHealth.cs" t="Include" />
+              <e p="PeaPodBehaviour.cs" t="Include" />
+              <e p="PeaPodHealth.cs" t="Include" />
+              <e p="PeaSpawner.cs" t="Include" />
             </e>
             <e p="Raspberry" t="Include">
               <e p="RaspberryBehaviour.cs" t="Include" />
               <e p="RaspberryHealth.cs" t="Include" />
               <e p="RaspberryProjectile.cs" t="Include" />
-              <e p="RaspberrySpriteHandler.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
             </e>
             <e p="SpawnParachute.cs" t="Include" />
@@ -1288,7 +1301,6 @@
               <e p="StrawberryBehaviour.cs" t="Include" />
               <e p="StrawberryHealth.cs" t="Include" />
               <e p="StrawberryProjectile.cs" t="Include" />
-              <e p="StrawberrySpriteHandler.cs" t="Include" />
             </e>
             <e p="TrainingDummy" t="Include">
               <e p="TrainingDummyBehavior.cs" t="Include" />
@@ -1341,6 +1353,10 @@
               <e p="BroccoliSpin.cs" t="Include" />
               <e p="BroccoliWalk.cs" t="Include" />
             </e>
+            <e p="Corn" t="Include">
+              <e p="CornAlert.cs" t="Include" />
+              <e p="CornAttack.cs" t="Include" />
+            </e>
             <e p="EnemyAttack.cs" t="Include" />
             <e p="EnemyDeadState.cs" t="Include" />
             <e p="EnemyIdle.cs" t="Include" />
@@ -1348,6 +1364,9 @@
             <e p="EnemyStunned.cs" t="Include" />
             <e p="EnemyWander.cs" t="Include" />
             <e p="MeleeEnemyAlerted.cs" t="Include" />
+            <e p="Peas" t="Include">
+              <e p="PeaEmerging.cs" t="Include" />
+            </e>
             <e p="RangedEnemyAlerted.cs" t="Include" />
             <e p="RangedEnemyChase.cs" t="Include" />
             <e p="RangedEnemyFlee.cs" t="Include" />
@@ -1367,6 +1386,10 @@
             </e>
             <e p="Campfire.cs" t="Include" />
             <e p="Caravan.cs" t="Include" />
+            <e p="Chest" t="Include">
+              <e p="ChestBehavior.cs" t="Include" />
+              <e p="ChestHealth.cs" t="Include" />
+            </e>
             <e p="DamagingTile.cs" t="Include" />
             <e p="DeadTree" t="Include">
               <e p="DeadTreeBehavior.cs" t="Include" />

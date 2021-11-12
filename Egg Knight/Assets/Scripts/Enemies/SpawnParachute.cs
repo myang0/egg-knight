@@ -47,7 +47,8 @@ public class SpawnParachute : MonoBehaviour {
                     // spawnedEnemy = SpawnLevel2();
                     break;
                 case 3:
-                    spawnedEnemy = SpawnLevel3();
+                    spawnedEnemy = SpawnLevel1();
+                    // spawnedEnemy = SpawnLevel3();
                     break;
                 default:
                     throw new Exception("Attempting to spawn an enemy in level >3???");

@@ -58,6 +58,7 @@ namespace Stage
 
             switch (stageType) {
                 case StageType.Spawn:
+                    isFirstShopVisited = false;
                     level++;
                     stagesCleared = 0;
                 
@@ -97,7 +98,6 @@ namespace Stage
             SetStageActiveStatus(stage);
             MovePlayerToStage(stage);
             hasPlayerTakenDamageCurrStage = false;
-            isFirstShopVisited = false;
             virtualCamera.GetComponent<CinemachineConfiner>().m_BoundingVolume = stage.GetCameraBoundary();
             currentStage = stage;
             UpdatePathing();

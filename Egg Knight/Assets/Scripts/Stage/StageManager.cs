@@ -21,12 +21,15 @@ namespace Stage {
         [SerializeField] public int numWavesCurr;
         [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
         public bool isAutoAggroOnSpawn;
+        public KeyStageStatus keyStatus;
+        public List<LockedWallBehavior> lockedWalls = new List<LockedWallBehavior>();
         public event EventHandler OnStageClear;
         public event EventHandler OnStageStart;
 
         private StageEntrance _stageEntrance;
         private ItemSpawnpoint _itemSpawnpoint;
         public List<StageExit> stageExits = new List<StageExit>();
+        public List<ChestBehavior> chests = new List<ChestBehavior>();
         private List<EnemySpawnpoint> _eSpawnpoints = new List<EnemySpawnpoint>();
         
         private LevelManager _levelManager;
@@ -41,19 +44,32 @@ namespace Stage {
 
         private const int NumStagesToBossLv1 = 10;
         private const int NumStagesToBossLv2 = 8;
-        private const int NumStagesToBossLv3 = 12;
+        private const int NumStagesToBossLv3 = 9;
 
-        private static readonly int[] Level1ItemStages = {3, 7, 11};
-        private static readonly int[] Level2ItemStages = {3, 6, 9};
-        private static readonly int[] Level3ItemStages = {3, 7, 11};
+        //Actual stage num is value+1
+        private static readonly int[] Level1ItemStages = {2, 6, 10};
+        private static readonly int[] Level2ItemStages = {2, 5, 8};
+        private static readonly int[] Level3ItemStages = {2, 6};
 
         private const float SurvivalTimer = 30f;
         private int _survivalTimerCurrent;
         private WaveCounterText _waveCounterText;
 
+        private float _hardEnemyMultiplier = 1.5f;
+        private float _easyEnemyMultiplier = 0.7f;
+        private float _survivalEnemyMultiplier = 0.7f;
+
+        private bool _initialSurvivalEnemiesSpawned;
+
+        public enum KeyStageStatus {
+            NotKeyStage, KeyNotFound, KeyFound
+        }
+
         private void Awake() {
             _eSpawnpoints.AddRange(GetComponentsInChildren<EnemySpawnpoint>());
             stageExits.AddRange(GetComponentsInChildren<StageExit>());
+            lockedWalls.AddRange(GetComponentsInChildren<LockedWallBehavior>());
+            chests.AddRange(GetComponentsInChildren<ChestBehavior>());
             _stageEntrance = GetComponentInChildren<StageEntrance>();
             _itemSpawnpoint = GetComponentInChildren<ItemSpawnpoint>();
             _camBoundary = GetComponent<BoxCollider>();
@@ -65,6 +81,25 @@ namespace Stage {
             Assert.IsNotNull(_levelManager);
             
             _waveCounterText = FindObjectOfType<WaveCounterText>();
+            if (keyStatus == KeyStageStatus.KeyNotFound) InitializeChests();
+        }
+
+        private void InitializeChests() {
+            bool keySet = false;
+            foreach (var c in chests) {
+                int randomChance = Random.Range(1, 101);
+                if (!keySet && randomChance < 100 / chests.Count) {
+                    keySet = true;
+                    c.drop = ChestBehavior.ChestDrops.Key;
+                }
+                else {
+                    c.drop = randomChance < 50 ? ChestBehavior.ChestDrops.Coin : ChestBehavior.ChestDrops.Heart;
+                    if (!keySet && c == chests[chests.Count-1]) {
+                        int randomChestIndex = Random.Range(0, chests.Count);
+                        chests[randomChestIndex].drop = ChestBehavior.ChestDrops.Key;
+                    }
+                }
+            }
         }
 
         private void Update() {
@@ -76,7 +111,13 @@ namespace Stage {
                 }
 
                 if (IsStageCleared()) {
-                    _waveCounterText.SetText("", 0);
+                    if (stageType == StageType.Survival && _levelManager.level == 3) {
+                        _waveCounterText.SetText("Enemy reinforcements have stopped.", 3);
+                    }
+                    else {
+                        _waveCounterText.SetText("", 0);
+                    }
+                    UnlockLockedWalls();
                     if (itemStatus == StageItemStatus.NeverSpawned) {
                         SpawnItem();
                         OnStageClear?.Invoke(this, EventArgs.Empty);
@@ -88,6 +129,34 @@ namespace Stage {
                 }
             } else if (stageStatus == StageStatus.Cleared) {
                 ReadyForNextStage();
+            }
+        }
+
+        public void KillAllEnemies() {
+            if (keyStatus == KeyStageStatus.KeyNotFound) keyStatus = KeyStageStatus.KeyFound;
+            
+            if (GetStageType() == StageType.Rest || GetStageType() == StageType.Shop ||
+                GetStageType() == StageType.Sirracha || GetStageType() == StageType.Spawn) {
+                numWavesCurr = 0;
+            }
+            else if (numWavesMax == 0) {
+                numWavesCurr = 1;
+            }
+            else {
+                StopCoroutine(StartSurvivalTimer());
+                _waveCounterText.ResetText();
+                numWavesCurr = numWavesMax;
+            }
+            foreach (var e in enemiesList) {
+                Destroy(e.gameObject);
+            }
+            enemiesList.Clear();
+            enemyCount = 0;
+        }
+
+        private void UnlockLockedWalls() {
+            foreach (var w in lockedWalls) {
+                w.SetInvulnerability(false);
             }
         }
 
@@ -108,22 +177,25 @@ namespace Stage {
         }
         
         private bool IsStageCleared() {
-            switch (stageType) {
-                case StageType.Rest:
-                case StageType.Shop:
-                case StageType.Sirracha:
-                case StageType.Spawn:
-                    return true;
-                case StageType.Medium:
-                case StageType.Hard:
-                case StageType.Easy:
-                    return enemyCount == 0 && numWavesCurr == numWavesMax;
-                case StageType.Boss:
-                    return enemiesList.Count == 0;
-                case StageType.Survival:
-                    return numWavesCurr == 1 && numWavesMax == 1;
+            if (keyStatus == KeyStageStatus.KeyFound) return true;
+            if (keyStatus == KeyStageStatus.KeyNotFound) return false;
+            if (keyStatus == KeyStageStatus.NotKeyStage) {
+                switch (stageType) {
+                    case StageType.Rest:
+                    case StageType.Shop:
+                    case StageType.Sirracha:
+                    case StageType.Spawn:
+                        return true;
+                    case StageType.Medium:
+                    case StageType.Hard:
+                    case StageType.Easy:
+                        return enemyCount == 0 && numWavesCurr == numWavesMax;
+                    case StageType.Boss:
+                        return enemiesList.Count == 0;
+                    case StageType.Survival:
+                        return numWavesCurr == 1 && numWavesMax == 1;
+                }
             }
-
             return false;
         }
 
@@ -132,13 +204,13 @@ namespace Stage {
 
             switch (stageType) {
                 case StageType.Hard:
-                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 1.5f);
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * _hardEnemyMultiplier);
                     break;
                 case StageType.Easy:
-                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.65f);
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * _easyEnemyMultiplier);
                     break;
                 case StageType.Survival:
-                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * 0.5f);
+                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * _survivalEnemyMultiplier);
                     break;
             }
             
@@ -151,17 +223,25 @@ namespace Stage {
         private void SpawnEnemies() {
             if (stageType == StageType.Survival) {
                 if (numWavesCurr == 1 && numWavesMax == 1 || enemyCount >= numEnemiesMax) return;
-                // if (numWavesCurr == 1 && numWavesMax == 1 || enemiesList.Count > numEnemiesMax) return;
 
-                if (enemyCount < numEnemiesMax - 3) {
-                    StartCoroutine(DelayedEnemySpawn());
+                if (!_initialSurvivalEnemiesSpawned) {
+                    if (enemyCount < numEnemiesMax) {
+                        RegularEnemySpawn();
+                    } else if (enemyCount == numEnemiesMax) {
+                        _initialSurvivalEnemiesSpawned = true;
+                    }
                 }
                 else {
-                    RegularEnemySpawn();
+                    if (enemyCount < numEnemiesMax) {
+                        StartCoroutine(DelayedEnemySpawn());
+                    } 
                 }
 
-                if (numWavesMax != 1) {
+                if (numWavesMax != 1 && keyStatus == KeyStageStatus.NotKeyStage) {
                     StartCoroutine(StartSurvivalTimer());
+                    numWavesMax = 1;
+                } else if (numWavesMax != 1 && keyStatus == KeyStageStatus.KeyNotFound) {
+                    _waveCounterText.SetText("Warning! Enemy reinforcements will constantly arrive!", 0);
                     numWavesMax = 1;
                 }
 
@@ -212,7 +292,7 @@ namespace Stage {
 
         private IEnumerator DelayedEnemySpawn() {
             enemyCount++;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
             int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
             EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
             spawn.SpawnEnemy();
@@ -222,6 +302,7 @@ namespace Stage {
             foreach (StageExit exit in stageExits) {
                 if (exit.GetIsExitInUse()) {
                     _levelManager.NextStage(exit.GetStageType());
+                    KillAllEnemies();
                     stageStatus = StageStatus.Inactive;
                     return;
                 }
@@ -326,8 +407,7 @@ namespace Stage {
                             stagesCleared == Level2ItemStages[1] ||
                             stagesCleared == Level2ItemStages[2]:
                 case 3 when stagesCleared == Level3ItemStages[0] ||
-                            stagesCleared == Level3ItemStages[1] ||
-                            stagesCleared == Level3ItemStages[2]:
+                            stagesCleared == Level3ItemStages[1]:
                     return true;
                 default:
                     return _levelManager.GetLuckyItemSpawn();
@@ -337,7 +417,7 @@ namespace Stage {
         public IEnumerator StartSurvivalTimer() {
             _survivalTimerCurrent = (int) SurvivalTimer;
             while (_survivalTimerCurrent > 0) {
-                _waveCounterText.SetText("Survive for " + _survivalTimerCurrent + "s", 0);
+                _waveCounterText.SetText("Survive for " + _survivalTimerCurrent + "s!", 0);
                 yield return new WaitForSeconds(1f);
                 _survivalTimerCurrent -= 1;
             }

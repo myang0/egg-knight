@@ -20,15 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +32,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LockedWallBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/37/3a9a44a3/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,20 +49,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A640F6C-B241-40B6-897C-AC910F849430/24/04950972/EventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.1.0/Unity.Mathematics/random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/KeyPickup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyDeadState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BossIntro.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BossIntroText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Eggitha.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryProjectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryProjectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageEntrance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/UnlockWeaponItem.cs" />
@@ -91,7 +75,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/DamagingTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" />
@@ -105,12 +88,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DamagingTile.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerFootprint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/LockedWall.cs" />
+        <option value="$PROJECT_DIR$/Assets/LockedWallHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/KeyPickup.cs" />
+        <option value="$PROJECT_DIR$/Assets/LockedWallBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/PickupBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/HealingItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
       </list>
     </option>
   </component>
@@ -189,6 +183,8 @@
       <workItem from="1636317258865" duration="7378000" />
       <workItem from="1636405569790" duration="16200000" />
       <workItem from="1636510214279" duration="13261000" />
+      <workItem from="1636595195065" duration="5977000" />
+      <workItem from="1636683357148" duration="4356000" />
     </task>
     <servers />
   </component>
@@ -309,10 +305,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1201" y="246" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1634537760711" />
-    <state x="1193" y="261" key="run.anything.popup" timestamp="1636413290322">
+    <state x="1193" y="261" key="run.anything.popup" timestamp="1636596740421">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1636413290322" />
+    <state x="1193" y="261" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1636596740421" />
     <state x="1199" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1633485547157">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
