@@ -37,7 +37,7 @@ public class SausageSpinAttack : MonoBehaviour {
   }
 
   public void StartAttack() {
-    int randomRoll = Random.Range(0, 50);
+    int randomRoll = Random.Range(0, 100);
 
     if (randomRoll < 50) {
       StartCoroutine(Spin1());

@@ -11,8 +11,6 @@ public class SausageSnipeAttack : MonoBehaviour {
 
   private void Awake() {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-    StartAttack();
   }
 
   public void StartAttack() {
