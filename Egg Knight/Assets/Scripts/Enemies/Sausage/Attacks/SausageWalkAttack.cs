@@ -43,6 +43,8 @@ public class SausageWalkAttack : MonoBehaviour {
         yield return new WaitForSeconds(_timeBetweenShots);
       }
     }
+
+    _anim.SetBool("IsWalking", false);
   }
 
   private void ShootAtPlayer() {

@@ -7,9 +7,13 @@ public class SausageSnipeAttack : MonoBehaviour {
   [SerializeField] private GameObject _bulletObject;
   [SerializeField] private GameObject _laserObject;
 
+  private Animator _anim;
+
   private Transform _playerTransform;
 
   private void Awake() {
+    _anim = GetComponent<Animator>();
+
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
@@ -30,5 +34,7 @@ public class SausageSnipeAttack : MonoBehaviour {
     bullet.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
 
     _laserObject.SetActive(false);
+
+    _anim.SetBool("IsSniping", false);
   }
 }

@@ -8,7 +8,13 @@ public class SausageBombAttack : MonoBehaviour {
 
   [SerializeField] private GameObject _bombObject;
 
+  private Animator _anim;
+
   private Transform _playerTransform;
+
+  private void Awake() {
+    _anim = GetComponent<Animator>();
+  }
 
   public void StartAttack() {
     StartCoroutine(Bomb());
@@ -22,5 +28,7 @@ public class SausageBombAttack : MonoBehaviour {
 
       yield return new WaitForSeconds(_timeBetweenThrows);
     }
+
+    _anim.SetBool("IsBombing", false);
   }
 }
