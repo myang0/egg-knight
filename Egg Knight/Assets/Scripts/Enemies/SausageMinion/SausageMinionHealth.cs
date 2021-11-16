@@ -27,6 +27,7 @@ public class SausageMinionHealth : EnemyHealth {
   }
 
   private void OnDestroy() {
+    SausagePartyAttack.Partygoers--;
     SausageHealth.OnSausageDeath -= HandleBossDeath;
   }
 }

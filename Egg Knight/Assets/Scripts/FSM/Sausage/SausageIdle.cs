@@ -9,6 +9,7 @@ public class SausageIdle : StateMachineBehaviour {
   private Animator _anim;
 
   private static int _subscribers = 0;
+  private static SausageAttack _lastUsedAttack = SausageAttack.Bomb;
 
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _sBehaviour = animator.GetComponent<EnemyBehaviour>() as SausageBehaviour;
@@ -52,17 +53,46 @@ public class SausageIdle : StateMachineBehaviour {
   }
 
   private void ChooseCloseRangeAttack() {
-    int attackRoll = Random.Range(0, 100);
+    SausageAttack currentAttack = _lastUsedAttack;
 
-    if (attackRoll < 25) {
-      _anim.SetBool("IsBombing", true);
-    } else if (attackRoll >= 25 && attackRoll < 50) {
-      _anim.SetBool("IsWalking", true);
-    } else if (attackRoll >= 50 && attackRoll < 75) {
-      _anim.SetBool("IsPartying", true);
-    } else {
-      _anim.SetBool("IsSpinning", true);
+    while (currentAttack == _lastUsedAttack) {
+      int attackRoll = Random.Range(0, 100);
+
+      if (attackRoll < 25) {
+        currentAttack = SausageAttack.Bomb;
+      } else if (attackRoll >= 25 && attackRoll < 50) {
+        currentAttack = SausageAttack.Walk;
+      } else if (attackRoll >= 50 && attackRoll < 75 && SausagePartyAttack.Partygoers <= 3) {
+        currentAttack = SausageAttack.Party;
+      } else {
+        currentAttack = SausageAttack.Spin;
+      }
     }
+
+    switch (currentAttack) {
+      case SausageAttack.Bomb: {
+        _anim.SetBool("IsBombing", true);
+        break;
+      }
+      case SausageAttack.Walk: {
+        _anim.SetBool("IsWalking", true);
+        break;
+      }
+      case SausageAttack.Party: {
+        _anim.SetBool("IsPartying", true);
+        break;
+      }
+      case SausageAttack.Spin: {
+        _anim.SetBool("IsChargingSpin", true);
+        break;
+      }
+      default: {
+        Debug.LogError("Unknown attack");
+        break;
+      }
+    }
+
+    _lastUsedAttack = currentAttack;
   }
 
   private void OnDestroy() {
@@ -70,5 +100,8 @@ public class SausageIdle : StateMachineBehaviour {
       _sStateManager.OnIdleEnd -= HandleIdleEnd;
       _subscribers = 0;
     }
+
+    Debug.Log("asdf");
+    _lastUsedAttack = SausageAttack.Bomb;
   }
 }

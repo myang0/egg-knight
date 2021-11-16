@@ -17,6 +17,10 @@ public class SausageHealth : EnemyHealth {
   }
 
   public override void Damage(float amount) {
+    if (_anim.GetBool("IsActive") == false) {
+      return;
+    }
+
     OnSausageDamage?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     base.Damage(amount);
   }

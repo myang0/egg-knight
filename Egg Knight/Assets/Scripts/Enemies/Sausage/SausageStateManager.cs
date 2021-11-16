@@ -12,7 +12,17 @@ public class SausageStateManager : MonoBehaviour {
   private void Awake() {
     _currentIdleTime = _initialIdleTime;
 
+    SausageActivator.OnSausageActivate += HandleSausageActivate;
+
     _eHealth = GetComponent<EnemyHealth>();
+  }
+
+  private void HandleSausageActivate(object sender, EventArgs e) {
+    if (GameObject.Find("Flowchart")) {
+      Fungus.Flowchart.BroadcastFungusMessage("SheriffSausageStart");
+    } else {
+      GetComponent<Animator>().SetBool("IsActive", true);
+    }
   }
 
   public void StartIdle() {
@@ -25,5 +35,9 @@ public class SausageStateManager : MonoBehaviour {
     yield return new WaitForSeconds(_currentIdleTime);
 
     OnIdleEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  private void OnDestroy() {
+    SausageActivator.OnSausageActivate -= HandleSausageActivate;
   }
 }

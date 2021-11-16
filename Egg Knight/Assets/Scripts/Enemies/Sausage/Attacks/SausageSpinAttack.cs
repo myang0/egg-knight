@@ -20,6 +20,8 @@ public class SausageSpinAttack : MonoBehaviour {
   private List<Vector2> _bulletVectors1;
   private List<Vector2> _bulletVectors2;
 
+  private Animator _anim;
+
   private void Awake() {
     _bulletVectors1 = new List<Vector2>(new Vector2[_numBulletsPerShot1]);
     _bulletVectors2 = new List<Vector2>(new Vector2[_numBulletsPerShot2]);
@@ -34,6 +36,8 @@ public class SausageSpinAttack : MonoBehaviour {
     for (int i = 0; i < _numBulletsPerShot2; i++) {
       _bulletVectors2[i] = Quaternion.Euler(0, 0, _angleBetweenShots2 * i) * Vector2.up;
     }
+
+    _anim = GetComponent<Animator>();
   }
 
   public void StartAttack() {
@@ -58,6 +62,8 @@ public class SausageSpinAttack : MonoBehaviour {
 
       yield return new WaitForSeconds(_waitTimeBetweenShots1);
     }
+
+    _anim.SetBool("IsSpinning", false);
   }
 
   private IEnumerator Spin2() {
@@ -72,6 +78,8 @@ public class SausageSpinAttack : MonoBehaviour {
 
       yield return new WaitForSeconds(_waitTimeBetweenShots2);
     }
+
+    _anim.SetBool("IsSpinning", false);
   }
 
   private void SpawnBullet(Vector2 direction) {
