@@ -31,6 +31,16 @@ public class BroccoliStateManager : MonoBehaviour {
 
     _eBehaviour = GetComponent<EnemyBehaviour>();
     _eHealth = GetComponent<EnemyHealth>();
+
+    BroccoliActivator.OnBroccoliActivate += HandleBroccoliActivate;
+  }
+
+  private void HandleBroccoliActivate(object sender, EventArgs e) {
+    if (GameObject.Find("Flowchart")) {
+      Fungus.Flowchart.BroadcastFungusMessage("BrigandBroccoliStart");
+    } else {
+      _anim.SetBool("IsActive", true);
+    }
   }
 
   public void StartIdle() {
@@ -87,5 +97,9 @@ public class BroccoliStateManager : MonoBehaviour {
     yield return new WaitForSeconds(_chargeTime);
 
     OnChargeEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  private void OnDestroy() {
+    
   }
 }
