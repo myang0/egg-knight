@@ -65,6 +65,10 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
         DamageEnemy(enemyHealth);
       }
+
+      if (enemyHealth.isInvulnerable) {
+        enemyHealth.Damage(0);
+      }
     }
   }
 
