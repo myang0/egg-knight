@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private bool _usesPathfinding = true;
+
     private Transform _playerTransform;
     private float nextWaypointDistance = 2f;
     private Path _path;
@@ -17,7 +19,10 @@ public class EnemyMovement : MonoBehaviour
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _seeker = GetComponent<Seeker>();
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
+
+        if (_usesPathfinding) {
+            InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
+        }
     }
     
     void UpdatePath() {
