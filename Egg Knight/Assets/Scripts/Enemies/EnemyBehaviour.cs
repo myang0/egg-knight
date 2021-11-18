@@ -39,7 +39,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool isWandering;
   private Vector3 _wanderDestination;
 
-  private Transform _playerTransform;
+  protected Transform _playerTransform;
   public bool isWallCollisionOn;
   private EnemyMovement _eMovement;
 
@@ -228,7 +228,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     alertAnimator?.Play("Active", 0, 0f);
   }
 
-  private void OnCollisionEnter2D(Collision2D other) {
+  protected virtual void OnCollisionEnter2D(Collision2D other) {
     if (!isWallCollisionOn && !isWandering && other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
       Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
     }
