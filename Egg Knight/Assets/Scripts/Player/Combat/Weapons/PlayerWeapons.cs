@@ -21,13 +21,23 @@ public class PlayerWeapons : MonoBehaviour {
   private Transform _weaponHoldPoint;
 
   public static event EventHandler OnWeaponAnimationBegin;
+  public static event EventHandler OnSwitchKnife;
+  public static event EventHandler OnSwitchFork;
+  public static event EventHandler OnSwitchSpoon;
+
+  private bool _isForkUnlocked = false;
+  private bool _isSpoonUnlocked = false;
 
   private void Awake() {
     // PlayerControls.OnQPress += SwitchPrevWeapon;
     // PlayerControls.OnEPress += SwitchNextWeapon;
+    UnlockWeaponItem.OnPickup += UnlockWeapon;
+    PlayerControls.OnUnlockAllWeapons += UnlockAllWeapons;
     PlayerControls.On1Press += SwitchKnife;
     PlayerControls.On2Press += SwitchFork;
     PlayerControls.On3Press += SwitchSpoon;
+    PlayerControls.OnScrollUp += SwitchNextWeapon;
+    PlayerControls.OnScrollDown += SwitchPrevWeapon;
     
     PlayerControls.OnLeftClick += HandleAttack;
 
@@ -43,14 +53,36 @@ public class PlayerWeapons : MonoBehaviour {
     DisplayCurrentWeapon();
   }
 
+  private void UnlockWeapon(object sender, EventArgs e) {
+    if (!_isForkUnlocked) _isForkUnlocked = true;
+    else if (!_isSpoonUnlocked) _isSpoonUnlocked = true;
+  }
+
+  private void UnlockAllWeapons(object sender, EventArgs e) {
+    _isForkUnlocked = true;
+    _isSpoonUnlocked = true;
+  }
+
   private void SwitchPrevWeapon(object sender, EventArgs e) {
     _currentWeaponIndex = (_currentWeaponIndex - 1 < 0) ? NUM_WEAPON_TYPES - 1 : _currentWeaponIndex - 1;
+    if (!_isForkUnlocked && !_isSpoonUnlocked) _currentWeaponIndex = 0;
+    if (_isForkUnlocked && !_isSpoonUnlocked && _currentWeaponIndex == 2) _currentWeaponIndex = 1;
     DisplayCurrentWeapon();
+    
+    if (_currentWeaponIndex == 0) OnSwitchKnife?.Invoke(this, EventArgs.Empty);
+    else if (_currentWeaponIndex == 1) OnSwitchFork?.Invoke(this, EventArgs.Empty);
+    else if (_currentWeaponIndex == 2) OnSwitchSpoon?.Invoke(this, EventArgs.Empty);
   }
 
   private void SwitchNextWeapon(object sender, EventArgs e) {
     _currentWeaponIndex = (_currentWeaponIndex + 1 >= NUM_WEAPON_TYPES) ? 0 : _currentWeaponIndex + 1;
+    if (!_isForkUnlocked && !_isSpoonUnlocked) _currentWeaponIndex = 0;
+    if (_isForkUnlocked && !_isSpoonUnlocked && _currentWeaponIndex == 2) _currentWeaponIndex = 0;
     DisplayCurrentWeapon();
+    
+    if (_currentWeaponIndex == 0) OnSwitchKnife?.Invoke(this, EventArgs.Empty);
+    else if (_currentWeaponIndex == 1) OnSwitchFork?.Invoke(this, EventArgs.Empty);
+    else if (_currentWeaponIndex == 2) OnSwitchSpoon?.Invoke(this, EventArgs.Empty);
   }
 
   private void HandleAttack(object sender, EventArgs e) {
@@ -116,20 +148,25 @@ public class PlayerWeapons : MonoBehaviour {
     if (_currentWeaponIndex != 0) {
       _currentWeaponIndex = 0;
       DisplayCurrentWeapon();
+      OnSwitchKnife?.Invoke(this, EventArgs.Empty);
     }
   }
   
   private void SwitchFork(object sender, EventArgs e) {
+    if (!_isForkUnlocked) return;
     if (_currentWeaponIndex != 1) {
       _currentWeaponIndex = 1;
       DisplayCurrentWeapon();
+      OnSwitchFork?.Invoke(this, EventArgs.Empty);
     }
   }
   
   private void SwitchSpoon(object sender, EventArgs e) {
+    if (!_isSpoonUnlocked) return;
     if (_currentWeaponIndex != 2) {
       _currentWeaponIndex = 2;
       DisplayCurrentWeapon();
+      OnSwitchSpoon?.Invoke(this, EventArgs.Empty);
     }
   }
 }

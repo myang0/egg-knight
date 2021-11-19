@@ -17,14 +17,15 @@ public class PlayerControls : MonoBehaviour {
 	public static event EventHandler On1Press;
 	public static event EventHandler On2Press;
 	public static event EventHandler On3Press;
+	public static event EventHandler OnScrollUp;
+	public static event EventHandler OnScrollDown;
+	public static event EventHandler OnUnlockAllWeapons;
 
 	private bool _notRolling = true;
 	private bool _dialogueDisabled = true;
 	private bool _gameRunning = true;
 
 	private bool _weaponSwitchingEnabled = true;
-	private bool _forkEnabled = false;
-	private bool _spoonEnabled = false;
 
 	private bool _movementKeysDown = false;
 
@@ -40,9 +41,6 @@ public class PlayerControls : MonoBehaviour {
 
 		PauseScreen.OnGamePaused += HandleGamePaused;
 		PauseScreen.OnGameResumed += HandleGameResumed;
-
-		UnlockWeaponItem.OnPickup += UnlockWeapon;
-		
 	}
 
 	private void Update() {
@@ -55,9 +53,8 @@ public class PlayerControls : MonoBehaviour {
 			MovementControls();
 
 			RollControls();
-
-			AttackSwitchControls();
 			UnlockAllWeapons();
+			AttackSwitchControls();
 			TeleportToExit();
 			KillAllEnemies();
 		}
@@ -70,17 +67,16 @@ public class PlayerControls : MonoBehaviour {
 		}
 	}
 
+	private void UnlockAllWeapons() {
+		if (Input.GetKey(KeyCode.L)) {
+			OnUnlockAllWeapons?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
 	private void TeleportToExit() {
 		if (Input.GetKey(KeyCode.O)) {
 			GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("LevelManager")
 				.GetComponent<LevelManager>().GetCurrentStage().stageExits[0].transform.position;
-		}
-	}
-
-	private void UnlockAllWeapons() {
-		if (Input.GetKey(KeyCode.L)) {
-			_forkEnabled = true;
-			_spoonEnabled = true;
 		}
 	}
 
@@ -135,24 +131,12 @@ public class PlayerControls : MonoBehaviour {
 		if (_weaponSwitchingEnabled == false) {
 			return;
 		}
-		
+
 		if (Input.GetKeyDown(KeyCode.Alpha1)) On1Press?.Invoke(this, EventArgs.Empty);
-		if (Input.GetKeyDown(KeyCode.Alpha2) && _forkEnabled) On2Press?.Invoke(this, EventArgs.Empty);
-		if (Input.GetKeyDown(KeyCode.Alpha3) && _spoonEnabled) On3Press?.Invoke(this, EventArgs.Empty);
-
-		// if (Input.GetKeyDown(KeyCode.Q)) {
-		// 	OnQPress?.Invoke(this, EventArgs.Empty);
-		// } else if (Input.GetKeyDown(KeyCode.E)) {
-		// 	OnEPress?.Invoke(this, EventArgs.Empty);
-		// }
-	}
-
-	private void UnlockWeapon(object sender, EventArgs e) {
-		if (!_forkEnabled) {
-			_forkEnabled = true;
-		} else if (!_spoonEnabled) {
-			_spoonEnabled = true;
-		}
+		if (Input.GetKeyDown(KeyCode.Alpha2)) On2Press?.Invoke(this, EventArgs.Empty);
+		if (Input.GetKeyDown(KeyCode.Alpha3)) On3Press?.Invoke(this, EventArgs.Empty);
+		if (Input.GetAxis("Mouse ScrollWheel") > 0) OnScrollDown?.Invoke(this, EventArgs.Empty);
+		if (Input.GetAxis("Mouse ScrollWheel") < 0) OnScrollUp?.Invoke(this, EventArgs.Empty);
 	}
 
 	private void HandleRollBegin(object sender, RollEventArgs e) {
