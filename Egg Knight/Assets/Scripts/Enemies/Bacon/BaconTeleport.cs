@@ -43,7 +43,7 @@ public class BaconTeleport : MonoBehaviour {
   private IEnumerator Invisibility() {
     yield return new WaitForSeconds(_invisibleTime);
 
-    _anim.SetBool("IsTeleportingIn", true);
+    _anim.SetBool("IsReappearing", true);
   }
 
   public void Reappear() {
