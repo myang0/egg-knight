@@ -15,9 +15,14 @@ public class EnemySpawnpoint : MonoBehaviour {
         var color = _sr.color;
         _sr.color = new Color(color.r, color.g, color.b, 0);
     }
+
     public void SpawnEnemy() {
         Vector3 oldPos = transform.position;
         Vector3 newPos = new Vector3(oldPos.x, oldPos.y, ZcoordinateConsts.Interactable);
         Instantiate(spawnParachute, newPos, Quaternion.identity);
+    }
+
+    public Vector3 GetPosition() {
+        return transform.position;
     }
 }

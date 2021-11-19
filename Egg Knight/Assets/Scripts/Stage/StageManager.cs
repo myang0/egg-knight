@@ -465,5 +465,9 @@ namespace Stage {
         public Vector3 GetSpawnPosition() {
             return _stageEntrance.GetPosition();
         }
+
+        public List<EnemySpawnpoint> GetEnemySpawnPoints() {
+            return _eSpawnpoints;
+        }
     }
 }
