@@ -1266,6 +1266,12 @@
               <e p="CornHealth.cs" t="Include" />
               <e p="Kernel.cs" t="Include" />
             </e>
+            <e p="EggArcher" t="Include">
+              <e p="Arrow.cs" t="Include" />
+              <e p="EggArcherAttack.cs" t="Include" />
+              <e p="EggArcherBehaviour.cs" t="Include" />
+              <e p="EggArcherHealth.cs" t="Include" />
+            </e>
             <e p="EggGuard" t="Include">
               <e p="EggGuardAttack.cs" t="Include" />
               <e p="EggGuardBehaviour.cs" t="Include" />
@@ -1296,11 +1302,42 @@
               <e p="RaspberryProjectile.cs" t="Include" />
               <e p="RaspberryState.cs" t="Include" />
             </e>
+            <e p="RoyalEggGuard" t="Include">
+              <e p="RoyalEggAttack.cs" t="Include" />
+              <e p="RoyalEggBehaviour.cs" t="Include" />
+              <e p="RoyalEggHealth.cs" t="Include" />
+              <e p="RoyalEggSlash.cs" t="Include" />
+            </e>
+            <e p="Sausage" t="Include">
+              <e p="Attacks" t="Include">
+                <e p="SausageBombAttack.cs" t="Include" />
+                <e p="SausageBullet.cs" t="Include" />
+                <e p="SausagePartyAttack.cs" t="Include" />
+                <e p="SausageSnipeAttack.cs" t="Include" />
+                <e p="SausageSpinAttack.cs" t="Include" />
+                <e p="SausageWalkAttack.cs" t="Include" />
+                <e p="SmokeBomb.cs" t="Include" />
+                <e p="SniperLaser.cs" t="Include" />
+              </e>
+              <e p="SausageActivator.cs" t="Include" />
+              <e p="SausageBehaviour.cs" t="Include" />
+              <e p="SausageHealth.cs" t="Include" />
+              <e p="SausageStateManager.cs" t="Include" />
+            </e>
+            <e p="SausageMinion" t="Include">
+              <e p="SausageMinionBehaviour.cs" t="Include" />
+              <e p="SausageMinionGun.cs" t="Include" />
+              <e p="SausageMinionHealth.cs" t="Include" />
+            </e>
             <e p="SpawnParachute.cs" t="Include" />
             <e p="Strawberry" t="Include">
               <e p="StrawberryBehaviour.cs" t="Include" />
               <e p="StrawberryHealth.cs" t="Include" />
               <e p="StrawberryProjectile.cs" t="Include" />
+            </e>
+            <e p="Tomato" t="Include">
+              <e p="TomatoBehaviour.cs" t="Include" />
+              <e p="TomatoHealth.cs" t="Include" />
             </e>
             <e p="TrainingDummy" t="Include">
               <e p="TrainingDummyBehavior.cs" t="Include" />
@@ -1318,6 +1355,7 @@
             <e p="Item.cs" t="Include" />
             <e p="Layers.cs" t="Include" />
             <e p="MouseInput.cs" t="Include" />
+            <e p="SausageAttack.cs" t="Include" />
             <e p="StageItemStatus.cs" t="Include" />
             <e p="StageStatus.cs" t="Include" />
             <e p="StageType.cs" t="Include" />
@@ -1341,6 +1379,7 @@
             <e p="TooltipEnableEventArgs.cs" t="Include" />
             <e p="YolkUpgradeEventArgs.cs" t="Include" />
           </e>
+          <e p="Explosion.cs" t="Include" />
           <e p="FSM" t="Include">
             <e p="Broccoli" t="Include">
               <e p="BroccoliChargeSlash.cs" t="Include" />
@@ -1357,6 +1396,12 @@
               <e p="CornAlert.cs" t="Include" />
               <e p="CornAttack.cs" t="Include" />
             </e>
+            <e p="EggArcher" t="Include">
+              <e p="EggArcherAlerted.cs" t="Include" />
+              <e p="EggArcherAttacking.cs" t="Include" />
+              <e p="EggArcherFleeing.cs" t="Include" />
+              <e p="EggArcherRolling.cs" t="Include" />
+            </e>
             <e p="EnemyAttack.cs" t="Include" />
             <e p="EnemyDeadState.cs" t="Include" />
             <e p="EnemyIdle.cs" t="Include" />
@@ -1370,7 +1415,21 @@
             <e p="RangedEnemyAlerted.cs" t="Include" />
             <e p="RangedEnemyChase.cs" t="Include" />
             <e p="RangedEnemyFlee.cs" t="Include" />
+            <e p="RoyalEgg" t="Include">
+              <e p="RoyalEggAlerted.cs" t="Include" />
+            </e>
+            <e p="Sausage" t="Include">
+              <e p="SausageBomb.cs" t="Include" />
+              <e p="SausageIdle.cs" t="Include" />
+              <e p="SausageParty.cs" t="Include" />
+              <e p="SausageSnipe.cs" t="Include" />
+              <e p="SausageSpin.cs" t="Include" />
+              <e p="SausageWalk.cs" t="Include" />
+            </e>
             <e p="SpawnEnemy.cs" t="Include" />
+            <e p="Tomato" t="Include">
+              <e p="TomatoAttack.cs" t="Include" />
+            </e>
           </e>
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />
@@ -1532,6 +1591,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="WeaponUI.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
