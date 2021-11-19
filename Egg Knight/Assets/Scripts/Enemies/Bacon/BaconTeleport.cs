@@ -12,6 +12,7 @@ public class BaconTeleport : MonoBehaviour {
   [SerializeField] private float _invisibleTime;
 
   private List<EnemySpawnpoint> _teleportPoints = new List<EnemySpawnpoint>();
+  private int _maxTeleportTries = 30;
 
   private Animator _anim;
   private SpriteRenderer _sr;
@@ -57,7 +58,22 @@ public class BaconTeleport : MonoBehaviour {
   private Vector3 FindNewPosition() {
     if (_teleportPoints.Any()) {
       int randomIndex = Random.Range(0, _teleportPoints.Count);
-      return _teleportPoints[randomIndex].GetPosition();
+      float distance = Vector3.Distance(transform.position, _teleportPoints[randomIndex].GetPosition());
+
+      int tries = 0;
+
+      while (distance >= _maxTeleportDistance && distance <= _minTeleportDistance && tries < _maxTeleportTries) {
+        randomIndex = Random.Range(0, _teleportPoints.Count);
+        distance = Vector3.Distance(transform.position, _teleportPoints[randomIndex].GetPosition());
+
+        tries++;
+      }
+
+      if (tries >= _maxTeleportTries) {
+        return transform.position;
+      } else {
+        return _teleportPoints[randomIndex].GetPosition();
+      }
     } else {
       return transform.position;
     }

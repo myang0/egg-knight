@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184da436114c77e4d97ee998241c3c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minTeleportDistance: 0
-  _maxTeleportDistance: 0
+  _minTeleportDistance: 5
+  _maxTeleportDistance: 20
   _smokeParticles: {fileID: 3076674538101461482, guid: 854db0e30aa578b438ce76df1477b0d8,
     type: 3}
   _invisibleTime: 2

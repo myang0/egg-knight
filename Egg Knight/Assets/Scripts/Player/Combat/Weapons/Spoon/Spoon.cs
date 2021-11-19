@@ -72,7 +72,7 @@ public class Spoon : BasePlayerWeapon {
   }
 
   private IEnumerator Despawn() {
-    yield return new WaitForSeconds(0.5f);
+    yield return new WaitForSeconds(0.25f);
 
     base.OnAnimationEnd();
   }

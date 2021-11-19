@@ -125,6 +125,7 @@ MonoBehaviour:
     type: 3}
   lv1Strawberry: {fileID: 6052989419570033560, guid: a05de99e326847a40b744b07ff0c4538,
     type: 3}
+  spawnSpecificEnemy: {fileID: 0}
 --- !u!198 &958320252
 ParticleSystem:
   m_ObjectHideFlags: 0
