@@ -17,6 +17,14 @@ public class BossHealthBar : MonoBehaviour {
     LevelManager.OnBroccoliFightBegin += HandleBossSpawn;
     BroccoliHealth.OnBroccoliDamage += HandleHealthChange;
     BroccoliHealth.OnBroccoliDeath += HandleBossDeath;
+
+    LevelManager.OnSausageFightBegin += HandleBossSpawn;
+    SausageHealth.OnSausageDamage += HandleHealthChange;
+    SausageHealth.OnSausageDeath += HandleBossDeath;
+
+    LevelManager.OnEggnaFightBegin += HandleBossSpawn;
+    EggnaHealth.OnEggnaDamage += HandleHealthChange;
+    EggnaHealth.OnEggnaDeath += HandleBossDeath;
   }
 
   private void HandleHealthChange(object sender, HealthChangeEventArgs e) {
@@ -43,5 +51,13 @@ public class BossHealthBar : MonoBehaviour {
     LevelManager.OnBroccoliFightBegin -= HandleBossSpawn;
     BroccoliHealth.OnBroccoliDamage -= HandleHealthChange;
     BroccoliHealth.OnBroccoliDeath -= HandleBossDeath;
+
+    LevelManager.OnSausageFightBegin -= HandleBossSpawn;
+    SausageHealth.OnSausageDamage -= HandleHealthChange;
+    SausageHealth.OnSausageDeath -= HandleBossDeath;
+
+    LevelManager.OnEggnaFightBegin -= HandleBossSpawn;
+    EggnaHealth.OnEggnaDamage -= HandleHealthChange;
+    EggnaHealth.OnEggnaDeath -= HandleBossDeath;
   }
 }

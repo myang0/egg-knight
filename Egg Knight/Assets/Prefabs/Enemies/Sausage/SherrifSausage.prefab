@@ -306,7 +306,7 @@ MonoBehaviour:
   isInAttackAnimation: 0
   isStunned: 0
   alertRange: 0
-  isTurningEnabled: 0
+  isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
