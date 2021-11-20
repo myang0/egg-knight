@@ -23,37 +23,16 @@ public class WeaponUI : MonoBehaviour
     }
 
     private SelectedWeapon _currentWeapon;
-    // private int angle = 15;
-    // private int angledHeight = 174;
-    // private int centerHeight = 199;
-    // private int leftX = 149;
-    // private int centerX = 199;
-    // private int rightX = 249;
     private float unselectedAlpha = 155f / 255f;
     
-    // Start is called before the first frame update
     void Start()
     {
-        // _positionLeft.position = new Vector3(leftX, angledHeight, 0);;
-        // _positionCenter.position = new Vector3(centerX, centerHeight, 0);;
-        // _positionRight.position = new Vector3(rightX, angledHeight, 0);;
-        
-        // fork.transform.rotation = 
-        
-        // SetKnife(this, EventArgs.Empty);
-        PlayerControls.On1Press += SetKnife;
-        PlayerControls.On2Press += SetFork;
-        PlayerControls.On3Press += SetSpoon;
+        SetKnife(this, EventArgs.Empty);
+        PlayerWeapons.OnSwitchKnife += SetKnife;
+        PlayerWeapons.OnSwitchFork += SetFork;
+        PlayerWeapons.OnSwitchSpoon += SetSpoon;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Debug.Log("KNIFE: " + knife.transform.position);
-        // Debug.Log("FORK: " + fork.transform.position);
-        // Debug.Log("SPOON: " + spoon.transform.position);
-    }
-
+    
     private IEnumerator AnimateMovement()
     {
         var t = 0f;
@@ -93,9 +72,6 @@ public class WeaponUI : MonoBehaviour
         StopCoroutine(AnimateMovement());
         _currentWeapon = SelectedWeapon.Knife;
         StartCoroutine(AnimateMovement());
-        // knife.transform.position = forkStart.position;
-        // fork.transform.position = spoonStart.position;
-        // spoon.transform.position = knifeStart.position;
     }
     
     private void SetFork(object sender, EventArgs e)
@@ -106,9 +82,6 @@ public class WeaponUI : MonoBehaviour
         StopCoroutine(AnimateMovement());
         _currentWeapon = SelectedWeapon.Fork;
         StartCoroutine(AnimateMovement());
-        // fork.transform.position = forkStart.position;
-        // spoon.transform.position = spoonStart.position;
-        // knife.transform.position = knifeStart.position;
     }
     
     private void SetSpoon(object sender, EventArgs e)
@@ -119,8 +92,5 @@ public class WeaponUI : MonoBehaviour
         StopCoroutine(AnimateMovement());
         _currentWeapon = SelectedWeapon.Spoon;
         StartCoroutine(AnimateMovement());
-        // spoon.transform.position = forkStart.position;
-        // knife.transform.position = spoonStart.position;
-        // fork.transform.position = knifeStart.position;
     }
 }
