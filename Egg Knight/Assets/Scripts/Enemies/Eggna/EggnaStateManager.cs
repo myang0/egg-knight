@@ -13,6 +13,8 @@ public class EggnaStateManager : MonoBehaviour {
     _currentIdleTime = _initialIdleTime;
 
     _eHealth = GetComponent<EnemyHealth>();
+
+    EggnaActivator.OnEggnaActivate += HandleEggnaActivate;
   }
 
   private void HandleEggnaActivate(object sender, EventArgs e) {
@@ -33,5 +35,9 @@ public class EggnaStateManager : MonoBehaviour {
     yield return new WaitForSeconds(_currentIdleTime);
 
     OnIdleEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  private void OnDestroy() {
+    EggnaActivator.OnEggnaActivate -= HandleEggnaActivate;
   }
 }

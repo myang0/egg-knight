@@ -40,7 +40,12 @@ namespace Stage
 
         private string _level1BossName = "Brigand Broccoli";
         public static event EventHandler<BossSpawnEventArgs> OnBroccoliFightBegin;
-        public static event EventHandler OnBroccoliFightEnd;
+
+        private string _level2BossName = "Sherrif Sausage";
+        public static event EventHandler<BossSpawnEventArgs> OnSausageFightBegin;
+
+        private string _level3BossName = "Lady Eggna";
+        public static event EventHandler<BossSpawnEventArgs> OnEggnaFightBegin;
 
         void Start() {
             StartAsserts();
@@ -412,8 +417,12 @@ namespace Stage
             OnBroccoliFightBegin?.Invoke(this, new BossSpawnEventArgs(_level1BossName));
         }
 
-        public void EndBroccoliFight() {
+        public void BeginSausageFight() {
+            OnSausageFightBegin?.Invoke(this, new BossSpawnEventArgs(_level2BossName));
+        }
 
+        public void BeginEggnaFight() {
+            OnEggnaFightBegin?.Invoke(this, new BossSpawnEventArgs(_level3BossName));
         }
     }
 }

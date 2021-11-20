@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EggnaBehaviour : EnemyBehaviour {
   [SerializeField] private float _meleeRange;
+  [SerializeField] private float _longRange;
 
   protected override void Awake() {
     EggnaHealth eggnaHealth = GetComponent<EggnaHealth>();
@@ -30,5 +31,9 @@ public class EggnaBehaviour : EnemyBehaviour {
 
   public bool IsInMeleeRange() {
     return GetDistanceToPlayer() <= _meleeRange;
+  }
+
+  public bool IsInLongRange() {
+    return GetDistanceToPlayer() > _longRange;
   }
 }

@@ -29,10 +29,10 @@ public class EggnaDash : MonoBehaviour {
   private void FixedUpdate() {
     if (_isDashing) {
       transform.position = Vector3.MoveTowards(transform.position, _targetPoint, _dashSpeed);
-    }
 
-    if (_isDashing && Vector3.Distance(transform.position, _targetPoint) < 0.01f) {
-      StopDash();
+      if (Vector3.Distance(transform.position, _targetPoint) < 0.01f) {
+        StopDash();
+      }
     }
   }
 

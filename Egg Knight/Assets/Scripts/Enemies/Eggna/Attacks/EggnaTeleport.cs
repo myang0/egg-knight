@@ -32,12 +32,17 @@ public class EggnaTeleport : MonoBehaviour {
   
   private IEnumerator Invisibility() {
     yield return new WaitForSeconds(_invisiblilityTime);
+
+    _anim.SetBool("IsReappearing", true);
   }
 
   public void Reappear() {
     transform.position = _playerTransform.position;
     
     _sr.enabled = true;
+
+    // TODO: call LandingAttack with an animation event once it's been made
+    LandingAttack();
   }
 
   public void LandingAttack() {

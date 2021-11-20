@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class EggnaSlash : MonoBehaviour {
+  private Animator _anim;
   private Rigidbody2D _rb;
 
   [SerializeField] private float _animationDuration;
@@ -17,11 +18,10 @@ public class EggnaSlash : MonoBehaviour {
   private Transform _playerTransform;
 
   private void Awake() {
+    _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-    StartAttack();
   }
 
   public void StartSlash() {
@@ -46,6 +46,8 @@ public class EggnaSlash : MonoBehaviour {
 
     _rb.velocity = Vector2.zero;
     _rb.drag = 0;
+
+    _anim.SetBool("IsSlashing", false);
   }
 
   private Vector2 GetVectorToPlayer() {
