@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SausageWalkAttack : MonoBehaviour {
   [SerializeField] private float _walkMoveSpeed;
@@ -11,11 +13,16 @@ public class SausageWalkAttack : MonoBehaviour {
   [SerializeField] private float _timeBetweenShots;
 
   [SerializeField] private GameObject _bulletObject;
+  [SerializeField] private Transform _shootPoint;
 
   private Animator _anim;
   private Rigidbody2D _rb;
 
   private Transform _playerTransform;
+
+  public static event EventHandler OnAttackStart;
+  public static event EventHandler OnRevolverShot;
+  public static event EventHandler OnAttackEnd;
 
   private void Awake() {
     _anim = GetComponent<Animator>();
@@ -31,6 +38,8 @@ public class SausageWalkAttack : MonoBehaviour {
   }
 
   public void StartAttack() {
+    OnAttackStart?.Invoke(this, EventArgs.Empty);
+
     StartCoroutine(Walk());
   }
 
@@ -45,16 +54,19 @@ public class SausageWalkAttack : MonoBehaviour {
     }
 
     _anim.SetBool("IsWalking", false);
+    OnAttackEnd?.Invoke(this, EventArgs.Empty);
   }
 
   private void ShootAtPlayer() {
     Vector2 direction = VectorToPlayer();
     Vector2 directionWithRecoil = Quaternion.Euler(0, 0, Random.Range(-25f, 25f)) * direction;
 
-    GameObject bulletObject = Instantiate(_bulletObject, transform.position, Quaternion.identity);
+    GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
     SausageBullet bullet = bulletObject?.GetComponent<SausageBullet>();
 
     bullet.SetDirection(directionWithRecoil, Vector2.SignedAngle(Vector2.up, directionWithRecoil));
+
+    OnRevolverShot?.Invoke(this, EventArgs.Empty);
   }
 
   private Vector2 VectorToPlayer() {

@@ -5,17 +5,20 @@ using UnityEngine;
 public class EggArcherAttacking : StateMachineBehaviour
 {
     private EggArcherBehaviour _eaBehaviour;
+    private EggArcherBow _bow;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         _eaBehaviour = animator.GetComponent<EggArcherBehaviour>();
-    }
-
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (_eaBehaviour.isDead) animator.SetTrigger("triggerDead");
-        if (_eaBehaviour.isStunned) animator.SetBool("isStunned", true);
+        _bow = _eaBehaviour.Bow;
 
         _eaBehaviour.StopMoving();
+
+        _bow.StartAttack();
+    }
+
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (_eaBehaviour.isDead) animator.SetTrigger("triggerDead");
+        if (_eaBehaviour.isStunned) animator.SetBool("isStunned", true);
         
         if (_eaBehaviour.HasClearShot() == false) {
             animator.SetBool("IsAttacking", false);
