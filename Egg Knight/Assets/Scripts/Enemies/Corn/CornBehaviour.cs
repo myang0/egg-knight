@@ -41,7 +41,6 @@ public class CornBehaviour : EnemyBehaviour {
     rb.velocity = Vector2.zero;
 
     isInAttackAnimation = true;
-    ShootKernels();
     
     yield break;
   }

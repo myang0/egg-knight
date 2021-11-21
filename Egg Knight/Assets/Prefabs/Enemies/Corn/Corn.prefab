@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4932097559f82c4a9ef5d7748ed8791, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94bb0ba6f8f38a443856544348b533fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,8 +226,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.575, y: 2.32}
+  m_Offset: {x: 0, y: -0.25}
+  m_Size: {x: 1, y: 2.4}
   m_Direction: 0
 --- !u!50 &5166309169819309422
 Rigidbody2D:
@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usesPathfinding: 1
 --- !u!114 &5166309169819309424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +357,8 @@ MonoBehaviour:
   alertRange: 5
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 5166309168747990666}
