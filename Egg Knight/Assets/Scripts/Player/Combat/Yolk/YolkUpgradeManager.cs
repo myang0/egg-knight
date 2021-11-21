@@ -11,6 +11,10 @@ public class YolkUpgradeManager : MonoBehaviour {
   }
 
   private void HandleYolkUpgradePickup(object sender, YolkUpgradeEventArgs e) {
+    if (HasUpgrade(e.type)) {
+      return;
+    }
+    
     _upgradeDict.Add(e.type, true);
   }
 

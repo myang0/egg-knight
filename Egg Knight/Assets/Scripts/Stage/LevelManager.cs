@@ -418,6 +418,9 @@ namespace Stage
         }
 
         public void BeginSausageFight() {
+            GameObject sausageObject = GameObject.Find("SheriffSausage");
+            sausageObject.GetComponent<Animator>().SetBool("IsActive", true);
+
             OnSausageFightBegin?.Invoke(this, new BossSpawnEventArgs(_level2BossName));
         }
 

@@ -55,7 +55,13 @@ public class Kernel : MonoBehaviour {
       PlayerHealth pHealth = col.GetComponent<PlayerHealth>();
       pHealth?.Damage(_damage);
 
+      StopCoroutine(ArmedColour());
+
       Disarm();
+    }
+
+    if (col.gameObject.layer == LayerMask.NameToLayer("Obstacle") && _collider.enabled == true) {
+      Destroy(gameObject);
     }
   }
 
@@ -68,15 +74,29 @@ public class Kernel : MonoBehaviour {
     _isAirborne = false;
     _isArmed = true;
 
+    StartCoroutine(ArmedColour());
     StartCoroutine(DespawnTimer());
   }
 
   public void Disarm() {
     _sr.sprite = _popcornSprite;
 
+    StopCoroutine(ArmedColour());
     StopCoroutine(DespawnTimer());
     StartCoroutine(Despawn(0.1f));
   }
+
+  private IEnumerator ArmedColour() {
+    while (true) {
+      _sr.color = Color.red;
+
+      yield return new WaitForSeconds(0.1f);
+
+      _sr.color = Color.white;
+
+      yield return new WaitForSeconds(0.5f);
+    }
+  } 
 
   private IEnumerator DespawnTimer() {
     yield return new WaitForSeconds(_timeToDespawn);

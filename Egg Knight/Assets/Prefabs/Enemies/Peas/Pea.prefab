@@ -252,7 +252,9 @@ MonoBehaviour:
   isStunned: 0
   alertRange: 15
   isTurningEnabled: 1
-  decrementEnemyCountOnDeath: 1
+  decrementEnemyCountOnDeath: 0
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}
@@ -270,3 +272,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usesPathfinding: 1

@@ -125,6 +125,11 @@ MonoBehaviour:
     type: 3}
   lv1Strawberry: {fileID: 6052989419570033560, guid: a05de99e326847a40b744b07ff0c4538,
     type: 3}
+  lv2Tomato: {fileID: 7766385794962761282, guid: 568a1b0c5f8b5ff4788c63359ce65cc9,
+    type: 3}
+  lv2PeaPod: {fileID: 7563575136203114434, guid: 636cfc718e40e2d4592f55478721aced,
+    type: 3}
+  lv2Corn: {fileID: 5166309169819309428, guid: d745b893cd85e8b4e8bbc7994811e644, type: 3}
   spawnSpecificEnemy: {fileID: 0}
 --- !u!198 &958320252
 ParticleSystem:

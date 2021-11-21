@@ -101,7 +101,6 @@ public class SausageIdle : StateMachineBehaviour {
       _subscribers = 0;
     }
 
-    Debug.Log("asdf");
     _lastUsedAttack = SausageAttack.Bomb;
   }
 }

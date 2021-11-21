@@ -20,6 +20,14 @@ public class SausageMinionBehaviour : EnemyBehaviour {
     base.Awake();
   }
 
+  private void FixedUpdate() {
+    if (isStunned || isDead) {
+      rb.velocity = Vector2.zero;
+    } else {
+      rb.velocity = GetVectorToPlayer() * _currentSpeed;
+    }
+  }
+
   private void HandleElectrocuted(object sender, EventArgs e) {
     StartCoroutine(Electrocute());
   }
@@ -30,5 +38,9 @@ public class SausageMinionBehaviour : EnemyBehaviour {
 
   protected override IEnumerator AttackPlayer() {
     yield break;
+  }
+
+  private Vector2 GetVectorToPlayer() {
+    return VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
   }
 }

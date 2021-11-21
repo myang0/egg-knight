@@ -12,6 +12,10 @@ public class SpawnParachute : MonoBehaviour {
     public EnemyBehaviour lv1Raspberry;
     public EnemyBehaviour lv1Strawberry;
 
+    public EnemyBehaviour lv2Tomato;
+    public EnemyBehaviour lv2PeaPod;
+    public EnemyBehaviour lv2Corn;
+
     public EnemyBehaviour spawnSpecificEnemy;
     
     // Spawn Rates
@@ -19,6 +23,10 @@ public class SpawnParachute : MonoBehaviour {
     private const int Lv1MushroomRate = 45;
     private const int Lv1RaspberryRate = 20;
     private const int Lv1StrawberryRate = 0;
+
+    private const int Lv2TomatoRate = 50;
+    private const int Lv2CornRate = 30;
+    private const int Lv2PeaPodRate = 20;
     
     void Awake() {
         StartAsserts();
@@ -31,6 +39,9 @@ public class SpawnParachute : MonoBehaviour {
         Assert.IsNotNull(lv1Mushroom);
         Assert.IsNotNull(lv1Raspberry);
         Assert.IsNotNull(lv1Strawberry);
+        Assert.IsNotNull(lv2Tomato);
+        Assert.IsNotNull(lv2PeaPod);
+        Assert.IsNotNull(lv2Corn);
     }
     
     public void SpawnEnemy() {
@@ -43,8 +54,13 @@ public class SpawnParachute : MonoBehaviour {
                     spawnedEnemy = SpawnLevel1();
                     break;
                 case 2:
-                    spawnedEnemy = SpawnLevel1();
-                    // spawnedEnemy = SpawnLevel2();
+                    int roll = Random.Range(0, 100);
+                    if (roll < 66) {
+                        spawnedEnemy = SpawnLevel1();
+                    } else {
+                        spawnedEnemy = SpawnLevel2();
+                    }
+                    
                     break;
                 case 3:
                     spawnedEnemy = SpawnLevel1();
@@ -92,22 +108,14 @@ public class SpawnParachute : MonoBehaviour {
     }
     
     private EnemyBehaviour SpawnLevel2() {
-        int enemyChance = Random.Range(1, 101);
-        
-        if (enemyChance > Lv1EggGuardRate) {
-            return InstantiateEnemy(null);        
-        }
+        int enemyRoll = Random.Range(0, 100);
 
-        if (enemyChance > Lv1MushroomRate) {
-            return InstantiateEnemy(null); 
-        }
-
-        if (enemyChance > Lv1RaspberryRate) {
-            return InstantiateEnemy(null); 
-        }
-
-        if (enemyChance > Lv1StrawberryRate) {
-            return InstantiateEnemy(null); 
+        if (enemyRoll < Lv2TomatoRate) {
+            return InstantiateEnemy(lv2Tomato);
+        } else if (enemyRoll >= Lv2TomatoRate && enemyRoll < Lv2TomatoRate + Lv2CornRate) {
+            return InstantiateEnemy(lv2Corn);
+        } else {
+            return InstantiateEnemy(lv2PeaPod);
         }
 
         return null;

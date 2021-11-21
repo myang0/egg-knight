@@ -1,17 +1,35 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SausageMinionGun : MonoBehaviour {
+  [SerializeField] private SausageMinionHealth _smHealth;
+  private bool _isAlive = true;
+
   [SerializeField] private GameObject _bulletObject;
 
-  [SerializeField] private float _timeBetweenShots;
+  [SerializeField] private int _minTimeBetweenShots;
+  [SerializeField] private int _maxTimeBetweenShots;
+
+  private int _timeBetweenShots;
 
   private Transform _playerTransform;
 
   private void Awake() {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
+    _timeBetweenShots = Random.Range(_minTimeBetweenShots, _maxTimeBetweenShots);
+
+    if (_smHealth != null) {
+      _smHealth.OnSausageMinionDeath += HandleDeath;
+    }
+
     StartCoroutine(Shoot());
+  }
+
+  void HandleDeath(object sender, EventArgs e) {
+    _isAlive = false;
   }
 
   private void FixedUpdate() {
@@ -21,13 +39,15 @@ public class SausageMinionGun : MonoBehaviour {
   }
 
   private IEnumerator Shoot() {
-    while(true) {
+    while(_isAlive) {
       yield return new WaitForSeconds(_timeBetweenShots);
 
-      GameObject bulletObject = Instantiate(_bulletObject, transform.position, Quaternion.identity);
-      SausageBullet bullet = bulletObject.GetComponent<SausageBullet>();
+      if (_isAlive) {
+        GameObject bulletObject = Instantiate(_bulletObject, transform.position, Quaternion.identity);
+        SausageBullet bullet = bulletObject.GetComponent<SausageBullet>();
 
-      bullet.SetDirection(GetVectorToPlayer(), transform.eulerAngles.z);
+        bullet.SetDirection(GetVectorToPlayer(), transform.eulerAngles.z);
+      }
     }
   }
 

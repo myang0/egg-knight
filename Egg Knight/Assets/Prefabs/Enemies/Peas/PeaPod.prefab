@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7563575136203114435}
   - component: {fileID: 7563575136203114434}
   - component: {fileID: 182784531598332637}
+  - component: {fileID: 504084474637871124}
   m_Layer: 8
   m_Name: PeaPod
   m_TagString: Enemy
@@ -339,6 +340,8 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 7563575136030716638}
@@ -372,3 +375,16 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &504084474637871124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563575136203114456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _usesPathfinding: 1
