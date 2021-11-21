@@ -11,6 +11,7 @@ TagManager:
   - Grave
   - Boss
   - TutorialManager
+  - Arrow
   layers:
   - Default
   - TransparentFX

@@ -8,13 +8,16 @@ public class SausageMinionGun : MonoBehaviour {
   private bool _isAlive = true;
 
   [SerializeField] private GameObject _bulletObject;
+  [SerializeField] private Transform _shootPoint;
 
-  [SerializeField] private int _minTimeBetweenShots;
-  [SerializeField] private int _maxTimeBetweenShots;
+  [SerializeField] private float _minTimeBetweenShots;
+  [SerializeField] private float _maxTimeBetweenShots;
 
-  private int _timeBetweenShots;
+  private float _timeBetweenShots;
 
   private Transform _playerTransform;
+
+  [SerializeField] private MinionRevolverSprite _revolverSprite;
 
   private void Awake() {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -43,10 +46,14 @@ public class SausageMinionGun : MonoBehaviour {
       yield return new WaitForSeconds(_timeBetweenShots);
 
       if (_isAlive) {
-        GameObject bulletObject = Instantiate(_bulletObject, transform.position, Quaternion.identity);
+        GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
         SausageBullet bullet = bulletObject.GetComponent<SausageBullet>();
 
         bullet.SetDirection(GetVectorToPlayer(), transform.eulerAngles.z);
+
+        if (_revolverSprite != null) {
+          _revolverSprite.PlayAnimation();
+        }
       }
     }
   }

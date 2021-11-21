@@ -4,8 +4,6 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EggArcherAttack : MonoBehaviour {
-  [SerializeField] private GameObject _arrowObject;
-
   [SerializeField] private float _dangerRange;
 
   [SerializeField] private float _rollDuration;
@@ -14,16 +12,20 @@ public class EggArcherAttack : MonoBehaviour {
 
   private Animator _anim;
   private Rigidbody2D _rb;
-  private EnemyBehaviour _eBehaviour;
+  private EggArcherBehaviour _eaBehaviour;
   private EnemyHealth _eHealth;
+
+  private EggArcherBow _bow;
 
   private Transform _playerTransform;
 
   private void Awake() {
     _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
-    _eBehaviour = GetComponent<EnemyBehaviour>();
+    _eaBehaviour = GetComponent<EggArcherBehaviour>();
     _eHealth = GetComponent<EnemyHealth>();
+
+    _bow = _eaBehaviour.Bow;
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -32,12 +34,14 @@ public class EggArcherAttack : MonoBehaviour {
   }
 
   private void HandlePlayerAttack(object sender, EventArgs e) {
-    if (_eBehaviour.GetDistanceToPlayer() < _dangerRange && _anim.GetBool("IsAttacking")) {
+    if (_eaBehaviour.GetDistanceToPlayer() < _dangerRange && _anim.GetBool("IsAttacking")) {
       StartCoroutine(Roll());
     }
   }
 
   private IEnumerator Roll() {
+    _bow.EndAttack();
+    
     _eHealth.isInvulnerable = true;
 
     _anim.SetBool("IsRolling", true);
@@ -55,14 +59,6 @@ public class EggArcherAttack : MonoBehaviour {
     _anim.SetBool("IsRolling", false);
 
     _eHealth.isInvulnerable = false;
-  }
-
-  public void ShootArrowAtPlayer() {
-    Vector2 vectorToPlayer = GetVectorToPlayer();
-    float angleToPlayer = Vector2.SignedAngle(Vector2.up, vectorToPlayer);
-
-    GameObject arrowObject = Instantiate(_arrowObject, transform.position, Quaternion.identity);
-    arrowObject.GetComponent<Arrow>().SetDirection(vectorToPlayer, angleToPlayer);
   }
 
   private Vector2 GetVectorToPlayer() {

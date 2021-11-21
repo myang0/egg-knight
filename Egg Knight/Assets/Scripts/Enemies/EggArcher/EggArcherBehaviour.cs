@@ -6,6 +6,13 @@ public class EggArcherBehaviour : EnemyBehaviour {
   private Animator _anim;
   private Collider2D _collider;
 
+  [SerializeField] private EggArcherBow _bow;
+  public EggArcherBow Bow {
+    get {
+      return _bow;
+    }
+  }
+
   protected override void Awake() {
     _anim = GetComponent<Animator>();
     _collider = GetComponent<Collider2D>();
@@ -27,7 +34,19 @@ public class EggArcherBehaviour : EnemyBehaviour {
     Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
     RaycastHit2D firstHit = Physics2D.Raycast(transform.position, vectorToPlayer);
 
-    return firstHit.transform.gameObject.CompareTag("Player");
+    if (firstHit.transform != null) {
+      int layer = firstHit.transform.gameObject.layer;
+
+      if (layer == 3) {
+        return true;
+      } else if (layer == 11) {
+        return false;
+      } else {
+        return true;
+      }
+    } else {
+      return false;
+    }
   }
 
   protected override void OnCollisionEnter2D(Collision2D other) {
