@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SmokeBomb : MonoBehaviour {
   private Rigidbody2D _rb;
@@ -22,6 +24,12 @@ public class SmokeBomb : MonoBehaviour {
     _rotationSpeed = Random.Range(-10f, 10f);
 
     _targetY = transform.position.y + Random.Range(-3f, 3f);
+
+    SausageHealth.OnSausageDeath += HandleBossDeath;
+  }
+
+  private void HandleBossDeath(object sender, EventArgs e) {
+    Destroy(gameObject);
   }
 
   private void FixedUpdate() {
@@ -48,5 +56,9 @@ public class SmokeBomb : MonoBehaviour {
   private void OnDrawGizmosSelected() {
     Gizmos.color = Color.red;
     Gizmos.DrawWireSphere(transform.position, _explosionRange);
+  }
+
+  private void OnDestroy() {
+    SausageHealth.OnSausageDeath -= HandleBossDeath;
   }
 }

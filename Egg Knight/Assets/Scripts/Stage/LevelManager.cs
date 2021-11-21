@@ -418,10 +418,18 @@ namespace Stage
         }
 
         public void BeginSausageFight() {
+            GameObject sausageObject = GameObject.Find("SheriffSausage");
+            sausageObject.GetComponent<Animator>().SetBool("IsActive", true);
+
             OnSausageFightBegin?.Invoke(this, new BossSpawnEventArgs(_level2BossName));
         }
 
         public void BeginEggnaFight() {
+            GameObject eggnaObject = GameObject.Find("LadyEggna");
+            if (eggnaObject != null) {
+                eggnaObject.GetComponent<Animator>().SetBool("IsActive", true);
+            }
+
             OnEggnaFightBegin?.Invoke(this, new BossSpawnEventArgs(_level3BossName));
         }
     }

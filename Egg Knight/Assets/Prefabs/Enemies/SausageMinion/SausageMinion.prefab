@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usesPathfinding: 1
 --- !u!1 &6421925850883275405
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c45fa3ee063ef4585bcedab69e5cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smHealth: {fileID: 6421925850566888550}
   _bulletObject: {fileID: 1215380289267501400, guid: b6d28f854a884994d936924bf9afc01a,
     type: 3}
-  _timeBetweenShots: 3
+  _minTimeBetweenShots: 2
+  _maxTimeBetweenShots: 4

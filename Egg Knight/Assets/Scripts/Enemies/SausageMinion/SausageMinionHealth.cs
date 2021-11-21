@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SausageMinionHealth : EnemyHealth {
+  public event EventHandler OnSausageMinionDeath;
+
   public event EventHandler<EnemyStatusEventArgs> OnSausageMinionStatusDamage;
 
   protected override void Awake() {
@@ -10,8 +12,13 @@ public class SausageMinionHealth : EnemyHealth {
     base.Awake();
   }
 
-  private void HandleBossDeath(object sender, EventArgs e) {
+  protected override void Die() {
+    OnSausageMinionDeath?.Invoke(this, EventArgs.Empty);
     base.Die();
+  }
+
+  private void HandleBossDeath(object sender, EventArgs e) {
+    Die();
   }
 
   public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
