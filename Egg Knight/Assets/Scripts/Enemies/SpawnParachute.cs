@@ -16,6 +16,10 @@ public class SpawnParachute : MonoBehaviour {
     public EnemyBehaviour lv2PeaPod;
     public EnemyBehaviour lv2Corn;
 
+    public EnemyBehaviour lv3RoyalEggGuard;
+    public EnemyBehaviour lv3EggArcher;
+    public EnemyBehaviour lv3BishopBacon;
+
     public EnemyBehaviour spawnSpecificEnemy;
     
     // Spawn Rates
@@ -27,6 +31,10 @@ public class SpawnParachute : MonoBehaviour {
     private const int Lv2TomatoRate = 50;
     private const int Lv2CornRate = 30;
     private const int Lv2PeaPodRate = 20;
+
+    private const int Lv3RoyalEggGuardRate = 60;
+    private const int Lv3EggArcherRate = 30;
+    private const int Lv3BishopBaconRate = 10;
     
     void Awake() {
         StartAsserts();
@@ -42,6 +50,9 @@ public class SpawnParachute : MonoBehaviour {
         Assert.IsNotNull(lv2Tomato);
         Assert.IsNotNull(lv2PeaPod);
         Assert.IsNotNull(lv2Corn);
+        Assert.IsNotNull(lv3RoyalEggGuard);
+        Assert.IsNotNull(lv3EggArcher);
+        Assert.IsNotNull(lv3BishopBacon);
     }
     
     public void SpawnEnemy() {
@@ -54,8 +65,8 @@ public class SpawnParachute : MonoBehaviour {
                     spawnedEnemy = SpawnLevel1();
                     break;
                 case 2:
-                    int roll = Random.Range(0, 100);
-                    if (roll < 66) {
+                    int level2EnemyRoll = Random.Range(0, 100);
+                    if (level2EnemyRoll < 66) {
                         spawnedEnemy = SpawnLevel1();
                     } else {
                         spawnedEnemy = SpawnLevel2();
@@ -63,8 +74,15 @@ public class SpawnParachute : MonoBehaviour {
                     
                     break;
                 case 3:
-                    spawnedEnemy = SpawnLevel1();
-                    // spawnedEnemy = SpawnLevel3();
+                    int level3EnemyRoll = Random.Range(0, 100);
+                    if (level3EnemyRoll < 50) {
+                        spawnedEnemy = SpawnLevel1();
+                    } else if (level3EnemyRoll >= 50 && level3EnemyRoll < 80) {
+                        spawnedEnemy = SpawnLevel2();
+                    } else {
+                        spawnedEnemy = SpawnLevel3();
+                    }
+
                     break;
                 default:
                     throw new Exception("Attempting to spawn an enemy in level >3???");
@@ -122,21 +140,14 @@ public class SpawnParachute : MonoBehaviour {
     }
     
     private EnemyBehaviour SpawnLevel3() {
-        int enemyChance = Random.Range(1, 101);
+        int enemyRoll = Random.Range(0, 100);
         
-        if (enemyChance > Lv1EggGuardRate) {
-            return InstantiateEnemy(null); 
-        }
-        if (enemyChance > Lv1MushroomRate) {
-            return InstantiateEnemy(null); 
-        }
-
-        if (enemyChance > Lv1RaspberryRate) {
-            return InstantiateEnemy(null); 
-        }
-
-        if (enemyChance > Lv1StrawberryRate) {
-            return InstantiateEnemy(null); 
+        if (enemyRoll < Lv3RoyalEggGuardRate) {
+            return InstantiateEnemy(lv3RoyalEggGuard);
+        } else if (enemyRoll >= Lv3RoyalEggGuardRate && enemyRoll < Lv3RoyalEggGuardRate + Lv3EggArcherRate) {
+            return InstantiateEnemy(lv3EggArcher);
+        } else {
+            return InstantiateEnemy(lv3BishopBacon);
         }
 
         return null;

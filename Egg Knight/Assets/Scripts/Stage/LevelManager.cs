@@ -425,6 +425,11 @@ namespace Stage
         }
 
         public void BeginEggnaFight() {
+            GameObject eggnaObject = GameObject.Find("LadyEggna");
+            if (eggnaObject != null) {
+                eggnaObject.GetComponent<Animator>().SetBool("IsActive", true);
+            }
+
             OnEggnaFightBegin?.Invoke(this, new BossSpawnEventArgs(_level3BossName));
         }
     }

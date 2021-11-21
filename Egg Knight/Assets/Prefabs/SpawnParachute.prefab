@@ -130,6 +130,12 @@ MonoBehaviour:
   lv2PeaPod: {fileID: 7563575136203114434, guid: 636cfc718e40e2d4592f55478721aced,
     type: 3}
   lv2Corn: {fileID: 5166309169819309428, guid: d745b893cd85e8b4e8bbc7994811e644, type: 3}
+  lv3RoyalEggGuard: {fileID: 5874542446636965870, guid: c61340fc66926224d8059dbd8a799a0c,
+    type: 3}
+  lv3EggArcher: {fileID: 4220699991525276304, guid: 4194a70bb943c6f438ef18aa83eff2d7,
+    type: 3}
+  lv3BishopBacon: {fileID: 7641279364623583969, guid: 7c7424ebf40827c49aede8e87dde25d0,
+    type: 3}
   spawnSpecificEnemy: {fileID: 0}
 --- !u!198 &958320252
 ParticleSystem:
