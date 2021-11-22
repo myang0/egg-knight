@@ -107,7 +107,7 @@ public class SpawnParachute : MonoBehaviour {
         int enemyChance = Random.Range(1, 101);
         
         if (enemyChance > Lv1EggGuardRate) {
-            return InstantiateEnemy(lv1EggGuard);
+            return InstantiateEnemy(lv2PeaPod);
         }
 
         if (enemyChance > Lv1MushroomRate) {

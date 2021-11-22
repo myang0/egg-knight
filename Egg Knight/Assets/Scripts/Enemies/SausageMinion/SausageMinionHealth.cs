@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SausageMinionHealth : EnemyHealth {
+  public Animator _anim;
+
   public event EventHandler OnSausageMinionDeath;
 
   public event EventHandler<EnemyStatusEventArgs> OnSausageMinionStatusDamage;
 
   protected override void Awake() {
+    _anim = GetComponent<Animator>();
+
     SausageHealth.OnSausageDeath += HandleBossDeath;
     base.Awake();
   }
 
   protected override void Die() {
+    _anim.Play("Dead");
+
     OnSausageMinionDeath?.Invoke(this, EventArgs.Empty);
     base.Die();
   }
