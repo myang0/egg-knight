@@ -14,6 +14,7 @@ public class SausageBullet : Projectile {
     }
 
     if (collider.gameObject.layer == LayerMask.NameToLayer("Obstacle") || playerHealth != null) {
+      if (collider.GetComponent<CactusHealth>() != null) return;
       StopCoroutine(DespawnTimer());
       Despawn();
     }
