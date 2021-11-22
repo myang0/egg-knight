@@ -22,9 +22,8 @@
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cactus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cactus.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Sausage/Attacks/SausageBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Sausage/Attacks/SausageBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +57,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/UnlockWeaponItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/DamagingTerrain.cs" />
         <option value="$PROJECT_DIR$/Assets/HideIfPlayerDamaged.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialNotStarted.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialManager.cs" />
@@ -109,6 +106,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Sausage/Attacks/SausageBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/VideoControls.cs" />
+        <option value="$PROJECT_DIR$/Assets/IntroControls.cs" />
       </list>
     </option>
   </component>
@@ -193,7 +192,8 @@
       <workItem from="1636854851914" duration="615000" />
       <workItem from="1637288913883" duration="5121000" />
       <workItem from="1637300268594" duration="3053000" />
-      <workItem from="1637559855533" duration="1980000" />
+      <workItem from="1637559855533" duration="1981000" />
+      <workItem from="1637570709870" duration="3387000" />
     </task>
     <servers />
   </component>
