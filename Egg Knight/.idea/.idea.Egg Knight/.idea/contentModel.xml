@@ -1239,6 +1239,7 @@
             </e>
           </e>
         </e>
+        <e p="IntroControls.cs" t="Include" />
         <e p="KeyPickup.cs" t="Include" />
         <e p="LockedWallBehavior.cs" t="Include" />
         <e p="LockedWallHealth.cs" t="Include" />
