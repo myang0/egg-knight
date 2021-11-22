@@ -28,9 +28,9 @@ public class SpawnParachute : MonoBehaviour {
     private const int Lv1RaspberryRate = 20;
     private const int Lv1StrawberryRate = 0;
 
-    private const int Lv2TomatoRate = 50;
+    private const int Lv2TomatoRate = 60;
     private const int Lv2CornRate = 30;
-    private const int Lv2PeaPodRate = 20;
+    private const int Lv2PeaPodRate = 10;
 
     private const int Lv3RoyalEggGuardRate = 60;
     private const int Lv3EggArcherRate = 30;

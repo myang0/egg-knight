@@ -10,6 +10,9 @@ public class EggArcherAttack : MonoBehaviour {
   [SerializeField] private float _rollSpeed;
   [SerializeField] private float _rollDrag;
 
+  private float _anglesPerFrame;
+  private bool _isRolling = false;
+
   private Animator _anim;
   private Rigidbody2D _rb;
   private EggArcherBehaviour _eaBehaviour;
@@ -31,6 +34,14 @@ public class EggArcherAttack : MonoBehaviour {
 
     PlayerControls.OnLeftClick += HandlePlayerAttack;
     PlayerControls.OnRightClick += HandlePlayerAttack;
+
+    _anglesPerFrame = (360.0f / (50 * _rollDuration));
+  }
+
+  private void FixedUpdate() {
+    if (_isRolling) {
+      transform.Rotate(0, 0, _anglesPerFrame);
+    }
   }
 
   private void HandlePlayerAttack(object sender, EventArgs e) {
@@ -45,6 +56,7 @@ public class EggArcherAttack : MonoBehaviour {
     _eHealth.isInvulnerable = true;
 
     _anim.SetBool("IsRolling", true);
+    _isRolling = true;
 
     Vector2 rollDirection = GetVectorToPlayer();
 
@@ -57,6 +69,9 @@ public class EggArcherAttack : MonoBehaviour {
     _rb.drag = 0;
 
     _anim.SetBool("IsRolling", false);
+    _isRolling = false;
+
+    transform.eulerAngles = Vector3.zero;
 
     _eHealth.isInvulnerable = false;
   }

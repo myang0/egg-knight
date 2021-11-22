@@ -27,6 +27,10 @@ public abstract class Health : MonoBehaviour {
   }
 
   public virtual void Damage(float amount) {
+    if (_currentHealth <= 0) {
+      return;
+    }
+
     _currentHealth -= amount;
 
     SpawnChangeIndicator(amount, Color.red);

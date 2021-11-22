@@ -33,7 +33,7 @@ public class SausageWalkAttack : MonoBehaviour {
 
   private void FixedUpdate() {
     if (_anim.GetBool("IsWalking")) {
-      _rb.velocity = VectorToPlayer() * _walkMoveSpeed;
+      _rb.velocity = VectorToPlayer(transform) * _walkMoveSpeed;
     }
   }
 
@@ -58,7 +58,7 @@ public class SausageWalkAttack : MonoBehaviour {
   }
 
   private void ShootAtPlayer() {
-    Vector2 direction = VectorToPlayer();
+    Vector2 direction = VectorToPlayer(_shootPoint);
     Vector2 directionWithRecoil = Quaternion.Euler(0, 0, Random.Range(-25f, 25f)) * direction;
 
     GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
@@ -69,7 +69,7 @@ public class SausageWalkAttack : MonoBehaviour {
     OnRevolverShot?.Invoke(this, EventArgs.Empty);
   }
 
-  private Vector2 VectorToPlayer() {
-    return VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
+  private Vector2 VectorToPlayer(Transform originTransform) {
+    return VectorHelper.GetVectorToPoint(originTransform.position, _playerTransform.position);
   }
 }

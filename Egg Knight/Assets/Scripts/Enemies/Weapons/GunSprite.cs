@@ -19,7 +19,7 @@ public class GunSprite : MonoBehaviour {
     _sr.flipX = (_playerTransform.position.x < _enemyTransform.position.x);
   }
 
-  protected IEnumerator FadeIn() {
+  protected IEnumerator FadeIn(float timeBetweenTicks = 0.025f) {
     _sr.enabled = true;
 
     float r = _sr.color.r;
@@ -31,11 +31,11 @@ public class GunSprite : MonoBehaviour {
       a += 0.05f;
       _sr.color = new Color(r, g, b, a);
 
-      yield return new WaitForSeconds(0.025f);
+      yield return new WaitForSeconds(timeBetweenTicks);
     }
   }
 
-  protected IEnumerator FadeOut() {
+  protected IEnumerator FadeOut(float timeBetweenTicks = 0.025f) {
     float r = _sr.color.r;
     float g = _sr.color.g;
     float b = _sr.color.b;
@@ -45,7 +45,7 @@ public class GunSprite : MonoBehaviour {
       a -= 0.05f;
       _sr.color = new Color(r, g, b, a);
 
-      yield return new WaitForSeconds(0.025f);
+      yield return new WaitForSeconds(timeBetweenTicks);
     }
 
     _sr.enabled = false;

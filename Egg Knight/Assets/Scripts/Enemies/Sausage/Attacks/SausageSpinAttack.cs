@@ -57,7 +57,7 @@ public class SausageSpinAttack : MonoBehaviour {
 
         SpawnBullet(direction);
 
-        _bulletVectors1[j] = Quaternion.Euler(0, 0, _angleBetweenShots1 / 4f) * direction;
+        _bulletVectors1[j] = Quaternion.Euler(0, 0, Random.Range(-90f, 90f)) * direction;
       }
 
       yield return new WaitForSeconds(_waitTimeBetweenShots1);
@@ -73,7 +73,7 @@ public class SausageSpinAttack : MonoBehaviour {
 
         SpawnBullet(direction);
 
-        _bulletVectors2[j] = Quaternion.Euler(0, 0, _angleBetweenShots2 / 24f) * direction;
+        _bulletVectors2[j] = Quaternion.Euler(0, 0, _angleBetweenShots2 / 16f) * direction;
       }
 
       yield return new WaitForSeconds(_waitTimeBetweenShots2);
