@@ -19,7 +19,7 @@ public class RoyalEggBehaviour : EnemyBehaviour {
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
     maxDistanceToAttack = 5f;
-    attackCooldownMax = 2.5f;
+    attackCooldownMax = 1f;
 
     Health = royalEggHealth;
     base.Awake();
@@ -34,8 +34,6 @@ public class RoyalEggBehaviour : EnemyBehaviour {
     isInAttackAnimation = true;
   
     rb.velocity = Vector2.zero;
-
-    _reAttack.StartAttack();
   
     yield return new WaitForSeconds(attackCooldownMax);
 

@@ -287,7 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828437c885047d84f81aaf1d4ea07f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slashObject: {fileID: 0}
+  _slashObject: {fileID: 2875347980883100606, guid: c9afc05dea3c86f48bf89604831070b6,
+    type: 3}
 --- !u!1 &5874542447871007295
 GameObject:
   m_ObjectHideFlags: 0
