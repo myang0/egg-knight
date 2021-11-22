@@ -28,6 +28,14 @@ public class SausageMinionBehaviour : EnemyBehaviour {
     }
   }
 
+  protected override void OnCollisionEnter2D(Collision2D other) {
+    if (other.collider.gameObject.name == "SheriffSausage") {
+      Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
+    }
+
+    base.OnCollisionEnter2D(other);
+  }
+
   private void HandleElectrocuted(object sender, EventArgs e) {
     StartCoroutine(Electrocute());
   }

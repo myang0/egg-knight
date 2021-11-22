@@ -13,7 +13,7 @@ public class SausagePartyAttack : MonoBehaviour {
     Partygoers = 0;
   }
 
-  public void StartAttack() {
+  public void StartParty() {
     int minionsToSpawn = Random.Range(1, 4);
 
     for (int i = 0; i < minionsToSpawn; i++) {
