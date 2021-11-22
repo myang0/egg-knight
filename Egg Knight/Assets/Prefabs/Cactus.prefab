@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a3b56c8db23f6a4bbb168ab2a5ec741, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b53cd4d3148c3141bdf94de3b2e455a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,11 +100,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005268097, y: -1.1084557}
+  m_Offset: {x: 0, y: 0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2820513, y: 3.2820513}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.875, y: 0.9375}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -157,6 +157,8 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 0
   decrementEnemyCountOnDeath: 0
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}

@@ -1249,8 +1249,17 @@
           <e p="Config" t="Include">
             <e p="StatusConfig.cs" t="Include" />
           </e>
+          <e p="Echo.cs" t="Include" />
           <e p="Eggitha.cs" t="Include" />
           <e p="Enemies" t="Include">
+            <e p="Bacon" t="Include">
+              <e p="BaconAttack.cs" t="Include" />
+              <e p="BaconBehaviour.cs" t="Include" />
+              <e p="BaconHealth.cs" t="Include" />
+              <e p="BaconStateManager.cs" t="Include" />
+              <e p="BaconTeleport.cs" t="Include" />
+              <e p="GreaseOrb.cs" t="Include" />
+            </e>
             <e p="Broccoli" t="Include">
               <e p="BoomerangBlade.cs" t="Include" />
               <e p="BroccoliActivator.cs" t="Include" />
@@ -1270,6 +1279,7 @@
               <e p="Arrow.cs" t="Include" />
               <e p="EggArcherAttack.cs" t="Include" />
               <e p="EggArcherBehaviour.cs" t="Include" />
+              <e p="EggArcherBow.cs" t="Include" />
               <e p="EggArcherHealth.cs" t="Include" />
             </e>
             <e p="EggGuard" t="Include">
@@ -1279,6 +1289,20 @@
               <e p="EggGuardSpear.cs" t="Include" />
               <e p="EggGuardState.cs" t="Include" />
               <e p="EggGuardWeapons.cs" t="Include" />
+            </e>
+            <e p="Eggna" t="Include">
+              <e p="Attacks" t="Include">
+                <e p="Dagger.cs" t="Include" />
+                <e p="EggnaDash.cs" t="Include" />
+                <e p="EggnaSlash.cs" t="Include" />
+                <e p="EggnaSpin.cs" t="Include" />
+                <e p="EggnaTeleport.cs" t="Include" />
+                <e p="EggnaThrow.cs" t="Include" />
+              </e>
+              <e p="EggnaActivator.cs" t="Include" />
+              <e p="EggnaBehaviour.cs" t="Include" />
+              <e p="EggnaHealth.cs" t="Include" />
+              <e p="EggnaStateManager.cs" t="Include" />
             </e>
             <e p="EnemyBehaviour.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
@@ -1345,6 +1369,10 @@
             </e>
             <e p="Weapons" t="Include">
               <e p="BaseEnemyWeapon.cs" t="Include" />
+              <e p="GunSprite.cs" t="Include" />
+              <e p="MinionRevolverSprite.cs" t="Include" />
+              <e p="RangedWeaponPivot.cs" t="Include" />
+              <e p="SheriffRevolverSprite.cs" t="Include" />
             </e>
           </e>
           <e p="Enums" t="Include">
@@ -1381,6 +1409,12 @@
           </e>
           <e p="Explosion.cs" t="Include" />
           <e p="FSM" t="Include">
+            <e p="Bacon" t="Include">
+              <e p="BaconAttacking.cs" t="Include" />
+              <e p="BaconIdle.cs" t="Include" />
+              <e p="BaconTeleportingIn.cs" t="Include" />
+              <e p="BaconTeleportingOut.cs" t="Include" />
+            </e>
             <e p="Broccoli" t="Include">
               <e p="BroccoliChargeSlash.cs" t="Include" />
               <e p="BroccoliChargeSpin.cs" t="Include" />
@@ -1401,6 +1435,15 @@
               <e p="EggArcherAttacking.cs" t="Include" />
               <e p="EggArcherFleeing.cs" t="Include" />
               <e p="EggArcherRolling.cs" t="Include" />
+            </e>
+            <e p="Eggna" t="Include">
+              <e p="EggnaDashState.cs" t="Include" />
+              <e p="EggnaDisappearState.cs" t="Include" />
+              <e p="EggnaIdleState.cs" t="Include" />
+              <e p="EggnaReappearState.cs" t="Include" />
+              <e p="EggnaSlashState.cs" t="Include" />
+              <e p="EggnaSpinState.cs" t="Include" />
+              <e p="EggnaThrowState.cs" t="Include" />
             </e>
             <e p="EnemyAttack.cs" t="Include" />
             <e p="EnemyDeadState.cs" t="Include" />
