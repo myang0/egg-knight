@@ -711,9 +711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf86c790b9998b4483e2e1a3978e0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numBulletsPerShot1: 12
+  _numBulletsPerShot1: 14
   _waitTimeBetweenShots1: 0.25
-  _totalShots1: 20
+  _totalShots1: 30
   _numBulletsPerShot2: 2
   _waitTimeBetweenShots2: 0.0625
   _totalShots2: 80
@@ -732,10 +732,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkMoveSpeed: 2
-  _numBursts: 3
+  _numBursts: 5
   _timeBetweenBursts: 1
-  _numShots: 5
-  _timeBetweenShots: 0.25
+  _numShots: 6
+  _timeBetweenShots: 0.15
   _bulletObject: {fileID: 7013311646222733351, guid: 61f2c72c09ba69e40971b1ef4dff6554,
     type: 3}
   _shootPoint: {fileID: 943679202}
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659052a07541e2f45a4921c748b8ee51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minTimeBeforeShot: 1
+  _minTimeBeforeShot: 0.5
   _maxTimeBeforeShot: 3
   _bulletObject: {fileID: 1521340873052132219, guid: 6660b7ae7cd23e44099a7b0a6ce756a1,
     type: 3}
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _totalThrows: 8
   _timeBetweenThrows: 0.5
-  _bombsPerThrow: 5
+  _bombsPerThrow: 8
   _bombObject: {fileID: 3567275577212889199, guid: 0fd316803ccc92e43b288b56ad87b3f6,
     type: 3}
 --- !u!114 &2902249381951379224
