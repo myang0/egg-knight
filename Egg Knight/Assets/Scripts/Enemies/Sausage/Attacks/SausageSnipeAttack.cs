@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SausageSnipeAttack : MonoBehaviour {
-  [SerializeField] private float _timeBeforeShot;
+  [SerializeField] private float _minTimeBeforeShot;
+  [SerializeField] private float _maxTimeBeforeShot;
+  private float _timeBeforeShot;
 
   [SerializeField] private GameObject _bulletObject;
   [SerializeField] private GameObject _laserObject;
@@ -19,6 +22,8 @@ public class SausageSnipeAttack : MonoBehaviour {
   public static event EventHandler OnAttackEnd;
 
   private void Awake() {
+    _timeBeforeShot = Random.Range(_minTimeBeforeShot, _maxTimeBeforeShot);
+
     _anim = GetComponent<Animator>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;

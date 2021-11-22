@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf86c790b9998b4483e2e1a3978e0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numBulletsPerShot1: 8
+  _numBulletsPerShot1: 12
   _waitTimeBetweenShots1: 0.25
   _totalShots1: 20
   _numBulletsPerShot2: 2
@@ -751,7 +751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659052a07541e2f45a4921c748b8ee51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBeforeShot: 2
+  _minTimeBeforeShot: 1
+  _maxTimeBeforeShot: 3
   _bulletObject: {fileID: 1521340873052132219, guid: 6660b7ae7cd23e44099a7b0a6ce756a1,
     type: 3}
   _laserObject: {fileID: 2902249381984808920}
