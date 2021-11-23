@@ -15,6 +15,7 @@ public class EggnaDash : MonoBehaviour {
 
   private Animator _anim;
   private Rigidbody2D _rb;
+  private Collider2D _collider;
 
   private Transform _playerTransform;
   private Vector3 _targetPoint;
@@ -22,6 +23,7 @@ public class EggnaDash : MonoBehaviour {
   private void Awake() {
     _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
+    _collider = GetComponent<Collider2D>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -38,13 +40,14 @@ public class EggnaDash : MonoBehaviour {
 
   public void StartDash() {
     _isDashing = true;
+    _collider.enabled = false;
     _targetPoint = _playerTransform.position;
 
     StartCoroutine(DashTrail());
   }
 
   private IEnumerator DashTrail() {
-    while (true) {
+    while (_isDashing) {
       yield return new WaitForSeconds(_timeBetweenEchoSpawns);
 
       Instantiate(_echoObject, transform.position, Quaternion.identity);
@@ -53,6 +56,7 @@ public class EggnaDash : MonoBehaviour {
 
   private void StopDash() {
     _isDashing = false;
+    _collider.enabled = true;
     _rb.velocity = Vector2.zero;
 
     StopCoroutine(DashTrail());

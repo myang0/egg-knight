@@ -5,7 +5,9 @@ public class EggnaSpin : MonoBehaviour {
   [SerializeField] private GameObject _daggerObject;
 
   [SerializeField] private int _numBursts;
-  [SerializeField] private float _timeBetweenBursts;
+  [SerializeField] private float _minTimeBetweenBursts;
+  [SerializeField] private float _maxTimeBetweenBursts;
+  private float _timeBetweenBursts;
 
   [SerializeField] private int _daggersPerBurst;
   [SerializeField] private float _timeBetweenThrows;
@@ -18,8 +20,9 @@ public class EggnaSpin : MonoBehaviour {
   private Transform _playerTransform;
 
   private void Awake() {
-    _eHealth = GetComponent<EggnaHealth>();
+    _timeBetweenBursts = _minTimeBetweenBursts;
 
+    _eHealth = GetComponent<EggnaHealth>();
     _anim = GetComponent<Animator>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -44,6 +47,8 @@ public class EggnaSpin : MonoBehaviour {
 
         yield return new WaitForSeconds(_timeBetweenThrows);
       }
+
+      _timeBetweenBursts = Random.Range(_minTimeBetweenBursts, _maxTimeBetweenBursts);
     }
 
     _anim.SetBool("IsSpinning", false);

@@ -4,8 +4,6 @@ public class RoyalEggSlash : BaseEnemyWeapon {
   [SerializeField] private float _attackRange;
   [SerializeField] private LayerMask _playerLayer;
 
-  private SpriteRenderer _sr;
-
   public void SetRotation(float angle) {
     transform.eulerAngles = new Vector3(0, 0, angle);
   }

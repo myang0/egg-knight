@@ -103,7 +103,7 @@ public class PlayerHealth : Health {
       return;
     }
 
-    SceneManager.LoadScene(2);
+    SceneManager.LoadScene(3);
 
     Destroy(gameObject);
   }

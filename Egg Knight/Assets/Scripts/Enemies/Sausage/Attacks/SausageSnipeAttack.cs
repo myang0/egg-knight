@@ -54,5 +54,7 @@ public class SausageSnipeAttack : MonoBehaviour {
     _anim.SetBool("IsSniping", false);
 
     OnAttackEnd?.Invoke(this, EventArgs.Empty);
+    
+    _timeBeforeShot = Random.Range(_minTimeBeforeShot, _maxTimeBeforeShot);
   }
 }

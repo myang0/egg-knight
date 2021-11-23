@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using Pathfinding;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TomatoBehaviour : EnemyBehaviour {
   private Collider2D _collider;
 
   private TomatoHealth _tHealth;
+
+  private Vector3 _targetPoint;
 
   [SerializeField] private GameObject _explosionObject;
 
@@ -19,10 +22,20 @@ public class TomatoBehaviour : EnemyBehaviour {
     EnemyBehaviour enemyBehaviour = GetComponent<EnemyBehaviour>();
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
-    maxDistanceToAttack = 4f;
+    maxDistanceToAttack = 5f;
 
     Health = _tHealth;
     base.Awake();
+  }
+
+  private void FixedUpdate() {
+    if (isInAttackAnimation) {
+      transform.position = Vector3.MoveTowards(transform.position, _targetPoint, 0.4f);
+
+      if (Vector3.Distance(transform.position, _targetPoint) < 0.01f && isDead == false) {
+        Explode();
+      }
+    }
   }
 
   private void HandleElectrocuted(object sender, EventArgs e) {
@@ -34,21 +47,19 @@ public class TomatoBehaviour : EnemyBehaviour {
 
     isInAttackAnimation = true;
 
-    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-    Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, playerPos);
+    _targetPoint = new Vector3(
+      _playerTransform.position.x + Random.Range(-1f, 1f),
+      _playerTransform.position.y + Random.Range(-1f, 1f),
+      _playerTransform.position.z
+    );
 
-    float distanceToPlayer = Vector2.Distance(transform.position, playerPos);
-    rb.velocity = vectorToPlayer * (distanceToPlayer * 1.5f);
-
-    yield return new WaitForSeconds(0.5f);
-
-    if (_tHealth.CurrentHealth > 0) {
-      Explode();
-    }
+    yield break;
   }
 
   public void Explode() {
-    Instantiate(_explosionObject, transform.position, Quaternion.identity);
-    _tHealth.OnExplode();
+    if (_tHealth.CurrentHealth > 0) {
+      Instantiate(_explosionObject, transform.position, Quaternion.identity);
+      _tHealth.OnExplode();
+    }
   }
 }

@@ -128,5 +128,5 @@ MonoBehaviour:
   _curseKey: 0
   _maxHealthReduction: 40
   _speedMultiplier: 2
-  _rollSpeedMultiplier: 2
+  _rollSpeedMultiplier: 1
   _rollCooldownMultiplier: 0.5
