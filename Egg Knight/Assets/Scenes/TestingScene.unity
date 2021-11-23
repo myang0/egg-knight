@@ -130,12 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5512330417173549834, guid: b1f186664f94d264e8a5acd022141786,
-        type: 3}
-      propertyPath: _dashSlashObject
-      value: 
-      objectReference: {fileID: 7696042843266684606, guid: e65e9a815e40b464eb5637d2ae50a325,
-        type: 3}
     - target: {fileID: 5512330417173549874, guid: b1f186664f94d264e8a5acd022141786,
         type: 3}
       propertyPath: m_RootOrder
