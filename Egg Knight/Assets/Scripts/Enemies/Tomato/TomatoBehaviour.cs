@@ -31,10 +31,6 @@ public class TomatoBehaviour : EnemyBehaviour {
   private void FixedUpdate() {
     if (isInAttackAnimation) {
       transform.position = Vector3.MoveTowards(transform.position, _targetPoint, 0.4f);
-
-      if (Vector3.Distance(transform.position, _targetPoint) < 0.01f && isDead == false) {
-        Explode();
-      }
     }
   }
 

@@ -12,7 +12,7 @@ public class EggnaThrow : MonoBehaviour {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
-  public void StartAttack() {
+  public void ThrowDaggers() {
     if (_daggerObject == null) {
       return;
     }

@@ -11,7 +11,7 @@ public class EggnaDash : MonoBehaviour {
   [SerializeField] private Transform _dashSlashPivot;
   [SerializeField] private Transform _dashSlashPoint;
 
-  [SerializeField] private Transform _dashSlashObject;
+  [SerializeField] private GameObject _dashSlashObject;
 
   private Animator _anim;
   private Rigidbody2D _rb;
@@ -65,10 +65,11 @@ public class EggnaDash : MonoBehaviour {
   }
 
   public void StartDashSlash() {
-    _dashSlashPivot.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector2.up, GetVectorToPlayer()));
+    float angle = Vector2.SignedAngle(Vector2.up, GetVectorToPlayer());
 
     if (_dashSlashObject != null) {
-      Instantiate(_dashSlashObject, _dashSlashPoint.position, Quaternion.identity);
+      GameObject dashSlashObject = Instantiate(_dashSlashObject, transform.position, Quaternion.identity);
+      dashSlashObject.GetComponent<EggnaSlashSwoosh>().SetRotation(angle);
     }
   }
 

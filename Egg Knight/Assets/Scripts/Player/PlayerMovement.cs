@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour {
 
   public void MultiplyMoveSpeed(float multiplyValue) {
     _movementSpeed *= multiplyValue;
+    _currentMovementSpeed = _movementSpeed;
   }
 
   public void MultiplyRollSpeed(float multiplyValue) {

@@ -274,7 +274,7 @@ MonoBehaviour:
   _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
     type: 3}
   _yolkCooldown: 1
-  _yolkPercentCost: 0.02
+  _yolkPercentCost: 0.01
 --- !u!114 &8208799723587694136
 MonoBehaviour:
   m_ObjectHideFlags: 0

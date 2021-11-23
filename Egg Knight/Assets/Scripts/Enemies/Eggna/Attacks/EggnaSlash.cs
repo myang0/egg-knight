@@ -25,10 +25,11 @@ public class EggnaSlash : MonoBehaviour {
   }
 
   public void StartSlash() {
-    _attackPivot.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector2.up, GetVectorToPlayer()));
+    float angle = Vector2.SignedAngle(Vector2.up, GetVectorToPlayer());
 
     if (_slashObject != null) {
-      Instantiate(_slashObject, transform.position, Quaternion.identity);
+      GameObject slashObject = Instantiate(_slashObject, transform.position, Quaternion.identity);
+      slashObject.GetComponent<EggnaSlashSwoosh>().SetRotation(angle);
     }
   }
 
