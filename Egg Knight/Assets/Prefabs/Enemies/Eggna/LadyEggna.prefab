@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &603194655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603194656}
+  m_Layer: 8
+  m_Name: ReappearPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603194656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603194655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5512330417173549874}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135377237
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +142,7 @@ Transform:
   - {fileID: 5512330418925694212}
   - {fileID: 5512330417935735964}
   - {fileID: 1135377238}
+  - {fileID: 603194656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -318,7 +349,8 @@ MonoBehaviour:
   _daggerObject: {fileID: 9067285521532788616, guid: 62cf8131bd78be14ea43f3315cb564c4,
     type: 3}
   _numBursts: 4
-  _timeBetweenBursts: 0.75
+  _minTimeBetweenBursts: 1
+  _maxTimeBetweenBursts: 2
   _daggersPerBurst: 5
   _timeBetweenThrows: 0.05
   _maxSpread: 5
@@ -371,12 +403,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24c3b55a31984a459699e360066836e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _invisiblilityTime: 0.25
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _attackRange: 1.5
-  _attackDamage: 10
+  _minInvisibilityTime: 0.5
+  _maxInvisibilityTime: 2
+  _smokeParticles: {fileID: 735216849006088597, guid: 77c0415ac7e43eb478053e163e8fe4f5,
+    type: 3}
+  _reappearPoint: {fileID: 603194656}
+  _swooshObject: {fileID: 7646004250534370257, guid: 65f51a3042d021d4bbb37d78c0ac03f4,
+    type: 3}
 --- !u!1 &5512330417935735963
 GameObject:
   m_ObjectHideFlags: 0

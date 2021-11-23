@@ -2,7 +2,13 @@ using System.Collections;
 using UnityEngine;
 
 public class EggnaTeleport : MonoBehaviour {
-  [SerializeField] private float _invisiblilityTime;
+  [SerializeField] private float _minInvisibilityTime;
+  [SerializeField] private float _maxInvisibilityTime;
+  private float _invisiblilityTime;
+
+  [SerializeField] private GameObject _smokeParticles;
+
+  [SerializeField] private Transform _reappearPoint;
 
   private Animator _anim;
   private SpriteRenderer _sr;
@@ -10,12 +16,11 @@ public class EggnaTeleport : MonoBehaviour {
 
   private Transform _playerTransform;
 
-  [SerializeField] private LayerMask _playerLayer;
-
-  [SerializeField] private float _attackRange;
-  [SerializeField] private float _attackDamage;
+  [SerializeField] private GameObject _swooshObject;
 
   private void Awake() {
+    _invisiblilityTime = Random.Range(_minInvisibilityTime, _maxInvisibilityTime);
+
     _anim = GetComponent<Animator>();
     _sr = GetComponent<SpriteRenderer>();
     _collider = GetComponent<Collider2D>();
@@ -31,7 +36,11 @@ public class EggnaTeleport : MonoBehaviour {
   }
   
   private IEnumerator Invisibility() {
+    Instantiate(_smokeParticles, transform.position, Quaternion.identity);
+
     yield return new WaitForSeconds(_invisiblilityTime);
+
+    _invisiblilityTime = Random.Range(_minInvisibilityTime, _maxInvisibilityTime);
 
     _anim.SetBool("IsReappearing", true);
   }
@@ -39,25 +48,17 @@ public class EggnaTeleport : MonoBehaviour {
   public void Reappear() {
     transform.position = _playerTransform.position;
     
+    Instantiate(_smokeParticles, _reappearPoint.position, Quaternion.identity);
+    
     _sr.enabled = true;
-
-    // TODO: call LandingAttack with an animation event once it's been made
-    LandingAttack();
   }
 
   public void LandingAttack() {
     _collider.enabled = true;
 
-    Collider2D[] playersInRange = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
-    PlayerHealth pHealth = playersInRange[0]?.gameObject?.GetComponent<PlayerHealth>();
-
-    if (pHealth != null) {
-      pHealth.Damage(_attackDamage);
+    if (_swooshObject != null) {
+      GameObject swooshObject = Instantiate(_swooshObject, transform.position, Quaternion.identity);
+      swooshObject.GetComponent<EggnaSwoosh>().SetRotation(180); 
     }
-  }
-
-  private void OnDrawGizmosSelected() {
-    Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(transform.position, _attackRange);
   }
 }

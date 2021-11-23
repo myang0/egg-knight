@@ -10,6 +10,10 @@ public class EggnaIdleState : StateMachineBehaviour {
 
   private static int _subscribers = 0;
 
+  private static EggnaAnyRangeAttack _lastUsedAttack = EggnaAnyRangeAttack.Spin;
+  private static EggnaCloseRangeAttack _lastUsedCloseRangeAttack = EggnaCloseRangeAttack.Any;
+  private static EggnaLongRangeAttack _lastUsedLongRangeAttack = EggnaLongRangeAttack.Any;
+
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _eBehaviour = animator.GetComponent<EnemyBehaviour>() as EggnaBehaviour;
     _eStateManager = animator.GetComponent<EggnaStateManager>();
@@ -44,35 +48,73 @@ public class EggnaIdleState : StateMachineBehaviour {
   }
 
   private void ChooseLongRangeAttack() {
-    int attackRoll = Random.Range(0, 100);
+    EggnaLongRangeAttack currentAttack = _lastUsedLongRangeAttack;
 
-    if (attackRoll < 33) {
+    while (currentAttack == _lastUsedLongRangeAttack) {
+      int attackRoll = Random.Range(0, 100);
+
+      if (attackRoll < 33) {
+        currentAttack = EggnaLongRangeAttack.Dash;
+      } else if (attackRoll >= 33 && attackRoll < 66) {
+        currentAttack = EggnaLongRangeAttack.Throw;
+      } else {
+        currentAttack = EggnaLongRangeAttack.Any;
+      }
+    }
+
+    if (currentAttack == EggnaLongRangeAttack.Dash) {
       _anim.SetBool("IsDashing", true);
-    } else if (attackRoll >= 33 && attackRoll < 66) {
+    } else if (currentAttack == EggnaLongRangeAttack.Throw) {
       _anim.SetBool("IsThrowing", true);
     } else {
       ChooseAnyRangeAttack();
     }
+
+    _lastUsedLongRangeAttack = currentAttack;
   }
 
   private void ChooseCloseRangeAttack() {
-    int attackRoll = Random.Range(0, 100);
+    EggnaCloseRangeAttack currentAttack = _lastUsedCloseRangeAttack;
 
-    if (attackRoll < 50) {
+    while (currentAttack == _lastUsedCloseRangeAttack) {
+      int attackRoll = Random.Range(0, 100);
+
+      if (attackRoll < 50) {
+        currentAttack = EggnaCloseRangeAttack.Slash;
+      } else {
+        currentAttack = EggnaCloseRangeAttack.Any;
+      }
+    }
+
+    if (currentAttack == EggnaCloseRangeAttack.Slash) {
       _anim.SetBool("IsSlashing", true);
     } else {
       ChooseAnyRangeAttack();
     }
+
+    _lastUsedCloseRangeAttack = currentAttack;
   }
 
   private void ChooseAnyRangeAttack() {
-    int attackRoll = Random.Range(0, 100);
+    EggnaAnyRangeAttack currentAttack = _lastUsedAttack;
 
-    if (attackRoll < 50) {
+    while (currentAttack == _lastUsedAttack) {
+      int attackRoll = Random.Range(0, 100);
+
+      if (attackRoll < 50) {
+        currentAttack = EggnaAnyRangeAttack.Teleport;
+      } else {
+        currentAttack = EggnaAnyRangeAttack.Spin;
+      }
+    }
+
+    if (currentAttack == EggnaAnyRangeAttack.Teleport) {
       _anim.SetBool("IsDisappearing", true);
     } else {
       _anim.SetBool("IsSpinning", true);
     }
+
+    _lastUsedAttack = currentAttack;
   }
 
   private void OnDestroy() {
@@ -80,5 +122,9 @@ public class EggnaIdleState : StateMachineBehaviour {
       _eStateManager.OnIdleEnd -= HandleIdleEnd;
       _subscribers = 0;
     }
+
+    _lastUsedAttack = EggnaAnyRangeAttack.Spin;
+    _lastUsedCloseRangeAttack = EggnaCloseRangeAttack.Any;
+    _lastUsedLongRangeAttack = EggnaLongRangeAttack.Any;
   }
 }
