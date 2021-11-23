@@ -372,7 +372,8 @@ MonoBehaviour:
   _timeBetweenEchoSpawns: 0.05
   _dashSlashPivot: {fileID: 5512330417935735964}
   _dashSlashPoint: {fileID: 5512330418774742387}
-  _dashSlashObject: {fileID: 0}
+  _dashSlashObject: {fileID: 7696042843266684606, guid: e65e9a815e40b464eb5637d2ae50a325,
+    type: 3}
 --- !u!114 &5512330417173549835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +391,8 @@ MonoBehaviour:
   _drag: 5
   _attackPivot: {fileID: 5512330418925694212}
   _attackPoint: {fileID: 5512330418049198136}
-  _slashObject: {fileID: 0}
+  _slashObject: {fileID: 7696042843266684606, guid: e65e9a815e40b464eb5637d2ae50a325,
+    type: 3}
 --- !u!114 &5512330417173549836
 MonoBehaviour:
   m_ObjectHideFlags: 0
