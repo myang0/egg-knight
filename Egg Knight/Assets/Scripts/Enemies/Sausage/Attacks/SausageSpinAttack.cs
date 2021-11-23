@@ -14,6 +14,9 @@ public class SausageSpinAttack : MonoBehaviour {
 
   [SerializeField] private float _waitTimeBetweenShots2;
   [SerializeField] private int _totalShots2;
+  
+  [SerializeField] private Transform _pivot;
+  [SerializeField] private Transform _shootPoint;
 
   [SerializeField] private GameObject _bulletObject;
 
@@ -21,6 +24,7 @@ public class SausageSpinAttack : MonoBehaviour {
   private List<Vector2> _bulletVectors2;
 
   private Animator _anim;
+  private EnemyBehaviour _eBehaviour;
 
   private void Awake() {
     _bulletVectors1 = new List<Vector2>(new Vector2[_numBulletsPerShot1]);
@@ -38,6 +42,7 @@ public class SausageSpinAttack : MonoBehaviour {
     }
 
     _anim = GetComponent<Animator>();
+    _eBehaviour = GetComponent<EnemyBehaviour>();
   }
 
   public void StartAttack() {
@@ -55,6 +60,7 @@ public class SausageSpinAttack : MonoBehaviour {
       for (int j = 0; j < _bulletVectors1.Count; j++) {
         Vector2 direction = _bulletVectors1[j];
 
+        _pivot.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector2.up, direction));
         SpawnBullet(direction);
 
         _bulletVectors1[j] = Quaternion.Euler(0, 0, Random.Range(-90f, 90f)) * direction;
@@ -71,6 +77,7 @@ public class SausageSpinAttack : MonoBehaviour {
       for (int j = 0; j < _bulletVectors2.Count; j++) {
         Vector2 direction = _bulletVectors2[j];
 
+        _pivot.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector2.up, direction));
         SpawnBullet(direction);
 
         _bulletVectors2[j] = Quaternion.Euler(0, 0, _angleBetweenShots2 / 32f) * direction;
@@ -83,7 +90,11 @@ public class SausageSpinAttack : MonoBehaviour {
   }
 
   private void SpawnBullet(Vector2 direction) {
-    GameObject bulletObject = Instantiate(_bulletObject, transform.position, Quaternion.identity);
+    if (_eBehaviour.isDead) {
+      return;
+    }
+    
+    GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
     SausageBullet bullet = bulletObject?.GetComponent<SausageBullet>();
 
     bullet.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));

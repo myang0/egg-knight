@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 
 public class SausageBombAttack : MonoBehaviour {
-  [SerializeField] private int _totalThrows;
-  [SerializeField] private float _timeBetweenThrows;
+  [SerializeField] private float _attackDuration;
+
   [SerializeField] private int _bombsPerThrow;
 
   [SerializeField] private GameObject _bombObject;
@@ -17,18 +17,18 @@ public class SausageBombAttack : MonoBehaviour {
   }
 
   public void StartAttack() {
-    StartCoroutine(Bomb());
+    StartCoroutine(BombDuration());
   }
 
-  private IEnumerator Bomb() {
-    for (int i = 0; i < _totalThrows; i++) {
-      for (int j = 0; j < _bombsPerThrow; j++) {
-        Instantiate(_bombObject, transform.position, Quaternion.identity);
-      }
-
-      yield return new WaitForSeconds(_timeBetweenThrows);
-    }
+  private IEnumerator BombDuration() {
+    yield return new WaitForSeconds(_attackDuration);
 
     _anim.SetBool("IsBombing", false);
+  }
+
+  private void Bomb() {
+    for (int i = 0; i < _bombsPerThrow; i++) {
+      Instantiate(_bombObject, transform.position, Quaternion.identity);
+    }
   }
 }
