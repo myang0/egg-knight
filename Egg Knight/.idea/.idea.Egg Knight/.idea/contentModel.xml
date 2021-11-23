@@ -1296,7 +1296,9 @@
                 <e p="Dagger.cs" t="Include" />
                 <e p="EggnaDash.cs" t="Include" />
                 <e p="EggnaSlash.cs" t="Include" />
+                <e p="EggnaSlashSwoosh.cs" t="Include" />
                 <e p="EggnaSpin.cs" t="Include" />
+                <e p="EggnaSwoosh.cs" t="Include" />
                 <e p="EggnaTeleport.cs" t="Include" />
                 <e p="EggnaThrow.cs" t="Include" />
               </e>
@@ -1374,6 +1376,7 @@
               <e p="MinionRevolverSprite.cs" t="Include" />
               <e p="RangedWeaponPivot.cs" t="Include" />
               <e p="SheriffRevolverSprite.cs" t="Include" />
+              <e p="SheriffRifleSprite.cs" t="Include" />
             </e>
           </e>
           <e p="Enums" t="Include">
@@ -1381,6 +1384,9 @@
             <e p="CursedItemType.cs" t="Include" />
             <e p="DamageType.cs" t="Include" />
             <e p="Direction.cs" t="Include" />
+            <e p="EggnaAnyRangeAttack.cs" t="Include" />
+            <e p="EggnaCloseRangeAttack.cs" t="Include" />
+            <e p="EggnaLongRangeAttack.cs" t="Include" />
             <e p="Item.cs" t="Include" />
             <e p="Layers.cs" t="Include" />
             <e p="MouseInput.cs" t="Include" />
