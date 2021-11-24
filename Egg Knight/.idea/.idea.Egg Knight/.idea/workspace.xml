@@ -21,31 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Eggitha/Eggitha.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Eggitha/Eggitha.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerFootprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerFootprint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/GoldenYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/GoldenYolk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/LeghornShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/LeghornShot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RocketPoweredYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RocketPoweredYolk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RunnyYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RunnyYolk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/Salmonella.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/Salmonella.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/ShellShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/ShellShot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/SmartYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/SmartYolk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkProjectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkShard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkShard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialFork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialFork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialRolling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialRolling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSpoon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSpoon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Rock.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Rock.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,10 +102,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerFootprint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkShard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +193,7 @@
       <workItem from="1637559855533" duration="1981000" />
       <workItem from="1637570709870" duration="3983000" />
       <workItem from="1637699227444" duration="871000" />
-      <workItem from="1637721459109" duration="11769000" />
+      <workItem from="1637721459109" duration="12113000" />
     </task>
     <servers />
   </component>
