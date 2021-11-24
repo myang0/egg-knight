@@ -198,15 +198,15 @@ namespace Stage
             switch (level) {
                 case 1:
                     stage = level1Stages[Random.Range(0, level1Stages.Count - 1)];
-                    Assert.IsTrue(level1Stages.Remove(stage));
+                    level1Stages.Remove(stage);
                     break;
                 case 2:
                     stage = level2Stages[Random.Range(0, level2Stages.Count - 1)];
-                    Assert.IsTrue(level2Stages.Remove(stage));
+                    level2Stages.Remove(stage);
                     break;
                 default:
                     stage = level3Stages[Random.Range(0, level3Stages.Count - 1)];
-                    Assert.IsTrue(level3Stages.Remove(stage));
+                    level3Stages.Remove(stage);
                     break;
             }
             return stage;
@@ -255,15 +255,15 @@ namespace Stage
             switch (level) {
                 case 1:
                     stage = level1Shops[Random.Range(0, level1Shops.Count)];
-                    Assert.IsTrue(level1Shops.Remove(stage));
+                    level1Shops.Remove(stage);
                     break;
                 case 2:
                     stage = level2Shops[Random.Range(0, level2Shops.Count)];
-                    Assert.IsTrue(level2Shops.Remove(stage));
+                    level2Shops.Remove(stage);
                     break;
                 default:
                     stage = level3Shops[Random.Range(0, level3Shops.Count)];
-                    Assert.IsTrue(level3Shops.Remove(stage));
+                    level3Shops.Remove(stage);
                     break;
             }
             return stage;
@@ -274,15 +274,15 @@ namespace Stage
             switch (level) {
                 case 1:
                     stage = level1Stages[level1Stages.Count - 1];
-                    Assert.IsTrue(level1Stages.Remove(stage));
+                    level1Stages.Remove(stage);
                     break;
                 case 2:
                     stage = level2Stages[level2Stages.Count - 1];
-                    Assert.IsTrue(level2Stages.Remove(stage));
+                    level2Stages.Remove(stage);
                     break;
                 default:
                     stage = level3Stages[level3Stages.Count - 1];
-                    Assert.IsTrue(level3Stages.Remove(stage));
+                    level3Stages.Remove(stage);
                     break;
             }
             return stage;
