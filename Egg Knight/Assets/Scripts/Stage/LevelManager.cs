@@ -449,6 +449,8 @@ namespace Stage
             Debug.LogError("Current Level: " + level);
             Debug.LogError("Stages Cleared: " + stagesCleared);
             Debug.LogError("Current Stage: " + currentStage.gameObject.name);
+            Debug.LogError("Current Active Enemies: " + currentStage.enemiesList.Count);
+            Debug.LogError("Current Spawned Enemies: " + currentStage.enemyCount);
             Debug.LogError("Rest Rate: " + restRate);
             Debug.LogError("Sir Racha Rate: " + sirrachaRate);
             Debug.LogError("Shop Rate: " + shopRate);
