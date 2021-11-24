@@ -23,4 +23,8 @@ public class YolkShard : Projectile {
     StopCoroutine(DespawnTimer());
     Despawn();
   }
+
+  public void SetDamageMultiplier(float multiplier) {
+    _damage = _damage * multiplier;
+  }
 }

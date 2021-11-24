@@ -9,11 +9,12 @@ public class YolkProjectile : Projectile {
   [SerializeField] private GameObject _shardPrefab;
   [SerializeField] private int _numShardsOnDespawn;
   private bool _isShellShot = false;
+  private YolkUpgradeManager upgrades;
 
   [SerializeField] private float _homingSpeed;
 
   protected override void Awake() {
-    YolkUpgradeManager upgrades = GameObject.FindGameObjectWithTag("Player").GetComponent<YolkUpgradeManager>();
+    upgrades = GameObject.FindGameObjectWithTag("Player").GetComponent<YolkUpgradeManager>();
 
     _isHoming = upgrades.HasUpgrade(YolkUpgradeType.SmartYolk);
     if (_isHoming) {
@@ -33,6 +34,7 @@ public class YolkProjectile : Projectile {
     GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
     foreach(GameObject enemy in allEnemies) {
+      if (!(enemy.GetComponent<DeadTreeBehavior>() == null & enemy.GetComponent<CactusBehavior>() == null)) continue;
       float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
       if (currentDistance < minDistance && enemy.layer == LayerMask.NameToLayer("Enemy")) {
@@ -59,6 +61,7 @@ public class YolkProjectile : Projectile {
 
       GameObject shardObject = Instantiate(_shardPrefab, transform.position, Quaternion.identity);
       YolkShard shard = shardObject.GetComponent<YolkShard>();
+      if (upgrades.HasUpgrade(YolkUpgradeType.RunnyYolk)) shard.SetDamageMultiplier(0.33f);
       shard.SetDirection(direction, 0);
     }
   }

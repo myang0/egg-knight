@@ -19,6 +19,8 @@ public class TutorialSpoon : StateMachineBehaviour
         tutRoom = manager.TutorialRooms[3];
         tutRoom.OnRoomEnter += StartDialogue;
         PlayerControls.On3Press += SpawnEnemy;
+        PlayerControls.OnScrollUp += SpawnEnemy;
+        PlayerControls.OnScrollDown += SpawnEnemy;
         TutorialManager.FsmEventHandler += ShowHelpText;
     }
 
@@ -54,6 +56,8 @@ public class TutorialSpoon : StateMachineBehaviour
         TutorialManager.FsmEventHandler -= ShowHelpText;
         manager.wcText.ResetText();
         PlayerControls.On3Press -= SpawnEnemy;
+        PlayerControls.OnScrollUp -= SpawnEnemy;
+        PlayerControls.OnScrollDown -= SpawnEnemy;
     }
 
     private void StartDialogue(object sender, EventArgs e) {

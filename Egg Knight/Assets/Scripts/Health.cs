@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour {
-  [SerializeField] protected float _maxHealth;
+  [SerializeField] public float _maxHealth;
   public event EventHandler OnDeath;
   public event EventHandler OnPreDeath;
 
-  protected float _currentHealth;
+  public float _currentHealth;
   public bool isInvulnerable;
   public float CurrentHealth {
     get => _currentHealth;

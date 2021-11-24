@@ -32,6 +32,10 @@ namespace Stage
         public int numSirRachaVisits = 0;
         public bool hasPlayerTakenDamageCurrStage;
         public int level = 1;
+        public GameObject level1Grid;
+        public GameObject level2Grid;
+        public GameObject level3Grid;
+        
         private const int ShopsPerLevel = 3;
         private GameObject _player;
 
@@ -60,6 +64,8 @@ namespace Stage
 
         public void NextStage(StageType stageType) {
             StageManager stage;
+            if (level == 2 && stageType != StageType.Spawn && !level2Grid.activeInHierarchy) level2Grid.SetActive(true);
+            if (level == 3 && stageType != StageType.Spawn && !level3Grid.activeInHierarchy) level3Grid.SetActive(true);
 
             switch (stageType) {
                 case StageType.Spawn:
@@ -107,6 +113,8 @@ namespace Stage
             currentStage = stage;
             UpdatePathing();
             stage.OnStageClear += IncrementRates;
+            if (level == 2 && stageType != StageType.Spawn && level1Grid.activeInHierarchy) level1Grid.SetActive(false);
+            if (level == 3 && stageType != StageType.Spawn && level2Grid.activeInHierarchy) level2Grid.SetActive(false);
         }
 
         private void UpdatePathing() {
@@ -314,10 +322,10 @@ namespace Stage
             Assert.IsTrue(level2Shops.Count == ShopsPerLevel);
             Assert.IsNotNull(level2Sirracha);
             Assert.IsNotNull(level2Rest);
-            // Assert.IsTrue(level3Stages.Count > 0);
-            // Assert.IsTrue(level3Shops.Count == ShopsPerLevel);
-            // Assert.IsNotNull(level3Sirracha);
-            // Assert.IsNotNull(level3Rest);
+            Assert.IsTrue(level3Stages.Count > 0);
+            Assert.IsTrue(level3Shops.Count == ShopsPerLevel);
+            Assert.IsNotNull(level3Sirracha);
+            Assert.IsNotNull(level3Rest);
             Assert.IsTrue(level > 0 && level < 4);
         }
         
@@ -364,7 +372,7 @@ namespace Stage
         }
     
         public bool GetRestSpawn() {
-            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
+            // if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
             
             switch (level) {
                 case 1 when level1Rest == null:
@@ -431,6 +439,52 @@ namespace Stage
             }
 
             OnEggnaFightBegin?.Invoke(this, new BossSpawnEventArgs(_level3BossName));
+        }
+
+        public void ForceClearStage() {
+            currentStage.SetStageStatus(StageStatus.Cleared);
+        }
+
+        public void PrintDebugLog() {
+            Debug.LogError("Current Level: " + level);
+            Debug.LogError("Stages Cleared: " + stagesCleared);
+            Debug.LogError("Current Stage: " + currentStage.gameObject.name);
+            Debug.LogError("Rest Rate: " + restRate);
+            Debug.LogError("Sir Racha Rate: " + sirrachaRate);
+            Debug.LogError("Shop Rate: " + shopRate);
+            Debug.LogError("Lucky Item Rate: " + luckyItemRate);
+            switch (level) {
+                case 1:
+                    Debug.LogError("Level 1 Stage Pool Size: " + level1Stages.Count);
+                    Debug.LogError("Level 1 Shop Pool Size: " + level1Shops.Count);
+                    if (level1Sirracha == null) Debug.LogError("Sir Racha IS NOT available this level");
+                    else Debug.LogError("Sir Racha IS available this level");
+
+                    if (level1Rest == null) Debug.LogError("Rest IS NOT available this level");
+                    else Debug.LogError("Rest IS available this level");
+                    
+                    break;
+                case 2:
+                    Debug.LogError("Level 2 Stage Pool Size: " + level2Stages.Count);
+                    Debug.LogError("Level 2 Shop Pool Size: " + level2Shops.Count);
+                    if (level2Sirracha == null) Debug.LogError("Sir Racha IS NOT available this level");
+                    else Debug.LogError("Sir Racha IS available this level");
+
+                    if (level2Rest == null) Debug.LogError("Rest IS NOT available this level");
+                    else Debug.LogError("Rest IS available this level");
+
+                    break;
+                case 3:
+                    Debug.LogError("Level 3 Stage Pool Size: " + level3Stages.Count);
+                    Debug.LogError("Level 3 Shop Pool Size: " + level3Shops.Count);
+                    if (level3Sirracha == null) Debug.LogError("Sir Racha IS NOT available this level");
+                    else Debug.LogError("Sir Racha IS available this level");
+
+                    if (level3Rest == null) Debug.LogError("Rest IS NOT available this level");
+                    else Debug.LogError("Rest IS available this level");
+
+                    break;
+            }
         }
     }
 }

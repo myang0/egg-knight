@@ -11,9 +11,6 @@ public class PlayerControls : MonoBehaviour {
 
 	public static event EventHandler OnSpaceBarPressed;
 	public static event EventHandler OnLeftClick;
-	public static event EventHandler OnQPress;
-	public static event EventHandler OnEPress;
-
 	public static event EventHandler On1Press;
 	public static event EventHandler On2Press;
 	public static event EventHandler On3Press;
@@ -57,24 +54,38 @@ public class PlayerControls : MonoBehaviour {
 			AttackSwitchControls();
 			TeleportToExit();
 			KillAllEnemies();
+			ForceClear();
+			PrintDebugLog();
+		}
+	}
+
+	private void PrintDebugLog() {
+		if (Input.GetKeyDown(KeyCode.M)) {
+			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().PrintDebugLog();
 		}
 	}
 
 	private void KillAllEnemies() {
-		if (Input.GetKey(KeyCode.K)) {
+		if (Input.GetKeyDown(KeyCode.K)) {
 			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>()
 				.GetCurrentStage().KillAllEnemies();
 		}
 	}
 
+	private void ForceClear() {
+		if (Input.GetKeyDown(KeyCode.Semicolon)) {
+			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().ForceClearStage();
+		}
+	}
+
 	private void UnlockAllWeapons() {
-		if (Input.GetKey(KeyCode.L)) {
+		if (Input.GetKeyDown(KeyCode.L)) {
 			OnUnlockAllWeapons?.Invoke(this, EventArgs.Empty);
 		}
 	}
 
 	private void TeleportToExit() {
-		if (Input.GetKey(KeyCode.O)) {
+		if (Input.GetKeyDown(KeyCode.O)) {
 			GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("LevelManager")
 				.GetComponent<LevelManager>().GetCurrentStage().stageExits[0].transform.position;
 		}
