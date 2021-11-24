@@ -128,5 +128,5 @@ MonoBehaviour:
   _upgradeKey: 6
   _cooldownMultiplier: 1.5
   _healthCostMultiplier: 1.25
-  _speedMultiplier: 3
+  _speedMultiplier: 2
   _damageMultiplier: 2
