@@ -65,7 +65,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     InvokeRepeating(nameof(InterruptWander), 0f, 2f);
   }
 
-  protected void Update() {
+  protected virtual void Update() {
     if (isDead) return;
     if (!isWandering && isTurningEnabled) {
       SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

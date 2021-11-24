@@ -43,7 +43,7 @@ public class BaconTeleport : MonoBehaviour {
   private IEnumerator Invisibility() {
     yield return new WaitForSeconds(_invisibleTime);
 
-    _anim.SetBool("IsReappearing", true);
+    _anim.SetBool("IsTeleportingIn", true);
   }
 
   public void Reappear() {
@@ -75,7 +75,11 @@ public class BaconTeleport : MonoBehaviour {
         return _teleportPoints[randomIndex].GetPosition();
       }
     } else {
-      return transform.position;
+      return new Vector3(
+        transform.position.x + Random.Range(-5f, 5f),
+        transform.position.y + Random.Range(-5f, 5f),
+        transform.position.z
+      );
     }
   }
 }

@@ -30,6 +30,18 @@ public class EggArcherBehaviour : EnemyBehaviour {
     base.Awake();
   }
 
+  protected virtual void Update() {
+    if (isDead) return;
+
+    SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+    if (_anim.GetBool("IsFleeing") && isTurningEnabled) {
+      spriteRenderer.flipX = rb.velocity.x <= 0;
+    } else if (!isWandering && isTurningEnabled) {
+      spriteRenderer.flipX = transform.position.x - _playerTransform.position.x > 0;
+    }
+  }
+
   public bool HasClearShot() {
     Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
     RaycastHit2D firstHit = Physics2D.Raycast(transform.position, vectorToPlayer);
