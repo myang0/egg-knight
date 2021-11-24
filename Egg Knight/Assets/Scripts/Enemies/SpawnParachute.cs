@@ -96,7 +96,6 @@ public class SpawnParachute : MonoBehaviour {
     }
 
     private EnemyBehaviour InstantiateEnemy(EnemyBehaviour enemy) {
-        Debug.Log("SPAWNING");
         Vector3 oldPos = transform.position;
         Vector3 newPos = new Vector3(oldPos.x, oldPos.y, ZcoordinateConsts.Character);
         EnemyBehaviour newEnemy = Instantiate(enemy, newPos, Quaternion.identity);
@@ -130,13 +129,11 @@ public class SpawnParachute : MonoBehaviour {
 
         if (enemyRoll < Lv2TomatoRate) {
             return InstantiateEnemy(lv2Tomato);
-        } else if (enemyRoll >= Lv2TomatoRate && enemyRoll < Lv2TomatoRate + Lv2CornRate) {
-            return InstantiateEnemy(lv2Corn);
-        } else {
-            return InstantiateEnemy(lv2PeaPod);
         }
-
-        return null;
+        if (enemyRoll < Lv2TomatoRate + Lv2CornRate) {
+            return InstantiateEnemy(lv2Corn);
+        }
+        return InstantiateEnemy(lv2PeaPod);
     }
     
     private EnemyBehaviour SpawnLevel3() {
@@ -144,12 +141,10 @@ public class SpawnParachute : MonoBehaviour {
         
         if (enemyRoll < Lv3RoyalEggGuardRate) {
             return InstantiateEnemy(lv3RoyalEggGuard);
-        } else if (enemyRoll >= Lv3RoyalEggGuardRate && enemyRoll < Lv3RoyalEggGuardRate + Lv3EggArcherRate) {
-            return InstantiateEnemy(lv3EggArcher);
-        } else {
-            return InstantiateEnemy(lv3BishopBacon);
         }
-
-        return null;
+        if (enemyRoll < Lv3RoyalEggGuardRate + Lv3EggArcherRate) {
+            return InstantiateEnemy(lv3EggArcher);
+        }
+        return InstantiateEnemy(lv3BishopBacon);
     }
 }

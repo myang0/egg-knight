@@ -38,8 +38,8 @@ public class EnemyMovement : MonoBehaviour
     public void MoveToPlayer(float currentSpeed) {
         if (_path == null) return;
         _reachedEndOfPath = _currentWaypoint >= _path.vectorPath.Count;
-    
 
+        if (_currentWaypoint >= _path.vectorPath.Count) return;
         Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb.position).normalized;
         Vector2 movementForce = direction * currentSpeed;
         // Vector2 movementForce = direction * _currentSpeed * Time.deltaTime;

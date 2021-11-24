@@ -75,7 +75,8 @@ namespace Stage {
             _camBoundary = GetComponent<BoxCollider>();
             _levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
             
-            Assert.IsTrue(stageExits.Count > 0);
+            // Assert.IsTrue(stageExits.Count > 0)
+            Assert.IsNotNull(GetComponentInChildren<ItemSpawnpoint>());
             Assert.IsNotNull(_stageEntrance);
             Assert.IsNotNull(_camBoundary);
             Assert.IsNotNull(_levelManager);

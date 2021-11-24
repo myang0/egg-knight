@@ -11,20 +11,32 @@ public class TutorialRolling : StateMachineBehaviour
     private bool isEnemySpawned;
     private GameObject healingYolk;
     private bool isDialoguePlayed;
+    private PlayerHealth pHealth;
+    private bool isHelpTextOn;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         manager = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<TutorialManager>();
+        pHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         tutRoom = manager.TutorialRooms[1];
         tutRoom.OnRoomEnter += StartDialogue;
-        TutorialManager.FsmEventHandler += ShowHelpText;
+        TutorialManager.FsmEventHandler += EnableHelpText;
     }
 
-    private void ShowHelpText(object sender, EventArgs e) {
-        manager.wcText.SetText("Press SPACE while moving to roll! Roll over the stakes and pick up the fork!", 0);
+    private void EnableHelpText(object sender, EventArgs e) {
+        isHelpTextOn = true;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (isHelpTextOn) {
+            if (pHealth._currentHealth < pHealth._maxHealth) {
+                manager.wcText.SetText("Pick up the healing yolk to heal or else the fork will disappear!", 0);
+            }
+            else {
+                manager.wcText.SetText("Press SPACE while moving to roll! Roll over the stakes and pick up the fork!", 0);
+            }
+        }
+        
         if (manager.forkItem == null) {
             animator.SetTrigger("NextRoom");
         }
@@ -42,7 +54,7 @@ public class TutorialRolling : StateMachineBehaviour
         }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().Heal(100);
         Fungus.Flowchart.BroadcastFungusMessage("FinishRolling");
-        TutorialManager.FsmEventHandler -= ShowHelpText;
+        TutorialManager.FsmEventHandler -= EnableHelpText;
         manager.wcText.ResetText();
         tutRoom.OnRoomEnter = null;
     }
