@@ -16,10 +16,10 @@ public class EnemySpawnpoint : MonoBehaviour {
         _sr.color = new Color(color.r, color.g, color.b, 0);
     }
 
-    public void SpawnEnemy() {
+    public SpawnParachute SpawnEnemy() {
         Vector3 oldPos = transform.position;
         Vector3 newPos = new Vector3(oldPos.x, oldPos.y, ZcoordinateConsts.Interactable);
-        Instantiate(spawnParachute, newPos, Quaternion.identity);
+        return Instantiate(spawnParachute, newPos, Quaternion.identity);
     }
 
     public Vector3 GetPosition() {

@@ -43,6 +43,8 @@ public class ShopItem : MonoBehaviour {
         _playerWallet.MakeTransaction(price);
         Vector3 playerPos = _playerObj.transform.position;
         Instantiate(item, playerPos, Quaternion.identity);
+        ItemManager itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
+        itemManager._items.Remove(item);
         Destroy(gameObject);
     }
 }

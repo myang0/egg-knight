@@ -14,6 +14,8 @@ namespace Stage {
         [SerializeField] private StageType stageType;
         [SerializeField] private StageStatus stageStatus;
         [SerializeField] public List<EnemyBehaviour> enemiesList;
+
+        public List<SpawnParachute> parachuteList;
         //Use enemyCount instead of enemiesList.Count because enemy spawns are delayed
         public int enemyCount;
         [SerializeField] private int numEnemiesMax;
@@ -51,13 +53,13 @@ namespace Stage {
         private static readonly int[] Level2ItemStages = {2, 5, 8};
         private static readonly int[] Level3ItemStages = {2, 6};
 
-        private const float SurvivalTimer = 30f;
+        private const float SurvivalTimer = 40f;
         private int _survivalTimerCurrent;
         private WaveCounterText _waveCounterText;
 
-        private float _hardEnemyMultiplier = 1.5f;
-        private float _easyEnemyMultiplier = 0.7f;
-        private float _survivalEnemyMultiplier = 0.7f;
+        private float _hardEnemyMultiplier = 1.25f;
+        private float _easyEnemyMultiplier = 1f;
+        private float _survivalEnemyMultiplier = 1f;
 
         private bool _initialSurvivalEnemiesSpawned;
 
@@ -148,10 +150,15 @@ namespace Stage {
                 _waveCounterText.ResetText();
                 numWavesCurr = numWavesMax;
             }
+            foreach (var parachute in parachuteList) {
+                if (parachute != null) Destroy(parachute.gameObject);
+                else parachuteList.Remove(parachute);
+            }
             foreach (var e in enemiesList) {
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
+            parachuteList.Clear();
             enemyCount = 0;
         }
 
@@ -286,17 +293,17 @@ namespace Stage {
         private EnemySpawnpoint RegularEnemySpawn() {
             int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
             EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
-            spawn.SpawnEnemy();
+            parachuteList.Add(spawn.SpawnEnemy());
             enemyCount++;
             return spawn;
         }
 
         private IEnumerator DelayedEnemySpawn() {
             enemyCount++;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
             EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
-            spawn.SpawnEnemy();
+            parachuteList.Add(spawn.SpawnEnemy());
         }
 
         private void ReadyForNextStage() {
@@ -425,11 +432,17 @@ namespace Stage {
             foreach (EnemyBehaviour e in enemiesList) {
                 StartCoroutine(e.FadeOutDeath());
             }
+
+            foreach (var parachute in parachuteList) {
+                if (parachute != null) Destroy(parachute.gameObject);
+                else parachuteList.Remove(parachute);
+            }
             yield return new WaitForSeconds(1.5f);
             foreach (EnemyBehaviour e in enemiesList) {
                 Destroy(e.gameObject);
             }
             enemiesList.Clear();
+            parachuteList.Clear();
             enemyCount = 0;
             numWavesCurr = 1;
         }

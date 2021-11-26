@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/ShopItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/ShopItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/WaveCounterText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/TutorialSkip.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialRoom.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialKnife.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialRolling.cs" />
@@ -75,9 +79,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DamagingTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWall.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWallHealth.cs" />
@@ -103,8 +105,13 @@
         <option value="$PROJECT_DIR$/Assets/WeaponUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/ShopItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
       </list>
     </option>
   </component>
@@ -194,7 +201,7 @@
       <workItem from="1637699227444" duration="871000" />
       <workItem from="1637721459109" duration="12707000" />
       <workItem from="1637746992425" duration="90000" />
-      <workItem from="1637895116221" duration="3849000" />
+      <workItem from="1637895116221" duration="6070000" />
     </task>
     <servers />
   </component>
