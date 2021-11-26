@@ -180,8 +180,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 78392767
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08509fddab6a38f44a5c2c3b58501e21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,6 +264,8 @@ MonoBehaviour:
   alertRange: 5
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  disableRegularDrops: 0
+  disableDeathRotation: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 1361924306}
@@ -282,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 75
+  _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
@@ -326,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884db5af4d33b6a4693ea963a17ac5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usesPathfinding: 1
 --- !u!61 &3118377129507018825
 BoxCollider2D:
   m_ObjectHideFlags: 0

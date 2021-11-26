@@ -1243,6 +1243,7 @@
         <e p="KeyPickup.cs" t="Include" />
         <e p="LockedWallBehavior.cs" t="Include" />
         <e p="LockedWallHealth.cs" t="Include" />
+        <e p="MinimapCamera.cs" t="Include" />
         <e p="PickupBase.cs" t="Include" />
         <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">

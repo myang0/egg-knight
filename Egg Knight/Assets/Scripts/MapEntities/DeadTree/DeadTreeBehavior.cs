@@ -72,6 +72,7 @@ public class DeadTreeBehavior : EnemyBehaviour {
         Quaternion newRotation = Quaternion.Euler(0, 0, 90);
         var newPos = topHalf.position;
         topHalf.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
+        topHalfSR.sortingLayerName = "Object";
 
         UpdatePathing();
 

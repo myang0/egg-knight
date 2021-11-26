@@ -20,8 +20,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cactus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cactus.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Campfire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Campfire.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Eggitha.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Eggitha.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/BishopBacon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/BishopBacon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/GreaseOrb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/GreaseOrb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/GreaseOrbEcho.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bacon/GreaseOrbEcho.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/BoomerangBlade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/BoomerangBlade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/BrigandBroccoli.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/BrigandBroccoli.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/GreatSlash.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Broccoli/GreatSlash.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Corn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Corn.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Kernel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Kernel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/EggArcher.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/EggArcher.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/Spear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/Spear.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaEcho.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaEcho.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaSlashSwoosh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaSlashSwoosh.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaSwoosh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/EggnaSwoosh.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/LadyEggna.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/LadyEggna.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/ThrowingDagger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Eggna/ThrowingDagger.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Spore.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Spore.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/Pea.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/Pea.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/PeaPod.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/PeaPod.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/RaspberryProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/RaspberryProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggGuard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggGuard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggSlash.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggSlash.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageSniperBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageSniperBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageSpinBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageSpinBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageWalkBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SausageWalkBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SheriffSausage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SheriffSausage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SmokeBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Sausage/SmokeBomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SausageMinion/SausageMinion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SausageMinion/SausageMinion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SausageMinion/SausageMinionBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SausageMinion/SausageMinionBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/Strawberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/Strawberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/StrawberryProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/StrawberryProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/TomatoExplosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/TomatoExplosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/TrainingDummy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/TrainingDummy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ForkItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ForkItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/RottenYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/RottenYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/RustySword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/RustySword.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/TornCape.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Cursed/TornCape.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/ChefHat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/ChefHat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/SecondYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/SecondYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/EggShardsGround.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/EggShardsGround.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/BurntToast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/BurntToast.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/CrackedEgg.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/CrackedEgg.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/ElectricalOutlet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/ElectricalOutlet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/IceCube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/IceCube.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/VegetablePeeler.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Elemental/VegetablePeeler.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/HealingYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/HealingYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/HeartYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/HeartYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Key Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Key Pickup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Mini Heart Yolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Mini Heart Yolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/GoldenYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/GoldenYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/LeghornShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/LeghornShot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RocketPoweredYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RocketPoweredYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RunnyYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/RunnyYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/Salmonella.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/Salmonella.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/ShellShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/ShellShot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/SmartYolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Upgrades/Yolk/SmartYolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/BleedParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/BleedParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/CoinParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/CoinParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/EggnaSmokeParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/EggnaSmokeParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/ElectrocuteParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/ElectrocuteParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/FrostParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/FrostParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/GreaseParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/GreaseParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/IgniteParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/IgniteParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/SausageConfettiParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/SausageConfettiParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/SmokeBombParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/SmokeBombParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Particles/YolkParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/YolkParticles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedFork.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedFork.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedForkHold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Fork/TwoProngedForkHold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnifeHold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Knife/ButterKnifeHold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Spoon/Spoon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Spoon/Spoon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Spoon/SpoonHold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/Spoon/SpoonHold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkShard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Attacks/YolkShard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnParachute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnParachute.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawnpoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spoon Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spoon Item.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StageEntry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +140,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LockedWallBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/37/3a9a44a3/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MinimapCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/d2/e1c17cce/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,8 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/TutorialRoom.cs" />
-        <option value="$PROJECT_DIR$/Assets/TutorialKnife.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialRolling.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialFork.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialSpoon.cs" />
@@ -64,7 +168,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/DamagingTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/Spoon/Spoon.cs" />
@@ -74,7 +177,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DamagingTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWall.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWallHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/KeyPickup.cs" />
@@ -106,6 +208,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/ReverseParentRotation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/MinimapCamera.cs" />
       </list>
     </option>
   </component>
@@ -195,7 +301,7 @@
       <workItem from="1637699227444" duration="871000" />
       <workItem from="1637721459109" duration="12707000" />
       <workItem from="1637746992425" duration="90000" />
-      <workItem from="1637895116221" duration="7782000" />
+      <workItem from="1637895116221" duration="10941000" />
     </task>
     <servers />
   </component>
