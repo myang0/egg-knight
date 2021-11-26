@@ -330,23 +330,25 @@ namespace Stage
         }
         
         public bool GetShopSpawn() {
+            int balance = _player.GetComponent<PlayerWallet>().GetBalance();
             int chance = Random.Range(1, 101);
-            if (_player.GetComponent<PlayerWallet>().GetBalance() < 4) return false;
+            if (balance < 5) return false;
 
             switch (level) {
                 case 1:
                     if (level1Shops.Count == 0) return false;
-                    chance = chance * 3 / level1Shops.Count;
                     break;
                 case 2:
                     if (level2Shops.Count == 0) return false;
-                    chance = chance * 3 / level2Shops.Count;
                     break;
                 case 3:
                     if (level3Shops.Count == 0) return false;
-                    chance = chance * 3 / level3Shops.Count;
                     break;
             }
+
+            int balanceBonus = Mathf.RoundToInt(balance/3f);
+            if (balanceBonus > 10) balanceBonus = 10;
+            chance = chance + balanceBonus;
             
             if (chance < shopRate) {
                 shopRate = 0;
@@ -372,7 +374,7 @@ namespace Stage
         }
     
         public bool GetRestSpawn() {
-            // if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
+            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
             
             switch (level) {
                 case 1 when level1Rest == null:
@@ -451,6 +453,8 @@ namespace Stage
             Debug.LogError("Current Stage: " + currentStage.gameObject.name);
             Debug.LogError("Current Active Enemies: " + currentStage.enemiesList.Count);
             Debug.LogError("Current Spawned Enemies: " + currentStage.enemyCount);
+            Debug.LogError("Item Status: " + currentStage.itemStatus);
+            Debug.LogError("Key Status: " + currentStage.keyStatus);
             Debug.LogError("Rest Rate: " + restRate);
             Debug.LogError("Sir Racha Rate: " + sirrachaRate);
             Debug.LogError("Shop Rate: " + shopRate);

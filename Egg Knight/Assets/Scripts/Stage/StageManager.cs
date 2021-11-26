@@ -19,7 +19,7 @@ namespace Stage {
         [SerializeField] private int numEnemiesMax;
         [SerializeField] public int numWavesMax;
         [SerializeField] public int numWavesCurr;
-        [SerializeField] private StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
+        [SerializeField] public StageItemStatus itemStatus = StageItemStatus.NeverSpawned;
         public bool isAutoAggroOnSpawn;
         public KeyStageStatus keyStatus;
         public List<LockedWallBehavior> lockedWalls = new List<LockedWallBehavior>();
