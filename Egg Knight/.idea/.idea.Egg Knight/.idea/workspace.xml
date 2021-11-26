@@ -21,7 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WeaponUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WeaponUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +93,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Sausage/Attacks/SausageBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/VideoControls.cs" />
         <option value="$PROJECT_DIR$/Assets/IntroControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialFork.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSpoon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialRolling.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SpawnParachute.cs" />
@@ -106,6 +107,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/WeaponUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
       </list>
     </option>
   </component>
@@ -195,7 +198,7 @@
       <workItem from="1637699227444" duration="871000" />
       <workItem from="1637721459109" duration="12707000" />
       <workItem from="1637746992425" duration="90000" />
-      <workItem from="1637895116221" duration="683000" />
+      <workItem from="1637895116221" duration="2620000" />
     </task>
     <servers />
   </component>

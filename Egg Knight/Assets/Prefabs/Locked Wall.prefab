@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72ed7b5e1deb7a49b3305e266884552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 75
+  _currentHealth: 0
   isInvulnerable: 1
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
