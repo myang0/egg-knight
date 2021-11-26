@@ -372,7 +372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50d5946e1e3a794b95f37b8654cc774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 60
+  _maxHealth: 50
+  _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
@@ -468,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c45fa3ee063ef4585bcedab69e5cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eBehaviour: {fileID: 6421925850566888571}
   _smHealth: {fileID: 6421925850566888550}
   _bulletObject: {fileID: 1215380289267501400, guid: b6d28f854a884994d936924bf9afc01a,
     type: 3}

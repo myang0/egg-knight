@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class EggArcherBow : MonoBehaviour {
+  [SerializeField] private EnemyBehaviour _eBehaviour;
   [SerializeField] private GameObject _arrowObject;
 
   private SpriteRenderer _bowSr;
@@ -24,8 +25,13 @@ public class EggArcherBow : MonoBehaviour {
     Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
     float angleToPlayer = Vector2.SignedAngle(Vector2.up, vectorToPlayer);
 
-    GameObject arrowObject = Instantiate(_arrowObject, transform.position, Quaternion.identity);
-    arrowObject.GetComponent<Arrow>().SetDirection(vectorToPlayer, angleToPlayer);
+    Arrow arrow = Instantiate(_arrowObject, transform.position, Quaternion.identity).GetComponent<Arrow>();
+
+    if (_eBehaviour != null) {
+      ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, arrow);
+    }
+
+    arrow.SetDirection(vectorToPlayer, angleToPlayer);
   }
 
   public void EndAttack() {

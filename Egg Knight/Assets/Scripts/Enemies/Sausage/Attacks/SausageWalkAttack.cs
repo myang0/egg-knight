@@ -17,6 +17,7 @@ public class SausageWalkAttack : MonoBehaviour {
 
   private Animator _anim;
   private Rigidbody2D _rb;
+  private EnemyBehaviour _eBehaviour;
 
   private Transform _playerTransform;
 
@@ -27,6 +28,7 @@ public class SausageWalkAttack : MonoBehaviour {
   private void Awake() {
     _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
+    _eBehaviour = GetComponent<EnemyBehaviour>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -63,6 +65,7 @@ public class SausageWalkAttack : MonoBehaviour {
 
     GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
     SausageBullet bullet = bulletObject?.GetComponent<SausageBullet>();
+    ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, bullet);
 
     bullet.SetDirection(directionWithRecoil, Vector2.SignedAngle(Vector2.up, directionWithRecoil));
 

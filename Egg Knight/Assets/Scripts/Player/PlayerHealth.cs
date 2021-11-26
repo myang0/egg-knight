@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class PlayerHealth : Health {
   [SerializeField] private float _iFramesDuration;
@@ -17,6 +18,12 @@ public class PlayerHealth : Health {
 
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
+
+  [SerializeField] private GameObject _ninjaParticles;
+  [SerializeField] private float _ninjaInvincibilityTime;
+
+  public static event EventHandler OnNinjaIFramesEnabled;
+  public static event EventHandler OnNinjaIFramesDisabled;
 
   protected override void Awake() {
     _inventory = gameObject.GetComponent<PlayerInventory>();
@@ -79,6 +86,13 @@ public class PlayerHealth : Health {
       return;
     }
 
+    int ninjaRoll = Random.Range(0, 8);
+    if (ninjaRoll < _inventory.GetItemQuantity(Item.NinjaHeadband)) {
+      Instantiate(_ninjaParticles, transform.position, Quaternion.identity);
+      StartCoroutine(NinjaIFrames());
+      return;
+    }
+
     amount = amount - (0.1f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
     _currentHealth -= amount;
 
@@ -120,6 +134,22 @@ public class PlayerHealth : Health {
 
     OnIFramesDisabled?.Invoke(this, EventArgs.Empty);
     _iFramesActive = false;
+  }
+
+  private IEnumerator NinjaIFrames() {
+    _iFramesActive = true;
+    OnNinjaIFramesEnabled?.Invoke(this, EventArgs.Empty);
+
+    DisableHitbox();
+
+    yield return new WaitForSeconds(_ninjaInvincibilityTime);
+
+    OnNinjaIFramesDisabled?.Invoke(this, EventArgs.Empty);
+
+    if (_isRolling == false) {
+      EnableHitbox();
+      _iFramesActive = false;
+    }
   }
 
   public override void Heal(float amount) {

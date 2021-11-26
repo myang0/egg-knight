@@ -101,7 +101,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 40, y: 15}
+  m_Size: {x: 40, y: 7.5}
   m_EdgeRadius: 0
 --- !u!114 &325719229
 MonoBehaviour:
@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1250
+  _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
@@ -796,10 +797,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walkMoveSpeed: 2
-  _numBursts: 4
+  _numBursts: 3
   _timeBetweenBursts: 1.5
-  _numShots: 6
-  _timeBetweenShots: 0.15
+  _numShots: 5
+  _timeBetweenShots: 0.25
   _bulletObject: {fileID: 7013311646222733351, guid: 61f2c72c09ba69e40971b1ef4dff6554,
     type: 3}
   _shootPoint: {fileID: 943679202}
@@ -815,8 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659052a07541e2f45a4921c748b8ee51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minTimeBeforeShot: 0.5
-  _maxTimeBeforeShot: 3
+  _timeBeforeShot: 1
   _bulletObject: {fileID: 1521340873052132219, guid: 6660b7ae7cd23e44099a7b0a6ce756a1,
     type: 3}
   _laserObject: {fileID: 2902249381984808920}

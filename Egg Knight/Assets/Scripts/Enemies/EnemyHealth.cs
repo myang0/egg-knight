@@ -32,7 +32,11 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnBleed += HandleBleed;
     enemyBehaviour.OnYolked += HandleYolked;
 
-    base.Awake();
+    if (_playerInventory != null && _playerInventory.HasItem(Item.Norovirus)) {
+      _currentHealth = _maxHealth * 0.8f;
+    } else {
+      base.Awake();
+    }
   }
 
   protected virtual void HandleFrosted(object sender, EventArgs e) {

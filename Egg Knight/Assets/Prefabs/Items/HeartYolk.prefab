@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2326677117730336665}
   - component: {fileID: 2326677117730336664}
   - component: {fileID: 2326677117730336667}
-  - component: {fileID: 2326677117730336676}
+  - component: {fileID: 7409505062412125937}
   m_Layer: 15
   m_Name: HeartYolk
   m_TagString: Untagged
@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3584847b108aeb4da74d068810207b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 45
+  allowWeaponPickup: 0
+  healAmount: 20
 --- !u!58 &2326677117730336667
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,7 +115,7 @@ CircleCollider2D:
   m_Offset: {x: -0.05, y: 0.15}
   serializedVersion: 2
   m_Radius: 0.6
---- !u!114 &2326677117730336676
+--- !u!114 &7409505062412125937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,9 +124,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2326677117730336671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cfdae395f49776469a47e3a167bc075, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f2136b31c1b664596b6f545bf71707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Heart Yolk
-  Description: Restores some yolk on pickup
-  InventoryKey: 19
+  Description: Increases max health and slightly heals
+  InventoryKey: 24
+  _healthBonus: 20

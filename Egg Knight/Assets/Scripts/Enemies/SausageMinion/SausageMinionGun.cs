@@ -4,6 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SausageMinionGun : MonoBehaviour {
+  [SerializeField] private EnemyBehaviour _eBehaviour;
   [SerializeField] private SausageMinionHealth _smHealth;
   private bool _isAlive = true;
 
@@ -48,6 +49,10 @@ public class SausageMinionGun : MonoBehaviour {
       if (_isAlive) {
         GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
         SausageBullet bullet = bulletObject.GetComponent<SausageBullet>();
+
+        if (_eBehaviour != null) {
+          ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, bullet);
+        }
 
         bullet.SetDirection(GetVectorToPlayer(), transform.eulerAngles.z);
 

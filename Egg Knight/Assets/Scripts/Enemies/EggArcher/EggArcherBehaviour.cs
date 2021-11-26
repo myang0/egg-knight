@@ -30,7 +30,7 @@ public class EggArcherBehaviour : EnemyBehaviour {
     base.Awake();
   }
 
-  protected virtual void Update() {
+  protected override void Update() {
     if (isDead) return;
 
     SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

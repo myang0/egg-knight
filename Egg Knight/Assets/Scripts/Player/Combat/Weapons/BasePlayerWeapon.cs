@@ -98,7 +98,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float amountAfterCoins = AddCoinDamage(_damageAmount);
+    float amountAfterProtein = AddProteinDamage(_damageAmount);
+    float amountAfterCoins = AddCoinDamage(amountAfterProtein);
     float amountAfterRage = AddRageDamage(amountAfterCoins);
     float totalAmount = HandleCrits(amountAfterRage, statuses, enemyHealth);
 
@@ -109,10 +110,14 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
   }
 
+  protected virtual float AddProteinDamage(float originalAmount) {
+    return originalAmount * (_inventory.HasItem(Item.ProteinPowder) ? 1.2f : 1.0f);
+  }
+
   protected virtual float AddCoinDamage(float originalAmount) {
     float totalAmount = originalAmount;
 
-    if (_inventory.ItemInInventory(Item.GoldChainNecklace)) {
+    if (_inventory.HasItem(Item.GoldChainNecklace)) {
       totalAmount += (originalAmount * _wallet.GetBalance() * 0.02f);
     }
 
@@ -122,7 +127,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   protected virtual float AddRageDamage(float originalAmount) {
     float totalAmount = originalAmount;
 
-    if (_health.BelowHalfHealth() && _inventory.ItemInInventory(Item.VikingHelmet)) {
+    if (_health.BelowHalfHealth() && _inventory.HasItem(Item.VikingHelmet)) {
       totalAmount += (0.5f - _health.CurrentHealthPercentage()) * _inventory.GetItemQuantity(Item.VikingHelmet) * totalAmount;
     }
 

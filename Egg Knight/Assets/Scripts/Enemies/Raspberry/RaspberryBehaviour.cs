@@ -58,6 +58,8 @@ public class RaspberryBehaviour : EnemyBehaviour {
     
     GameObject projectileObject = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.identity);
     RaspberryProjectile projectile = projectileObject.GetComponent<RaspberryProjectile>();
+
+    ProjectileHelper.Refrigerate(_playerInventory, projectile);
     projectile.SetDirection(vectorToPlayer, 0);
 
     CountShots();

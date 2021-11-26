@@ -23,6 +23,9 @@ public class PlayerAnimation : MonoBehaviour {
     PlayerHealth.OnIFramesEnabled += HandleOnIFramesEnabled;
     PlayerHealth.OnIFramesDisabled += HandleOnIFramesDisabled;
 
+    PlayerHealth.OnNinjaIFramesEnabled += HandleNinjaIFramesEnabled;
+    PlayerHealth.OnNinjaIFramesDisabled += HandleNinjaIFramesDisabled;
+
     _sr = gameObject.GetComponent<SpriteRenderer>();
     _anim = gameObject.GetComponent<Animator>();
   }
@@ -53,6 +56,14 @@ public class PlayerAnimation : MonoBehaviour {
 
   private void HandleOnIFramesDisabled(object sender, EventArgs e) {
     _iFramesActive = false;
+    _sr.color = new Color(1, 1, 1, 1);
+  }
+
+  private void HandleNinjaIFramesEnabled(object sender, EventArgs e) {
+    _sr.color = new Color(1, 1, 1, 0.25f);
+  }
+
+  private void HandleNinjaIFramesDisabled(object sender, EventArgs e) {
     _sr.color = new Color(1, 1, 1, 1);
   }
 

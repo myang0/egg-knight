@@ -46,6 +46,7 @@ public class StrawberryBehaviour : EnemyBehaviour {
     for (int i = 0; i < _projectileVectors.Count; i++) {
       GameObject projectileObject = Instantiate(_projectilePrefab, _shootPoint.position, Quaternion.identity);
       StrawberryProjectile projectile = projectileObject?.GetComponent<StrawberryProjectile>();
+      ProjectileHelper.Refrigerate(_playerInventory, projectile);
 
       Vector2 direction = _projectileVectors[i];
       projectile.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));

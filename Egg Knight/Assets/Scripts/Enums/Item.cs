@@ -9,6 +9,8 @@ public enum Item {
   ChefHat,
   NinjaHeadband,
   PizzaDelivery,
+  QuailEgg,
+  PortableRefrigerator,
   WarPaint,
   GoldChainNecklace,
   VikingHelmet,
@@ -17,6 +19,9 @@ public enum Item {
   VegetablePeeler,
   FragmentationShell,
   EggShards,
+  Norovirus,
+  ProteinPowder,
+  HotChiliPepper,
   YolkUpgrade,
   HeartYolk,
   CursedItem

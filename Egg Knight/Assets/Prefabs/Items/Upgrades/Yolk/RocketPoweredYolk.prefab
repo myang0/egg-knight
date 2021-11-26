@@ -129,4 +129,4 @@ MonoBehaviour:
   _cooldownMultiplier: 1.5
   _healthCostMultiplier: 1.25
   _speedMultiplier: 2
-  _damageMultiplier: 2
+  _damageMultiplier: 1.5
