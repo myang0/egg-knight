@@ -356,6 +356,15 @@ namespace Stage {
                     }
                     // Check special stage spawns
                     else if (!didSpecialRoomSpawn) {
+                        // Stage leading to a boss will always have a shop if enough shops are available
+                        if (currentLevel == 1 && stagesCleared == NumStagesToBossLv1-1 && _levelManager.level1Shops.Count != 0 ||
+                            currentLevel == 2 && stagesCleared == NumStagesToBossLv2-1 && _levelManager.level2Shops.Count != 0 ||
+                            currentLevel == 3 && stagesCleared == NumStagesToBossLv3-1 && _levelManager.level3Shops.Count != 0)
+                        {
+                            exit.SetStageType(StageType.Shop);
+                            didSpecialRoomSpawn = true;
+                            skipRegularRoomGen = true;
+                        }
                         if (_levelManager.GetShopSpawn()) {
                             exit.SetStageType(StageType.Shop);
                             didSpecialRoomSpawn = true;

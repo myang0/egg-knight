@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyZone: {fileID: 4512687328967082071}
   item: {fileID: 0}
-  price: 20
+  price: 15
 --- !u!1 &5879566465935678773
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyZone: {fileID: 8603203993679196660}
   item: {fileID: 0}
-  price: 20
+  price: 15
 --- !u!1 &9041036349316182652
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +843,7 @@ SpriteRenderer:
   m_SortingLayerID: 1397397571
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38c2e44f33cbfce48a0ad65bd5eff0ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fa02f889493599458c92dbc3f7be4c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

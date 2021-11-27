@@ -21,18 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerFootprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerFootprint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DeadTree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HealthChangeIndicator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/RestartGameButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/RestartGameButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WeaponUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WeaponUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +92,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkShard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/EnemySpawnpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/ItemManager.cs" />
@@ -115,9 +105,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/RestartGameButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/WeaponUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerFootprint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
       </list>
     </option>
   </component>
@@ -209,7 +200,7 @@
       <workItem from="1637746992425" duration="90000" />
       <workItem from="1637895116221" duration="10941000" />
       <workItem from="1637972120432" duration="2520000" />
-      <workItem from="1637975870326" duration="1414000" />
+      <workItem from="1637975870326" duration="2158000" />
     </task>
     <servers />
   </component>
