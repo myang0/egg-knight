@@ -14,6 +14,7 @@ public class CoinDrop : MonoBehaviour
     [SerializeField] private Coin coin;
     
     private int _coinDropRate = 35;
+    private int _moddedCoinDropRate = 35;
     private const float HardDropRateMultiplier = 1.25f;
 
     private void Awake() {
@@ -23,17 +24,17 @@ public class CoinDrop : MonoBehaviour
     }
 
     private void HandleDropRateChange(object sender, CoinRateChangeEventArgs e) {
-        _coinDropRate += (int)e.rate;
+        _moddedCoinDropRate += (int)e.rate;
     }
     
-    public void DropCoin(Vector3 enemyPos) {
+    public void DropCoin(Vector3 enemyPos, bool allowDropMods) {
         stageManager = levelManager.GetCurrentStage();
         
         StageType stageType = stageManager.GetStageType();
 
         int tempDropRate = _coinDropRate;
-        if (stageType == StageType.Hard)
-            tempDropRate = Mathf.RoundToInt(_coinDropRate * HardDropRateMultiplier);
+        if (allowDropMods) tempDropRate = _moddedCoinDropRate;
+        if (stageType == StageType.Hard) tempDropRate = Mathf.RoundToInt(_coinDropRate * HardDropRateMultiplier);
 
         int coinDropChance = Random.Range(1, 101);
         if (coinDropChance < tempDropRate) {

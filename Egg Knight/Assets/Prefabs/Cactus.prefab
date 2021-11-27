@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1397397571
-  m_SortingLayer: 6
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9b53cd4d3148c3141bdf94de3b2e455a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -160,6 +160,7 @@ MonoBehaviour:
   decrementEnemyCountOnDeath: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
+  notAffectedByDropMods: 1
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}

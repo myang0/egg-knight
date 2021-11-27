@@ -35,6 +35,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public bool decrementEnemyCountOnDeath;
   public bool disableRegularDrops;
   public bool disableDeathRotation;
+  public bool notAffectedByDropMods;
 
   public bool isWandering;
   private Vector3 _wanderDestination;
@@ -75,7 +76,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   private void HandlePreDeath(object sender, EventArgs e) {
     StartCoroutine(FadeOutDeath());
-    if (!disableRegularDrops) FindObjectOfType<CoinDrop>().DropCoin(transform.position);
+    if (!disableRegularDrops) FindObjectOfType<CoinDrop>().DropCoin(transform.position, !notAffectedByDropMods);
   }
 
   public IEnumerator FadeOutDeath() {
