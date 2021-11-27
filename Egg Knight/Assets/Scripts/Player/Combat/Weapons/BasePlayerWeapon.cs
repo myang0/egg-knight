@@ -29,7 +29,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     _sr = gameObject.GetComponent<SpriteRenderer>();
 
     _weaponModifiers = new List<StatusCondition>();
-    
+
     _playerObject = GameObject.FindGameObjectWithTag("Player");
 
     _health = _playerObject.GetComponent<PlayerHealth>();
@@ -61,9 +61,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
       if (enemyHealth != null && !enemyHealth.isInvulnerable) {
-        HealOnHit();
-
-        DamageEnemy(enemyHealth);
+        if (DamageEnemy(enemyHealth)) HealOnHit();
       }
 
       if (enemyHealth != null && enemyHealth.isInvulnerable) {
@@ -79,15 +77,18 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
   }
 
-  protected virtual void HealOnHit() {
+  protected virtual bool HealOnHit() {
     int healRoll = UnityEngine.Random.Range(0, 100);
 
     if (healRoll < (25 * _inventory.GetItemQuantity(Item.VampireFangs))) {
       _health.Heal(1);
+      return true;
     }
+
+    return false;
   }
 
-  protected virtual void DamageEnemy(EnemyHealth enemyHealth) {
+  protected virtual bool DamageEnemy(EnemyHealth enemyHealth) {
     List<StatusCondition> statuses = new List<StatusCondition>();
 
     foreach (StatusCondition modifier in _weaponModifiers) {
@@ -105,9 +106,9 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     float totalAmount = baseDmgInclCrit + coinBonus + rageBonus;
 
     if (statuses.Any()) {
-      enemyHealth.DamageWithStatusesAndType(totalAmount, statuses, _damageType);
+      return enemyHealth.DamageWithStatusesAndType(totalAmount, statuses, _damageType);
     } else {
-      enemyHealth.DamageWithType(totalAmount, _damageType);
+      return enemyHealth.DamageWithType(totalAmount, _damageType);
     }
   }
 

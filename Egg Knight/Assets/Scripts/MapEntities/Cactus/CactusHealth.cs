@@ -13,9 +13,10 @@ public class CactusHealth : EnemyHealth
         Damage(amount);
     }
 
-    public override void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
-        OnCactusStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
+    public override bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
+        bool isDamageDealt = DamageWithType(amount, type);
+        if (isDamageDealt) OnCactusStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
-        DamageWithType(amount, type);
+        return isDamageDealt;
     }
 }

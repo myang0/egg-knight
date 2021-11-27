@@ -97,10 +97,10 @@ public abstract class EnemyHealth : Health {
 
   public abstract void DamageWithStatuses(float amount, List<StatusCondition> statuses);
 
-  public abstract void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type);
+  public abstract bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type);
 
-  public virtual void DamageWithType(float amount, DamageType type) {
-    if (_currentHealth <= 0) return;
+  public virtual bool DamageWithType(float amount, DamageType type) {
+    if (_currentHealth <= 0) return false;
     
     float bonusDamage = 0;
 
@@ -111,9 +111,11 @@ public abstract class EnemyHealth : Health {
 
     if (type == _immuneTo || type == _immuneTo2) {
       Damage(0);
+      return false;
     }
     else {
       Damage(amount + bonusDamage);
+      return true;
     }
   }
 

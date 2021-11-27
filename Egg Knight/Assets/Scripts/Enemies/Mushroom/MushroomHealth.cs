@@ -15,10 +15,11 @@ public class MushroomHealth : EnemyHealth
         Damage(amount);
     }
 
-    public override void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
-        OnMushroomStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
+    public override bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
+        bool isDamageDealt = DamageWithType(amount, type);
+        if (isDamageDealt) OnMushroomStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
-        DamageWithType(amount, type);
+        return isDamageDealt;
     }
 
     protected override void Die() {

@@ -13,11 +13,14 @@ public class EggArcherHealth : EnemyHealth {
     }
   }
 
-  public override void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
+  public override bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
     if (isInvulnerable == false) {
-      OnEggArcherStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
+      bool isDamageDealt = DamageWithType(amount, type);
+      if (isDamageDealt) OnEggArcherStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
-      DamageWithType(amount, type);
+      return isDamageDealt;
     }
+
+    return false;
   }
 }

@@ -13,9 +13,10 @@ public class ChestHealth : EnemyHealth
         Damage(amount);
     }
 
-    public override void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
-        OnChestStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
+    public override bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
+        bool isDamageDealt = DamageWithType(amount, type);
+        if (isDamageDealt) OnChestStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
-        DamageWithType(amount, type);
+        return isDamageDealt;
     }
 }

@@ -13,9 +13,9 @@ public class LockedWallHealth : EnemyHealth
         Damage(amount);
     }
 
-    public override void DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
+    public override bool DamageWithStatusesAndType(float amount, List<StatusCondition> statuses, DamageType type) {
         OnLockedWallStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
-        DamageWithType(amount, type);
+        return DamageWithType(amount, type);
     }
 }
