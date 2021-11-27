@@ -127,6 +127,6 @@ MonoBehaviour:
   InventoryKey: 23
   _upgradeKey: 6
   _cooldownMultiplier: 1.25
-  _costMultiplier: 1.5
+  _costMultiplier: 1.25
   _speedMultiplier: 2
   _damageMultiplier: 1.5

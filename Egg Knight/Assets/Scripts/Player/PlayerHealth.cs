@@ -151,7 +151,7 @@ public class PlayerHealth : Health {
     base.Heal(trueAmount);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
-    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs((int)Mathf.Ceil(_currentHealth), (int)_maxHealth));
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
   }
 
   public override void AddToMaxHealth(float addValue) {
