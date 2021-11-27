@@ -1,5 +1,5 @@
 public static class StatusConfig {
-  public static int StatusEffectChance = 10;
+  public static int StatusEffectChance = 15;
 
   public static float YolkedDuration = 3;
   public static float YolkedSpeedModifier = 0.5f;
@@ -16,7 +16,7 @@ public static class StatusConfig {
   public static float FrostSpeedMultiplier = 0.75f;
   public static float FrostDamageMultiplier = 0.25f;
 
-  public static float ElectrocuteStunDuration = 1;
+  public static float ElectrocuteStunDuration = 1f;
   public static float ElectrocuteDamage = 12;
 
   public static int BleedTicks = 25;
