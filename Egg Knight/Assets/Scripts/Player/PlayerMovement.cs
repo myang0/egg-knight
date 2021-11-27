@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 
   [SerializeField] private float _rollCooldown = 0.25f;
   private bool _canRoll = true;
+  private bool _isVisible = true;
 
   private Vector2 _lastMovementVector;
 
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour {
     PlayerControls.OnSpaceBarPressed += HandleRoll;
     PlayerFootprint.OnSandpitEnter += SandpitSlow;
     PlayerFootprint.OnSandpitExit += ResetSpeed;
+
+    PlayerHealth.OnNinjaIFramesEnabled += HandleNinjaIFramesEnabled;
+    PlayerHealth.OnNinjaIFramesDisabled += HandleNinjaIFramesDisabled;
 
     _rb = gameObject.GetComponent<Rigidbody2D>();
 
@@ -48,6 +52,15 @@ public class PlayerMovement : MonoBehaviour {
     _currentMovementSpeed = _currentMovementSpeed * 0.5f;
   }
 
+  private void HandleNinjaIFramesEnabled(object sender, EventArgs e) {
+    _currentMovementSpeed *= 1.5f;
+    _isVisible = false;
+  }
+
+  private void HandleNinjaIFramesDisabled(object sender, EventArgs e) {
+    _currentMovementSpeed /= 1.5f;
+    _isVisible = true;
+  }
 
   private void HandleMovement(object sender, MovementVectorEventArgs e) {
     if (_rb == null) {
@@ -67,7 +80,7 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   private void HandleRoll(object sender, EventArgs e) {
-    if (_canRoll) {
+    if (_canRoll && _isVisible) {
       StartCoroutine(Roll());
     }
   }
@@ -124,5 +137,7 @@ public class PlayerMovement : MonoBehaviour {
     PlayerControls.OnSpaceBarPressed -= HandleRoll;
     LevelManager.OnDialogueStart -= HandleDialogueChange;
 		LevelManager.OnDialogueEnd -= HandleDialogueChange;
+    PlayerHealth.OnNinjaIFramesEnabled -= HandleNinjaIFramesEnabled;
+    PlayerHealth.OnNinjaIFramesDisabled -= HandleNinjaIFramesDisabled;
   }
 }

@@ -128,4 +128,4 @@ MonoBehaviour:
   _upgradeKey: 5
   _cooldownMultiplier: 0.2
   _costMultiplier: 0.2
-  _damageMultiplier: 0.3
+  _damageMultiplier: 0.25

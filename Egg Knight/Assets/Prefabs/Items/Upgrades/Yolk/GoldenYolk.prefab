@@ -126,4 +126,4 @@ MonoBehaviour:
   Description: Decreased cost to shoot yolk
   InventoryKey: 23
   _upgradeKey: 1
-  _costMultiplier: 0.75
+  _costMultiplier: 0.8

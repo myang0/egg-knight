@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 820057735
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 143265c615bc3d44dbc6db2cbfda5314, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -130,4 +130,4 @@ MonoBehaviour:
   DisplayName: Heart Yolk
   Description: Increases max health and slightly heals
   InventoryKey: 24
-  _healthBonus: 20
+  _healthBonus: 10
