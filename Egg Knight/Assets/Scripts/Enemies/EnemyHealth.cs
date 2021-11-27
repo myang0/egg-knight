@@ -127,7 +127,7 @@ public abstract class EnemyHealth : Health {
 
   protected override void Die() {
     int healRoll = UnityEngine.Random.Range(0, 100);
-    if (healRoll < (10 * _playerInventory.GetItemQuantity(Item.ChefHat)) && 
+    if (healRoll < (7.5f * _playerInventory.GetItemQuantity(Item.ChefHat)) && 
         !gameObject.GetComponent<EnemyBehaviour>().disableRegularDrops) {
       Instantiate(_healingYolkPrefab, transform.position, Quaternion.identity);
     }

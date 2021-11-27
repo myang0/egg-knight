@@ -55,7 +55,7 @@ public class ChestBehavior : EnemyBehaviour
                 Instantiate(coinObj, spawnPos, Quaternion.identity);
             }
         } else if (drop == ChestDrops.Heart) {
-            int randomAmt = Random.Range(minAmt*2, maxAmt*2+1);
+            int randomAmt = Random.Range(minAmt*3, maxAmt*3+1);
             for (int i = 0; i < randomAmt; i++) {
                 Vector3 pos = transform.position;
                 Vector3 spawnPos = new Vector3(pos.x + Random.Range(-maxOffset, maxOffset), pos.y + Random.Range(-maxOffset, maxOffset), ZcoordinateConsts.Pickup);

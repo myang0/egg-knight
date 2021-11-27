@@ -32,7 +32,7 @@ TagManager:
   - Coin
   - Sandpit
   - BossActivator
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -48,4 +48,34 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Minimap
+    uniqueID: 218517717
+    locked: 0
+  - name: Terrain
+    uniqueID: 2415917191
+    locked: 0
+  - name: Terrain Under
+    uniqueID: 725735675
+    locked: 0
+  - name: Object
+    uniqueID: 1397397571
+    locked: 0
+  - name: Item
+    uniqueID: 820057735
+    locked: 0
+  - name: Weapons Under
+    uniqueID: 2364866245
+    locked: 0
+  - name: Character
+    uniqueID: 78392767
+    locked: 0
+  - name: Weapons Over
+    uniqueID: 2813354039
+    locked: 0
+  - name: FX
+    uniqueID: 1042406581
+    locked: 0
+  - name: Terrain Over
+    uniqueID: 2784325303
     locked: 0

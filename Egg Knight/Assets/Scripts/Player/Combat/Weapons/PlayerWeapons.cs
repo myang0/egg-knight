@@ -137,6 +137,8 @@ public class PlayerWeapons : MonoBehaviour {
     PlayerControls.On1Press -= SwitchKnife;
     PlayerControls.On2Press -= SwitchFork;
     PlayerControls.On3Press -= SwitchSpoon;
+    PlayerControls.OnScrollUp -= SwitchNextWeapon;
+    PlayerControls.OnScrollDown -= SwitchPrevWeapon;
     // PlayerControls.OnQPress -= SwitchPrevWeapon;
     // PlayerControls.OnEPress -= SwitchNextWeapon;
     PlayerControls.OnLeftClick -= HandleAttack;

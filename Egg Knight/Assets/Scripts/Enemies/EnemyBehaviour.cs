@@ -95,6 +95,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     SpriteRenderer sr = GetComponent<SpriteRenderer>();
     var newPos = transform.position;
     transform.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
+    sr.sortingLayerName = "Object";
 
     while (sr.color.a > 0) {
       if (!disableDeathRotation) transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
