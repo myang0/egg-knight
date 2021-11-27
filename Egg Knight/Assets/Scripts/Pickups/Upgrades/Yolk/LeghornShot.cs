@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LeghornShot : YolkUpgrade {
   [SerializeField] private float _cooldownMultiplier;
-  [SerializeField] private float _healthCostMultiplier;
+  [SerializeField] private float _costMultiplier;
 
   protected override void OnTriggerEnter2D(Collider2D col) {
     if (col.CompareTag("Player")) {
@@ -11,7 +11,7 @@ public class LeghornShot : YolkUpgrade {
 
       if (yolkManager != null) {
         yolkManager.MultiplyByCooldown(_cooldownMultiplier);
-        yolkManager.MultiplyByPercentCost(_healthCostMultiplier);
+        yolkManager.MultiplyByCost(_costMultiplier);
       }
 
       YolkPickup();

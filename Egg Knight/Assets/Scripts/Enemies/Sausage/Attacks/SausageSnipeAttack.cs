@@ -4,9 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SausageSnipeAttack : MonoBehaviour {
-  [SerializeField] private float _minTimeBeforeShot;
-  [SerializeField] private float _maxTimeBeforeShot;
-  private float _timeBeforeShot;
+  [SerializeField] private float _timeBeforeShot = 2.0f;
 
   [SerializeField] private GameObject _bulletObject;
   [SerializeField] private GameObject _laserObject;
@@ -14,6 +12,7 @@ public class SausageSnipeAttack : MonoBehaviour {
   [SerializeField] private Transform _shootPoint;
 
   private Animator _anim;
+  private EnemyBehaviour _eBehaviour;
 
   private Transform _playerTransform;
 
@@ -22,9 +21,8 @@ public class SausageSnipeAttack : MonoBehaviour {
   public static event EventHandler OnAttackEnd;
 
   private void Awake() {
-    _timeBeforeShot = Random.Range(_minTimeBeforeShot, _maxTimeBeforeShot);
-
     _anim = GetComponent<Animator>();
+    _eBehaviour = GetComponent<EnemyBehaviour>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -47,6 +45,7 @@ public class SausageSnipeAttack : MonoBehaviour {
     GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
     SausageBullet bullet = bulletObject?.GetComponent<SausageBullet>();
 
+    ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, bullet);
     bullet.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
 
     _laserObject.SetActive(false);
@@ -54,7 +53,5 @@ public class SausageSnipeAttack : MonoBehaviour {
     _anim.SetBool("IsSniping", false);
 
     OnAttackEnd?.Invoke(this, EventArgs.Empty);
-    
-    _timeBeforeShot = Random.Range(_minTimeBeforeShot, _maxTimeBeforeShot);
   }
 }

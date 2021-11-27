@@ -46,7 +46,7 @@ public class SausageSpinAttack : MonoBehaviour {
   }
 
   public void StartAttack() {
-    int randomRoll = Random.Range(0, 100);
+    int randomRoll = Random.Range(0, 50);
 
     if (randomRoll < 50) {
       StartCoroutine(Spin1());
@@ -80,7 +80,7 @@ public class SausageSpinAttack : MonoBehaviour {
         _pivot.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(Vector2.up, direction));
         SpawnBullet(direction);
 
-        _bulletVectors2[j] = Quaternion.Euler(0, 0, _angleBetweenShots2 / 32f) * direction;
+        _bulletVectors2[j] = Quaternion.Euler(0, 0, _angleBetweenShots2 / 48f) * direction;
       }
 
       yield return new WaitForSeconds(_waitTimeBetweenShots2);
@@ -97,6 +97,7 @@ public class SausageSpinAttack : MonoBehaviour {
     GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
     SausageBullet bullet = bulletObject?.GetComponent<SausageBullet>();
 
+    ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, bullet);
     bullet.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
   }
 }

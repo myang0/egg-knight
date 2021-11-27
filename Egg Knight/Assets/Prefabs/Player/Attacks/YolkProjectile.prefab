@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifetime: 2
-  _damage: 15
+  _damage: 10
   _speed: 15
   _shardPrefab: {fileID: 4603155792962259345, guid: a2591da904c55fb40808d28801f6884b,
     type: 3}

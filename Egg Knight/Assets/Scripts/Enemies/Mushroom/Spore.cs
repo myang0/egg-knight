@@ -40,7 +40,7 @@ public class Spore : MonoBehaviour {
       GameObject playerObject = col.gameObject;
       PlayerHealth playerHealth = playerObject?.GetComponent<PlayerHealth>();
 
-      playerHealth?.Damage(_damage);
+      playerHealth?.Damage(Mathf.Round(_damage));
     }
   }
 

@@ -350,9 +350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _daggerObject: {fileID: 9067285521532788616, guid: 62cf8131bd78be14ea43f3315cb564c4,
     type: 3}
-  _numBursts: 4
-  _minTimeBetweenBursts: 1
-  _maxTimeBetweenBursts: 2
+  _numBursts: 2
+  _timeBetweenBursts: 1
   _daggersPerBurst: 5
   _timeBetweenThrows: 0.05
   _maxSpread: 5

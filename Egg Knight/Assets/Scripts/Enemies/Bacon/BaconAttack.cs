@@ -7,14 +7,17 @@ public class BaconAttack : MonoBehaviour {
   [SerializeField] private GameObject _greaseOrbPrefab;
 
   private Animator _anim;
+  private EnemyBehaviour _eBehaviour;
 
   private void Awake() {
     _anim = GetComponent<Animator>();
+    _eBehaviour = GetComponent<EnemyBehaviour>();
   }
 
   public void SpawnOrb() {
     if (_greaseOrbPrefab != null) {
-      Instantiate(_greaseOrbPrefab, transform.position, Quaternion.identity);
+      GreaseOrb orb = Instantiate(_greaseOrbPrefab, transform.position, Quaternion.identity).GetComponent<GreaseOrb>();
+      ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, orb);
 
       StartCoroutine(Cooldown());
     }

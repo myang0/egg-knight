@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 820057735
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 107feac2cbd400f41bfc3dcba99bbb0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Sir Racha's Rotten Yolk
   Description: Yolk attacks deal double damage... BUT all healing is halved
-  InventoryKey: 20
+  InventoryKey: 25
   _curseKey: 1
   _yolkCostMultiplier: 0.5
   _damageMultiplier: 2

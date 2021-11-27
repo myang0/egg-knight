@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RunnyYolk : YolkUpgrade {
   [SerializeField] private float _cooldownMultiplier;
-  [SerializeField] private float _healthCostMultiplier;
+  [SerializeField] private float _costMultiplier;
   [SerializeField] private float _damageMultiplier;
 
   protected override void OnTriggerEnter2D(Collider2D col) {
@@ -12,7 +12,7 @@ public class RunnyYolk : YolkUpgrade {
 
       if (yolkManager != null) {
         yolkManager.MultiplyByCooldown(_cooldownMultiplier);
-        yolkManager.MultiplyByPercentCost(_healthCostMultiplier);
+        yolkManager.MultiplyByCost(_costMultiplier);
         yolkManager.MultiplyByDamageScaling(_damageMultiplier);
       }
 

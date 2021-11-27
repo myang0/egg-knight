@@ -1,9 +1,11 @@
 using System;
 
-public class HealthChangeEventArgs : EventArgs {
-  public float newPercent;
+public class PlayerHealthChangeEventArgs : EventArgs {
+  public float currentHealth;
+  public int maxHealth;
 
-  public HealthChangeEventArgs(float percent) {
-    this.newPercent = percent;
+  public PlayerHealthChangeEventArgs(float currentHealth, int maxHealth) {
+    this.currentHealth = currentHealth;
+    this.maxHealth = maxHealth;
   }
 }

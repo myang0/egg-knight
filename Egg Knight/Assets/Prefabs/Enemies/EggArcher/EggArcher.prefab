@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da6d0eeeaf3ad048b235f2a722325ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eBehaviour: {fileID: 4220699991525276304}
   _arrowObject: {fileID: 5546460710436422689, guid: 7a1af162a4922e34ba337e374d2eb0b1,
     type: 3}
 --- !u!1 &4220699990794501539

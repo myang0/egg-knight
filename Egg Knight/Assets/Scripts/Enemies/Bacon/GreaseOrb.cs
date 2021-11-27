@@ -10,7 +10,7 @@ public class GreaseOrb : Projectile {
 
   private Transform _playerTransform;
 
-  private void Awake() {
+  protected override void Awake() {
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
     BaconHealth.OnBaconDeath += HandleBaconDeath;

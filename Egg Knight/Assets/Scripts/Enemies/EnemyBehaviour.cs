@@ -41,6 +41,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private Vector3 _wanderDestination;
 
   protected Transform _playerTransform;
+  protected PlayerInventory _playerInventory;
+  public PlayerInventory PlayerInventory {
+    get {
+      return _playerInventory;
+    }
+  }
+
   public bool isWallCollisionOn;
   private EnemyMovement _eMovement;
 
@@ -59,7 +66,9 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     Health.OnPreDeath += HandlePreDeath;
     Health.OnDeath += HandleDeath;
 
-    _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+    GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+    _playerTransform = playerObject.transform;
+    _playerInventory = playerObject.GetComponent<PlayerInventory>();
 
     Vector3 pos = transform.position;
     transform.position = new Vector3(pos.x, pos.y, ZcoordinateConsts.Character);

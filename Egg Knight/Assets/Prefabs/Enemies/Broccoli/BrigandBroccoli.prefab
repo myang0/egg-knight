@@ -378,6 +378,7 @@ MonoBehaviour:
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
+  notAffectedByDropMods: 0
   isWandering: 0
   isWallCollisionOn: 1
   alertAnimator: {fileID: 0}
@@ -414,9 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _longDistanceThreshold: 20
   _shortDistanceThreshold: 5
-  _minSpinMoveSpeed: 3
+  _minSpinMoveSpeed: 2.5
   _maxSpinMoveSpeed: 25
-  _walkMoveSpeed: 3.5
+  _walkMoveSpeed: 3
 --- !u!50 &7661167815159373119
 Rigidbody2D:
   serializedVersion: 4
@@ -496,7 +497,7 @@ MonoBehaviour:
     type: 3}
   _greatSlashPrefab: {fileID: 6921622868308280127, guid: 95802ae86144b8e41937a21f56917d30,
     type: 3}
-  _contactDamage: 7.5
+  _contactDamage: 7
 --- !u!114 &1111544623
 MonoBehaviour:
   m_ObjectHideFlags: 0

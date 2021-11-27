@@ -6,7 +6,7 @@ public class GoldChainNecklace : BaseItem {
 
   public static event EventHandler<CoinRateChangeEventArgs> OnPickup;
 
-  protected virtual void OnTriggerEnter2D(Collider2D other) {
+  protected override void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("Player")) {
       OnPickup?.Invoke(this, new CoinRateChangeEventArgs(_additionalDropRate));
 
