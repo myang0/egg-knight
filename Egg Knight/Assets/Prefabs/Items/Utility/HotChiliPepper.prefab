@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Hot Chili Pepper
   Description: Increased movement speed
-  InventoryKey: 21
+  InventoryKey: 22
   _speedMultiplier: 1.25

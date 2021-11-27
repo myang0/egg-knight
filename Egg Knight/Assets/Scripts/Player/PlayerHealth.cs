@@ -69,18 +69,6 @@ public class PlayerHealth : Health {
     return (_currentHealth - damage) <= 0;
   }
 
-  public void YolkDamage(float amount) {
-    if (DamageWillKill(amount)) {
-      return;
-    }
-
-    SpawnChangeIndicator(amount, Color.yellow);
-
-    _currentHealth -= amount;
-
-    OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
-  }
-
   public override void Damage(float amount) {
     if (_iFramesActive || _isRolling) {
       return;

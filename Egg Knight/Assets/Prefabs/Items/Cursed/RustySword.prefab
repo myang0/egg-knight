@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 820057735
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2ad6046f36651da43a28e9ea1b4b9ca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Sir Racha's Rusty Sword
   Description: Critical strikes inflict bleeding... BUT deal damage to yourself
-  InventoryKey: 20
+  InventoryKey: 25
   _curseKey: 2

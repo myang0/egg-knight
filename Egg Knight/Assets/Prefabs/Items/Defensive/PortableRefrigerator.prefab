@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Portable Refrigerator
   Description: All enemy projectiles move slower
-  InventoryKey: 10
+  InventoryKey: 11

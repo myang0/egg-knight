@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RocketPoweredYolk : YolkUpgrade {
   [SerializeField] private float _cooldownMultiplier;
-  [SerializeField] private float _healthCostMultiplier;
+  [SerializeField] private float _costMultiplier;
   [SerializeField] private float _speedMultiplier;
   [SerializeField] private float _damageMultiplier;
 
@@ -13,7 +13,7 @@ public class RocketPoweredYolk : YolkUpgrade {
 
       if (yolkManager != null) {
         yolkManager.MultiplyByCooldown(_cooldownMultiplier);
-        yolkManager.MultiplyByPercentCost(_healthCostMultiplier);
+        yolkManager.MultiplyByCost(_costMultiplier);
         yolkManager.MultiplyBySpeedScaling(_speedMultiplier);
         yolkManager.MultiplyByDamageScaling(_damageMultiplier);
       }

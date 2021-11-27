@@ -212,17 +212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1278995262712370199, guid: 8bfc84c169380084394e2d78cd6830c1,
-        type: 3}
-      propertyPath: _ninjaParticles
-      value: 
-      objectReference: {fileID: 7179511237543573231, guid: 5e690635a6fb2e540910524a4d3bc509,
-        type: 3}
-    - target: {fileID: 1278995262712370199, guid: 8bfc84c169380084394e2d78cd6830c1,
-        type: 3}
-      propertyPath: _ninjaInvincibilityTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_RootOrder
@@ -231,12 +220,12 @@ PrefabInstance:
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.89
+      value: 43.53
       objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 47.54
+      value: 47.48
       objectReference: {fileID: 0}
     - target: {fileID: 1278995262712370205, guid: 8bfc84c169380084394e2d78cd6830c1,
         type: 3}
