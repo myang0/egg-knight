@@ -16,6 +16,8 @@ public class PlayerHealth : Health {
   public static event EventHandler<HealthChangeEventArgs> OnHealthDecrease;
   public static event EventHandler<HealthChangeEventArgs> OnHealthIncrease;
 
+  public static event EventHandler<PlayerHealthChangeEventArgs> OnHealthChange;
+
   public static event EventHandler OnIFramesEnabled;
   public static event EventHandler OnIFramesDisabled;
 
@@ -33,6 +35,8 @@ public class PlayerHealth : Health {
     PlayerMovement.OnRollEnd += HandleRollEnd;
     
     base.Awake();
+
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
   }
 
   private void HandleRoll(object sender, RollEventArgs e) {
@@ -87,6 +91,7 @@ public class PlayerHealth : Health {
     SpawnChangeIndicator(amount, Color.red);
 
     OnHealthDecrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
 
     if (_currentHealth <= 0) {
       Die();
@@ -146,6 +151,13 @@ public class PlayerHealth : Health {
     base.Heal(trueAmount);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs((int)Mathf.Ceil(_currentHealth), (int)_maxHealth));
+  }
+
+  public override void AddToMaxHealth(float addValue) {
+    base.AddToMaxHealth(addValue);
+
+    OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
   }
 
   public void RustySwordDamage() {

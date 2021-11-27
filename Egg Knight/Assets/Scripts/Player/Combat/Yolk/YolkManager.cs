@@ -70,10 +70,10 @@ public class YolkManager : MonoBehaviour {
 
   private IEnumerator YolkRegen() {
     while (true) {
-      yield return new WaitForSeconds(0.1f);
+      yield return new WaitForSeconds(0.05f);
 
       float lastYolk = _currentYolk;
-      _currentYolk = (_currentYolk + (_yolkRegenPerSecond / 10f) < _maxYolk) ? _currentYolk + (_yolkRegenPerSecond / 10f) : _maxYolk;
+      _currentYolk = (_currentYolk + (_yolkRegenPerSecond / 20f) < _maxYolk) ? _currentYolk + (_yolkRegenPerSecond / 20f) : _maxYolk;
 
       if (lastYolk != _currentYolk) {
         OnYolkChange?.Invoke(this, new YolkChangeEventArgs(CurrentYolkPercent()));

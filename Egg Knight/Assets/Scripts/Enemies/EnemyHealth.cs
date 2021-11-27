@@ -33,7 +33,7 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnYolked += HandleYolked;
 
     if (_playerInventory != null && _playerInventory.HasItem(Item.Norovirus)) {
-      _currentHealth = _maxHealth * 0.8f;
+      _currentHealth = _maxHealth * 0.85f;
     } else {
       base.Awake();
     }
