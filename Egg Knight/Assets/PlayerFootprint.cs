@@ -8,6 +8,19 @@ public class PlayerFootprint : MonoBehaviour {
     public static EventHandler OnSandpitEnter;
     public static EventHandler OnSandpitExit;
     public GameObject parent;
+    
+    private void Start() {
+        PlayerMovement.OnRollBegin += DisableEnemyCollision;
+        PlayerMovement.OnRollEnd += EnableEnemyCollision;
+    }
+
+    private void DisableEnemyCollision(object sender, RollEventArgs e) {
+        Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
+    }
+
+    private void EnableEnemyCollision(object sender, EventArgs e) {
+        Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
+    }
 
     private void FixedUpdate() {
         transform.rotation = Quaternion.Euler (0.0f, 0.0f, parent.transform.rotation.z * -1.0f);

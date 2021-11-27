@@ -44,7 +44,16 @@ public class WeaponUI : MonoBehaviour
             PlayerControls.OnUnlockAllWeapons -= ShowWeapon;
         }
     }
-    
+
+    private void OnDestroy() {
+        PlayerWeapons.OnSwitchKnife -= SetKnife;
+        PlayerWeapons.OnSwitchFork -= SetFork;
+        PlayerWeapons.OnSwitchSpoon -= SetSpoon;
+        UnlockWeaponItem.OnPickup -= ShowWeapon;
+        PlayerControls.OnUnlockAllWeapons -= ShowWeapon;
+        PlayerControls.OnUnlockAllWeapons -= ShowWeapon;
+    }
+
     private void ShowWeapon(object sender, System.EventArgs e) {
         if (fork.color.a == 0) {
             Color c = fork.color;

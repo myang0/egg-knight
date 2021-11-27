@@ -44,14 +44,14 @@ namespace Stage {
         private const int EasyStageSpawnRate = 10;
         private const int SurvivalStageSpawnRate = 0;
 
-        private const int NumStagesToBossLv1 = 9;
+        private const int NumStagesToBossLv1 = 10;
         private const int NumStagesToBossLv2 = 8;
-        private const int NumStagesToBossLv3 = 8;
+        private const int NumStagesToBossLv3 = 9;
 
         //Actual stage num is value+1
-        private static readonly int[] Level1ItemStages = {2, 6, 9};
+        private static readonly int[] Level1ItemStages = {2, 6, 10};
         private static readonly int[] Level2ItemStages = {2, 5, 8};
-        private static readonly int[] Level3ItemStages = {2, 5};
+        private static readonly int[] Level3ItemStages = {2, 6};
 
         private const float SurvivalTimer = 40f;
         private int _survivalTimerCurrent;

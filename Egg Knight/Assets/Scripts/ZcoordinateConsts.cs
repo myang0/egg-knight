@@ -1,10 +1,10 @@
 public class ZcoordinateConsts {
-    public const int Object = 10;
-    public const int Pickup = 9;
-    public const int Character = 6;
-    public const int TilemapCollider = 7;
-    public const int WeaponAttack = 8;
-    public const int Interactable = 6;
-    public const int OverCharacter = 5;
-    public const int UIlike = 1;
+    public const int Object = 0;
+    public const int Pickup = 0;
+    public const int Character = 0;
+    public const int TilemapCollider = 0;
+    public const int WeaponAttack = 0;
+    public const int Interactable = 0;
+    public const int OverCharacter = 0;
+    public const int UIlike = 0;
 }
