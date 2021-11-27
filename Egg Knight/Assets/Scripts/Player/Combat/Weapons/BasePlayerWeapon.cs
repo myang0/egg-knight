@@ -119,9 +119,9 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual float AddCoinDamage() {
-    // Bonus of 1 to 10 damage max, capped at 30 coins
+    // Bonus of 1 to 10 damage max, capped at 50 coins
     if (_inventory.HasItem(Item.GoldChainNecklace)) {
-      float bonusAmount = 1 + _wallet.GetBalance() * 0.3f;
+      float bonusAmount = 1 + _wallet.GetBalance() * 0.18f;
       if (bonusAmount > 10) bonusAmount = 10;
       return bonusAmount;
     }
@@ -130,10 +130,10 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected virtual float AddRageDamage() {
-    // Bonus of 5 to 15 damage (50% HP to 0%)
+    // Bonus of 5 to 10 damage (50% HP to 0%)
     if (_health.BelowHalfHealth() && _inventory.HasItem(Item.VikingHelmet)) {
       Debug.Log(_health.CurrentHealthPercentage());
-      float bonusAmount = 5 + (10 - _health.CurrentHealthPercentage()*20f) * _inventory.GetItemQuantity(Item.VikingHelmet);
+      float bonusAmount = 5 + (5 - _health.CurrentHealthPercentage()*10f) * _inventory.GetItemQuantity(Item.VikingHelmet);
       return bonusAmount;
     }
 

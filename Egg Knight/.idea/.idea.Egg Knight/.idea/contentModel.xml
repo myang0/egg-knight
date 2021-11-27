@@ -1406,6 +1406,7 @@
             <e p="CursedItemEventArgs.cs" t="Include" />
             <e p="ElementalItemEventArgs.cs" t="Include" />
             <e p="EnemyStatusEventArgs.cs" t="Include" />
+            <e p="HealthChangeEventArgs.cs" t="Include" />
             <e p="InventoryAddEventArgs.cs" t="Include" />
             <e p="ItemDisplayEventArgs.cs" t="Include" />
             <e p="ItemTextEventArgs.cs" t="Include" />
@@ -1413,6 +1414,7 @@
             <e p="PlayerHealthChangeEventArgs.cs" t="Include" />
             <e p="RollEventArgs.cs" t="Include" />
             <e p="TooltipEnableEventArgs.cs" t="Include" />
+            <e p="YolkChangeEventArgs.cs" t="Include" />
             <e p="YolkUpgradeEventArgs.cs" t="Include" />
           </e>
           <e p="Explosion.cs" t="Include" />
@@ -1485,6 +1487,7 @@
           <e p="Health.cs" t="Include" />
           <e p="HealthChangeIndicator.cs" t="Include" />
           <e p="Helpers" t="Include">
+            <e p="ProjectileHelper.cs" t="Include" />
             <e p="VectorHelper.cs" t="Include" />
           </e>
           <e p="HideIfPlayerDamaged.cs" t="Include" />
@@ -1517,10 +1520,14 @@
               <e p="RottenYolk.cs" t="Include" />
               <e p="TornCape.cs" t="Include" />
             </e>
+            <e p="Defensive" t="Include">
+              <e p="QuailEgg.cs" t="Include" />
+            </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />
             </e>
             <e p="HealingItem.cs" t="Include" />
+            <e p="HeartYolk.cs" t="Include" />
             <e p="ItemManager.cs" t="Include" />
             <e p="Offensive" t="Include">
               <e p="EggShardBehaviour.cs" t="Include" />
@@ -1536,6 +1543,9 @@
                 <e p="RunnyYolk.cs" t="Include" />
                 <e p="YolkUpgrade.cs" t="Include" />
               </e>
+            </e>
+            <e p="Utility" t="Include">
+              <e p="HotChiliPepper.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
@@ -1599,6 +1609,7 @@
               <e p="ResumeButton.cs" t="Include" />
             </e>
             <e p="HealthBar.cs" t="Include" />
+            <e p="HealthText.cs" t="Include" />
             <e p="ItemDisplay.cs" t="Include" />
             <e p="ItemGridElement.cs" t="Include" />
             <e p="ItemText.cs" t="Include" />
@@ -1608,6 +1619,7 @@
             <e p="UIControls.cs" t="Include" />
             <e p="WalletText.cs" t="Include" />
             <e p="WaveCounterText.cs" t="Include" />
+            <e p="YolkBar.cs" t="Include" />
           </e>
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>
