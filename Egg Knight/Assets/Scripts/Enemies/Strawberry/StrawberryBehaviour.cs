@@ -19,6 +19,15 @@ public class StrawberryBehaviour : EnemyBehaviour {
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
     maxDistanceToAttack = 5;
+    
+    int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+    if (level > 1) {
+      strawberryHealth.AddToMaxHealth(10);
+    }
+
+    if (level > 2) {
+      strawberryHealth.AddToMaxHealth(10);
+    }
 
     Health = strawberryHealth;
     isWallCollisionOn = true;

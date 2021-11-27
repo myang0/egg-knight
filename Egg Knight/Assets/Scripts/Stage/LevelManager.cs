@@ -444,13 +444,14 @@ namespace Stage
         }
 
         public void ForceClearStage() {
-            currentStage.SetStageStatus(StageStatus.Cleared);
+            currentStage.ClearStageRoutine();
         }
 
         public void PrintDebugLog() {
             Debug.LogError("Current Level: " + level);
             Debug.LogError("Stages Cleared: " + stagesCleared);
             Debug.LogError("Current Stage: " + currentStage.gameObject.name);
+            Debug.LogError("Current Stage Status: " + currentStage.GetStageStatus());
             Debug.LogError("Current Active Enemies: " + currentStage.enemiesList.Count);
             Debug.LogError("Current Spawned Enemies: " + currentStage.enemyCount);
             Debug.LogError("Item Status: " + currentStage.itemStatus);

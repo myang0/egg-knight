@@ -114,24 +114,28 @@ namespace Stage {
                 }
 
                 if (IsStageCleared()) {
-                    if (stageType == StageType.Survival && _levelManager.level == 3) {
-                        _waveCounterText.SetText("Enemy reinforcements have stopped.", 3);
-                    }
-                    else {
-                        _waveCounterText.SetText("", 0);
-                    }
-                    UnlockLockedWalls();
-                    if (itemStatus == StageItemStatus.NeverSpawned) {
-                        SpawnItem();
-                        OnStageClear?.Invoke(this, EventArgs.Empty);
-                    } else if (itemStatus == StageItemStatus.FailedSpawn ||
-                              itemStatus == StageItemStatus.Collected) {
-                        stageStatus = StageStatus.Cleared;
-                        GenerateExits();
-                    }
+                    ClearStageRoutine();
                 }
             } else if (stageStatus == StageStatus.Cleared) {
                 ReadyForNextStage();
+            }
+        }
+
+        public void ClearStageRoutine() {
+            if (stageType == StageType.Survival && _levelManager.level == 3) {
+                _waveCounterText.SetText("Enemy reinforcements have stopped.", 3);
+            }
+            else {
+                _waveCounterText.SetText("", 0);
+            }
+            UnlockLockedWalls();
+            if (itemStatus == StageItemStatus.NeverSpawned) {
+                SpawnItem();
+                OnStageClear?.Invoke(this, EventArgs.Empty);
+            } else if (itemStatus == StageItemStatus.FailedSpawn ||
+                       itemStatus == StageItemStatus.Collected) {
+                stageStatus = StageStatus.Cleared;
+                GenerateExits();
             }
         }
 

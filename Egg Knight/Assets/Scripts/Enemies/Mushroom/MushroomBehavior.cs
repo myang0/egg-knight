@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Stage;
 using UnityEngine;
 
 public class MushroomBehavior : EnemyBehaviour {
@@ -12,6 +13,18 @@ public class MushroomBehavior : EnemyBehaviour {
 
         EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
         enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+        
+        int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+        if (level > 1) {
+            _maxSpeed += 0.75f;
+            mushroomHealth.AddToMaxHealth(10);
+        }
+
+        if (level > 2) {
+            _maxSpeed += 1f;
+            mushroomHealth.AddToMaxHealth(15);
+        }
+
 
         Health = mushroomHealth;
         base.Awake();

@@ -22,6 +22,25 @@ public class RaspberryBehaviour : EnemyBehaviour {
     maxDistanceToAttack = 8;
     minDistanceToAttack = 5;
 
+    int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+    if (level > 1) {
+      _maxShotsPerAttack += 1;
+      attackCooldownMax -= 1;
+      maxDistanceToAttack += 2;
+      minDistanceToAttack -= 1;
+      _maxSpeed += 0.5f;
+      raspberryHealth.AddToMaxHealth(10);
+    }
+
+    if (level > 2) {
+      _maxShotsPerAttack += 1;
+      attackCooldownMax -= 1;
+      maxDistanceToAttack += 1;
+      minDistanceToAttack -= 1;
+      _maxSpeed += 0.5f;
+      raspberryHealth.AddToMaxHealth(10);
+    }
+
     Health = raspberryHealth;
     isWallCollisionOn = true;
     base.Awake();

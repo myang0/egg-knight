@@ -25,7 +25,7 @@ public class CoinDrop : MonoBehaviour
         PlayerWallet wallet = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWallet>();
         
         int coinDropChance = Random.Range(1, 101);
-        if (wallet.GetBalance() > 30) coinDropChance += Random.Range(1, wallet.GetBalance()/2);
+        if (wallet.GetBalance() > 30) coinDropChance += Random.Range(1, wallet.GetBalance());
         if (coinDropChance < _coinDropRate) {
             Vector3 newPos = new Vector3(enemyPos.x, enemyPos.y, ZcoordinateConsts.Character);
             Instantiate(coin, newPos, Quaternion.identity);
