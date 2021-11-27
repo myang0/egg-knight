@@ -98,10 +98,11 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float amountAfterProtein = AddProteinDamage(_damageAmount);
-    float amountAfterCoins = AddCoinDamage(amountAfterProtein);
-    float amountAfterRage = AddRageDamage(amountAfterCoins);
-    float totalAmount = HandleCrits(amountAfterRage, statuses, enemyHealth);
+    float baseDmgInclCrit = HandleCrits(_damageAmount, statuses, enemyHealth);
+    float coinBonus = AddCoinDamage();
+    float rageBonus = AddRageDamage();
+
+    float totalAmount = baseDmgInclCrit + coinBonus + rageBonus;
 
     if (statuses.Any()) {
       enemyHealth.DamageWithStatusesAndType(totalAmount, statuses, _damageType);
@@ -110,28 +111,31 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
   }
 
+  // TODO: Incorporate protein damage
   protected virtual float AddProteinDamage(float originalAmount) {
     return originalAmount * (_inventory.HasItem(Item.ProteinPowder) ? 1.2f : 1.0f);
   }
 
-  protected virtual float AddCoinDamage(float originalAmount) {
-    float totalAmount = originalAmount;
-
-    if (_inventory.HasItem(Item.GoldChainNecklace)) {
-      totalAmount += (originalAmount * _wallet.GetBalance() * 0.02f);
+  protected virtual float AddCoinDamage() {
+    // Bonus of 1 to 10 damage max, capped at 30 coins
+    if (_inventory.ItemInInventory(Item.GoldChainNecklace)) {
+      float bonusAmount = 1 + _wallet.GetBalance() * 0.3f;
+      if (bonusAmount > 10) bonusAmount = 10;
+      return bonusAmount;
     }
 
-    return totalAmount;
+    return 0;
   }
 
-  protected virtual float AddRageDamage(float originalAmount) {
-    float totalAmount = originalAmount;
-
-    if (_health.BelowHalfHealth() && _inventory.HasItem(Item.VikingHelmet)) {
-      totalAmount += (0.5f - _health.CurrentHealthPercentage()) * _inventory.GetItemQuantity(Item.VikingHelmet) * totalAmount;
+  protected virtual float AddRageDamage() {
+    // Bonus of 5 to 15 damage (50% HP to 0%)
+    if (_health.BelowHalfHealth() && _inventory.ItemInInventory(Item.VikingHelmet)) {
+      Debug.Log(_health.CurrentHealthPercentage());
+      float bonusAmount = 5 + (10 - _health.CurrentHealthPercentage()*20f) * _inventory.GetItemQuantity(Item.VikingHelmet);
+      return bonusAmount;
     }
 
-    return totalAmount;
+    return 0;
   }
 
   protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses, EnemyHealth eHealth) {

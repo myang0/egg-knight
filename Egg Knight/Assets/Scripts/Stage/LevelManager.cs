@@ -11,15 +11,15 @@ namespace Stage
     {
         [SerializeField] private StageManager currentStage;
         [SerializeField] private List<StageManager> level1Stages;
-        [SerializeField] private List<StageManager> level1Shops;
+        [SerializeField] public List<StageManager> level1Shops;
         [SerializeField] private StageManager level1Sirracha;
         [SerializeField] private StageManager level1Rest;
         [SerializeField] private List<StageManager> level2Stages;
-        [SerializeField] private List<StageManager> level2Shops;
+        [SerializeField] public List<StageManager> level2Shops;
         [SerializeField] private StageManager level2Sirracha;
         [SerializeField] private StageManager level2Rest;
         [SerializeField] private List<StageManager> level3Stages;
-        [SerializeField] private List<StageManager> level3Shops;
+        [SerializeField] public List<StageManager> level3Shops;
         [SerializeField] private StageManager level3Sirracha;
         [SerializeField] private StageManager level3Rest;
         [SerializeField] private CinemachineVirtualCamera virtualCamera;

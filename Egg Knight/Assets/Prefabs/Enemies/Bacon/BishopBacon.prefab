@@ -206,6 +206,7 @@ MonoBehaviour:
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
+  affectedByDropModifiers: 1
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}
