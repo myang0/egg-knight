@@ -12,6 +12,9 @@ public class PlayerFootprint : MonoBehaviour {
     private void Start() {
         PlayerMovement.OnRollBegin += DisableEnemyCollision;
         PlayerMovement.OnRollEnd += EnableEnemyCollision;
+
+        PlayerHealth.OnNinjaIFramesEnabled += HandleNinjaIFramesEnabled;
+        PlayerHealth.OnNinjaIFramesDisabled += HandleNinjaIFramesDisabled;
     }
 
     private void DisableEnemyCollision(object sender, RollEventArgs e) {
@@ -19,6 +22,14 @@ public class PlayerFootprint : MonoBehaviour {
     }
 
     private void EnableEnemyCollision(object sender, EventArgs e) {
+        Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
+    }
+
+    private void HandleNinjaIFramesEnabled(object sender, EventArgs e) {
+        Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
+    }
+
+    private void HandleNinjaIFramesDisabled(object sender, EventArgs e) {
         Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
     }
 
@@ -39,5 +50,8 @@ public class PlayerFootprint : MonoBehaviour {
     private void OnDestroy() {
         PlayerMovement.OnRollBegin -= DisableEnemyCollision;
         PlayerMovement.OnRollEnd -= EnableEnemyCollision;
+
+        PlayerHealth.OnNinjaIFramesEnabled -= HandleNinjaIFramesEnabled;
+        PlayerHealth.OnNinjaIFramesDisabled -= HandleNinjaIFramesDisabled;
     }
 }
