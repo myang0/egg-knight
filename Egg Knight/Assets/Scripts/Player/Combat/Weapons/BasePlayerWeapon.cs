@@ -98,9 +98,11 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float amountAfterCoins = AddCoinDamage(_damageAmount);
-    float amountAfterRage = AddRageDamage(amountAfterCoins);
-    float totalAmount = HandleCrits(amountAfterRage, statuses, enemyHealth);
+    float baseDmgInclCrit = HandleCrits(_damageAmount, statuses, enemyHealth);
+    float coinBonus = AddCoinDamage();
+    float rageBonus = AddRageDamage();
+
+    float totalAmount = baseDmgInclCrit + coinBonus + rageBonus;
 
     if (statuses.Any()) {
       enemyHealth.DamageWithStatusesAndType(totalAmount, statuses, _damageType);
@@ -109,29 +111,26 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
   }
 
-  protected virtual float AddCoinDamage(float originalAmount) {
-    float totalAmount = originalAmount;
-
-    // Bonus of 1 to 10 damage max
+  protected virtual float AddCoinDamage() {
+    // Bonus of 1 to 10 damage max, capped at 30 coins
     if (_inventory.ItemInInventory(Item.GoldChainNecklace)) {
-      float bonusAmount = 1 + _wallet.GetBalance() * 0.36f;
+      float bonusAmount = 1 + _wallet.GetBalance() * 0.3f;
       if (bonusAmount > 10) bonusAmount = 10;
-      totalAmount += bonusAmount;
+      return bonusAmount;
     }
 
-    return totalAmount;
+    return 0;
   }
 
-  protected virtual float AddRageDamage(float originalAmount) {
-    float totalAmount = originalAmount;
-
+  protected virtual float AddRageDamage() {
     // Bonus of 5 to 15 damage (50% HP to 0%)
     if (_health.BelowHalfHealth() && _inventory.ItemInInventory(Item.VikingHelmet)) {
-      float bonusAmount = 5 + (10 - _health.CurrentHealthPercentage() * 0.3f) * _inventory.GetItemQuantity(Item.VikingHelmet);
-      totalAmount += bonusAmount;
+      Debug.Log(_health.CurrentHealthPercentage());
+      float bonusAmount = 5 + (10 - _health.CurrentHealthPercentage()*20f) * _inventory.GetItemQuantity(Item.VikingHelmet);
+      return bonusAmount;
     }
 
-    return totalAmount;
+    return 0;
   }
 
   protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses, EnemyHealth eHealth) {

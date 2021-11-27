@@ -55,7 +55,7 @@ public class PlayerHealth : Health {
   }
 
   public bool BelowHalfHealth() {
-    return _currentHealth < (_maxHealth / 2.0f);
+    return _currentHealth <= (_maxHealth / 2.0f);
   }
 
   public bool DamageWillKill(float damage) {

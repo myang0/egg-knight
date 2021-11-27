@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/TutorialFork.cs" />
-        <option value="$PROJECT_DIR$/Assets/TutorialSpoon.cs" />
         <option value="$PROJECT_DIR$/Assets/TutorialYolk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthChangeIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/DamagingTile.cs" />
@@ -106,7 +106,9 @@
         <option value="$PROJECT_DIR$/Assets/PlayerFootprint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" />
       </list>
     </option>
   </component>
@@ -198,7 +200,7 @@
       <workItem from="1637746992425" duration="90000" />
       <workItem from="1637895116221" duration="10941000" />
       <workItem from="1637972120432" duration="2520000" />
-      <workItem from="1637975870326" duration="4321000" />
+      <workItem from="1637975870326" duration="6793000" />
     </task>
     <servers />
   </component>
