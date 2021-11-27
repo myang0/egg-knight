@@ -35,4 +35,9 @@ public class PlayerFootprint : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.layer == LayerMask.NameToLayer("Sandpit")) OnSandpitExit?.Invoke(this, EventArgs.Empty);
     }
+
+    private void OnDestroy() {
+        PlayerMovement.OnRollBegin -= DisableEnemyCollision;
+        PlayerMovement.OnRollEnd -= EnableEnemyCollision;
+    }
 }

@@ -255,8 +255,9 @@ MonoBehaviour:
   alertRange: 15
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 0
-  disableRegularDrops: 0
+  disableRegularDrops: 1
   disableDeathRotation: 0
+  notAffectedByDropMods: 1
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}

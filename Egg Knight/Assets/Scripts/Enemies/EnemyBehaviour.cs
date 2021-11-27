@@ -85,7 +85,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
 
   private void HandlePreDeath(object sender, EventArgs e) {
     StartCoroutine(FadeOutDeath());
-    if (!disableRegularDrops) FindObjectOfType<CoinDrop>().DropCoin(transform.position, !notAffectedByDropMods);
+    if (!disableRegularDrops) FindObjectOfType<CoinDrop>().DropCoin(transform.position);
   }
 
   public IEnumerator FadeOutDeath() {
