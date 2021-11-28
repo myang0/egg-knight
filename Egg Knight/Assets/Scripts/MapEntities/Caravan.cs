@@ -13,6 +13,8 @@ public class Caravan : MonoBehaviour {
 
     public ItemManager itemManager;
     public LevelManager levelManager;
+    private StageManager parentStage;
+    public bool isShopActivated;
     private bool _hasDialoguePlayed;
 
     private void Start() {
@@ -20,6 +22,7 @@ public class Caravan : MonoBehaviour {
         transform.position = new Vector3(currPos.x, currPos.y, ZcoordinateConsts.Interactable);
         itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        parentStage = GetComponentInParent<StageManager>();
         _hasDialoguePlayed = false;
 
         Vector3 pos = transform.position;
@@ -27,33 +30,39 @@ public class Caravan : MonoBehaviour {
     }
 
     private void Update() {
-        if (shopItem1.item == shopItem2.item || shopItem1.item == shopItem3.item || 
-            shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item) {
+        if (parentStage.GetStageType() != StageType.Shop) return;
+        if (parentStage.GetStageType() == StageType.Shop && !isShopActivated) {
             shopItem1.item = itemManager.GetRandomItem();
-        }
-
-        if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item) {
             shopItem2.item = itemManager.GetRandomItem();
-        }
-        
-        if (shopItem3.item == shopItem4.item || shopItem3.item == shopItem5.item) {
             shopItem3.item = itemManager.GetRandomItem();
+            shopItem4.item = itemManager.GetRandomItem();
+            shopItem5.item = itemManager.GetRandomItem();
+            isShopActivated = true;
         }
 
-        if (shopItem4.item == shopItem5.item) {
-            shopItem4.item = itemManager.GetRandomItem();
+        if (isShopActivated) {
+            if (shopItem1.item == shopItem2.item || shopItem1.item == shopItem3.item || 
+                shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item) {
+                shopItem1.item = itemManager.GetRandomItem();
+            }
+
+            if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item) {
+                shopItem2.item = itemManager.GetRandomItem();
+            }
+        
+            if (shopItem3.item == shopItem4.item || shopItem3.item == shopItem5.item) {
+                shopItem3.item = itemManager.GetRandomItem();
+            }
+
+            if (shopItem4.item == shopItem5.item) {
+                shopItem4.item = itemManager.GetRandomItem();
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player") && !_hasDialoguePlayed) {
             _hasDialoguePlayed = true;
-            shopItem1.item = itemManager.GetRandomHealingItem();
-            shopItem2.item = itemManager.GetRandomItem();
-            shopItem3.item = itemManager.GetRandomItem();
-            shopItem4.item = itemManager.GetRandomItem();
-            shopItem5.item = itemManager.GetRandomItem();
-            
             if (levelManager.level == 1) {
                 if (levelManager.isFirstShopVisited) {
                     Fungus.Flowchart.BroadcastFungusMessage ("StageOneRepeatShop");
