@@ -16,12 +16,12 @@ public class MushroomBehavior : EnemyBehaviour {
         
         int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
         if (level > 1) {
-            _maxSpeed += 0.75f;
+            _maxSpeed += 0.5f;
             mushroomHealth.AddToMaxHealth(10);
         }
 
         if (level > 2) {
-            _maxSpeed += 1f;
+            _maxSpeed += 0.5f;
             mushroomHealth.AddToMaxHealth(15);
         }
 
