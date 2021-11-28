@@ -329,7 +329,7 @@ MonoBehaviour:
   isAttackOffCooldown: 0
   isInAttackAnimation: 0
   isStunned: 0
-  alertRange: 5
+  alertRange: 4
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
