@@ -5,4 +5,5 @@ public enum StatusCondition {
   Frosted,
   Electrocuted,
   Bleeding,
+  Weakened,
 }

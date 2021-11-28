@@ -6,6 +6,6 @@ public static class ProjectileHelper {
       return;
     }
 
-    p.MultiplySpeed((inventory.HasItem(Item.PortableRefrigerator) ? 0.75f : 1.0f));
+    p.MultiplySpeed((inventory.HasItem(Item.PortableRefrigerator) ? 0.85f : 1.0f));
   }
 }

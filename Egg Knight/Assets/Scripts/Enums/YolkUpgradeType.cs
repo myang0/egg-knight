@@ -5,5 +5,7 @@ public enum YolkUpgradeType {
   ShellShot,
   Salmonella,
   RunnyYolk,
-  RocketPoweredYolk
+  RocketPoweredYolk,
+  CorrosiveCore,
+  ExplosiveEmbryo
 }

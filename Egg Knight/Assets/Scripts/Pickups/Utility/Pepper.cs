@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HotChiliPepper : BaseItem {
+public class Pepper : BaseItem {
   [SerializeField] private float _speedMultiplier;
 
   protected override void OnTriggerEnter2D(Collider2D col) {

@@ -20,9 +20,14 @@ public abstract class Health : MonoBehaviour {
     }
   }
 
+  protected float _initialArmourValue = 1.0f;
+  protected float _armourValue;
+
   [SerializeField] protected GameObject _changeIndicatorPrefab;
 
   protected virtual void Awake() {
+    _armourValue = _initialArmourValue;
+
     _currentHealth = _maxHealth;
   }
 
@@ -35,6 +40,7 @@ public abstract class Health : MonoBehaviour {
       amount = 0;
     }
 
+    amount *= (1.0f / _armourValue);
     _currentHealth -= amount;
 
     SpawnChangeIndicator(amount, Color.red);

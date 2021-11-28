@@ -25,5 +25,10 @@ public enum Item {
   HotChiliPepper,
   YolkUpgrade,
   HeartYolk,
-  CursedItem
+  CursedItem,
+  BagOfSugar,
+  HabaneroPepper,
+  Spinach,
+  HerbalMedicine,
+  MasterKnife
 }

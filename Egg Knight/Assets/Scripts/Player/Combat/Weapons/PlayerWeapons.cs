@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class PlayerWeapons : MonoBehaviour {
 
   private Camera _mainCamera;
 
+  private PlayerInventory _inventory;
   private Transform _weaponHoldPoint;
 
   public static event EventHandler OnWeaponAnimationBegin;
@@ -28,9 +30,12 @@ public class PlayerWeapons : MonoBehaviour {
   private bool _isForkUnlocked = false;
   private bool _isSpoonUnlocked = false;
 
+  private float _speed = 1.0f;
+  private float _damageMultiplier = 1.0f;
+
+  private bool _knifeBeamOffCooldown = true;
+
   private void Awake() {
-    // PlayerControls.OnQPress += SwitchPrevWeapon;
-    // PlayerControls.OnEPress += SwitchNextWeapon;
     UnlockWeaponItem.OnPickup += UnlockWeapon;
     PlayerControls.OnUnlockAllWeapons += UnlockAllWeapons;
     PlayerControls.On1Press += SwitchKnife;
@@ -48,6 +53,8 @@ public class PlayerWeapons : MonoBehaviour {
     _weaponModifiers = new List<StatusCondition>();
 
     _mainCamera = Camera.main;
+
+    _inventory = GetComponent<PlayerInventory>();
 
     _weaponHoldPoint = GameObject.Find("PlayerWeaponDisplayPoint").transform;
     DisplayCurrentWeapon();
@@ -97,8 +104,19 @@ public class PlayerWeapons : MonoBehaviour {
       _currentWeapon = Instantiate(_weapons[_currentWeaponIndex], wepPos, Quaternion.identity);
       _currentWeapon.transform.eulerAngles = new Vector3(0, 0, rotateAngle);
 
+      BasePlayerWeapon weapon = _currentWeapon.GetComponent<BasePlayerWeapon>();
+      weapon.SetSpeed(_speed);
+      weapon.MultiplyDamage(_damageMultiplier);
+
+      if (_currentWeaponIndex == 0 && _inventory.HasItem(Item.MasterKnife) && _knifeBeamOffCooldown) {
+        ButterKnife knife = weapon as ButterKnife;
+        knife.IsKnifeBeam = true;
+
+        StartCoroutine(KnifeBeamCooldown());
+        _knifeBeamOffCooldown = false;
+      }
+
       if (_weaponModifiers.Any()) {
-        BasePlayerWeapon weapon = _currentWeapon.GetComponent<BasePlayerWeapon>();
         weapon.SetModifiers(_weaponModifiers);
       }
     }
@@ -139,8 +157,6 @@ public class PlayerWeapons : MonoBehaviour {
     PlayerControls.On3Press -= SwitchSpoon;
     PlayerControls.OnScrollUp -= SwitchNextWeapon;
     PlayerControls.OnScrollDown -= SwitchPrevWeapon;
-    // PlayerControls.OnQPress -= SwitchPrevWeapon;
-    // PlayerControls.OnEPress -= SwitchNextWeapon;
     PlayerControls.OnLeftClick -= HandleAttack;
     ElementalItem.OnElementalItemPickup -= AddModifier;
     BasePlayerWeapon.OnWeaponAnimationEnd -= HandleWeaponAnimEnd;
@@ -170,5 +186,19 @@ public class PlayerWeapons : MonoBehaviour {
       DisplayCurrentWeapon();
       OnSwitchSpoon?.Invoke(this, EventArgs.Empty);
     }
+  }
+
+  private IEnumerator KnifeBeamCooldown() {
+    yield return new WaitForSeconds(2);
+
+    _knifeBeamOffCooldown = true;
+  }
+
+  public void MultiplySpeed(float speedMultiplier) {
+    _speed *= speedMultiplier;
+  }
+
+  public void AddToDamageMultiplier(float additionalDamage) {
+    _damageMultiplier += additionalDamage;
   }
 }
