@@ -67,4 +67,8 @@ public class TutorialKnife : StateMachineBehaviour {
             isDialoguePlayed = true;
         }
     }
+
+    private void OnDestroy() {
+        TutorialManager.FsmEventHandler -= SpawnEnemy;
+    }
 }

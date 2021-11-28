@@ -50,4 +50,8 @@ public class TutorialYolk : StateMachineBehaviour
         dummy.SetActive(true);
         isDialoguePlayed = true;
     }
+
+    private void OnDestroy() {
+        TutorialManager.FsmEventHandler -= ShowHelpText;
+    }
 }

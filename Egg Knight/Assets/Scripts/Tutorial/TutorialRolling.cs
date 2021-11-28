@@ -64,4 +64,8 @@ public class TutorialRolling : StateMachineBehaviour
         Fungus.Flowchart.BroadcastFungusMessage("StartRolling");
         isDialoguePlayed = true;
     }
+
+    private void OnDestroy() {
+        TutorialManager.FsmEventHandler -= EnableHelpText;
+    }
 }

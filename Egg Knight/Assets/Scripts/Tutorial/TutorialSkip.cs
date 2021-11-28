@@ -50,4 +50,8 @@ public class TutorialSkip : StateMachineBehaviour
     private void StartDialogue(object sender, EventArgs e) {
         Fungus.Flowchart.BroadcastFungusMessage("StartKnife");
     }
+
+    private void OnDestroy() {
+        TutorialManager.FsmEventHandler -= SpawnEnemy;
+    }
 }

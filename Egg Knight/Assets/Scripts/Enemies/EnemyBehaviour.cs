@@ -228,6 +228,9 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
   
   public virtual bool GetIsAttackReady() {
+    if (GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown && !isInAttackAnimation) {
+      Debug.Log((GetDistanceToPlayer() < maxDistanceToAttack) + ":" + isAttackOffCooldown + ":" + isInAttackAnimation);
+    }
     return GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown && !isInAttackAnimation;
   }
 

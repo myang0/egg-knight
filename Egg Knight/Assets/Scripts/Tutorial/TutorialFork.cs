@@ -64,4 +64,11 @@ public class TutorialFork : StateMachineBehaviour
         Fungus.Flowchart.BroadcastFungusMessage("StartFork");
         isDialoguePlayed = true;
     }
+
+    private void OnDestroy() {
+        PlayerControls.On2Press -= SpawnEnemy;
+        PlayerControls.OnScrollUp -= SpawnEnemy;
+        PlayerControls.OnScrollDown -= SpawnEnemy;
+        TutorialManager.FsmEventHandler -= ShowHelpText;
+    }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Stage;
 using UnityEngine;
 
 public class PeaBehaviour : EnemyBehaviour {
@@ -12,6 +13,11 @@ public class PeaBehaviour : EnemyBehaviour {
 
     EnemyBehaviour enemyBehaviour = gameObject.GetComponent<EnemyBehaviour>();
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
+    
+    int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+    if (level > 2) {
+      peaHealth.AddToMaxHealth(10);
+    }
 
     Health = peaHealth;
     base.Awake();

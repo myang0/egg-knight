@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba4447aad96e7b489998d0547c406ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 40
+  _maxHealth: 60
   _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
@@ -159,10 +159,12 @@ MonoBehaviour:
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
+  notAffectedByDropMods: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 7766385796106648247}
   isDead: 0
+  _attackDamage: 0
   _explosionObject: {fileID: 2934463478322923025, guid: be440fa1b67916d43ac75e999ad0c027,
     type: 3}
 --- !u!114 &7766385794962761289
@@ -346,8 +348,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1042406581
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

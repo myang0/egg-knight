@@ -65,4 +65,11 @@ public class TutorialSpoon : StateMachineBehaviour
         Fungus.Flowchart.BroadcastFungusMessage("StartSpoon");
         isDialoguePlayed = true;
     }
+
+    private void OnDestroy() {
+        TutorialManager.FsmEventHandler -= ShowHelpText;
+        PlayerControls.On3Press -= SpawnEnemy;
+        PlayerControls.OnScrollUp -= SpawnEnemy;
+        PlayerControls.OnScrollDown -= SpawnEnemy;
+    }
 }

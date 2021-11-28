@@ -1,4 +1,5 @@
 using System.Collections;
+using Stage;
 using UnityEngine;
 
 public class PeaSpawner : MonoBehaviour {
@@ -9,6 +10,11 @@ public class PeaSpawner : MonoBehaviour {
 
   private void Awake() {
     if (_peaObject != null) {
+      int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+      if (level > 2) {
+        _peasToBeSpawned += 2;
+      }
+      
       StartCoroutine(SpawnPeas());
     } else {
       Destroy(gameObject);
