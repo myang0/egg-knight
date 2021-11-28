@@ -30,6 +30,11 @@ public class PlayerAnimation : MonoBehaviour {
     _anim = gameObject.GetComponent<Animator>();
   }
 
+  private void Update() {
+    if (GetComponent<PlayerInventory>().HasItem(Item.QuailEgg))
+      transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+  }
+
   private void HandleRollBegin(object sender, RollEventArgs e) {
     _isRolling = true;
 

@@ -9,6 +9,7 @@ public enum Item {
   ChefHat,
   NinjaHeadband,
   PizzaDelivery,
+  DuckEgg,
   QuailEgg,
   PortableRefrigerator,
   WarPaint,

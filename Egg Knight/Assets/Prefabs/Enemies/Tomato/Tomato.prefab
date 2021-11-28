@@ -164,7 +164,7 @@ MonoBehaviour:
   isWallCollisionOn: 0
   alertAnimator: {fileID: 7766385796106648247}
   isDead: 0
-  _attackDamage: 0
+  _attackDamage: 3
   _explosionObject: {fileID: 2934463478322923025, guid: be440fa1b67916d43ac75e999ad0c027,
     type: 3}
 --- !u!114 &7766385794962761289

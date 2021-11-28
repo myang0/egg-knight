@@ -20,39 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Eggitha/Eggitha.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Eggitha/Eggitha.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Tomato/TomatoController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Tomato/TomatoController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Corn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Corn/Corn.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/Arrow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/EggArcher.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggArcher/EggArcher.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Pea/PeaPodController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Pea/PeaPodController.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/PeaPod.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Peas/PeaPod.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggGuard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RoyalEggGuard/RoyalEggGuard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/Strawberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Strawberry/Strawberry.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/TomatoExplosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/TomatoExplosion.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/QuailEgg.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/QuailEgg.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnParachute.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnParachute.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/Tomato/TomatoAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/Tomato/TomatoAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialFork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialFork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialKnife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialKnife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialRolling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialRolling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSkip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSkip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSpoon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSpoon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialYolk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialYolk.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Tomato/Explosion/explosion-6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/QuailEgg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/QuailEgg.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/MinimapCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/RestartGameButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
-        <option value="$PROJECT_DIR$/Assets/WeaponUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ZcoordinateConsts.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/LockedWallHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Bacon/BaconHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Broccoli/BroccoliHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornHealth.cs" />
@@ -138,6 +114,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/QuailEgg.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" />
       </list>
     </option>
   </component>
@@ -231,7 +214,7 @@
       <workItem from="1637972120432" duration="2520000" />
       <workItem from="1637975870326" duration="9888000" />
       <workItem from="1637995164870" duration="3012000" />
-      <workItem from="1638052328751" duration="8031000" />
+      <workItem from="1638052328751" duration="10354000" />
     </task>
     <servers />
   </component>

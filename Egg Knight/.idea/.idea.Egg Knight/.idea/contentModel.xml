@@ -1521,7 +1521,7 @@
               <e p="TornCape.cs" t="Include" />
             </e>
             <e p="Defensive" t="Include">
-              <e p="QuailEgg.cs" t="Include" />
+              <e p="DuckEgg.cs" t="Include" />
             </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />

@@ -19,11 +19,6 @@ public class Caravan : MonoBehaviour {
         Vector3 currPos = transform.position;
         transform.position = new Vector3(currPos.x, currPos.y, ZcoordinateConsts.Interactable);
         itemManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<ItemManager>();
-        shopItem1.item = itemManager.GetRandomHealingItem();
-        shopItem2.item = itemManager.GetRandomItem();
-        shopItem3.item = itemManager.GetRandomItem();
-        shopItem4.item = itemManager.GetRandomItem();
-        shopItem5.item = itemManager.GetRandomItem();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         _hasDialoguePlayed = false;
 
@@ -53,6 +48,12 @@ public class Caravan : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player") && !_hasDialoguePlayed) {
             _hasDialoguePlayed = true;
+            shopItem1.item = itemManager.GetRandomHealingItem();
+            shopItem2.item = itemManager.GetRandomItem();
+            shopItem3.item = itemManager.GetRandomItem();
+            shopItem4.item = itemManager.GetRandomItem();
+            shopItem5.item = itemManager.GetRandomItem();
+            
             if (levelManager.level == 1) {
                 if (levelManager.isFirstShopVisited) {
                     Fungus.Flowchart.BroadcastFungusMessage ("StageOneRepeatShop");
