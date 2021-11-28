@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Viking Helmet
   Description: Deal more damage when at low health
-  InventoryKey: 14
+  InventoryKey: 15

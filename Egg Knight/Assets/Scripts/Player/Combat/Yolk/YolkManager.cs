@@ -9,11 +9,16 @@ public class YolkManager : MonoBehaviour {
   [SerializeField] private float _yolkCooldown = 1.0f;
   private bool _yolkOffCooldown = true;
 
-  [SerializeField] private float _maxYolk = 90;
+  [SerializeField] private float _initialMaxYolk = 90;
+  private float _maxYolk;
   private float _currentYolk;
 
+  private bool _maxYolkIncreased = false;
+
   [SerializeField] private float _yolkCost = 30;
-  [SerializeField] private float _yolkRegenPerSecond = 10;
+
+  [SerializeField] private const float _initialRegenPerSecond = 7.5f;
+  private float _regenPerSecond;
 
   private float _speedScaling = 1.0f;
   private float _damageScaling = 1.0f;
@@ -26,7 +31,10 @@ public class YolkManager : MonoBehaviour {
   private void Awake() {
     PlayerControls.OnRightClick += HandleRightClick;
 
+    _maxYolk = _initialMaxYolk;
     _currentYolk = _maxYolk;
+
+    _regenPerSecond = _initialRegenPerSecond;
 
     _upgrades = gameObject.GetComponent<YolkUpgradeManager>();
     _cursedInventory = gameObject.GetComponent<PlayerCursedInventory>();
@@ -73,7 +81,7 @@ public class YolkManager : MonoBehaviour {
       yield return new WaitForSeconds(0.05f);
 
       float lastYolk = _currentYolk;
-      _currentYolk = (_currentYolk + (_yolkRegenPerSecond / 20f) < _maxYolk) ? _currentYolk + (_yolkRegenPerSecond / 20f) : _maxYolk;
+      _currentYolk = (_currentYolk + (_regenPerSecond / 20f) < _maxYolk) ? _currentYolk + (_regenPerSecond / 20f) : _maxYolk;
 
       if (lastYolk != _currentYolk) {
         OnYolkChange?.Invoke(this, new YolkChangeEventArgs(CurrentYolkPercent()));
@@ -100,6 +108,29 @@ public class YolkManager : MonoBehaviour {
 
   public void MultiplyByCost(float multiplier) {
     _yolkCost *= multiplier;
+
+    if (_yolkCost > _maxYolk) {
+      ScaleMaxYolkAndRegen(_yolkCost);
+
+      _maxYolkIncreased = true;
+    } else if (_yolkCost < _maxYolk && _maxYolkIncreased) {
+      if (_yolkCost < _initialMaxYolk) {
+        _maxYolk = _initialMaxYolk;
+        _regenPerSecond = _initialRegenPerSecond;
+
+        _maxYolkIncreased = false;
+      } else {
+        ScaleMaxYolkAndRegen(_yolkCost);
+      }
+    }
+  }
+
+  private void ScaleMaxYolkAndRegen(float newCost) {
+    float prevMaxYolk = _maxYolk;
+    _maxYolk = newCost;
+
+    float percentageChange = _maxYolk / prevMaxYolk;
+    _regenPerSecond *= percentageChange;
   }
 
   public void MultiplyBySpeedScaling(float multiplier) {

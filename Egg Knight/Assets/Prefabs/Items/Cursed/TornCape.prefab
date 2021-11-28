@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Sir Racha's Torn Cape
   Description: Increase mobility... BUT decreases maximum health
-  InventoryKey: 25
+  InventoryKey: 26
   _curseKey: 0
   _maxHealthReduction: 40
   _speedMultiplier: 2

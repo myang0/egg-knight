@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 public class RottenYolk : CursedItem {
-  [SerializeField] private float _yolkCostMultiplier;
   [SerializeField] private float _damageMultiplier;
 
   protected override void OnTriggerEnter2D(Collider2D col) {
@@ -10,7 +9,6 @@ public class RottenYolk : CursedItem {
       GameObject pObject = col.gameObject;
 
       YolkManager yolkManager = pObject?.GetComponent<YolkManager>();
-      yolkManager?.MultiplyByCost(_yolkCostMultiplier);
       yolkManager?.MultiplyByDamageScaling(_damageMultiplier);
 
       CursedItemPickup();

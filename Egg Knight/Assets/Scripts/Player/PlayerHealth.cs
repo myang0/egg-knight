@@ -102,7 +102,11 @@ public class PlayerHealth : Health {
 
   protected override void Die() {
     if (_inventory.GetItemQuantity(Item.SecondYolk) > 0) {
-      _currentHealth = _maxHealth * 0.3f;
+      _currentHealth = Mathf.Round(_maxHealth * 0.3f);
+
+      OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
+      OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
+
       StartCoroutine(IFramesOnHit());
 
       _inventory.RemoveItem(Item.SecondYolk);

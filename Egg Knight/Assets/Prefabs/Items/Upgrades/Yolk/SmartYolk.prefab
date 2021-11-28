@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Smart Yolk
   Description: Yolk homes in on the nearest enemy
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 2

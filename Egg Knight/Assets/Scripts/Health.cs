@@ -31,6 +31,10 @@ public abstract class Health : MonoBehaviour {
       return;
     }
 
+    if (isInvulnerable) {
+      amount = 0;
+    }
+
     _currentHealth -= amount;
 
     SpawnChangeIndicator(amount, Color.red);

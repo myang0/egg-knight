@@ -4,8 +4,9 @@ using Stage;
 using UnityEngine;
 
 public class CornBehaviour : EnemyBehaviour {
-  [SerializeField] private GameObject _kernelPrefab;
+  [SerializeField] private float _contactDamage;
 
+  [SerializeField] private GameObject _kernelPrefab;
   [SerializeField] private int _numKernelsPerBurst;
 
   protected override void Awake() {
@@ -16,7 +17,7 @@ public class CornBehaviour : EnemyBehaviour {
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
 
     attackCooldownMax = 6;
-    maxDistanceToAttack = float.MaxValue;
+    maxDistanceToAttack = 15;
 
     Health = cornHealth;
     isWallCollisionOn = true;
@@ -52,5 +53,14 @@ public class CornBehaviour : EnemyBehaviour {
 
     isInAttackAnimation = false;
     StartCoroutine(AttackCooldown());
+  }
+
+  private void OnTriggerEnter2D(Collider2D col) {
+    if (col.gameObject.CompareTag("Player")) {
+      GameObject playerObject = col.gameObject;
+      PlayerHealth playerHealth = playerObject?.GetComponent<PlayerHealth>();
+
+      playerHealth?.Damage(_contactDamage);
+    }
   }
 }

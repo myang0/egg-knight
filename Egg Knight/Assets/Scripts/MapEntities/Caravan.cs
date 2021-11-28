@@ -32,7 +32,7 @@ public class Caravan : MonoBehaviour {
     private void Update() {
         if (parentStage.GetStageType() != StageType.Shop) return;
         if (parentStage.GetStageType() == StageType.Shop && !isShopActivated) {
-            shopItem1.item = itemManager.GetRandomItem();
+            shopItem1.item = itemManager.GetRandomHealingItem();
             shopItem2.item = itemManager.GetRandomItem();
             shopItem3.item = itemManager.GetRandomItem();
             shopItem4.item = itemManager.GetRandomItem();
@@ -43,7 +43,7 @@ public class Caravan : MonoBehaviour {
         if (isShopActivated) {
             if (shopItem1.item == shopItem2.item || shopItem1.item == shopItem3.item || 
                 shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item) {
-                shopItem1.item = itemManager.GetRandomItem();
+                shopItem1.item = itemManager.GetRandomHealingItem();
             }
 
             if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item) {
