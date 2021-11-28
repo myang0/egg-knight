@@ -23,4 +23,7 @@ public static class StatusConfig {
   public static float BleedTimeBetweenTicks = 0.25f;
   public static float BleedDuration = 5;
   public static float BleedDamage = 1;
+
+  public static float WeakenedDuration = 3;
+  public static float WeakenedArmourModifier = 0.75f;
 }

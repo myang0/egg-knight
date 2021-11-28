@@ -13,6 +13,8 @@ public class PlayerHealth : Health {
   private PlayerInventory _inventory;
   private PlayerCursedInventory _cursedInventory;
 
+  private float _healMultiplier = 1.0f;
+
   public static event EventHandler<HealthChangeEventArgs> OnHealthDecrease;
   public static event EventHandler<HealthChangeEventArgs> OnHealthIncrease;
 
@@ -150,9 +152,9 @@ public class PlayerHealth : Health {
   }
 
   public override void Heal(float amount) {
-    float trueAmount = _cursedInventory.HasItem(CursedItemType.RottenYolk) ? amount / 2.0f : amount;
+    amount *= _healMultiplier;
 
-    base.Heal(trueAmount);
+    base.Heal(amount);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
@@ -177,5 +179,9 @@ public class PlayerHealth : Health {
   private void OnDestroy() {
     PlayerMovement.OnRollBegin -= HandleRoll;
     PlayerMovement.OnRollEnd -= HandleRollEnd;
+  }
+
+  public void ScaleHealMultiplier(float scale) {
+    _healMultiplier *= scale;
   }
 }

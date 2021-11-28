@@ -9,6 +9,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
 
   protected List<StatusCondition> _weaponModifiers;
 
+  protected float _speed = 1.0f;
+
   protected GameObject _playerObject;
 
   protected PlayerHealth _health;
@@ -170,4 +172,13 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   }
 
   protected abstract void OnDrawGizmosSelected();
+
+  public void SetSpeed(float speed) {
+    _speed = speed;
+    _anim.speed = _speed;
+  }
+
+  public void MultiplyDamage(float modifier) {
+    _damageAmount *= modifier;
+  }
 }

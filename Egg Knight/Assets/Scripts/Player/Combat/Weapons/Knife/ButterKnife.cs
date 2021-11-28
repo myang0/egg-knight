@@ -6,7 +6,20 @@ public class ButterKnife : BasePlayerWeapon {
 
   [SerializeField] private LayerMask _obstacleLayer;
 
+  [SerializeField] private GameObject _knifeBeamPrefab;
+  private bool _isKnifeBeam;
+  public bool IsKnifeBeam {
+    set {
+      _isKnifeBeam = value;
+    }
+  }
+
   public override void EnableHitbox() {
+    if (_isKnifeBeam) {
+      KnifeBeam knifeBeam = Instantiate(_knifeBeamPrefab, _attackPoint.position, Quaternion.identity).GetComponent<KnifeBeam>();
+      knifeBeam.SetDirection(transform.up, transform.eulerAngles.z);
+    }
+
     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer);
     Collider2D[] obstaclesInRange = 
       Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _obstacleLayer);

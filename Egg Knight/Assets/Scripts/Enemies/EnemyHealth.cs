@@ -31,6 +31,7 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnElectrocuted += HandleElectrocuted;
     enemyBehaviour.OnBleed += HandleBleed;
     enemyBehaviour.OnYolked += HandleYolked;
+    enemyBehaviour.OnWeakened += HandleWeakened;
 
     if (_playerInventory != null && _playerInventory.HasItem(Item.Norovirus)) {
       _currentHealth = _maxHealth * 0.85f;
@@ -93,6 +94,22 @@ public abstract class EnemyHealth : Health {
 
       Damage(StatusConfig.SalmonellaDamage);
     }
+  }
+
+  protected virtual void HandleWeakened(object sender, EventArgs e) {
+    if (_armourValue == _initialArmourValue) {
+      StartCoroutine(Weakened());
+    }
+  }
+
+  protected virtual IEnumerator Weakened() {
+    yield return new WaitForSeconds(0.01f);
+
+    _armourValue *= StatusConfig.WeakenedArmourModifier;
+
+    yield return new WaitForSeconds(StatusConfig.WeakenedDuration);
+
+    _armourValue /= StatusConfig.WeakenedArmourModifier;
   }
 
   public override void Damage(float amount) {

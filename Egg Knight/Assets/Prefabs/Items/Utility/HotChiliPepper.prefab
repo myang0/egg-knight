@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2856425343674194367}
   - component: {fileID: 2856425343674194360}
   - component: {fileID: 2856425343674194361}
-  - component: {fileID: 2856425343674194362}
-  m_Layer: 0
+  - component: {fileID: 4798108200101494743}
+  m_Layer: 15
   m_Name: HotChiliPepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.68, y: 1.86}
   m_EdgeRadius: 0
---- !u!114 &2856425343674194362
+--- !u!114 &4798108200101494743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2856425343674194363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec42c7297337d541953436ade3879eb, type: 3}
+  m_Script: {fileID: 11500000, guid: eafa006572bbe004cbca529f6f991ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Hot Chili Pepper
-  Description: Increased movement speed
+  Description: More movement speed
   InventoryKey: 23
   _speedMultiplier: 1.25

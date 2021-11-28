@@ -6,6 +6,9 @@ public class YolkProjectile : Projectile {
   private bool _isHoming = false;
   private Transform _nearestEnemy;
 
+  [SerializeField] private GameObject _explosionPrefab;
+  private bool _isExplosive = false;
+
   [SerializeField] private GameObject _shardPrefab;
   [SerializeField] private int _numShardsOnDespawn;
   private bool _isShellShot = false;
@@ -13,8 +16,12 @@ public class YolkProjectile : Projectile {
 
   [SerializeField] private float _homingSpeed;
 
+  private float _damageMultiplier = 1.0f;
+
   protected override void Awake() {
     upgrades = GameObject.FindGameObjectWithTag("Player").GetComponent<YolkUpgradeManager>();
+
+    _isExplosive = upgrades.HasUpgrade(YolkUpgradeType.ExplosiveEmbryo);
 
     _isHoming = upgrades.HasUpgrade(YolkUpgradeType.SmartYolk);
     if (_isHoming) {
@@ -50,6 +57,13 @@ public class YolkProjectile : Projectile {
   }
 
   protected override void Despawn() {
+    if (_isExplosive) {
+      YolkExplosion yolkExplosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity).GetComponent<YolkExplosion>();
+
+      yolkExplosion.SetUpgrades(upgrades);
+      yolkExplosion.MultiplyDamage(_damageMultiplier);
+    }
+
     if (_isShellShot) {
       SpawnShards();
     }
@@ -84,7 +98,17 @@ public class YolkProjectile : Projectile {
     EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
     
     if (enemyHealth != null && collider.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
-      enemyHealth.DamageWithStatuses(_damage, new List<StatusCondition>() { StatusCondition.Yolked });
+      if (_isExplosive == false) {
+        List<StatusCondition> statusList;
+
+        if (upgrades.HasUpgrade(YolkUpgradeType.CorrosiveCore)) {
+          statusList = new List<StatusCondition>() { StatusCondition.Yolked, StatusCondition.Weakened };
+        } else {
+          statusList = new List<StatusCondition>() { StatusCondition.Yolked };
+        }
+
+        enemyHealth.DamageWithStatuses(_damage, statusList);
+      }
     }
 
     if (collider.gameObject.layer == LayerMask.NameToLayer("Obstacle") || enemyHealth != null) {
@@ -95,5 +119,6 @@ public class YolkProjectile : Projectile {
 
   public void MultiplyDamage(float multiplyAmount) {
     _damage *= multiplyAmount;
+    _damageMultiplier = multiplyAmount;
   }
 }

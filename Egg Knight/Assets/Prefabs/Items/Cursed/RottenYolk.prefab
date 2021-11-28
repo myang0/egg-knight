@@ -101,6 +101,7 @@ MonoBehaviour:
   InventoryKey: 26
   _curseKey: 1
   _damageMultiplier: 2
+  _healMultiplier: 0.5
 --- !u!61 &3009087022290827439
 BoxCollider2D:
   m_ObjectHideFlags: 0

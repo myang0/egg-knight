@@ -129,6 +129,8 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _knifeBeamPrefab: {fileID: 2039182256207528140, guid: 71698fa4dc30c54409d713b7866b328b,
+    type: 3}
 --- !u!1 &8745055936194079937
 GameObject:
   m_ObjectHideFlags: 0
