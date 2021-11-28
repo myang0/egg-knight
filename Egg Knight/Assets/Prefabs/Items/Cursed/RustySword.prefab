@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Sir Racha's Rusty Sword
   Description: Critical strikes inflict bleeding... BUT deal damage to yourself
-  InventoryKey: 25
+  InventoryKey: 26
   _curseKey: 2

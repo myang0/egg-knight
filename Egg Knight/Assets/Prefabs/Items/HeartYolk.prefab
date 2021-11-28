@@ -129,5 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Heart Yolk
   Description: Increases max health and slightly heals
-  InventoryKey: 24
+  InventoryKey: 25
   _healthBonus: 10

@@ -98,9 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Sir Racha's Rotten Yolk
   Description: Yolk attacks deal double damage... BUT all healing is halved
-  InventoryKey: 25
+  InventoryKey: 26
   _curseKey: 1
-  _yolkCostMultiplier: 0.5
   _damageMultiplier: 2
 --- !u!61 &3009087022290827439
 BoxCollider2D:

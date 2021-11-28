@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Shell Shot
   Description: Yolk bursts into damaging shell shards on hit
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 3

@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Gold Chain Necklace
   Description: Deal more damage the more coins you have
-  InventoryKey: 13
+  InventoryKey: 14
   _additionalDropRate: 20

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Leghorn's Shot
   Description: Shoot 3 shots of yolk instead of 1
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 0
   _cooldownMultiplier: 2
   _costMultiplier: 2

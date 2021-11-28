@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Runny Yolk
   Description: Decrease damage of yolk, but greatly increase fire rate
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 5
   _cooldownMultiplier: 0.2
-  _costMultiplier: 0.2
+  _costMultiplier: 0.3
   _damageMultiplier: 0.25

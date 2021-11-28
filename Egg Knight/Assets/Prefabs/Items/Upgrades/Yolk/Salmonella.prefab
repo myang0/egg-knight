@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Salmonella
   Description: Yolked enemies take damage over time
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 4

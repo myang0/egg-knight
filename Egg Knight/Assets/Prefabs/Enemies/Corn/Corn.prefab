@@ -356,7 +356,7 @@ MonoBehaviour:
   isAttackOffCooldown: 0
   isInAttackAnimation: 0
   isStunned: 0
-  alertRange: 5
+  alertRange: 15
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
@@ -366,9 +366,10 @@ MonoBehaviour:
   isWallCollisionOn: 0
   alertAnimator: {fileID: 5166309168747990666}
   isDead: 0
+  _contactDamage: 5
   _kernelPrefab: {fileID: 1362904509219522819, guid: 01a06933d2555de4ba7c62be84445385,
     type: 3}
-  _numKernelsPerBurst: 8
+  _numKernelsPerBurst: 15
 --- !u!114 &-3109920031517495866
 MonoBehaviour:
   m_ObjectHideFlags: 0

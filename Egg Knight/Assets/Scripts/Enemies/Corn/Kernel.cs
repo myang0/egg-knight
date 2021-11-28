@@ -19,9 +19,10 @@ public class Kernel : MonoBehaviour {
   private bool _isAirborne = true;
   private bool _isArmed = false;
 
+  private float _moveSpeed;
   private float _rotationSpeed;
 
-  private float _targetY;
+  private Vector3 _targetPoint;
 
   private void Awake() {
     _rb = GetComponent<Rigidbody2D>();
@@ -32,21 +33,25 @@ public class Kernel : MonoBehaviour {
     _origG = _sr.color.g;
     _origB = _sr.color.b;
 
-    Vector2 forceVector = Quaternion.Euler(0, 0, Random.Range(-12.5f, 12.5f)) * Vector2.up;
-    _rb.AddForce(forceVector * Random.Range(15f, 25f), ForceMode2D.Impulse);
+    Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+    _targetPoint = new Vector3(
+      playerPos.x + Random.Range(-5f, 5f),
+      playerPos.y + Random.Range(-5f, 5f),
+      playerPos.z
+    );
 
+    _moveSpeed = Random.Range(0.2f, 0.4f);
     _rotationSpeed = Random.Range(-5f, 5f);
-
-    _targetY = transform.position.y + Random.Range(-2.5f, 0.5f);
   }
 
   private void FixedUpdate() {
     if (_isAirborne) {
       transform.Rotate(0, 0, _rotationSpeed);
-    }
 
-    if (_isAirborne && transform.position.y <= _targetY && _rb.velocity.y < 0) {
-      Arm();
+      transform.position = Vector3.MoveTowards(transform.position, _targetPoint, _moveSpeed);
+      if (Vector3.Distance(transform.position, _targetPoint) < 0.01f) {
+        StartCoroutine(ArmTimer());
+      }
     }
   }
 
@@ -66,12 +71,8 @@ public class Kernel : MonoBehaviour {
   }
 
   private void Arm() {
-    _rb.velocity = Vector2.zero;
-    _rb.gravityScale = 0;
-
     _collider.enabled = true;
 
-    _isAirborne = false;
     _isArmed = true;
 
     StartCoroutine(ArmedColour());
@@ -84,6 +85,14 @@ public class Kernel : MonoBehaviour {
     StopCoroutine(ArmedColour());
     StopCoroutine(DespawnTimer());
     StartCoroutine(Despawn(0.1f));
+  }
+
+  private IEnumerator ArmTimer() {
+    _isAirborne = false;
+
+    yield return new WaitForSeconds(0.5f);
+
+    Arm();
   }
 
   private IEnumerator ArmedColour() {

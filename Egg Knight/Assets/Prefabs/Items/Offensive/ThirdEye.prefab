@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Third Eye
   Description: Chance to critically strike on hit
-  InventoryKey: 16
+  InventoryKey: 17

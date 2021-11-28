@@ -124,6 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Golden Yolk
   Description: Decreased cost to shoot yolk
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 1
   _costMultiplier: 0.8

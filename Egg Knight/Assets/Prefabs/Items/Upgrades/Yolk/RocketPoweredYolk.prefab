@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 'Rocket-Powered Yolk '
   Description: Increase speed, range, and damage of yolk
-  InventoryKey: 23
+  InventoryKey: 24
   _upgradeKey: 6
   _cooldownMultiplier: 1.25
   _costMultiplier: 1.25
