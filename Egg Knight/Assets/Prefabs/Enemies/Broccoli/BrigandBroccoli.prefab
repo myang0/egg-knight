@@ -374,7 +374,7 @@ MonoBehaviour:
   isInAttackAnimation: 0
   isStunned: 0
   alertRange: 0
-  isTurningEnabled: 0
+  isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
@@ -401,6 +401,7 @@ MonoBehaviour:
   _walkTime: 5
   _parryTime: 2
   _chargeTime: 1
+  _maxThrowTime: 5
 --- !u!114 &7661167815159373118
 MonoBehaviour:
   m_ObjectHideFlags: 0
