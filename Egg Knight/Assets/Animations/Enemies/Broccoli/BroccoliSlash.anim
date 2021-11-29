@@ -23,18 +23,16 @@ AnimationClip:
       value: {fileID: 21300000, guid: 0777861cf92c69f45b777e7069f95d61, type: 3}
     - time: 0.083333336
       value: {fileID: 21300000, guid: 9f59738dddeb9bb46bb0f376f357571b, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 3eb48c5616d70b3468f4ebe8a151b125, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: b9f034e23da88154687933f829748eff, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 3b2f98f48471bac4997582b89b72c2ac, type: 3}
     - time: 0.41666666
+      value: {fileID: 21300000, guid: 3eb48c5616d70b3468f4ebe8a151b125, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: b9f034e23da88154687933f829748eff, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: 3b2f98f48471bac4997582b89b72c2ac, type: 3}
+    - time: 0.6666667
       value: {fileID: 21300000, guid: 372ab0f0afb000b4daf5a77cd1d98e08, type: 3}
-    - time: 0.8333333
+    - time: 1.0833334
       value: {fileID: 21300000, guid: f787e3fb7626e4a4aa606b3b3ebc3874, type: 3}
-    - time: 0.9166667
-      value: {fileID: 21300000, guid: 527ef2bb79549284199f0c51f8f1d3c1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -61,13 +59,12 @@ AnimationClip:
     - {fileID: 21300000, guid: 3b2f98f48471bac4997582b89b72c2ac, type: 3}
     - {fileID: 21300000, guid: 372ab0f0afb000b4daf5a77cd1d98e08, type: 3}
     - {fileID: 21300000, guid: f787e3fb7626e4a4aa606b3b3ebc3874, type: 3}
-    - {fileID: 21300000, guid: 527ef2bb79549284199f0c51f8f1d3c1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.93333334
+    m_StopTime: 1.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,7 +84,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.25
+  - time: 0.5
     functionName: GreatSlash
     data: 
     objectReferenceParameter: {fileID: 0}

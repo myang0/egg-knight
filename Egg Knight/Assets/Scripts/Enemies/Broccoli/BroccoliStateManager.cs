@@ -19,6 +19,8 @@ public class BroccoliStateManager : MonoBehaviour {
   [SerializeField] private float _chargeTime;
   public event EventHandler OnChargeEnd;
 
+  [SerializeField] private float _maxThrowTime;
+
   private Animator _anim;
 
   private EnemyBehaviour _eBehaviour;
@@ -87,5 +89,21 @@ public class BroccoliStateManager : MonoBehaviour {
     yield return new WaitForSeconds(_chargeTime);
 
     OnChargeEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  public void StartThrow() {
+    StartCoroutine(Throw());
+  }
+
+  private IEnumerator Throw() {
+    yield return new WaitForSeconds(_maxThrowTime);
+
+    if (_anim.GetBool("IsThrowing")) {
+      _anim.SetBool("IsThrowing", false);
+    }
+  }
+
+  public void StopThrow() {
+    StopCoroutine(Throw());
   }
 }

@@ -80,7 +80,7 @@ public class BroccoliIdle : StateMachineBehaviour {
   }
 
   private void ChooseLongRangeAttack() {
-    float attackRoll = Random.Range(0f, 1f);
+    float attackRoll = Random.Range(0.5f, 1f);
 
     if (attackRoll < 0.5f) {
       _anim.SetBool("IsChargingSpin", true);
