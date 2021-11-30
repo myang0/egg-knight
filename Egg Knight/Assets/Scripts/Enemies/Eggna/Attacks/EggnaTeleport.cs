@@ -13,17 +13,19 @@ public class EggnaTeleport : MonoBehaviour {
   private Animator _anim;
   private SpriteRenderer _sr;
   private Collider2D _collider;
+  private EnemyHealth _eHealth;
 
   private Transform _playerTransform;
 
   [SerializeField] private GameObject _swooshObject;
 
   private void Awake() {
-    _invisiblilityTime = Random.Range(_minInvisibilityTime, _maxInvisibilityTime);
+    _invisiblilityTime = _maxInvisibilityTime;
 
     _anim = GetComponent<Animator>();
     _sr = GetComponent<SpriteRenderer>();
     _collider = GetComponent<Collider2D>();
+    _eHealth = GetComponent<EnemyHealth>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -31,6 +33,8 @@ public class EggnaTeleport : MonoBehaviour {
   public void Disappear() {
     _sr.enabled = false;
     _collider.enabled = false;
+
+    _invisiblilityTime = _minInvisibilityTime + (_eHealth.CurrentHealthPercentage() * (_maxInvisibilityTime - _minInvisibilityTime));
 
     StartCoroutine(Invisibility());
   }

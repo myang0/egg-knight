@@ -5,7 +5,9 @@ public class EggnaSpin : MonoBehaviour {
   [SerializeField] private GameObject _daggerObject;
 
   [SerializeField] private int _numBursts;
-  [SerializeField] private float _timeBetweenBursts = 1;
+  [SerializeField] private float _minTimeBetweenBursts = 0.25f;
+  [SerializeField] private float _maxTimeBetweenBursts = 1;
+  private float _timeBetweenBursts;
 
   [SerializeField] private int _daggersPerBurst;
   [SerializeField] private float _timeBetweenThrows;
@@ -19,6 +21,8 @@ public class EggnaSpin : MonoBehaviour {
   private Transform _playerTransform;
 
   private void Awake() {
+    _timeBetweenBursts = _maxTimeBetweenBursts;
+
     _eHealth = GetComponent<EggnaHealth>();
     _anim = GetComponent<Animator>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
@@ -31,12 +35,12 @@ public class EggnaSpin : MonoBehaviour {
       return;
     }
 
+    _timeBetweenBursts = _minTimeBetweenBursts + (_eHealth.CurrentHealthPercentage() * (_maxTimeBetweenBursts - _minTimeBetweenBursts));
+
     StartCoroutine(SpinAttack());
   }
 
   private IEnumerator SpinAttack() {
-    _eHealth.isInvulnerable = true;
-
     for (int i = 0; i < _numBursts; i++) {
       yield return new WaitForSeconds(_timeBetweenBursts);
 
@@ -48,8 +52,6 @@ public class EggnaSpin : MonoBehaviour {
     }
 
     _anim.SetBool("IsSpinning", false);
-
-    _eHealth.isInvulnerable = false;
   }
 
   private void ThrowDagger() {

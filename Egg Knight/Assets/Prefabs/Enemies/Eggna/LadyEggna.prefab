@@ -301,6 +301,7 @@ MonoBehaviour:
   decrementEnemyCountOnDeath: 1
   disableRegularDrops: 0
   disableDeathRotation: 0
+  notAffectedByDropMods: 0
   isWandering: 0
   isWallCollisionOn: 1
   alertAnimator: {fileID: 0}
@@ -351,7 +352,8 @@ MonoBehaviour:
   _daggerObject: {fileID: 9067285521532788616, guid: 62cf8131bd78be14ea43f3315cb564c4,
     type: 3}
   _numBursts: 2
-  _timeBetweenBursts: 1
+  _minTimeBetweenBursts: 0.4
+  _maxTimeBetweenBursts: 1
   _daggersPerBurst: 5
   _timeBetweenThrows: 0.05
   _maxSpread: 5
@@ -388,8 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationDuration: 0.5
-  _forwardsMomentum: 10
-  _drag: 5
+  _forwardsMomentum: 15
+  _drag: 7.5
   _attackPivot: {fileID: 5512330418925694212}
   _attackPoint: {fileID: 5512330418049198136}
   _slashObject: {fileID: 7696042843266684606, guid: e65e9a815e40b464eb5637d2ae50a325,

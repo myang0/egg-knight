@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &992226838
 Transform:
   m_ObjectHideFlags: 0
@@ -261,9 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf52235a27d8b45469d4e47a67565ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 6.5
   _currentMovementSpeed: 0
-  _rollSpeed: 12
+  _rollSpeed: 15
   _rollDrag: 3
   _rollDuration: 0.5
   _rollCooldown: 0.25
@@ -361,9 +361,9 @@ MonoBehaviour:
   _yolkPrefab: {fileID: 3473190112106686320, guid: 6d78a704706e39248a1a07ac5e011022,
     type: 3}
   _yolkCooldown: 1
-  _maxYolk: 90
+  _initialMaxYolk: 90
   _yolkCost: 30
-  _yolkRegenPerSecond: 5
+  _initialRegenPerSecond: 10
 --- !u!114 &8208799723587694136
 MonoBehaviour:
   m_ObjectHideFlags: 0

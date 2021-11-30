@@ -46,4 +46,4 @@ MonoBehaviour:
   _peaObject: {fileID: 2428562928229924412, guid: 0d4e614aab22c6740995b638e5b1e53d,
     type: 3}
   _peasToBeSpawned: 5
-  _timeBetweenSpawns: 0.25
+  _timeBetweenSpawns: 0.5
