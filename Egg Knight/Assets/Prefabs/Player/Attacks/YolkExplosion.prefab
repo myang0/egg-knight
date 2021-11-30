@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811c9310f9a139e4f992d5e208b443f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionRange: 1.9
+  _explosionRange: 2.4
   _explosionDamage: 15
   _hitLayer:
     serializedVersion: 2

@@ -12,7 +12,8 @@ public class YolkExplosion : Explosion {
     _explosionDamage *= damageMultiplier;
     _explosionRange *= damageMultiplier;
 
-    transform.localScale = new Vector3(damageMultiplier, damageMultiplier, damageMultiplier);
+    float clampedScale = Mathf.Clamp(damageMultiplier, 0.5f, 1.5f);
+    transform.localScale = new Vector3(clampedScale, clampedScale, 1);
   }
 
   public override void OnExplode() {
