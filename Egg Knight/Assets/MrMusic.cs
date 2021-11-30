@@ -13,8 +13,11 @@ public class MrMusic : MonoBehaviour {
     public AudioClip level3Boss;
 
     public AudioSource source;
+    public float fxVolume;
 
     private LevelManager _levelManager;
+
+    public EventHandler OnSFXVolumeChange;
     // Start is called before the first frame update
     void Start() {
         source.clip = level1BGM;
@@ -22,6 +25,24 @@ public class MrMusic : MonoBehaviour {
         source.Play();
         _levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         _levelManager.OnStageStart += StartLevelMusicSubscriber;
+        OnSFXVolumeChange += (sender, args) => {
+            Debug.Log("SFX Volume set to: " + fxVolume);
+        };
+        source.volume = PlayerPrefs.GetFloat("BGMVolume", 25);
+        fxVolume = PlayerPrefs.GetFloat("SFXVolume", 25);
+    }
+    
+    public void SetBackgroundMusicVolume(System.Single vol) {
+        source.volume = vol;
+        PlayerPrefs.SetFloat("BGMVolume", source.volume);
+        PlayerPrefs.Save();
+    }
+    
+    public void SetSFXVolume(System.Single vol) {
+        OnSFXVolumeChange?.Invoke(this, EventArgs.Empty);
+        fxVolume = vol;
+        PlayerPrefs.SetFloat("SFXVolume", fxVolume);
+        PlayerPrefs.Save();
     }
 
     void StartBossMusic() {
