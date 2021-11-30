@@ -17,7 +17,7 @@ public class YolkManager : MonoBehaviour {
 
   [SerializeField] private float _yolkCost = 30;
 
-  [SerializeField] private const float _initialRegenPerSecond = 7.5f;
+  [SerializeField] private float _initialRegenPerSecond = 10f;
   private float _regenPerSecond;
 
   private float _speedScaling = 1.0f;

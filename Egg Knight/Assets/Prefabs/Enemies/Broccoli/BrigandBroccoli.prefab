@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4f8e987ac00ba4dada3acf4fd3b3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
+  _maxHealth: 800
   _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
@@ -416,9 +416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _longDistanceThreshold: 20
   _shortDistanceThreshold: 5
-  _minSpinMoveSpeed: 2.5
-  _maxSpinMoveSpeed: 25
-  _walkMoveSpeed: 3
+  _minSpinMoveSpeed: 3
+  _maxSpinMoveSpeed: 30
+  _walkMoveSpeed: 3.75
 --- !u!50 &7661167815159373119
 Rigidbody2D:
   serializedVersion: 4

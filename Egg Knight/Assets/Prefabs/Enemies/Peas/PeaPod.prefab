@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  _maxSpeed: 3
+  _maxSpeed: 3.5
   maxDistanceToAttack: 0
   minDistanceToAttack: 0
   attackCooldownMax: 0

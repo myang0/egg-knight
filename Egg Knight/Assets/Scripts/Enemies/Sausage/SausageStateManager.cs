@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 public class SausageStateManager : MonoBehaviour {
+  [SerializeField] private float _minIdleTime;
   [SerializeField] private float _initialIdleTime;
   private float _currentIdleTime;
   public event EventHandler OnIdleEnd;
@@ -30,7 +31,7 @@ public class SausageStateManager : MonoBehaviour {
   }
 
   private IEnumerator Idle() {
-    _currentIdleTime = _eHealth.CurrentHealthPercentage() * _initialIdleTime;
+    _currentIdleTime = _minIdleTime + (_eHealth.CurrentHealthPercentage() * (_initialIdleTime - _minIdleTime));
 
     yield return new WaitForSeconds(_currentIdleTime);
 
