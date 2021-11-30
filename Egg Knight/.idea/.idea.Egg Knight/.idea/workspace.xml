@@ -23,8 +23,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MrMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MrMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DyingGuard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DyingGuard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shelldon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shelldon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/RoyalEggGuard/RoyalEggHealth.cs" />
@@ -100,19 +104,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
-        <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWallBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsButton.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsDoneButton.cs" />
         <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
         <option value="$PROJECT_DIR$/Assets/SliderValueDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthText.cs" />
+        <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -212,6 +217,7 @@
       <workItem from="1638234041125" duration="2145000" />
       <workItem from="1638238880440" duration="1349000" />
       <workItem from="1638260113215" duration="3864000" />
+      <workItem from="1638313301154" duration="2391000" />
     </task>
     <servers />
   </component>
@@ -344,5 +350,24 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1199" y="247" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1633485547157" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/HealthText.cs</url>
+          <line>15</line>
+          <properties documentPath="D:\Unity Projects\iat410\Egg Knight\Assets\Scripts\UI\HealthText.cs" initialLine="15">
+            <startOffsets>
+              <option value="528" />
+            </startOffsets>
+            <endOffsets>
+              <option value="529" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

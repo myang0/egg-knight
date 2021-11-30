@@ -31,7 +31,8 @@ public class Caravan : MonoBehaviour {
 
     private void Update() {
         if (parentStage.GetStageType() != StageType.Shop) return;
-        if (parentStage.GetStageType() == StageType.Shop && !isShopActivated) {
+        if (parentStage.GetStageType() == StageType.Shop && !isShopActivated &&
+            (parentStage.itemStatus == StageItemStatus.Spawned || parentStage.itemStatus == StageItemStatus.FailedSpawn)) {
             shopItem1.item = itemManager.GetRandomHealingItem();
             shopItem2.item = itemManager.GetRandomItem();
             shopItem3.item = itemManager.GetRandomItem();

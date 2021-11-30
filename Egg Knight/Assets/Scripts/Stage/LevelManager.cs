@@ -35,6 +35,9 @@ namespace Stage
         public GameObject level1Grid;
         public GameObject level2Grid;
         public GameObject level3Grid;
+        private const int NumStagesToBossLv1 = 10;
+        private const int NumStagesToBossLv2 = 8;
+        private const int NumStagesToBossLv3 = 9;
 
         public EventHandler OnStageStart;
         
@@ -153,7 +156,18 @@ namespace Stage
             if (currStageType == StageType.Spawn) return;
             
             stagesCleared++;
-            restRate += 5;
+            switch (level) {
+                case 1 when level1Rest != null:
+                    restRate += 100/NumStagesToBossLv1;
+                    break;
+                case 2 when level2Rest != null:
+                    restRate += 100/NumStagesToBossLv2;
+                    break;
+                case 3 when level3Rest != null:
+                    restRate += 100/NumStagesToBossLv3;
+                    break;
+            }
+
             shopRate += 10;
             sirrachaRate += 1;
 
@@ -369,7 +383,7 @@ namespace Stage
         public bool GetSirrachaSpawn() {
             switch (level) {
                 case 1 when level1Sirracha == null:
-                case 2 when level1Sirracha == null:
+                case 2 when level2Sirracha == null:
                 case 3 when level3Sirracha == null:
                     return false;
             }
@@ -383,7 +397,7 @@ namespace Stage
         }
     
         public bool GetRestSpawn() {
-            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 65) return false;
+            if (_player.GetComponent<PlayerHealth>().CurrentHealth > 60 && stagesCleared < 7) return false;
             
             switch (level) {
                 case 1 when level1Rest == null:
