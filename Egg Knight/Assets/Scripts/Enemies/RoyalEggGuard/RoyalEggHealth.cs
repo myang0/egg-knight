@@ -7,7 +7,14 @@ public class RoyalEggHealth : EnemyHealth {
 
   protected override void Awake() {
     isInvulnerable = true;
+
+    EggnaHealth.OnEggnaDeath += HandleEggnaDeath;
+
     base.Awake();
+  }
+
+  private void HandleEggnaDeath(object sender, EventArgs e) {
+    base.Die();
   }
 
   public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
@@ -25,5 +32,9 @@ public class RoyalEggHealth : EnemyHealth {
     if (isDamageDealt) OnRoyalEggStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
     return isDamageDealt;
+  }
+
+  private void OnDestroy() {
+    EggnaHealth.OnEggnaDeath -= HandleEggnaDeath;
   }
 }

@@ -34,6 +34,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   public float alertRange;
   public bool isTurningEnabled;
   public bool decrementEnemyCountOnDeath;
+  public bool spawnedByEggna = false;
   public bool disableRegularDrops;
   public bool disableDeathRotation;
   public bool notAffectedByDropMods;
@@ -109,6 +110,11 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   private void HandleDeath(object sender, EventArgs e) {
+    if (spawnedByEggna) {
+      EggnaEnemySpawner spawner = GameObject.Find("LadyEggna")?.GetComponent<EggnaEnemySpawner>();
+      spawner.DecrementEnemies();
+    }
+
     GameObject.FindGameObjectWithTag("LevelManager")
       .GetComponent<LevelManager>()
       .GetCurrentStage()

@@ -21,7 +21,13 @@ public class YolkManager : MonoBehaviour {
   private float _regenPerSecond;
 
   private float _speedScaling = 1.0f;
+
   private float _damageScaling = 1.0f;
+  public float DamageScaling {
+    get {
+      return _damageScaling;
+    }
+  }
 
   private YolkUpgradeManager _upgrades;
   private PlayerCursedInventory _cursedInventory;
@@ -139,7 +145,6 @@ public class YolkManager : MonoBehaviour {
 
   public void MultiplyByDamageScaling(float multiplier) {
     _damageScaling *= multiplier;
-    StatusConfig.SalmonellaDamage *= multiplier;
   }
 
   private void OnDestroy() {

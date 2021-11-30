@@ -89,10 +89,12 @@ public abstract class EnemyHealth : Health {
   }
 
   protected virtual IEnumerator Yolked() {
+    YolkManager yolkManager = GameObject.FindGameObjectWithTag("Player")?.GetComponent<YolkManager>();
+
     for (int i = 0; i < StatusConfig.SalmonellaTicks; i++) {
       yield return new WaitForSeconds(StatusConfig.SalmonellaTimeBetweenTicks);
 
-      Damage(StatusConfig.SalmonellaDamage);
+      Damage(StatusConfig.SalmonellaDamage * yolkManager.DamageScaling);
     }
   }
 

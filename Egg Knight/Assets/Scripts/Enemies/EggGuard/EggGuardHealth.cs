@@ -5,6 +5,16 @@ using UnityEngine;
 public class EggGuardHealth : EnemyHealth {
   public event EventHandler<EnemyStatusEventArgs> OnEggGuardStatusDamage;
 
+  protected override void Awake() {
+    EggnaHealth.OnEggnaDeath += HandleEggnaDeath;
+
+    base.Awake();
+  }
+
+  private void HandleEggnaDeath(object sender, EventArgs e) {
+    base.Die();
+  }
+
   public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
     OnEggGuardStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
@@ -16,5 +26,9 @@ public class EggGuardHealth : EnemyHealth {
     if (isDamageDealt) OnEggGuardStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
     return isDamageDealt;
+  }
+
+  private void OnDestroy() {
+    EggnaHealth.OnEggnaDeath -= HandleEggnaDeath;
   }
 }

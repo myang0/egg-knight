@@ -12,6 +12,7 @@ public class EnemyIdle : StateMachineBehaviour {
         _eHealth = animator.GetComponent<EnemyHealth>();
         _eBehavior.isWallCollisionOn = true;
         SetAlertIfSurvival(animator);
+        SetAlertIfBoss(animator);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -30,6 +31,15 @@ public class EnemyIdle : StateMachineBehaviour {
         LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         StageManager stageManager = levelManager.GetCurrentStage();
         if (stageManager.GetStageType() == StageType.Survival || stageManager.isAutoAggroOnSpawn) {
+            animator.SetBool("isAlert", true);
+            _eBehavior.SetAlertTrigger();
+        }
+    }
+
+    private void SetAlertIfBoss(Animator animator) {
+        LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+        StageManager stageManager = levelManager.GetCurrentStage();
+        if (stageManager.GetStageType() == StageType.Boss) {
             animator.SetBool("isAlert", true);
             _eBehavior.SetAlertTrigger();
         }

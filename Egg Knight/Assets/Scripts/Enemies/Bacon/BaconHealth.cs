@@ -7,6 +7,16 @@ public class BaconHealth : EnemyHealth {
 
   public event EventHandler<EnemyStatusEventArgs> OnBaconStatusDamage;
 
+  protected override void Awake() {
+    EggnaHealth.OnEggnaDeath += HandleEggnaDeath;
+
+    base.Awake();
+  }
+
+  private void HandleEggnaDeath(object sender, EventArgs e) {
+    base.Die();
+  }
+
   public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
     OnBaconStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
 
@@ -23,5 +33,9 @@ public class BaconHealth : EnemyHealth {
   protected override void Die() {
     OnBaconDeath?.Invoke(this, EventArgs.Empty);
     base.Die();
+  }
+
+  private void OnDestroy() {
+    EggnaHealth.OnEggnaDeath -= HandleEggnaDeath;
   }
 }

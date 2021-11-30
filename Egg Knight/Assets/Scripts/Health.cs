@@ -40,6 +40,11 @@ public abstract class Health : MonoBehaviour {
       amount = 0;
     }
 
+    if (_armourValue == 0) {
+      Debug.LogError("Armour value was zero");
+      _armourValue = 1.0f;
+    }
+
     amount *= (1.0f / _armourValue);
     _currentHealth -= amount;
 

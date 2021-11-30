@@ -8,7 +8,11 @@ public class EggnaHealth : EnemyHealth {
   public static event EventHandler<HealthChangeEventArgs> OnEggnaDamage;
   public static event EventHandler OnEggnaDeath;
 
+  public static event EventHandler OnEggnaBelowHalfHealth;
+
   private Animator _anim;
+
+  private bool _aboveHalfHealth = true;
 
   protected override void Awake() {
     _anim = GetComponent<Animator>();
@@ -23,6 +27,12 @@ public class EggnaHealth : EnemyHealth {
 
     OnEggnaDamage?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     base.Damage(amount);
+
+    if (_aboveHalfHealth && CurrentHealthPercentage() <= 0.5f) {
+      OnEggnaBelowHalfHealth?.Invoke(this, EventArgs.Empty);
+
+      _aboveHalfHealth = false;
+    }
   }
 
   protected override void Die() {
