@@ -44,21 +44,13 @@ public class EggArcherBehaviour : EnemyBehaviour {
 
   public bool HasClearShot() {
     Vector2 vectorToPlayer = VectorHelper.GetVectorToPoint(transform.position, _playerTransform.position);
-    RaycastHit2D firstHit = Physics2D.Raycast(transform.position, vectorToPlayer);
+    RaycastHit2D firstHit = Physics2D.Raycast(
+      transform.position,
+      vectorToPlayer,
+      (1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("Obstacle"))
+    );
 
-    if (firstHit.transform != null) {
-      int layer = firstHit.transform.gameObject.layer;
-
-      if (layer == 3) {
-        return true;
-      } else if (layer == 11) {
-        return false;
-      } else {
-        return true;
-      }
-    } else {
-      return false;
-    }
+    return firstHit.transform.gameObject.CompareTag("Player");
   }
 
   protected override void OnCollisionEnter2D(Collision2D other) {

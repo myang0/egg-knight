@@ -6,17 +6,39 @@ public class EggArcherBow : MonoBehaviour {
 
   private SpriteRenderer _bowSr;
   private Animator _bowAnim;
+  private LineRenderer _lr;
 
   private Transform _playerTransform;
 
   private void Awake() {
     _bowSr = GetComponent<SpriteRenderer>();
     _bowAnim = GetComponent<Animator>();
+    _lr = GetComponent<LineRenderer>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
+  private void Update() {
+    if (_lr.enabled) {
+      Vector3 bowPos = transform.position;
+      Vector3 playerPos = _playerTransform.position;
+
+      _lr.SetPositions(new Vector3[] { transform.position, _playerTransform.position });
+
+      RaycastHit2D firstHit = Physics2D.Raycast(
+        bowPos,
+        transform.up,
+        (1 << LayerMask.NameToLayer("Player")) | (1 << LayerMask.NameToLayer("Obstacle"))
+      );
+
+      Vector3 endPos = firstHit.transform.gameObject.CompareTag("Player") ? playerPos : (Vector3)firstHit.point;
+
+      _lr.SetPositions(new Vector3[] { bowPos, endPos });
+    } 
+  }
+
   public void StartAttack() {
+    _lr.enabled = true;
     _bowSr.enabled = true;
     _bowAnim.SetBool("IsShooting", true);
   }
@@ -35,6 +57,7 @@ public class EggArcherBow : MonoBehaviour {
   }
 
   public void EndAttack() {
+    _lr.enabled = false;
     _bowSr.enabled = false;
     _bowAnim.SetBool("IsShooting", false);
   }

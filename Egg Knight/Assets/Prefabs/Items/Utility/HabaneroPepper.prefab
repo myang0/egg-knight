@@ -125,4 +125,4 @@ MonoBehaviour:
   DisplayName: Habanero Pepper
   Description: Even more movement speed
   InventoryKey: 28
-  _speedMultiplier: 1.5
+  _speedMultiplier: 1.4

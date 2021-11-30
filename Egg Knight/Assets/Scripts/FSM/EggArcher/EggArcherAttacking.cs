@@ -21,7 +21,12 @@ public class EggArcherAttacking : StateMachineBehaviour
         if (_eaBehaviour.isStunned) animator.SetBool("isStunned", true);
         
         if (_eaBehaviour.HasClearShot() == false) {
+            Debug.Log("hi");
             animator.SetBool("IsAttacking", false);
         }
+    }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        _bow.EndAttack();
     }
 }

@@ -65,14 +65,12 @@ public class Kernel : MonoBehaviour {
       Disarm();
     }
 
-    if (col.gameObject.layer == LayerMask.NameToLayer("Obstacle") && _collider.enabled == true) {
+    if (col.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
       Destroy(gameObject);
     }
   }
 
   private void Arm() {
-    _collider.enabled = true;
-
     _isArmed = true;
 
     StartCoroutine(ArmedColour());

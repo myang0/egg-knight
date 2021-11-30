@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5512330417173549834}
   - component: {fileID: 5512330417173549835}
   - component: {fileID: 5512330417173549836}
+  - component: {fileID: 4439597122168774830}
   m_Layer: 8
   m_Name: LadyEggna
   m_TagString: Enemy
@@ -208,7 +209,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -414,6 +415,26 @@ MonoBehaviour:
     type: 3}
   _reappearPoint: {fileID: 603194656}
   _swooshObject: {fileID: 7646004250534370257, guid: 65f51a3042d021d4bbb37d78c0ac03f4,
+    type: 3}
+--- !u!114 &4439597122168774830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512330417173549887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84446334f34d5fb4098731853ae08d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies:
+  - {fileID: 4090832051791540568, guid: 7f8038ca233fd7e4fb065299e2657547, type: 3}
+  - {fileID: 5874542446636965860, guid: c61340fc66926224d8059dbd8a799a0c, type: 3}
+  - {fileID: 4220699991525276302, guid: 4194a70bb943c6f438ef18aa83eff2d7, type: 3}
+  - {fileID: 7641279364623583979, guid: 7c7424ebf40827c49aede8e87dde25d0, type: 3}
+  _minDistanceToPlayer: 10
+  _smokeParticles: {fileID: 3076674538101461482, guid: 854db0e30aa578b438ce76df1477b0d8,
     type: 3}
 --- !u!1 &5512330417935735963
 GameObject:

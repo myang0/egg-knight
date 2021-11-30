@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class YolkManager : MonoBehaviour {
+  [SerializeField] private Transform _shootPoint;
   [SerializeField] private GameObject _yolkPrefab;
 
   [SerializeField] private float _yolkCooldown = 1.0f;
@@ -21,7 +22,13 @@ public class YolkManager : MonoBehaviour {
   private float _regenPerSecond;
 
   private float _speedScaling = 1.0f;
+
   private float _damageScaling = 1.0f;
+  public float DamageScaling {
+    get {
+      return _damageScaling;
+    }
+  }
 
   private YolkUpgradeManager _upgrades;
   private PlayerCursedInventory _cursedInventory;
@@ -90,7 +97,7 @@ public class YolkManager : MonoBehaviour {
   }
 
   private void SpawnYolk(Vector2 direction, float angle) {
-    GameObject yolkObject = Instantiate(_yolkPrefab, transform.position, Quaternion.identity);
+    GameObject yolkObject = Instantiate(_yolkPrefab, _shootPoint.position, Quaternion.identity);
     YolkProjectile yolk = yolkObject.GetComponent<YolkProjectile>();
 
     yolk.MultiplySpeed(_speedScaling);
@@ -139,7 +146,6 @@ public class YolkManager : MonoBehaviour {
 
   public void MultiplyByDamageScaling(float multiplier) {
     _damageScaling *= multiplier;
-    StatusConfig.SalmonellaDamage *= multiplier;
   }
 
   private void OnDestroy() {
