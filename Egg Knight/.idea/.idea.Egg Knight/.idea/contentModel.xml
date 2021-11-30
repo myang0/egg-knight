@@ -1245,6 +1245,7 @@
         <e p="LockedWallBehavior.cs" t="Include" />
         <e p="LockedWallHealth.cs" t="Include" />
         <e p="MinimapCamera.cs" t="Include" />
+        <e p="MrMusic.cs" t="Include" />
         <e p="PickupBase.cs" t="Include" />
         <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">
@@ -1339,6 +1340,7 @@
             </e>
             <e p="Sausage" t="Include">
               <e p="Attacks" t="Include">
+                <e p="Crosshair.cs" t="Include" />
                 <e p="SausageBombAttack.cs" t="Include" />
                 <e p="SausageBullet.cs" t="Include" />
                 <e p="SausagePartyAttack.cs" t="Include" />
@@ -1435,6 +1437,7 @@
               <e p="BroccoliParry.cs" t="Include" />
               <e p="BroccoliSlash.cs" t="Include" />
               <e p="BroccoliSpin.cs" t="Include" />
+              <e p="BroccoliThrow.cs" t="Include" />
               <e p="BroccoliWalk.cs" t="Include" />
             </e>
             <e p="Corn" t="Include">
@@ -1523,6 +1526,7 @@
             </e>
             <e p="Defensive" t="Include">
               <e p="DuckEgg.cs" t="Include" />
+              <e p="HerbalMedicine.cs" t="Include" />
             </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />
@@ -1530,7 +1534,11 @@
             <e p="HealingItem.cs" t="Include" />
             <e p="HeartYolk.cs" t="Include" />
             <e p="ItemManager.cs" t="Include" />
+            <e p="Misc" t="Include">
+              <e p="Spinach.cs" t="Include" />
+            </e>
             <e p="Offensive" t="Include">
+              <e p="BagOfSugar.cs" t="Include" />
               <e p="EggShardBehaviour.cs" t="Include" />
               <e p="EggShards.cs" t="Include" />
               <e p="GoldChainNecklace.cs" t="Include" />
@@ -1538,6 +1546,8 @@
             <e p="UnlockWeaponItem.cs" t="Include" />
             <e p="Upgrades" t="Include">
               <e p="Yolk" t="Include">
+                <e p="CorrosiveCore.cs" t="Include" />
+                <e p="ExplosiveEmbryo.cs" t="Include" />
                 <e p="GoldenYolk.cs" t="Include" />
                 <e p="LeghornShot.cs" t="Include" />
                 <e p="RocketPoweredYolk.cs" t="Include" />
@@ -1546,7 +1556,7 @@
               </e>
             </e>
             <e p="Utility" t="Include">
-              <e p="HotChiliPepper.cs" t="Include" />
+              <e p="Pepper.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
@@ -1560,6 +1570,7 @@
                 </e>
                 <e p="Knife" t="Include">
                   <e p="ButterKnife.cs" t="Include" />
+                  <e p="KnifeBeam.cs" t="Include" />
                 </e>
                 <e p="PlayerWeapons.cs" t="Include" />
                 <e p="Spoon" t="Include">
@@ -1568,6 +1579,7 @@
                 <e p="WeaponDisplayPoint.cs" t="Include" />
               </e>
               <e p="Yolk" t="Include">
+                <e p="YolkExplosion.cs" t="Include" />
                 <e p="YolkManager.cs" t="Include" />
                 <e p="YolkProjectile.cs" t="Include" />
                 <e p="YolkShard.cs" t="Include" />

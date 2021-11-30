@@ -35,8 +35,12 @@ namespace Stage
         public GameObject level1Grid;
         public GameObject level2Grid;
         public GameObject level3Grid;
+
+        public EventHandler OnStageStart;
         
         private const int ShopsPerLevel = 3;
+        private int _level2MaxStages;
+        private int _level3MaxStages;
         private GameObject _player;
 
         public static event EventHandler OnDialogueStart;
@@ -53,20 +57,25 @@ namespace Stage
 
         void Start() {
             StartAsserts();
-
+            
             PlayerHealth.OnHealthDecrease += PlayerTookDamage;
             _player = GameObject.FindGameObjectWithTag("Player");
             restRate = 0;
             sirrachaRate = 0;
             shopRate = 0;
             UpdatePathing();
+            _level2MaxStages = level2Stages.Count;
+            _level3MaxStages = level3Stages.Count;
         }
 
         public void NextStage(StageType stageType) {
             StageManager stage;
             if (level == 2 && stageType != StageType.Spawn && !level2Grid.activeInHierarchy) level2Grid.SetActive(true);
             if (level == 3 && stageType != StageType.Spawn && !level3Grid.activeInHierarchy) level3Grid.SetActive(true);
-
+            
+            if (level == 2 && level2Stages.Count != _level2MaxStages) OnStageStart?.Invoke(this, EventArgs.Empty);
+            if (level == 3 && level3Stages.Count != _level3MaxStages) OnStageStart?.Invoke(this, EventArgs.Empty);
+            
             switch (stageType) {
                 case StageType.Spawn:
                     isFirstShopVisited = false;

@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/LockedWallBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/37/3a9a44a3/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MinimapCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MrMusic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/d2/e1c17cce/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Broccoli/BroccoliHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardHealth.cs" />
@@ -81,7 +83,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CoinDrop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Raspberry/RaspberryBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialKnife.cs" />
@@ -107,6 +108,8 @@
         <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
       </list>
     </option>
   </component>
@@ -202,6 +205,8 @@
       <workItem from="1637995164870" duration="3012000" />
       <workItem from="1638052328751" duration="11154000" />
       <workItem from="1638073823670" duration="1717000" />
+      <workItem from="1638079949066" duration="51000" />
+      <workItem from="1638234041125" duration="2144000" />
     </task>
     <servers />
   </component>
