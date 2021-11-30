@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Stage;
 using UnityEngine;
 
 public class LockedWallBehavior : EnemyBehaviour
@@ -23,6 +24,10 @@ public class LockedWallBehavior : EnemyBehaviour
 
         Health.OnPreDeath += (sender, args) => {
             StartCoroutine(FadeOutDeath());
+            GameObject.FindGameObjectWithTag("LevelManager")
+                .GetComponent<LevelManager>()
+                .GetCurrentStage()
+                .lockedWalls.Remove(this);
             UpdatePathing();
         };
         
