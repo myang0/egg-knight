@@ -199,7 +199,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
 
   public void StopMoving() {
-    rb.velocity = Vector2.zero;
+    if (rb != null) rb.velocity = Vector2.zero;
   }
 
   public void Wander() {
