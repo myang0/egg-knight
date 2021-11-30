@@ -1246,6 +1246,8 @@
         <e p="LockedWallHealth.cs" t="Include" />
         <e p="MinimapCamera.cs" t="Include" />
         <e p="MrMusic.cs" t="Include" />
+        <e p="OptionsButton.cs" t="Include" />
+        <e p="OptionsDoneButton.cs" t="Include" />
         <e p="PickupBase.cs" t="Include" />
         <e p="PlayerFootprint.cs" t="Include" />
         <e p="Scripts" t="Include">
@@ -1636,6 +1638,7 @@
           </e>
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>
+        <e p="SliderValueDisplay.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
