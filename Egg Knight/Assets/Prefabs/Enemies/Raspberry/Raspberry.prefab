@@ -262,11 +262,12 @@ MonoBehaviour:
   alertRange: 4
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
-  isWandering: 0
-  isWallCollisionOn: 0
+  isWandering: 1
+  isWallCollisionOn: 1
   alertAnimator: {fileID: 804755781}
   isDead: 0
   _projectilePrefab: {fileID: 6034735207784910516, guid: ed5a11cde5694bb498ad5e2e13af6cd1,

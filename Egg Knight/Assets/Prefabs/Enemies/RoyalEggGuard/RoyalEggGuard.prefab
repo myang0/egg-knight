@@ -195,11 +195,12 @@ MonoBehaviour:
   alertRange: 4
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
-  isWandering: 0
-  isWallCollisionOn: 0
+  isWandering: 1
+  isWallCollisionOn: 1
   alertAnimator: {fileID: 5874542447871007292}
   isDead: 0
   _minAlertTime: 3
