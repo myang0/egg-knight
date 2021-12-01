@@ -24,7 +24,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Locked Wall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +211,7 @@
       <workItem from="1638234041125" duration="2145000" />
       <workItem from="1638238880440" duration="1349000" />
       <workItem from="1638260113215" duration="3864000" />
-      <workItem from="1638313301154" duration="3790000" />
+      <workItem from="1638313301154" duration="4403000" />
     </task>
     <servers />
   </component>
