@@ -93,7 +93,11 @@ public class PlayerHealth : Health {
       return;
     }
 
-    amount = amount - (0.1f * _inventory.GetItemQuantity(Item.BrandNewHelmet) * amount);
+    if (_armourValue == 0) {
+      _armourValue = 1;
+    }
+
+    amount /= _armourValue;
     _currentHealth -= amount;
 
     SpawnChangeIndicator(amount, Color.red);
@@ -187,6 +191,10 @@ public class PlayerHealth : Health {
   private void OnDestroy() {
     PlayerMovement.OnRollBegin -= HandleRoll;
     PlayerMovement.OnRollEnd -= HandleRollEnd;
+  }
+
+  public void ScaleArmour(float scale) {
+    _armourValue *= scale;
   }
 
   public void ScaleHealMultiplier(float scale) {

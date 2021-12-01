@@ -84,7 +84,7 @@ public class SmokeBomb : MonoBehaviour {
     Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
     
     Vector3 target = new Vector3(playerPos.x + Random.Range(-4f, 4f), playerPos.y + Random.Range(-4f, 4f), playerPos.z);
-    transform.position = new Vector3(target.x, target.y + 50, target.z);
+    transform.position = new Vector3(target.x, target.y + 25, target.z);
 
     _targetY = target.y;
 
