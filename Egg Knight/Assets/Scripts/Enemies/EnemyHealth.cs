@@ -137,8 +137,22 @@ public abstract class EnemyHealth : Health {
       return false;
     }
     else {
+      PlayTypeSound(type);
+
       Damage(amount + bonusDamage);
       return true;
+    }
+  }
+
+  private void PlayTypeSound(DamageType type) {
+    if (type == DamageType.Slash) {
+      SoundManager.Instance.PlaySound(Sound.Slash);
+    } else if (type == DamageType.Pierce) {
+      SoundManager.Instance.PlaySound(Sound.Pierce);
+    } else if (type == DamageType.Blunt) {
+      SoundManager.Instance.PlaySound(Sound.Blunt);
+    } else {
+
     }
   }
 

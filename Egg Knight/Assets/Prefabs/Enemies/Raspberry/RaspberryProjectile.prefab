@@ -137,3 +137,6 @@ MonoBehaviour:
   _lifetime: 1.5
   _damage: 3
   _speed: 12.5
+  _clip: {fileID: 8300000, guid: 9864f310a1a9406438980cdd9186583f, type: 3}
+  _singleTimeSound: {fileID: 5400128494713636506, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}

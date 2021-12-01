@@ -7,7 +7,11 @@ public class TwoProngedFork : BasePlayerWeapon {
 
   [SerializeField] private LayerMask _obstacleLayer;
 
+  [SerializeField] private AudioClip _useClip;
+
   public override void EnableHitbox() {
+    PlaySound(_useClip);
+
     float hitboxAngle = transform.eulerAngles.z;
 
     Collider2D[] enemiesInRange = Physics2D.OverlapBoxAll(
@@ -37,6 +41,14 @@ public class TwoProngedFork : BasePlayerWeapon {
 
     DamageEnemies(enemiesHit);
     CollectCoins(coinsInRange);
+  }
+
+  protected override void PlaySound(AudioClip clip) {
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+
+    sound.ScalePitch(1.1f);
+    sound.LoadClipAndPlay(clip);
   }
 
   protected override void OnDrawGizmosSelected() {

@@ -133,7 +133,7 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void AttackControls() {
-		if (Input.GetMouseButtonDown((int)MouseInput.LeftClick)) {
+		if (Input.GetMouseButton((int)MouseInput.LeftClick)) {
 			OnLeftClick?.Invoke(this, EventArgs.Empty);
 		}
 	}

@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 8208799723587694136}
   - component: {fileID: 3892726908943795697}
   - component: {fileID: 86720331422931750}
+  - component: {fileID: 454420521}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -386,6 +387,9 @@ MonoBehaviour:
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
     type: 3}
   _iFramesDuration: 0.5
+  _healClip: {fileID: 8300000, guid: 64f32c2d6d706874c8351986d8fb9a94, type: 3}
+  _damageClip: {fileID: 0}
+  _ninjaClip: {fileID: 0}
   _ninjaParticles: {fileID: 7179511237543573231, guid: 5e690635a6fb2e540910524a4d3bc509,
     type: 3}
   _ninjaInvincibilityTime: 1
@@ -476,6 +480,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e84f6e517604ce4c879c0274354a36d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &454420521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278995262712370207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fefa7e9ab1a7a4a91ded05d641df19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!1 &4914012378924738977
 GameObject:
   m_ObjectHideFlags: 0

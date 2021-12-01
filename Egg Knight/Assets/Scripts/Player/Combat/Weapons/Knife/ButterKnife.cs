@@ -6,6 +6,8 @@ public class ButterKnife : BasePlayerWeapon {
 
   [SerializeField] private LayerMask _obstacleLayer;
 
+  [SerializeField] private AudioClip _swingClip;
+
   [SerializeField] private GameObject _knifeBeamPrefab;
   private bool _isKnifeBeam;
   public bool IsKnifeBeam {
@@ -15,6 +17,8 @@ public class ButterKnife : BasePlayerWeapon {
   }
 
   public override void EnableHitbox() {
+    PlaySound(_swingClip);
+
     if (_isKnifeBeam) {
       KnifeBeam knifeBeam = Instantiate(_knifeBeamPrefab, _attackPoint.position, Quaternion.identity).GetComponent<KnifeBeam>();
       knifeBeam.SetDirection(transform.up, transform.eulerAngles.z);

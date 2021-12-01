@@ -8,11 +8,8 @@ public class Coin : PickupBase
     [SerializeField] private GameObject _coinParticles;
     [SerializeField] private int _monetaryValue;
 
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     if (other.CompareTag("Player")) {
-    //         PickUp(other.gameObject);
-    //     }
-    // }
+    [SerializeField] private AudioClip _clip;
+    [SerializeField] private SingleTimeSound _singleTimeSound;
 
     public override void PickUp(GameObject playerObject) {
         PlayerWallet wallet = playerObject?.GetComponent<PlayerWallet>();
@@ -22,6 +19,10 @@ public class Coin : PickupBase
         if (_coinParticles != null) {
             Instantiate(_coinParticles, transform.position, Quaternion.identity);
         }
+
+        Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+            .GetComponent<SingleTimeSound>()
+            .LoadClipAndPlay(_clip);
 
         Destroy(gameObject);
     }

@@ -10,6 +10,9 @@ public class Spoon : BasePlayerWeapon {
 
   [SerializeField] private LayerMask _obstacleLayer;
 
+  [SerializeField] private AudioClip _swingClip;
+  private bool _soundPlayed = false;
+
   private List<Collider2D> _hitEnemies;
 
   protected override void Awake() {
@@ -19,6 +22,8 @@ public class Spoon : BasePlayerWeapon {
   }
 
   public override void EnableHitbox() {
+    PlaySound(_swingClip);
+
     float hitboxAngle = transform.eulerAngles.z;
 
     Collider2D[] enemiesInRange = Physics2D.OverlapBoxAll(
@@ -60,6 +65,19 @@ public class Spoon : BasePlayerWeapon {
 
     DamageEnemies(notHitEnemies.ToArray());
     CollectCoins(coinsInRange);
+  }
+
+  protected override void PlaySound(AudioClip clip) {
+    if (_soundPlayed == false) {
+      SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+        .GetComponent<SingleTimeSound>();
+
+      sound.ScaleVolume(2f);
+      sound.ScalePitch(0.6f);
+      sound.LoadClipAndPlay(clip);
+
+      _soundPlayed = true;
+    }
   }
 
   protected override void OnDrawGizmosSelected() {

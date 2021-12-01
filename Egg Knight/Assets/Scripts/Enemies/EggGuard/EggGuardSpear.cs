@@ -7,7 +7,11 @@ public class EggGuardSpear : BaseEnemyWeapon {
 
   [SerializeField] private LayerMask _playerLayer;
 
+  [SerializeField] private AudioClip _spearClip;
+
   public override void EnableHitbox() {
+    PlaySound(_spearClip);
+
     float hitboxAngle = transform.eulerAngles.z;
 
     Collider2D[] playersInRange = Physics2D.OverlapBoxAll(

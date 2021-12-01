@@ -139,11 +139,13 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   private void HandleStatus(StatusCondition status) {
     switch (status) {
       case StatusCondition.Yolked: {
+        SoundManager.Instance.PlaySound(Sound.Yolked);
         OnYolked?.Invoke(this, EventArgs.Empty);
         StartCoroutine(Yolked());
         break;
       }
       case StatusCondition.Ignited: {
+        SoundManager.Instance.PlaySound(Sound.Ignited);
         OnIgnited?.Invoke(this, EventArgs.Empty);
         break;
       }
