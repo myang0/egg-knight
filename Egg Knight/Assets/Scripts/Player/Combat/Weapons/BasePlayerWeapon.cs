@@ -24,6 +24,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   [SerializeField] protected LayerMask _enemyLayer;
   [SerializeField] protected LayerMask _coinLayer;
 
+  [SerializeField] protected GameObject _singleTimeSound;
+
   public static event EventHandler OnWeaponAnimationEnd;
 
   protected virtual void Awake() {
@@ -169,6 +171,12 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     Destroy(gameObject);
 
     OnWeaponAnimationEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  protected virtual void PlaySound(AudioClip clip) {
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(clip);
   }
 
   protected abstract void OnDrawGizmosSelected();

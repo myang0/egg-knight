@@ -7,6 +7,8 @@ public abstract class BaseEnemyWeapon : MonoBehaviour {
 
   [SerializeField] protected float _damageAmount;
 
+  [SerializeField] protected GameObject _singleTimeSound;
+
   protected virtual void Awake() {
     _sr = gameObject.GetComponent<SpriteRenderer>();
 
@@ -22,6 +24,12 @@ public abstract class BaseEnemyWeapon : MonoBehaviour {
     if (playerHealth != null) {
       playerHealth.Damage(_damageAmount);
     }
+  }
+
+  protected virtual void PlaySound(AudioClip clip) {
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(clip);
   }
 
   public abstract void EnableHitbox();

@@ -124,11 +124,14 @@ MonoBehaviour:
   _coinLayer:
     serializedVersion: 2
     m_Bits: 65536
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
   _attackPoint: {fileID: 5810657503478167525}
   _attackRange: 1.75
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _swingClip: {fileID: 8300000, guid: 99a1619b672c8204e939731170b91741, type: 3}
   _knifeBeamPrefab: {fileID: 2039182256207528140, guid: 71698fa4dc30c54409d713b7866b328b,
     type: 3}
 --- !u!1 &8745055936194079937

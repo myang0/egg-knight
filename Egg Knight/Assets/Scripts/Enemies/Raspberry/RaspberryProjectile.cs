@@ -2,6 +2,19 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class RaspberryProjectile : Projectile {
+  [SerializeField] private AudioClip _clip;
+  [SerializeField] private SingleTimeSound _singleTimeSound;
+
+  protected override void Awake() {
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+    
+    sound.ScaleVolume(2f);
+    sound.LoadClipAndPlay(_clip);
+
+    base.Awake();
+  }
+
   protected override void Despawn() {
     Destroy(gameObject);
   }

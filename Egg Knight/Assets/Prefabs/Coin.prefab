@@ -100,6 +100,9 @@ MonoBehaviour:
   _coinParticles: {fileID: 1199253095449819781, guid: 8331a2f6dacb8694ab783c6e3bce52bf,
     type: 3}
   _monetaryValue: 1
+  _clip: {fileID: 8300000, guid: 145e0d85ea00c9540904166fcce586f7, type: 3}
+  _singleTimeSound: {fileID: 5400128494713636506, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!61 &99262485123975056
 BoxCollider2D:
   m_ObjectHideFlags: 0

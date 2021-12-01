@@ -154,9 +154,12 @@ MonoBehaviour:
   _coinLayer:
     serializedVersion: 2
     m_Bits: 65536
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
   _attackPoint: {fileID: 8576726790495408133}
   _attackWidth: 6
   _attackHeight: 4
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _swingClip: {fileID: 8300000, guid: c1be9d1dedac29f4da80b186c001d456, type: 3}

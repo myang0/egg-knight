@@ -12,6 +12,11 @@ public class PlayerHealth : Health {
 
   private PlayerInventory _inventory;
   private PlayerCursedInventory _cursedInventory;
+  private PlayerSounds _sounds;
+
+  [SerializeField] private AudioClip _healClip;
+  [SerializeField] private AudioClip _damageClip;
+  [SerializeField] private AudioClip _ninjaClip;
 
   private float _healMultiplier = 1.0f;
 
@@ -30,8 +35,9 @@ public class PlayerHealth : Health {
   public static event EventHandler OnNinjaIFramesDisabled;
 
   protected override void Awake() {
-    _inventory = gameObject.GetComponent<PlayerInventory>();
-    _cursedInventory = gameObject.GetComponent<PlayerCursedInventory>();
+    _inventory = GetComponent<PlayerInventory>();
+    _cursedInventory = GetComponent<PlayerCursedInventory>();
+    _sounds = GetComponent<PlayerSounds>();
 
     PlayerMovement.OnRollBegin += HandleRoll;
     PlayerMovement.OnRollEnd += HandleRollEnd;
@@ -155,6 +161,8 @@ public class PlayerHealth : Health {
     amount *= _healMultiplier;
 
     base.Heal(amount);
+
+    _sounds.PlayClip(_healClip, 2f);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));

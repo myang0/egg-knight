@@ -21,7 +21,7 @@ public abstract class Health : MonoBehaviour {
   }
 
   protected float _initialArmourValue = 1.0f;
-  protected float _armourValue;
+  protected float _armourValue = 1.0f;
 
   [SerializeField] protected GameObject _changeIndicatorPrefab;
 
