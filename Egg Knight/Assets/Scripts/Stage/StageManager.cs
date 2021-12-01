@@ -59,9 +59,9 @@ namespace Stage {
 
         private float _hardEnemyMultiplier = 1.25f;
         private float _easyEnemyMultiplier = 1f;
-        private float _survivalEnemyMultiplier = 1f;
+        private float _survivalEnemyMultiplier = 0.65f;
 
-        private bool _initialSurvivalEnemiesSpawned;
+        public bool _initialSurvivalEnemiesSpawned;
 
         public enum KeyStageStatus {
             NotKeyStage, KeyNotFound, KeyFound
@@ -238,8 +238,9 @@ namespace Stage {
                 if (!_initialSurvivalEnemiesSpawned) {
                     if (enemyCount < numEnemiesMax) {
                         RegularEnemySpawn();
-                    } else if (enemyCount == numEnemiesMax) {
-                        _initialSurvivalEnemiesSpawned = true;
+                        if (enemyCount == numEnemiesMax) {
+                            _initialSurvivalEnemiesSpawned = true;
+                        }
                     }
                 }
                 else {
@@ -303,7 +304,8 @@ namespace Stage {
 
         private IEnumerator DelayedEnemySpawn() {
             enemyCount++;
-            yield return new WaitForSeconds(2f);
+            float randomDelay = Random.Range(2.5f, 4f);
+            yield return new WaitForSeconds(randomDelay);
             int randomSpawnIndex = Random.Range(1, _eSpawnpoints.Count);
             EnemySpawnpoint spawn = _eSpawnpoints[randomSpawnIndex];
             parachuteList.Add(spawn.SpawnEnemy());

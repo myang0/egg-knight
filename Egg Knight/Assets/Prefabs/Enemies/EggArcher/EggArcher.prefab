@@ -558,11 +558,12 @@ MonoBehaviour:
   alertRange: 4
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
-  isWandering: 0
-  isWallCollisionOn: 0
+  isWandering: 1
+  isWallCollisionOn: 1
   alertAnimator: {fileID: 4220699990794501542}
   isDead: 0
   _bow: {fileID: 2058402039}

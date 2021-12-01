@@ -100,7 +100,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
     transform.position = new Vector3(newPos.x, newPos.y, ZcoordinateConsts.Interactable);
     sr.sortingLayerName = "Object";
 
-    while (sr.color.a > 0) {
+    while (sr.color.a > 0 || sr != null) {
       if (!disableDeathRotation) transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 7.5f);
       var color = sr.color;
       float newAlpha = color.a -= 0.001f;
@@ -239,9 +239,6 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   }
   
   public virtual bool GetIsAttackReady() {
-    if (GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown && !isInAttackAnimation) {
-      Debug.Log((GetDistanceToPlayer() < maxDistanceToAttack) + ":" + isAttackOffCooldown + ":" + isInAttackAnimation);
-    }
     return GetDistanceToPlayer() < maxDistanceToAttack && isAttackOffCooldown && !isInAttackAnimation;
   }
 

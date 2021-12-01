@@ -1309,6 +1309,7 @@
               </e>
               <e p="EggnaActivator.cs" t="Include" />
               <e p="EggnaBehaviour.cs" t="Include" />
+              <e p="EggnaEnemySpawner.cs" t="Include" />
               <e p="EggnaHealth.cs" t="Include" />
               <e p="EggnaStateManager.cs" t="Include" />
             </e>
@@ -1585,6 +1586,7 @@
                 <e p="YolkManager.cs" t="Include" />
                 <e p="YolkProjectile.cs" t="Include" />
                 <e p="YolkShard.cs" t="Include" />
+                <e p="YolkShootPivot.cs" t="Include" />
                 <e p="YolkUpgradeManager.cs" t="Include" />
               </e>
             </e>
