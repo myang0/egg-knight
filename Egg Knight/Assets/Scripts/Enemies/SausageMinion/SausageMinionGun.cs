@@ -18,6 +18,9 @@ public class SausageMinionGun : MonoBehaviour {
 
   private Transform _playerTransform;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _shootClip;
+
   [SerializeField] private MinionRevolverSprite _revolverSprite;
 
   private void Awake() {
@@ -47,6 +50,10 @@ public class SausageMinionGun : MonoBehaviour {
       yield return new WaitForSeconds(_timeBetweenShots);
 
       if (_isAlive) {
+        Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+          .GetComponent<SingleTimeSound>()
+          .LoadClipAndPlay(_shootClip);
+
         GameObject bulletObject = Instantiate(_bulletObject, _shootPoint.position, Quaternion.identity);
         SausageBullet bullet = bulletObject.GetComponent<SausageBullet>();
 

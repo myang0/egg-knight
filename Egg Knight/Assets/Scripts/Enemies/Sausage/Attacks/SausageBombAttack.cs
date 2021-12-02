@@ -9,11 +9,15 @@ public class SausageBombAttack : MonoBehaviour {
   [SerializeField] private GameObject _bombObject;
 
   private Animator _anim;
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _useClip;
 
   private Transform _playerTransform;
 
   private void Awake() {
     _anim = GetComponent<Animator>();
+    _soundPlayer = GetComponent<SoundPlayer>();
   }
 
   public void StartAttack() {
@@ -27,6 +31,8 @@ public class SausageBombAttack : MonoBehaviour {
   }
 
   private void Bomb() {
+    _soundPlayer.PlayClip(_useClip);
+
     for (int i = 0; i < _bombsPerThrow; i++) {
       Instantiate(_bombObject, transform.position, Quaternion.identity);
     }

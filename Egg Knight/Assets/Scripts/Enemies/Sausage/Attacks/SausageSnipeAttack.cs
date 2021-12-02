@@ -13,6 +13,10 @@ public class SausageSnipeAttack : MonoBehaviour {
 
   private Animator _anim;
   private EnemyBehaviour _eBehaviour;
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _aimClip;
+  [SerializeField] private AudioClip _shootClip;
 
   private Transform _playerTransform;
 
@@ -23,6 +27,7 @@ public class SausageSnipeAttack : MonoBehaviour {
   private void Awake() {
     _anim = GetComponent<Animator>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -30,6 +35,7 @@ public class SausageSnipeAttack : MonoBehaviour {
   public void StartAttack() {
     OnAttackStart?.Invoke(this, EventArgs.Empty);
 
+    _soundPlayer.PlayClip(_aimClip);
     _laserObject.SetActive(true);
 
     StartCoroutine(Snipe());
@@ -37,6 +43,8 @@ public class SausageSnipeAttack : MonoBehaviour {
 
   private IEnumerator Snipe() {
     yield return new WaitForSeconds(_timeBeforeShot);
+
+    _soundPlayer.PlayClip(_shootClip);
 
     OnRifleShot?.Invoke(this, EventArgs.Empty);
 
