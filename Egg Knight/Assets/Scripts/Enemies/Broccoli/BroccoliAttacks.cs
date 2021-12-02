@@ -27,12 +27,23 @@ public class BroccoliAttacks : MonoBehaviour {
 
   [SerializeField] private GameObject _greatSlashPrefab;
 
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _spinClip;
+  [SerializeField] private AudioClip _walkAttackClip;
+
   private Transform _playerTransform;
 
   [SerializeField] private float _contactDamage;
 
   private void Awake() {
+    _soundPlayer = GetComponent<SoundPlayer>();
+
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+  }
+
+  public void PlayWalkSound() {
+    _soundPlayer.PlayClip(_walkAttackClip);
   }
 
   public void LeftWalkAttack() {
@@ -55,6 +66,10 @@ public class BroccoliAttacks : MonoBehaviour {
 
   private bool IsSpriteFlipped() {
     return _playerTransform.position.x < transform.position.x;
+  }
+
+  public void PlaySpinSound() {
+    _soundPlayer.PlayClip(_spinClip, volumeScaling: 4.0f);
   }
 
   public void SpinAttack() {

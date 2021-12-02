@@ -31,7 +31,7 @@ public class SausageBombAttack : MonoBehaviour {
   }
 
   private void Bomb() {
-    _soundPlayer.PlayClip(_useClip);
+    _soundPlayer.PlayClip(_useClip, volumeScaling: 2f);
 
     for (int i = 0; i < _bombsPerThrow; i++) {
       Instantiate(_bombObject, transform.position, Quaternion.identity);

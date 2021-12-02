@@ -9,11 +9,33 @@ public class BroccoliHealth : EnemyHealth {
   public static event EventHandler OnBroccoliDeath;
 
   private Animator _anim;
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _parryStartClip;
+  [SerializeField] private AudioClip _parryHitClip;
+
+  private bool _parrySoundPlayed = false;
 
   protected override void Awake() {
     _anim = GetComponent<Animator>();
+    _soundPlayer = GetComponent<SoundPlayer>();
+
+    BroccoliStateManager bStateManager = GetComponent<BroccoliStateManager>();
+    bStateManager.OnIdleEnd += HandleIdleEnd;
 
     base.Awake();
+  }
+
+  private void HandleIdleEnd(object sender, EventArgs e) {
+    _parrySoundPlayed = false;
+  }
+
+  public void ParryStartSound() {
+    if (_parrySoundPlayed == false) {
+      _soundPlayer.PlayClip(_parryStartClip);
+
+      _parrySoundPlayed = true;
+    }
   }
 
   public override void Damage(float amount) {
@@ -22,6 +44,8 @@ public class BroccoliHealth : EnemyHealth {
     }
 
     if (_anim.GetBool("IsParrying")) {
+      _soundPlayer.PlayClip(_parryHitClip);
+
       _anim.SetBool("HitDuringParry", true);
       
       return;

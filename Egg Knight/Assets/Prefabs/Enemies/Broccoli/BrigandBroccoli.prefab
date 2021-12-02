@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1111544623}
   - component: {fileID: 1513451022818137773}
   - component: {fileID: 2041266772457052460}
+  - component: {fileID: 1893359990}
   m_Layer: 8
   m_Name: BrigandBroccoli
   m_TagString: Enemy
@@ -353,6 +354,8 @@ MonoBehaviour:
   _immuneTo2: 3
   _healingYolkPrefab: {fileID: 4787203447430769849, guid: 26cfa568e37ae0d4497679ffb812d2c1,
     type: 3}
+  _parryStartClip: {fileID: 8300000, guid: 99d13819b113a43498bd2506f50f2f6c, type: 3}
+  _parryHitClip: {fileID: 8300000, guid: 8b2fe3cf3d47e2143a2a15c2d50825cb, type: 3}
 --- !u!114 &7661167815159373112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +379,7 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
@@ -498,6 +502,8 @@ MonoBehaviour:
     type: 3}
   _greatSlashPrefab: {fileID: 6921622868308280127, guid: 95802ae86144b8e41937a21f56917d30,
     type: 3}
+  _spinClip: {fileID: 8300000, guid: f348156a3d138ac4c8b397292c8a59bb, type: 3}
+  _walkAttackClip: {fileID: 8300000, guid: a08de540789bb44439c758fa9b68ea59, type: 3}
   _contactDamage: 7
 --- !u!114 &1111544623
 MonoBehaviour:
@@ -560,6 +566,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 35, y: 15}
   m_EdgeRadius: 0
+--- !u!114 &1893359990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661167815159370439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ae9b1404c7534287f5fa0eaa40faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!1 &7697024850751781804
 GameObject:
   m_ObjectHideFlags: 0
