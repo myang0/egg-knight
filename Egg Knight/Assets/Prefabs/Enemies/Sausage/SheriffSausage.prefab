@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 2902249381951379227}
   - component: {fileID: 2902249381951379224}
   - component: {fileID: 2902249381951379225}
+  - component: {fileID: 1963139670}
   m_Layer: 8
   m_Name: SheriffSausage
   m_TagString: Enemy
@@ -756,6 +757,7 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
@@ -786,6 +788,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 878377767}
   _bulletObject: {fileID: 5058814349942901952, guid: bf15a8d6524702a418e21b5529772caa,
     type: 3}
+  _shootClip: {fileID: 8300000, guid: a7bfe2a4b3bf81b469af961effce36ce, type: 3}
 --- !u!114 &2902249381951379220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +809,7 @@ MonoBehaviour:
   _bulletObject: {fileID: 7013311646222733351, guid: 61f2c72c09ba69e40971b1ef4dff6554,
     type: 3}
   _shootPoint: {fileID: 943679202}
+  _shootClip: {fileID: 8300000, guid: 38b545bb277133f48b03b13721310e55, type: 3}
 --- !u!114 &2902249381951379226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +827,8 @@ MonoBehaviour:
     type: 3}
   _laserObject: {fileID: 2902249381984808920}
   _shootPoint: {fileID: 1341947931}
+  _aimClip: {fileID: 8300000, guid: 364afcd2a356ef344aa5c42d90557801, type: 3}
+  _shootClip: {fileID: 8300000, guid: 77712ceba2060f94989ba3591fd88fee, type: 3}
 --- !u!114 &2902249381951379227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +845,7 @@ MonoBehaviour:
   _bombsPerThrow: 8
   _bombObject: {fileID: 3567275577212889199, guid: 0fd316803ccc92e43b288b56ad87b3f6,
     type: 3}
+  _useClip: {fileID: 8300000, guid: b6274e71b04835a4a961200f7909be35, type: 3}
 --- !u!114 &2902249381951379224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minionObject: {fileID: 6421925850566888560, guid: f771f823fcd024b479d56c8d39295c23,
     type: 3}
+  _partyClip: {fileID: 8300000, guid: dbb00bd4436b2224bbfeabdfbd81ac8d, type: 3}
   _spawnPoints:
   - {fileID: 2902249382851714523}
   - {fileID: 2902249381379789990}
@@ -871,6 +879,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minIdleTime: 1
   _initialIdleTime: 3
+--- !u!114 &1963139670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902249381951379212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ae9b1404c7534287f5fa0eaa40faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!1 &2902249381984808920
 GameObject:
   m_ObjectHideFlags: 0
