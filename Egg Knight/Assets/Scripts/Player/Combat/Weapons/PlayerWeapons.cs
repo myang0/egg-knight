@@ -189,13 +189,17 @@ public class PlayerWeapons : MonoBehaviour {
   }
 
   private IEnumerator KnifeBeamCooldown() {
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(2 * _speed);
 
     _knifeBeamOffCooldown = true;
   }
 
   public void MultiplySpeed(float speedMultiplier) {
     _speed *= speedMultiplier;
+  }
+
+  public void ScaleDamageMultiplier(float scale) {
+    _damageMultiplier *= scale;
   }
 
   public void AddToDamageMultiplier(float additionalDamage) {

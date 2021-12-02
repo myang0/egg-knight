@@ -84,7 +84,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   protected virtual bool HealOnHit() {
     int healRoll = UnityEngine.Random.Range(0, 100);
 
-    if (healRoll < (25 * _inventory.GetItemQuantity(Item.VampireFangs))) {
+    if (healRoll < (10 * _inventory.GetItemQuantity(Item.VampireFangs))) {
       _health.Heal(1);
       return true;
     }

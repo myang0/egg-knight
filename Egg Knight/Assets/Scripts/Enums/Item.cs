@@ -30,5 +30,7 @@ public enum Item {
   HabaneroPepper,
   Spinach,
   HerbalMedicine,
-  MasterKnife
+  MasterKnife,
+  EnergyDrink,
+  Milk
 }

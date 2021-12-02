@@ -37,6 +37,8 @@ public class BossHealthBar : MonoBehaviour {
     _barIcon?.SetActive(true);
     _nameText?.SetActive(true);
 
+    _slider.value = 1f;
+
     _nameText.GetComponent<TextMeshProUGUI>().text = e.name;
   }
 
