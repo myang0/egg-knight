@@ -10,7 +10,13 @@ public class GreatSlash : BaseEnemyWeapon {
 
   [SerializeField] private LayerMask _playerLayer;
 
+  [SerializeField] private AudioClip _clip;
+
   public override void EnableHitbox() {
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(_clip);
+
     List<Collider2D> playersInLeftRange = GetPlayersInAttackRange(_leftAttackPoint).ToList();
     List<Collider2D> playersInRightRange = GetPlayersInAttackRange(_rightAttackPoint).ToList();
 

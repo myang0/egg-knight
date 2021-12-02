@@ -15,6 +15,9 @@ public class BoomerangBlade : MonoBehaviour {
   private Rigidbody2D _rb;
   private Collider2D _collider;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _clip;
+
   private void Awake() {
     _bossTransform = GameObject.Find("BrigandBroccoli")?.transform;
 
@@ -30,6 +33,8 @@ public class BoomerangBlade : MonoBehaviour {
 
     StartCoroutine(DisableCollider());
     StartCoroutine(ReturnToSender());
+    StartCoroutine(PlaySounds());
+    StartCoroutine(DespawnDelay());
   }
 
   private IEnumerator DisableCollider() {
@@ -44,6 +49,22 @@ public class BoomerangBlade : MonoBehaviour {
     yield return new WaitForSeconds(1.0f);
 
     _isReturning = true;
+  }
+
+  private IEnumerator PlaySounds() {
+    while (true) {
+      Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+        .GetComponent<SingleTimeSound>()
+        .LoadClipAndPlay(_clip);
+
+      yield return new WaitForSeconds(0.1f);
+    }
+  }
+
+  private IEnumerator DespawnDelay() {
+    yield return new WaitForSeconds(5);
+
+    Destroy(gameObject);
   }
 
   private void FixedUpdate() {
