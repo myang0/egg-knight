@@ -353,6 +353,7 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 0
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
@@ -478,6 +479,9 @@ MonoBehaviour:
   _shootPoint: {fileID: 1476544316}
   _minTimeBetweenShots: 2
   _maxTimeBetweenShots: 4
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
+  _shootClip: {fileID: 8300000, guid: 38b545bb277133f48b03b13721310e55, type: 3}
   _revolverSprite: {fileID: 496982053}
 --- !u!1001 &5592466785717800857
 PrefabInstance:

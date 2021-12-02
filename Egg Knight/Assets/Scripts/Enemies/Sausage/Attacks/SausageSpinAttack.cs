@@ -25,6 +25,9 @@ public class SausageSpinAttack : MonoBehaviour {
 
   private Animator _anim;
   private EnemyBehaviour _eBehaviour;
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _shootClip;
 
   private void Awake() {
     _bulletVectors1 = new List<Vector2>(new Vector2[_numBulletsPerShot1]);
@@ -43,6 +46,7 @@ public class SausageSpinAttack : MonoBehaviour {
 
     _anim = GetComponent<Animator>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
+    _soundPlayer = GetComponent<SoundPlayer>();
   }
 
   public void StartAttack() {
@@ -56,6 +60,8 @@ public class SausageSpinAttack : MonoBehaviour {
   }
 
   private IEnumerator Spin1() {
+    StartCoroutine(SpinSounds());
+
     for (int i = 0; i < _totalShots1; i++) {
       for (int j = 0; j < _bulletVectors1.Count; j++) {
         Vector2 direction = _bulletVectors1[j];
@@ -99,5 +105,13 @@ public class SausageSpinAttack : MonoBehaviour {
 
     ProjectileHelper.Refrigerate(_eBehaviour.PlayerInventory, bullet);
     bullet.SetDirection(direction, Vector2.SignedAngle(Vector2.up, direction));
+  }
+
+  private IEnumerator SpinSounds() {
+    while (_anim.GetBool("IsSpinning")) {
+      yield return new WaitForSeconds(0.1f);
+
+      _soundPlayer.PlayClip(_shootClip);
+    }
   }
 }

@@ -18,6 +18,9 @@ public class SausageWalkAttack : MonoBehaviour {
   private Animator _anim;
   private Rigidbody2D _rb;
   private EnemyBehaviour _eBehaviour;
+  private SoundPlayer _soundPlayer;
+
+  [SerializeField] private AudioClip _shootClip;
 
   private Transform _playerTransform;
 
@@ -29,6 +32,7 @@ public class SausageWalkAttack : MonoBehaviour {
     _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
@@ -60,6 +64,8 @@ public class SausageWalkAttack : MonoBehaviour {
   }
 
   private void ShootAtPlayer() {
+    _soundPlayer.PlayClip(_shootClip);
+
     Vector2 direction = VectorToPlayer(_shootPoint);
     Vector2 directionWithRecoil = Quaternion.Euler(0, 0, Random.Range(-25f, 25f)) * direction;
 

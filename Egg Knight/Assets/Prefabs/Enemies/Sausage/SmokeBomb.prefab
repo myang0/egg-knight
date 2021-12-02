@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -126,3 +126,6 @@ MonoBehaviour:
     m_Bits: 8
   _explosionRange: 0.75
   _explosionDamage: 10
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
+  _explodeClip: {fileID: 8300000, guid: 59c8647f447c75045be50c4d67eab226, type: 3}

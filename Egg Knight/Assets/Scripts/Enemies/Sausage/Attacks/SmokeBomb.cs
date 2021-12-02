@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SmokeBomb : MonoBehaviour {
+public class SmokeBomb : MonoBehaviour {  
   private Rigidbody2D _rb;
 
   [SerializeField] private GameObject _crosshairObject;
@@ -15,6 +15,9 @@ public class SmokeBomb : MonoBehaviour {
 
   [SerializeField] private float _explosionRange;
   [SerializeField] private float _explosionDamage;
+
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _explodeClip;
 
   private float _rotationSpeed;
   private float _targetY;
@@ -57,6 +60,12 @@ public class SmokeBomb : MonoBehaviour {
 
       pHealth?.Damage(_explosionDamage);
     }
+
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+
+    sound.ScaleVolume(0.8f);
+    sound.LoadClipAndPlay(_explodeClip);
 
     Instantiate(_smokeParticlesObject, transform.position, Quaternion.identity);
     Destroy(gameObject);

@@ -12,7 +12,7 @@ public class PlayerHealth : Health {
 
   private PlayerInventory _inventory;
   private PlayerCursedInventory _cursedInventory;
-  private PlayerSounds _sounds;
+  private SoundPlayer _soundPlayer;
 
   [SerializeField] private AudioClip _healClip;
   [SerializeField] private AudioClip _damageClip;
@@ -37,7 +37,7 @@ public class PlayerHealth : Health {
   protected override void Awake() {
     _inventory = GetComponent<PlayerInventory>();
     _cursedInventory = GetComponent<PlayerCursedInventory>();
-    _sounds = GetComponent<PlayerSounds>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     PlayerMovement.OnRollBegin += HandleRoll;
     PlayerMovement.OnRollEnd += HandleRollEnd;
@@ -166,7 +166,7 @@ public class PlayerHealth : Health {
 
     base.Heal(amount);
 
-    _sounds.PlayClip(_healClip, 2f);
+    _soundPlayer.PlayClip(_healClip, 2f);
 
     OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
     OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));

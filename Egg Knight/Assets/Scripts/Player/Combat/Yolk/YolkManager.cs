@@ -32,7 +32,7 @@ public class YolkManager : MonoBehaviour {
 
   private YolkUpgradeManager _upgrades;
   private PlayerCursedInventory _cursedInventory;
-  private PlayerSounds _sounds;
+  private SoundPlayer _soundPlayer;
 
   [SerializeField] private AudioClip _shootClip;
 
@@ -48,7 +48,7 @@ public class YolkManager : MonoBehaviour {
 
     _upgrades = GetComponent<YolkUpgradeManager>();
     _cursedInventory = GetComponent<PlayerCursedInventory>();
-    _sounds = GetComponent<PlayerSounds>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     StartCoroutine(YolkRegen());
   }
@@ -108,7 +108,7 @@ public class YolkManager : MonoBehaviour {
     yolk.SetDirection(direction, angle);
     yolk.MultiplyDamage(_damageScaling);
 
-    _sounds.PlayClip(_shootClip, 1.5f);
+    _soundPlayer.PlayClip(_shootClip, 1.5f);
   }
 
   private float CurrentYolkPercent() {
