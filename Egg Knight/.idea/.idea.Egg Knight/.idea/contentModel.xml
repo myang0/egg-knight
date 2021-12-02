@@ -1398,6 +1398,7 @@
             <e p="Layers.cs" t="Include" />
             <e p="MouseInput.cs" t="Include" />
             <e p="SausageAttack.cs" t="Include" />
+            <e p="Sound.cs" t="Include" />
             <e p="StageItemStatus.cs" t="Include" />
             <e p="StageStatus.cs" t="Include" />
             <e p="StageType.cs" t="Include" />
@@ -1597,8 +1598,14 @@
             <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerWallet.cs" t="Include" />
+            <e p="SoundPlayer.cs" t="Include" />
           </e>
           <e p="Projectile.cs" t="Include" />
+          <e p="Sound" t="Include">
+            <e p="SingleTimeSound.cs" t="Include" />
+            <e p="SoundAudioClip.cs" t="Include" />
+            <e p="SoundManager.cs" t="Include" />
+          </e>
           <e p="Stage" t="Include">
             <e p="EnemySpawnpoint.cs" t="Include" />
             <e p="ItemSpawnpoint.cs" t="Include" />

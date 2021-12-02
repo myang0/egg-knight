@@ -34,9 +34,9 @@ public class MrMusic : MonoBehaviour {
         OnSFXVolumeChange += (sender, args) => {
             Debug.Log("SFX Volume set to: " + fxVolume);
         };
-        source.volume = PlayerPrefs.GetFloat("BGMVolume", 25);
+        source.volume = PlayerPrefs.GetFloat("BGMVolume", 0.2f);
         musicVolume = source.volume;
-        fxVolume = PlayerPrefs.GetFloat("SFXVolume", 25);
+        fxVolume = PlayerPrefs.GetFloat("SFXVolume", 0.2f);
     }
     
     public void SetBackgroundMusicVolume(System.Single vol) {

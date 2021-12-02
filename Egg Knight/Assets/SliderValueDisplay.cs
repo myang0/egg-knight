@@ -17,13 +17,13 @@ public class SliderValueDisplay : MonoBehaviour {
 
     private void Awake() {
         if (sliderType == SliderType.BGM) {
-            slider.value = PlayerPrefs.GetFloat("BGMVolume", 25);
-            tmp.text = "" + RoundValue(PlayerPrefs.GetFloat("BGMVolume", 25));
+            slider.value = PlayerPrefs.GetFloat("BGMVolume", 0.2f);
+            tmp.text = "" + RoundValue(PlayerPrefs.GetFloat("BGMVolume", 0.2f));
         }
 
         if (sliderType == SliderType.SFX) {
-            slider.value = PlayerPrefs.GetFloat("SFXVolume", 25);
-            tmp.text = "" + RoundValue(PlayerPrefs.GetFloat("SFXVolume", 25));
+            slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.2f);
+            tmp.text = "" + RoundValue(PlayerPrefs.GetFloat("SFXVolume", 0.2f));
         }
     }
 
