@@ -26,8 +26,13 @@ public class SoundManager : MonoBehaviour {
     if (clip != null) {
       SingleTimeSound stSound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity).GetComponent<SingleTimeSound>();
 
+      // TODO: do not do this
       if (sound == Sound.Pierce) {
         stSound.RandomizePitch(0.9f, 1.1f);
+      } else if (sound == Sound.Electrocuted) {
+        stSound.ScaleVolume(2);
+      } else if (sound == Sound.Blunt) {
+        stSound.ScaleVolume(0.5f);
       }
 
       stSound.LoadClipAndPlay(clip);

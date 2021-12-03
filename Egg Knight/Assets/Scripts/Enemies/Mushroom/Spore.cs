@@ -12,7 +12,16 @@ public class Spore : MonoBehaviour {
 
   private float _initialAlpha;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _clip;
+
   private void Awake() {
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+
+    sound.ScaleVolume(1.0f);
+    sound.LoadClipAndPlay(_clip);
+
     _rotationSpeed = Random.Range(-0.1f, 0.1f);
 
     float randomScale = Random.Range(0.5f, 2f);

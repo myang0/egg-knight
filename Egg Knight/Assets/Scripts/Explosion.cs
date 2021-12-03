@@ -7,6 +7,15 @@ public class Explosion : MonoBehaviour {
 
   [SerializeField] protected LayerMask _hitLayer;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _clip;
+
+  private void Awake() {
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(_clip);
+  }
+
   public virtual void OnExplode() {
     Collider2D[] entitiesInRange = Physics2D.OverlapCircleAll(transform.position, _explosionRange, _hitLayer);
 

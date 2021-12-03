@@ -115,9 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426c92543d4d6a34e8acff5fac4ebdef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionPoint: {fileID: 2934463478322923038}
   _explosionRange: 2.5
   _explosionDamage: 10
   _hitLayer:
     serializedVersion: 2
     m_Bits: 8
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
+  _clip: {fileID: 8300000, guid: d33c3c293c22b6a44aac2905d8cb24f6, type: 3}

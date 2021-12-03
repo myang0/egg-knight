@@ -5,9 +5,29 @@ using UnityEngine;
 
 public class MushroomHealth : EnemyHealth
 {
+    private Animator _anim;
+
     [SerializeField] private GameObject _sporePrefab;
 
     public event EventHandler<EnemyStatusEventArgs> OnMushroomStatusDamage;
+
+    protected override void Awake() {
+        _anim = GetComponent<Animator>();
+
+        base.Awake();
+
+        StartCoroutine(SpawnSpores());
+    }
+
+    private IEnumerator SpawnSpores() {
+        while (_currentHealth > 0) {
+            if (_anim.GetBool("isAlert")) {
+                Instantiate(_sporePrefab, transform.position, Quaternion.identity);
+            }
+
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
 
     public override void DamageWithStatuses(float amount, List<StatusCondition> statuses) {
         OnMushroomStatusDamage?.Invoke(this, new EnemyStatusEventArgs(statuses));
