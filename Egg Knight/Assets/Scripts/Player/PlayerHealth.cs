@@ -17,7 +17,7 @@ public class PlayerHealth : Health {
   [SerializeField] private AudioClip _healClip;
   [SerializeField] private AudioClip _damageClip;
   [SerializeField] private AudioClip _ninjaClip;
-
+  public GameObject secondYolkAura;
   private float _healMultiplier = 1.0f;
 
   public static event EventHandler<HealthChangeEventArgs> OnHealthDecrease;
@@ -117,12 +117,8 @@ public class PlayerHealth : Health {
 
   protected override void Die() {
     if (_inventory.GetItemQuantity(Item.SecondYolk) > 0) {
-      _currentHealth = Mathf.Round(_maxHealth * 0.3f);
-
-      OnHealthIncrease?.Invoke(this, new HealthChangeEventArgs(CurrentHealthPercentage()));
-      OnHealthChange?.Invoke(this, new PlayerHealthChangeEventArgs(_currentHealth, (int)_maxHealth));
-
-      StartCoroutine(IFramesOnHit());
+      Heal(_maxHealth * 0.3f);
+      StartCoroutine(SecondYolkEffect());
 
       _inventory.RemoveItem(Item.SecondYolk);
 
@@ -133,9 +129,23 @@ public class PlayerHealth : Health {
       isDead = true;
       OnGameOver?.Invoke(this, EventArgs.Empty);
     }
-    // SceneManager.LoadScene(3);
-    //
-    // Destroy(gameObject);
+  }
+
+  private IEnumerator SecondYolkEffect() {
+    secondYolkAura.SetActive(true);
+    _iFramesActive = true;
+    DisableHitbox();
+    
+    float effectDuration = 3f;
+    while (effectDuration > 0) {
+      effectDuration -= Time.deltaTime;
+      secondYolkAura.transform.Rotate(0, 0, 360*Time.deltaTime);
+      yield return new WaitForFixedUpdate();
+    }
+    
+    EnableHitbox();
+    secondYolkAura.SetActive(false);
+    _iFramesActive = false;
   }
 
   private IEnumerator IFramesOnHit() {
