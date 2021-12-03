@@ -8,9 +8,10 @@ public class WeaponDisplayPoint : MonoBehaviour {
     private const float LeftX = -0.38f;
     private const float RightX = 0.38f;
     private const float Y = -0.55f;
-    private bool enableFlip;
+    private bool _enableFlip;
 
     private void Awake() {
+        _enableFlip = true;
         PlayerHealth.OnGameOver += DeathDisableFlip;
         PlayerHealth.OnReviveGameOver += DeathDisableFlip;
         PlayerDeath.OnReviveSequenceDone += DeathEnableFlip;
@@ -21,7 +22,7 @@ public class WeaponDisplayPoint : MonoBehaviour {
         Vector3 playerPos = _player.position;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (!enableFlip) return;
+        if (!_enableFlip) return;
         if (mousePos.x < _player.position.x) {
             transform.position = new Vector3(LeftX + playerPos.x, Y + playerPos.y, ZcoordinateConsts.WeaponAttack);
         }
@@ -31,11 +32,11 @@ public class WeaponDisplayPoint : MonoBehaviour {
     }
 
     private void DeathDisableFlip(object sender, EventArgs e) {
-        enableFlip = false;
+        _enableFlip = false;
     }
     
     private void DeathEnableFlip(object sender, EventArgs e) {
-        enableFlip = true;
+        _enableFlip = true;
     }
 
     private void OnDestroy() {
