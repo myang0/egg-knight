@@ -43,20 +43,28 @@ public class Caravan : MonoBehaviour {
 
         if (isShopActivated) {
             if (shopItem1.item == shopItem2.item || shopItem1.item == shopItem3.item || 
-                shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item) {
+                shopItem1.item == shopItem4.item || shopItem1.item == shopItem5.item
+                || shopItem1 != null && shopItem1.item == null) {
                 shopItem1.item = itemManager.GetRandomHealingItem();
             }
 
-            if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item) {
+            if (shopItem2.item == shopItem3.item || shopItem2.item == shopItem4.item || shopItem2.item == shopItem5.item
+                || shopItem2 != null && shopItem2.item == null) {
                 shopItem2.item = itemManager.GetRandomItem();
             }
         
-            if (shopItem3.item == shopItem4.item || shopItem3.item == shopItem5.item) {
+            if (shopItem3.item == shopItem4.item || shopItem3.item == shopItem5.item
+                                                 || shopItem3 != null && shopItem3.item == null) {
                 shopItem3.item = itemManager.GetRandomItem();
             }
 
-            if (shopItem4.item == shopItem5.item) {
+            if (shopItem4.item == shopItem5.item
+                || shopItem4 != null && shopItem4.item == null) {
                 shopItem4.item = itemManager.GetRandomItem();
+            }
+
+            if (shopItem5 != null && shopItem5.item == null) {
+                shopItem5.item = itemManager.GetRandomItem();
             }
         }
     }
