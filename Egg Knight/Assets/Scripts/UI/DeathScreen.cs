@@ -21,7 +21,6 @@ public class DeathScreen : MonoBehaviour {
         foreach (var v in uiToHide) {
             v.SetActive(false);
         }
-        PlayerDeath.OnDeathScreenStart -= AnimateToBeContinuedSubscriber;
     }
 
     private IEnumerator AnimateToBeContinued() {
@@ -40,5 +39,9 @@ public class DeathScreen : MonoBehaviour {
         deathOverlay.SetActive(true);
         Time.timeScale = 0;
         yield return null;
+    }
+
+    private void OnDestroy() {
+        PlayerDeath.OnDeathScreenStart -= AnimateToBeContinuedSubscriber;
     }
 }

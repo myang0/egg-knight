@@ -40,6 +40,8 @@ public class PlayerControls : MonoBehaviour {
 		PauseScreen.OnGameResumed += HandleGameResumed;
 
 		PlayerHealth.OnGameOver += DisableControlsDeath;
+		PlayerHealth.OnReviveGameOver += DisableControlsDeath;
+		PlayerDeath.OnReviveSequenceDone += EnableControlsDeath;
 	}
 
 	private void Update() {
@@ -63,6 +65,11 @@ public class PlayerControls : MonoBehaviour {
 
 	private void DisableControlsDeath(object sender, EventArgs e) {
 		_gameRunning = false;
+		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	}
+	
+	private void EnableControlsDeath(object sender, EventArgs e) {
+		_gameRunning = true;
 	}
 
 	private void PrintDebugLog() {
@@ -199,5 +206,8 @@ public class PlayerControls : MonoBehaviour {
 
 		PauseScreen.OnGamePaused -= HandleGamePaused;
 		PauseScreen.OnGameResumed -= HandleGameResumed;
+		
+		PlayerHealth.OnGameOver -= DisableControlsDeath;
+		PlayerHealth.OnReviveGameOver -= DisableControlsDeath;
 	}
 }

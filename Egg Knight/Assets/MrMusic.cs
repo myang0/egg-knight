@@ -61,7 +61,6 @@ public class MrMusic : MonoBehaviour {
         source.clip = gameOver;
         source.loop = true;
         source.Play();
-        PlayerHealth.OnGameOver -= StartGameOverMusic;
     }
 
     void StartBossMusic() {
@@ -129,5 +128,9 @@ public class MrMusic : MonoBehaviour {
 
             yield return new WaitForSeconds(_musicFadeSpeed);
         } 
+    }
+
+    private void OnDestroy() {
+        PlayerHealth.OnGameOver -= StartGameOverMusic;
     }
 }

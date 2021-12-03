@@ -35,6 +35,8 @@ public class PlayerHealth : Health {
   public static event EventHandler OnNinjaIFramesDisabled;
 
   public static event EventHandler OnGameOver;
+  public static event EventHandler OnReviveGameOver;
+  public static event EventHandler OnRevive;
   public bool isDead;
 
   protected override void Awake() {
@@ -42,6 +44,7 @@ public class PlayerHealth : Health {
     _cursedInventory = GetComponent<PlayerCursedInventory>();
     _soundPlayer = GetComponent<SoundPlayer>();
 
+    PlayerDeath.OnReviveSequenceDone += SecondYolkEffectSubscriber;
     PlayerMovement.OnRollBegin += HandleRoll;
     PlayerMovement.OnRollEnd += HandleRollEnd;
     
@@ -116,12 +119,10 @@ public class PlayerHealth : Health {
   }
 
   protected override void Die() {
+    Debug.Log("AA");
+    
     if (_inventory.GetItemQuantity(Item.SecondYolk) > 0) {
-      Heal(_maxHealth * 0.3f);
-      StartCoroutine(SecondYolkEffect());
-
-      _inventory.RemoveItem(Item.SecondYolk);
-
+      OnReviveGameOver?.Invoke(this, EventArgs.Empty);
       return;
     }
 
@@ -131,7 +132,13 @@ public class PlayerHealth : Health {
     }
   }
 
+  private void SecondYolkEffectSubscriber(object sender, EventArgs e) {
+    StartCoroutine(SecondYolkEffect());
+  }
+
   private IEnumerator SecondYolkEffect() {
+    Heal(_maxHealth * 0.3f);
+    _inventory.RemoveItem(Item.SecondYolk);
     secondYolkAura.SetActive(true);
     _iFramesActive = true;
     DisableHitbox();
@@ -208,6 +215,7 @@ public class PlayerHealth : Health {
   private void OnDestroy() {
     PlayerMovement.OnRollBegin -= HandleRoll;
     PlayerMovement.OnRollEnd -= HandleRollEnd;
+    PlayerDeath.OnReviveSequenceDone -= SecondYolkEffectSubscriber;
   }
 
   public void ScaleArmour(float scale) {

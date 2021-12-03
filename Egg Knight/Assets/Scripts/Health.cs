@@ -56,7 +56,7 @@ public abstract class Health : MonoBehaviour {
   }
 
   public virtual void Heal(float amount) {
-    _currentHealth += amount;
+    _currentHealth += Mathf.RoundToInt(amount);
 
     SpawnChangeIndicator(amount, Color.green);
 

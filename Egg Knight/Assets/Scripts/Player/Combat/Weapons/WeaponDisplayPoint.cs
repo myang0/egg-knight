@@ -12,6 +12,8 @@ public class WeaponDisplayPoint : MonoBehaviour {
 
     private void Awake() {
         PlayerHealth.OnGameOver += DeathDisableFlip;
+        PlayerHealth.OnReviveGameOver += DeathDisableFlip;
+        PlayerDeath.OnReviveSequenceDone += DeathEnableFlip;
     }
 
     private void FixedUpdate() {
@@ -30,6 +32,15 @@ public class WeaponDisplayPoint : MonoBehaviour {
 
     private void DeathDisableFlip(object sender, EventArgs e) {
         enableFlip = false;
+    }
+    
+    private void DeathEnableFlip(object sender, EventArgs e) {
+        enableFlip = true;
+    }
+
+    private void OnDestroy() {
         PlayerHealth.OnGameOver -= DeathDisableFlip;
+        PlayerHealth.OnReviveGameOver -= DeathDisableFlip;
+        PlayerDeath.OnReviveSequenceDone -= DeathEnableFlip;
     }
 }
