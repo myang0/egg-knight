@@ -38,6 +38,8 @@ public class PlayerControls : MonoBehaviour {
 
 		PauseScreen.OnGamePaused += HandleGamePaused;
 		PauseScreen.OnGameResumed += HandleGameResumed;
+
+		PlayerHealth.OnGameOver += DisableControlsDeath;
 	}
 
 	private void Update() {
@@ -57,6 +59,10 @@ public class PlayerControls : MonoBehaviour {
 			ForceClear();
 			PrintDebugLog();
 		}
+	}
+
+	private void DisableControlsDeath(object sender, EventArgs e) {
+		_gameRunning = false;
 	}
 
 	private void PrintDebugLog() {

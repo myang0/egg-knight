@@ -11,6 +11,7 @@ public class MrMusic : MonoBehaviour {
     public AudioClip level1Boss;
     public AudioClip level2Boss;
     public AudioClip level3Boss;
+    public AudioClip gameOver;
 
     public AudioSource source;
 
@@ -37,6 +38,7 @@ public class MrMusic : MonoBehaviour {
         source.volume = PlayerPrefs.GetFloat("BGMVolume", 0.2f);
         musicVolume = source.volume;
         fxVolume = PlayerPrefs.GetFloat("SFXVolume", 0.2f);
+        PlayerHealth.OnGameOver += StartGameOverMusic;
     }
     
     public void SetBackgroundMusicVolume(System.Single vol) {
@@ -52,6 +54,14 @@ public class MrMusic : MonoBehaviour {
         fxVolume = vol;
         PlayerPrefs.SetFloat("SFXVolume", fxVolume);
         PlayerPrefs.Save();
+    }
+
+    void StartGameOverMusic(object sender, EventArgs e) {
+        // StartCoroutine(MusicFadeOut(gameOver));
+        source.clip = gameOver;
+        source.loop = true;
+        source.Play();
+        PlayerHealth.OnGameOver -= StartGameOverMusic;
     }
 
     void StartBossMusic() {

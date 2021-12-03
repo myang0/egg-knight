@@ -1529,8 +1529,10 @@
               <e p="TornCape.cs" t="Include" />
             </e>
             <e p="Defensive" t="Include">
+              <e p="BrandNewHelmet.cs" t="Include" />
               <e p="DuckEgg.cs" t="Include" />
               <e p="HerbalMedicine.cs" t="Include" />
+              <e p="Milk.cs" t="Include" />
             </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />
@@ -1545,6 +1547,7 @@
               <e p="BagOfSugar.cs" t="Include" />
               <e p="EggShardBehaviour.cs" t="Include" />
               <e p="EggShards.cs" t="Include" />
+              <e p="EnergyDrink.cs" t="Include" />
               <e p="GoldChainNecklace.cs" t="Include" />
             </e>
             <e p="UnlockWeaponItem.cs" t="Include" />
@@ -1594,6 +1597,7 @@
             <e p="PlayerAnimation.cs" t="Include" />
             <e p="PlayerControls.cs" t="Include" />
             <e p="PlayerCursedInventory.cs" t="Include" />
+            <e p="PlayerDeath.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
@@ -1632,6 +1636,7 @@
               <e p="RestartGameButton.cs" t="Include" />
               <e p="ResumeButton.cs" t="Include" />
             </e>
+            <e p="DeathScreen.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="HealthText.cs" t="Include" />
             <e p="ItemDisplay.cs" t="Include" />

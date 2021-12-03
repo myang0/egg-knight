@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour {
   private Animator _anim;
   private SpriteRenderer _sr;
 
+  private bool enableFlip = true;
   private bool _iFramesActive = false;
 
   private bool _isRolling = false;
@@ -26,6 +27,8 @@ public class PlayerAnimation : MonoBehaviour {
     PlayerHealth.OnNinjaIFramesEnabled += HandleNinjaIFramesEnabled;
     PlayerHealth.OnNinjaIFramesDisabled += HandleNinjaIFramesDisabled;
 
+    PlayerHealth.OnGameOver += EnableFlipSubscriber;
+
     _sr = gameObject.GetComponent<SpriteRenderer>();
     _anim = gameObject.GetComponent<Animator>();
   }
@@ -33,6 +36,11 @@ public class PlayerAnimation : MonoBehaviour {
   private void Update() {
     if (GetComponent<PlayerInventory>().HasItem(Item.QuailEgg))
       transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+  }
+
+  private void EnableFlipSubscriber(object sender, EventArgs e) {
+    enableFlip = false;
+    PlayerHealth.OnGameOver -= EnableFlipSubscriber;
   }
 
   private void HandleRollBegin(object sender, RollEventArgs e) {
@@ -95,7 +103,7 @@ public class PlayerAnimation : MonoBehaviour {
   private void FixedUpdate() {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-    _sr.flipX = (mousePos.x < transform.position.x);
+    if (enableFlip) _sr.flipX = (mousePos.x < transform.position.x);
 
     if (_iFramesActive) {
       float alpha = _sr.color.a;

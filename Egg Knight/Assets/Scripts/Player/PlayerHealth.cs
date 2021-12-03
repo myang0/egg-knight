@@ -34,6 +34,9 @@ public class PlayerHealth : Health {
   public static event EventHandler OnNinjaIFramesEnabled;
   public static event EventHandler OnNinjaIFramesDisabled;
 
+  public static event EventHandler OnGameOver;
+  public bool isDead;
+
   protected override void Awake() {
     _inventory = GetComponent<PlayerInventory>();
     _cursedInventory = GetComponent<PlayerCursedInventory>();
@@ -126,9 +129,13 @@ public class PlayerHealth : Health {
       return;
     }
 
-    SceneManager.LoadScene(3);
-
-    Destroy(gameObject);
+    if (!isDead) {
+      isDead = true;
+      OnGameOver?.Invoke(this, EventArgs.Empty);
+    }
+    // SceneManager.LoadScene(3);
+    //
+    // Destroy(gameObject);
   }
 
   private IEnumerator IFramesOnHit() {
