@@ -137,7 +137,7 @@ public class PlayerHealth : Health {
   }
 
   private IEnumerator SecondYolkEffect() {
-    Heal(_maxHealth * 0.3f);
+    Heal(_maxHealth * 0.5f);
     _inventory.RemoveItem(Item.SecondYolk);
     secondYolkAura.SetActive(true);
     _iFramesActive = true;
