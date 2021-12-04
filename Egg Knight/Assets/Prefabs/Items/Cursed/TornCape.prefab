@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4221bc1ea73571408c2636f195ae389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: Sir Racha's Torn Cape
+  DisplayName: Torn Cape
   Description: Increase mobility... BUT decreases maximum health
   InventoryKey: 26
   _curseKey: 0

@@ -24,6 +24,10 @@ public class Kernel : MonoBehaviour {
 
   private Vector3 _targetPoint;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _beepClip;
+  [SerializeField] private AudioClip _popClip;
+
   private void Awake() {
     _rb = GetComponent<Rigidbody2D>();
     _collider = GetComponent<Collider2D>();
@@ -60,7 +64,13 @@ public class Kernel : MonoBehaviour {
       PlayerHealth pHealth = col.GetComponent<PlayerHealth>();
       pHealth?.Damage(_damage);
 
+      Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+        .GetComponent<SingleTimeSound>()
+        .LoadClipAndPlay(_popClip);
+
       StopCoroutine(ArmedColour());
+
+      _isArmed = false;
 
       Disarm();
     }
@@ -94,8 +104,14 @@ public class Kernel : MonoBehaviour {
   }
 
   private IEnumerator ArmedColour() {
-    while (true) {
+    while (_isArmed) {
       _sr.color = Color.red;
+
+      SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+        .GetComponent<SingleTimeSound>();
+
+      sound.ScaleVolume(0.5f);
+      sound.LoadClipAndPlay(_beepClip);
 
       yield return new WaitForSeconds(0.1f);
 

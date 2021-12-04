@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0d51b73c8ee594882ab06d1cc8ee05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: Sir Racha's Rotten Yolk
+  DisplayName: Rotten Yolk
   Description: Yolk attacks deal double damage... BUT all healing is halved
   InventoryKey: 26
   _curseKey: 1

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 349c07a2a4203684ba60637435046d79
+<<<<<<< HEAD:Egg Knight/Assets/Sprites/Attacks/Fork/Jab1.meta
+guid: 4e856d18fe6501248a32c1fbf5696153
+=======
+guid: cd5829f5715ad2749ac98ca5afad2606
+>>>>>>> main:Egg Knight/Assets/Animations/UI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

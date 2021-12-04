@@ -155,6 +155,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         break;
       }
       case StatusCondition.Electrocuted: {
+        SoundManager.Instance.PlaySound(Sound.Electrocuted);
         OnElectrocuted?.Invoke(this, EventArgs.Empty);
         break;
       }

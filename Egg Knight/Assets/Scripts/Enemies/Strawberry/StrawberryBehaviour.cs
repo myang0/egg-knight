@@ -5,6 +5,8 @@ using Stage;
 using UnityEngine;
 
 public class StrawberryBehaviour : EnemyBehaviour {
+  private Animator _anim;
+
   [SerializeField] private Transform _shootPoint;
 
   [SerializeField] private GameObject _projectilePrefab;
@@ -22,10 +24,12 @@ public class StrawberryBehaviour : EnemyBehaviour {
     
     int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
     if (level > 1) {
+      // _anim.speed = 1.5f;
       strawberryHealth.AddToMaxHealth(10);
     }
 
     if (level > 2) {
+      // _anim.speed = 2f;
       strawberryHealth.AddToMaxHealth(10);
     }
 
