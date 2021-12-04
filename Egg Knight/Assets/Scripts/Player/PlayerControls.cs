@@ -152,10 +152,6 @@ public class PlayerControls : MonoBehaviour {
 	}
 
 	private void AttackSwitchControls() {
-		if (_weaponSwitchingEnabled == false) {
-			return;
-		}
-
 		if (Input.GetKeyDown(KeyCode.Alpha1)) On1Press?.Invoke(this, EventArgs.Empty);
 		if (Input.GetKeyDown(KeyCode.Alpha2)) On2Press?.Invoke(this, EventArgs.Empty);
 		if (Input.GetKeyDown(KeyCode.Alpha3)) On3Press?.Invoke(this, EventArgs.Empty);

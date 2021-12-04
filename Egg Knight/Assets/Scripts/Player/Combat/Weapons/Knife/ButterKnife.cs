@@ -34,7 +34,7 @@ public class ButterKnife : BasePlayerWeapon {
     
     Collider2D[] coinsInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _coinLayer);
 
-    DamageEnemies(enemiesHit);
+    DamageEnemies(enemiesHit, _damageAmount);
     CollectCoins(coinsInRange);
   }
 

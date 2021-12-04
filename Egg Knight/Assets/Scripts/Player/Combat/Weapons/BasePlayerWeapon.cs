@@ -7,6 +7,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   protected Animator _anim;
   protected SpriteRenderer _sr;
 
+  protected Camera _mainCamera;
+
   protected List<StatusCondition> _weaponModifiers;
 
   protected float _speed = 1.0f;
@@ -29,8 +31,10 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   public static event EventHandler OnWeaponAnimationEnd;
 
   protected virtual void Awake() {
-    _anim = gameObject.GetComponent<Animator>();
-    _sr = gameObject.GetComponent<SpriteRenderer>();
+    _anim = GetComponent<Animator>();
+    _sr = GetComponent<SpriteRenderer>();
+
+    _mainCamera = Camera.main;
 
     _weaponModifiers = new List<StatusCondition>();
 
@@ -57,7 +61,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     transform.position = newPos;
   }
 
-  protected void DamageEnemies(Collider2D[] enemies) {
+  protected void DamageEnemies(Collider2D[] enemies, float damage) {
     GameObject[] enemyObjects = enemies.Select(e => e.gameObject).ToArray();
     GameObject[] uniqueEnemyObjects = enemyObjects.Distinct().ToArray();
 
@@ -65,7 +69,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
       if (enemyHealth != null && !enemyHealth.isInvulnerable) {
-        if (DamageEnemy(enemyHealth)) HealOnHit();
+        if (DamageEnemy(enemyHealth, damage)) HealOnHit();
       }
 
       if (enemyHealth != null && enemyHealth.isInvulnerable) {
@@ -92,7 +96,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     return false;
   }
 
-  protected virtual bool DamageEnemy(EnemyHealth enemyHealth) {
+  protected virtual bool DamageEnemy(EnemyHealth enemyHealth, float damage) {
     List<StatusCondition> statuses = new List<StatusCondition>();
 
     foreach (StatusCondition modifier in _weaponModifiers) {
@@ -103,7 +107,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float proteinDamage = AddProteinDamage(_damageAmount);
+    float proteinDamage = AddProteinDamage(damage);
     float baseDmgInclCrit = HandleCrits(proteinDamage, statuses, enemyHealth);
     float coinBonus = AddCoinDamage();
     float rageBonus = AddRageDamage();
@@ -177,6 +181,14 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
       .GetComponent<SingleTimeSound>()
       .LoadClipAndPlay(clip);
+  }
+
+  protected void ResetRotation() {
+    Vector3 mousePosInWorld = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    Vector2 vectorToMouse = VectorHelper.GetVectorToPoint(transform.position, mousePosInWorld);
+
+    float angle = Vector2.SignedAngle(Vector2.up, vectorToMouse);
+    transform.eulerAngles = new Vector3(0, 0, angle);
   }
 
   protected abstract void OnDrawGizmosSelected();

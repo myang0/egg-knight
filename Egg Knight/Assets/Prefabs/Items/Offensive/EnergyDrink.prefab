@@ -126,4 +126,4 @@ MonoBehaviour:
   Description: Greatly increases attack speed while lowering damage
   InventoryKey: 32
   _attackSpeedModifier: 2
-  _attackModifier: 0.5
+  _attackModifier: 0.4
