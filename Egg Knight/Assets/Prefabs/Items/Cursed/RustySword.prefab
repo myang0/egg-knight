@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b9918338d7f94380fbe57e13faae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: Sir Racha's Rusty Sword
+  DisplayName: Rusty Sword
   Description: Critical strikes inflict bleeding... BUT deal damage to yourself
   InventoryKey: 26
   _curseKey: 2

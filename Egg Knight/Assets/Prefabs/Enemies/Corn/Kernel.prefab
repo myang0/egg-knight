@@ -147,3 +147,7 @@ MonoBehaviour:
   _popcornSprite: {fileID: 21300000, guid: 9eef44473a8353d43a6da2ae715936fe, type: 3}
   _timeToDespawn: 10
   _damage: 6
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
+  _beepClip: {fileID: 8300000, guid: 996fbfc9e5cf192429bc2df810d5bc7c, type: 3}
+  _popClip: {fileID: 8300000, guid: 70b5348321d33ae4485ee0e0d6ad724f, type: 3}
