@@ -96,7 +96,7 @@ public class TwoProngedFork : BasePlayerWeapon {
   }
 
   private IEnumerator Despawn() {
-    yield return new WaitForSeconds(0.5f / _speed);
+    yield return new WaitForSeconds(0.25f / _speed);
 
     if (_isAttacking == false) {
       base.OnAnimationEnd();
