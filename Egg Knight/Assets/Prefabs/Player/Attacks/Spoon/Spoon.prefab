@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c896790f28cf84291ba37cbd04391f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 12.5
+  _damageAmount: 15
   _damageType: 2
   _enemyLayer:
     serializedVersion: 2
@@ -192,7 +192,7 @@ MonoBehaviour:
   _attackHeight: 4
   _finisherPoint: {fileID: 99398924}
   _finisherRange: 3.75
-  _finisherDamage: 17.5
+  _finisherDamage: 15
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 2048
