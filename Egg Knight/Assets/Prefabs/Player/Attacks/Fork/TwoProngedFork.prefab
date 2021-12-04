@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1005899939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005899940}
+  m_Layer: 6
+  m_Name: FinisherPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1005899940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005899939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885423615155747031}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885423615155747016
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8446557267312775294}
+  - {fileID: 1005899940}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea66b4fe8e5f5af4dbc53ad6225fbaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 12.5
+  _damageAmount: 10
   _damageType: 0
   _enemyLayer:
     serializedVersion: 2
@@ -127,8 +158,18 @@ MonoBehaviour:
   _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
     type: 3}
   _attackPoint: {fileID: 8446557267312775294}
-  _attackWidth: 0.75
-  _attackHeight: 5.5
+  _attackRange: {x: 0.75, y: 5.75}
+  _finisherPoint: {fileID: 1005899940}
+  _finisherRange: {x: 0.75, y: 6.75}
+  _finisherDamage: 15
+  _animatorStates:
+  - ForkJab1
+  - ForkJab2
+  - ForkJab3
+  _animatorParams:
+  - IsJab2
+  - IsJab3
+  - IsJab4
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 2048

@@ -127,7 +127,7 @@ public class PlayerWeapons : MonoBehaviour {
   }
 
   private void HandleWeaponAnimEnd(object sender, EventArgs e) {
-    _currentWeaponDisplay.SetActive(true);
+    DisplayCurrentWeapon();
   }
 
   private void DisplayCurrentWeapon() {
@@ -165,7 +165,9 @@ public class PlayerWeapons : MonoBehaviour {
   private void SwitchKnife(object sender, EventArgs e) {
     if (_currentWeaponIndex != 0) {
       _currentWeaponIndex = 0;
-      DisplayCurrentWeapon();
+      if (_currentWeapon == null) {
+        DisplayCurrentWeapon();
+      }
       OnSwitchKnife?.Invoke(this, EventArgs.Empty);
     }
   }
@@ -174,7 +176,9 @@ public class PlayerWeapons : MonoBehaviour {
     if (!_isForkUnlocked) return;
     if (_currentWeaponIndex != 1) {
       _currentWeaponIndex = 1;
-      DisplayCurrentWeapon();
+      if (_currentWeapon == null) {
+        DisplayCurrentWeapon();
+      }
       OnSwitchFork?.Invoke(this, EventArgs.Empty);
     }
   }
@@ -183,7 +187,9 @@ public class PlayerWeapons : MonoBehaviour {
     if (!_isSpoonUnlocked) return;
     if (_currentWeaponIndex != 2) {
       _currentWeaponIndex = 2;
-      DisplayCurrentWeapon();
+      if (_currentWeapon == null) {
+        DisplayCurrentWeapon();
+      }
       OnSwitchSpoon?.Invoke(this, EventArgs.Empty);
     }
   }
