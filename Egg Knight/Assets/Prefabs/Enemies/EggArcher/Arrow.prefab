@@ -148,6 +148,9 @@ MonoBehaviour:
   _lifetime: 5
   _damage: 8
   _speed: 25
+  _clip: {fileID: 8300000, guid: 4fb3b99a9f63a7949a427cbc1099d5cf, type: 3}
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!96 &4848669583662959593
 TrailRenderer:
   serializedVersion: 2

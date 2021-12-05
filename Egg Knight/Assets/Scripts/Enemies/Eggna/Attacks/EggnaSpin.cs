@@ -17,8 +17,11 @@ public class EggnaSpin : MonoBehaviour {
   private Animator _anim;
   private EggnaHealth _eHealth;
   private EnemyBehaviour _eBehaviour;
+  private SoundPlayer _soundPlayer;
 
   private Transform _playerTransform;
+
+  [SerializeField] private AudioClip _spinClip;
 
   private void Awake() {
     _timeBetweenBursts = _maxTimeBetweenBursts;
@@ -26,8 +29,13 @@ public class EggnaSpin : MonoBehaviour {
     _eHealth = GetComponent<EggnaHealth>();
     _anim = GetComponent<Animator>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+  }
+
+  public void PlaySpinSound() {
+    _soundPlayer.PlayClip(_spinClip, volumeScaling: 0.25f);
   }
 
   public void StartAttack() {

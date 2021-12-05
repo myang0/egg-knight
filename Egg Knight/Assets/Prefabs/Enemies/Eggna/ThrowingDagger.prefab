@@ -148,6 +148,9 @@ MonoBehaviour:
   _lifetime: 5
   _damage: 8
   _speed: 40
+  _clip: {fileID: 8300000, guid: dbf271e089ec21d4197cc8ba3d762367, type: 3}
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!96 &6008719363915475849
 TrailRenderer:
   serializedVersion: 2
@@ -198,13 +201,22 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.14583378
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.49625084
+        value: 0.09457478
+        inSlope: -0.028629405
+        outSlope: -0.028629405
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.29794702
       - serializedVersion: 3
         time: 0.99999994
         value: 0

@@ -16,12 +16,18 @@ public class EggnaEnemySpawner : MonoBehaviour {
 
   [SerializeField] private GameObject _smokeParticles;
 
+  private SoundPlayer _soundPlayer;
+
   private Transform _playerTransform;
 
   [SerializeField] private int _maxEnemiesSpawned = 3;
   private int _numEnemiesSpawned = 0;
 
+  [SerializeField] private AudioClip _summonClip;
+
   private void Awake() {
+    _soundPlayer = GetComponent<SoundPlayer>();
+
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
     EggnaHealth.OnEggnaBelowHalfHealth += HandleEggnaBelowHalfHealth;
@@ -61,6 +67,8 @@ public class EggnaEnemySpawner : MonoBehaviour {
     Vector3 spawnPos = GetSpawnPosition();
 
     int randomIndex = Random.Range(0, _enemies.Count);
+
+    _soundPlayer.PlayClip(_summonClip);
 
     Instantiate(_smokeParticles, spawnPos, Quaternion.identity);
     EnemyBehaviour eBehaviour = Instantiate(_enemies[randomIndex], spawnPos, Quaternion.identity).GetComponent<EnemyBehaviour>();

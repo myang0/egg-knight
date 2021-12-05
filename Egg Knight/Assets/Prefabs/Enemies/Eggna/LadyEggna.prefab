@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 5512330417173549835}
   - component: {fileID: 5512330417173549836}
   - component: {fileID: 4439597122168774830}
+  - component: {fileID: 1357266294}
   m_Layer: 8
   m_Name: LadyEggna
   m_TagString: Enemy
@@ -359,6 +360,7 @@ MonoBehaviour:
   _daggersPerBurst: 5
   _timeBetweenThrows: 0.05
   _maxSpread: 5
+  _spinClip: {fileID: 8300000, guid: 73a8476795823e14aa1fc0435a57d70a, type: 3}
 --- !u!114 &5512330417173549834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +419,8 @@ MonoBehaviour:
   _reappearPoint: {fileID: 603194656}
   _swooshObject: {fileID: 7646004250534370257, guid: 65f51a3042d021d4bbb37d78c0ac03f4,
     type: 3}
+  _clip: {fileID: 8300000, guid: e4dcdd93bb95f9e45a76b896ac8cbad4, type: 3}
+  _swooshClip: {fileID: 8300000, guid: 07bf93185bf5d2d4eaf053fb0147c331, type: 3}
 --- !u!114 &4439597122168774830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +443,21 @@ MonoBehaviour:
   _smokeParticles: {fileID: 3076674538101461482, guid: 854db0e30aa578b438ce76df1477b0d8,
     type: 3}
   _maxEnemiesSpawned: 3
+  _summonClip: {fileID: 8300000, guid: 50634eba9d510cf4782214c58043af23, type: 3}
+--- !u!114 &1357266294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512330417173549887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002ae9b1404c7534287f5fa0eaa40faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
 --- !u!1 &5512330417935735963
 GameObject:
   m_ObjectHideFlags: 0

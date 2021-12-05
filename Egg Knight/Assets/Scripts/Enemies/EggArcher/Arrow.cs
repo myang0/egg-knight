@@ -2,6 +2,17 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class Arrow : Projectile {
+  [SerializeField] private AudioClip _clip;
+  [SerializeField] private GameObject _singleTimeSound;
+
+  protected override void Awake() {
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(_clip);
+
+    base.Awake();
+  }
+
   protected override void Despawn() {
     Destroy(gameObject);
   }

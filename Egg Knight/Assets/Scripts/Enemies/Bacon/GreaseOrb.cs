@@ -8,6 +8,9 @@ public class GreaseOrb : Projectile {
   [SerializeField] private GameObject _echoObject;
   [SerializeField] private float _timeBetweenEcho;
 
+  [SerializeField] private AudioClip _clip;
+  [SerializeField] private GameObject _singleTimeSound;
+
   private Transform _playerTransform;
 
   protected override void Awake() {
@@ -16,6 +19,10 @@ public class GreaseOrb : Projectile {
     BaconHealth.OnBaconDeath += HandleBaconDeath;
 
     StartCoroutine(SpawnEcho());
+
+    Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>()
+      .LoadClipAndPlay(_clip);
 
     base.Awake();
   }
