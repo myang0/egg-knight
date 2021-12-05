@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6155a7611c662e643a91f7d55437169f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1500
+  _maxHealth: 2000
   _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,
@@ -300,6 +300,7 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 1
   decrementEnemyCountOnDeath: 1
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
   notAffectedByDropMods: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc10ffe6024114381c8208f71a0a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialIdleTime: 3
+  _initialIdleTime: 2
 --- !u!114 &5512330417173549832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +437,7 @@ MonoBehaviour:
   _minDistanceToPlayer: 10
   _smokeParticles: {fileID: 3076674538101461482, guid: 854db0e30aa578b438ce76df1477b0d8,
     type: 3}
+  _maxEnemiesSpawned: 3
 --- !u!1 &5512330417935735963
 GameObject:
   m_ObjectHideFlags: 0

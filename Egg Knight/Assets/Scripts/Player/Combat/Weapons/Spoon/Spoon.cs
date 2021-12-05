@@ -93,6 +93,11 @@ public class Spoon : BasePlayerWeapon {
     }
   }
 
+  public override void MultiplyDamage(float modifier) {
+    _damageAmount *= modifier;
+    _finisherDamage *= modifier;
+  }
+
   private void OnDestroy() {
     PlayerControls.OnLeftClick -= HandleLeftClick;
   }

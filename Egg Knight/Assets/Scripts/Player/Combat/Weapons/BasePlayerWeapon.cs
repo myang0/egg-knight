@@ -23,6 +23,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   [SerializeField] protected float _damageAmount;
   [SerializeField] protected DamageType _damageType;
 
+  protected float _modifier;
+
   [SerializeField] protected LayerMask _enemyLayer;
   [SerializeField] protected LayerMask _coinLayer;
 
@@ -198,7 +200,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     _anim.speed = _speed;
   }
 
-  public void MultiplyDamage(float modifier) {
+  public virtual void MultiplyDamage(float modifier) {
     _damageAmount *= modifier;
   }
 }
