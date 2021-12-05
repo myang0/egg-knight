@@ -12,7 +12,6 @@ public class EggnaIdleState : StateMachineBehaviour {
 
   private static EggnaAnyRangeAttack _lastUsedAttack = EggnaAnyRangeAttack.Spin;
   private static EggnaCloseRangeAttack _lastUsedCloseRangeAttack = EggnaCloseRangeAttack.Any;
-  private static EggnaLongRangeAttack _lastUsedLongRangeAttack = EggnaLongRangeAttack.Any;
 
   public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     _eBehaviour = animator.GetComponent<EnemyBehaviour>() as EggnaBehaviour;
@@ -40,37 +39,9 @@ public class EggnaIdleState : StateMachineBehaviour {
   private void HandleIdleEnd(object sender, EventArgs e) {
     if (_eBehaviour.IsInMeleeRange()) {
       ChooseCloseRangeAttack();
-    } else if (_eBehaviour.IsInLongRange()) {
-      ChooseLongRangeAttack();
     } else {
       ChooseAnyRangeAttack();
     }
-  }
-
-  private void ChooseLongRangeAttack() {
-    EggnaLongRangeAttack currentAttack = _lastUsedLongRangeAttack;
-
-    while (currentAttack == _lastUsedLongRangeAttack) {
-      int attackRoll = Random.Range(0, 100);
-
-      if (attackRoll < 33) {
-        currentAttack = EggnaLongRangeAttack.Dash;
-      } else if (attackRoll >= 33 && attackRoll < 66) {
-        currentAttack = EggnaLongRangeAttack.Throw;
-      } else {
-        currentAttack = EggnaLongRangeAttack.Any;
-      }
-    }
-
-    if (currentAttack == EggnaLongRangeAttack.Dash) {
-      _anim.SetBool("IsDashing", true);
-    } else if (currentAttack == EggnaLongRangeAttack.Throw) {
-      _anim.SetBool("IsThrowing", true);
-    } else {
-      ChooseAnyRangeAttack();
-    }
-
-    _lastUsedLongRangeAttack = currentAttack;
   }
 
   private void ChooseCloseRangeAttack() {
@@ -101,17 +72,38 @@ public class EggnaIdleState : StateMachineBehaviour {
     while (currentAttack == _lastUsedAttack) {
       int attackRoll = Random.Range(0, 100);
 
-      if (attackRoll < 50) {
+      if (attackRoll < 25) {
         currentAttack = EggnaAnyRangeAttack.Teleport;
-      } else {
+      } else if (attackRoll >= 25 && attackRoll < 50) {
         currentAttack = EggnaAnyRangeAttack.Spin;
+      } else if (attackRoll >= 50 && attackRoll < 75) {
+        currentAttack = EggnaAnyRangeAttack.Throw;
+      } else {
+        currentAttack = EggnaAnyRangeAttack.Dash;
       }
     }
 
-    if (currentAttack == EggnaAnyRangeAttack.Teleport) {
-      _anim.SetBool("IsDisappearing", true);
-    } else {
-      _anim.SetBool("IsSpinning", true);
+    switch (currentAttack) {
+      case EggnaAnyRangeAttack.Teleport: {
+        _anim.SetBool("IsDisappearing", true);
+        break;
+      }
+      case EggnaAnyRangeAttack.Spin: {
+        _anim.SetBool("IsSpinning", true);
+        break;
+      }
+      case EggnaAnyRangeAttack.Throw: {
+        _anim.SetBool("IsThrowing", true);
+        break;
+      }
+      case EggnaAnyRangeAttack.Dash: {
+        _anim.SetBool("IsDashing", true);
+        break;
+      }
+      default: {
+        Debug.LogError("Unknown attack");
+        break;
+      }
     }
 
     _lastUsedAttack = currentAttack;
@@ -125,6 +117,5 @@ public class EggnaIdleState : StateMachineBehaviour {
 
     _lastUsedAttack = EggnaAnyRangeAttack.Spin;
     _lastUsedCloseRangeAttack = EggnaCloseRangeAttack.Any;
-    _lastUsedLongRangeAttack = EggnaLongRangeAttack.Any;
   }
 }

@@ -1,4 +1,6 @@
 public enum EggnaAnyRangeAttack {
   Teleport,
-  Spin
+  Spin,
+  Throw,
+  Dash
 }

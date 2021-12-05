@@ -370,7 +370,7 @@ MonoBehaviour:
   _contactDamage: 5
   _kernelPrefab: {fileID: 1362904509219522819, guid: 01a06933d2555de4ba7c62be84445385,
     type: 3}
-  _numKernelsPerBurst: 15
+  _numKernelsPerBurst: 10
 --- !u!114 &-3109920031517495866
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class GreatSlash : BaseEnemyWeapon {
   [SerializeField] private AudioClip _clip;
 
   public override void EnableHitbox() {
+    VirtualCamera.Instance.Shake(4f, 0.25f);
+
     Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
       .GetComponent<SingleTimeSound>()
       .LoadClipAndPlay(_clip);

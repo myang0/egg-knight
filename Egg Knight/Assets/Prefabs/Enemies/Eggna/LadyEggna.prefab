@@ -308,7 +308,7 @@ MonoBehaviour:
   isWallCollisionOn: 1
   alertAnimator: {fileID: 0}
   isDead: 0
-  _meleeRange: 5
+  _meleeRange: 6
   _longRange: 10
 --- !u!114 &5512330417173549879
 MonoBehaviour:
@@ -392,8 +392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationDuration: 0.5
-  _forwardsMomentum: 15
-  _drag: 7.5
+  _forwardsMomentum: 30
+  _drag: 10
   _attackPivot: {fileID: 5512330418925694212}
   _attackPoint: {fileID: 5512330418049198136}
   _slashObject: {fileID: 7696042843266684606, guid: e65e9a815e40b464eb5637d2ae50a325,
@@ -434,7 +434,8 @@ MonoBehaviour:
   - {fileID: 5874542446636965860, guid: c61340fc66926224d8059dbd8a799a0c, type: 3}
   - {fileID: 4220699991525276302, guid: 4194a70bb943c6f438ef18aa83eff2d7, type: 3}
   - {fileID: 7641279364623583979, guid: 7c7424ebf40827c49aede8e87dde25d0, type: 3}
-  _minDistanceToPlayer: 10
+  _minDistanceToPlayer: 5
+  _maxDistanceToPlayer: 15
   _smokeParticles: {fileID: 3076674538101461482, guid: 854db0e30aa578b438ce76df1477b0d8,
     type: 3}
   _maxEnemiesSpawned: 3

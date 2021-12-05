@@ -11,7 +11,8 @@ public class EggnaEnemySpawner : MonoBehaviour {
   private List<EnemySpawnpoint> _spawnPoints = new List<EnemySpawnpoint>();
   private bool _isSpawning = false;
 
-  [SerializeField] private float _minDistanceToPlayer = 10f;
+  [SerializeField] private float _minDistanceToPlayer = 5f;
+  [SerializeField] private float _maxDistanceToPlayer = 15f;
 
   [SerializeField] private GameObject _smokeParticles;
 
@@ -74,12 +75,20 @@ public class EggnaEnemySpawner : MonoBehaviour {
 
     float spawnPointDistanceToPlayer = Vector3.Distance(transform.position, _spawnPoints[randomIndex].GetPosition());
 
-    while (spawnPointDistanceToPlayer < _minDistanceToPlayer) {
+    int tries = 0;
+
+    while (spawnPointDistanceToPlayer < _minDistanceToPlayer && spawnPointDistanceToPlayer > _maxDistanceToPlayer && tries < 30) {
       randomIndex = Random.Range(0, _spawnPoints.Count);
       spawnPointDistanceToPlayer = Vector3.Distance(transform.position, _spawnPoints[randomIndex].GetPosition());
+
+      tries++;
     }
 
-    return _spawnPoints[randomIndex].GetPosition();
+    if (tries < 30) {
+      return transform.position;
+    } else {
+      return _spawnPoints[randomIndex].GetPosition();
+    }
   }
 
   private void OnDestroy() {

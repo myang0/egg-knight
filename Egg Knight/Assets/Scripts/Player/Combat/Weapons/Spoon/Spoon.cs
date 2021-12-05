@@ -39,6 +39,8 @@ public class Spoon : BasePlayerWeapon {
   }
 
   public override void EnableHitbox() {
+    VirtualCamera.Instance.Shake(2f, 0.15f);
+
     PlaySound(_swingClip);
 
     float hitboxAngle = transform.eulerAngles.z;
@@ -53,6 +55,8 @@ public class Spoon : BasePlayerWeapon {
   }
 
   public void FinisherHitbox() {
+    VirtualCamera.Instance.Shake(3f, 0.25f);
+
     PlaySound(_swingClip);
 
     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(_finisherPoint.position, _finisherRange, _enemyLayer);

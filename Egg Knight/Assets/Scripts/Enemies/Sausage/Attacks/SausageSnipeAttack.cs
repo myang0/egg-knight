@@ -44,6 +44,8 @@ public class SausageSnipeAttack : MonoBehaviour {
   private IEnumerator Snipe() {
     yield return new WaitForSeconds(_timeBeforeShot);
 
+    VirtualCamera.Instance.Shake(2.5f, 0.1f);
+
     _soundPlayer.PlayClip(_shootClip);
 
     OnRifleShot?.Invoke(this, EventArgs.Empty);
