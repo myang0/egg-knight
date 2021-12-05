@@ -6,5 +6,6 @@ public enum Sound {
   Bleeding,
   Slash,
   Pierce,
-  Blunt
+  Blunt,
+  Block,
 }

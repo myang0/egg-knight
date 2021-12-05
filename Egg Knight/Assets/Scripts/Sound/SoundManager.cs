@@ -33,6 +33,8 @@ public class SoundManager : MonoBehaviour {
         stSound.ScaleVolume(2);
       } else if (sound == Sound.Blunt) {
         stSound.ScaleVolume(0.5f);
+      } else if (sound == Sound.Block) {
+        stSound.ScaleVolume(0.5f);
       }
 
       stSound.LoadClipAndPlay(clip);

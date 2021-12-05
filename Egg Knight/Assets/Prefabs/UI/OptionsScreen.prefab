@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SFX Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7996eff3c4df15e4b8ab3568f69780dd, type: 2}
-  m_sharedMaterial: {fileID: -7708973554145692545, guid: 7996eff3c4df15e4b8ab3568f69780dd,
+  m_fontAsset: {fileID: 11400000, guid: 7a602ebf32fcdfb42bba2430b93e68fd, type: 2}
+  m_sharedMaterial: {fileID: -624656770140862069, guid: 7a602ebf32fcdfb42bba2430b93e68fd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -337,8 +337,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Done '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7996eff3c4df15e4b8ab3568f69780dd, type: 2}
-  m_sharedMaterial: {fileID: -7708973554145692545, guid: 7996eff3c4df15e4b8ab3568f69780dd,
+  m_fontAsset: {fileID: 11400000, guid: d00eb32d045548f4b81bdc2b28e4fcd2, type: 2}
+  m_sharedMaterial: {fileID: -6948726982489766485, guid: d00eb32d045548f4b81bdc2b28e4fcd2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -472,8 +472,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7996eff3c4df15e4b8ab3568f69780dd, type: 2}
-  m_sharedMaterial: {fileID: -7708973554145692545, guid: 7996eff3c4df15e4b8ab3568f69780dd,
+  m_fontAsset: {fileID: 11400000, guid: 7a602ebf32fcdfb42bba2430b93e68fd, type: 2}
+  m_sharedMaterial: {fileID: -624656770140862069, guid: 7a602ebf32fcdfb42bba2430b93e68fd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -970,8 +970,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7996eff3c4df15e4b8ab3568f69780dd, type: 2}
-  m_sharedMaterial: {fileID: -7708973554145692545, guid: 7996eff3c4df15e4b8ab3568f69780dd,
+  m_fontAsset: {fileID: 11400000, guid: d00eb32d045548f4b81bdc2b28e4fcd2, type: 2}
+  m_sharedMaterial: {fileID: -6948726982489766485, guid: d00eb32d045548f4b81bdc2b28e4fcd2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

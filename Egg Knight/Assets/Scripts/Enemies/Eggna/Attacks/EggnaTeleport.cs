@@ -14,10 +14,14 @@ public class EggnaTeleport : MonoBehaviour {
   private SpriteRenderer _sr;
   private Collider2D _collider;
   private EnemyHealth _eHealth;
+  private SoundPlayer _soundPlayer;
 
   private Transform _playerTransform;
 
   [SerializeField] private GameObject _swooshObject;
+
+  [SerializeField] private AudioClip _clip;
+  [SerializeField] private AudioClip _swooshClip;
 
   private void Awake() {
     _invisiblilityTime = _maxInvisibilityTime;
@@ -26,11 +30,14 @@ public class EggnaTeleport : MonoBehaviour {
     _sr = GetComponent<SpriteRenderer>();
     _collider = GetComponent<Collider2D>();
     _eHealth = GetComponent<EnemyHealth>();
+    _soundPlayer = GetComponent<SoundPlayer>();
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
   }
 
   public void Disappear() {
+    _soundPlayer.PlayClip(_clip);
+
     _sr.enabled = false;
     _collider.enabled = false;
 
@@ -50,11 +57,17 @@ public class EggnaTeleport : MonoBehaviour {
   }
 
   public void Reappear() {
+    _soundPlayer.PlayClip(_clip);
+
     transform.position = _playerTransform.position;
     
     Instantiate(_smokeParticles, _reappearPoint.position, Quaternion.identity);
     
     _sr.enabled = true;
+  }
+
+  public void PlaySwoosh() {
+    _soundPlayer.PlayClip(_swooshClip);
   }
 
   public void LandingAttack() {

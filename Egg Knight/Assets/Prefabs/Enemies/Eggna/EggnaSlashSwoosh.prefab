@@ -147,8 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 8
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
   _attackRange: 2
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8
   _attackPoint: {fileID: 7696042843037489772}
+  _clip: {fileID: 8300000, guid: 07bf93185bf5d2d4eaf053fb0147c331, type: 3}
