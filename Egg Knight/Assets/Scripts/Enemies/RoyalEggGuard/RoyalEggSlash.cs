@@ -9,6 +9,8 @@ public class RoyalEggSlash : BaseEnemyWeapon {
   }
 
   public override void EnableHitbox() {
+    VirtualCamera.Instance.Shake(2f, 0.15f);
+
     Collider2D[] playersInRange = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 
     if (playersInRange.Length > 0) {

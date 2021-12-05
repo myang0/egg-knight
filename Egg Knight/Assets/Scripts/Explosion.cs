@@ -17,6 +17,8 @@ public class Explosion : MonoBehaviour {
   }
 
   public virtual void OnExplode() {
+    VirtualCamera.Instance.Shake(2f, 0.1f);
+
     Collider2D[] entitiesInRange = Physics2D.OverlapCircleAll(transform.position, _explosionRange, _hitLayer);
 
     foreach (Collider2D entity in entitiesInRange) {

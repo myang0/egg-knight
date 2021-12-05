@@ -17,6 +17,7 @@ public class SausageWalkAttack : MonoBehaviour {
 
   private Animator _anim;
   private Rigidbody2D _rb;
+  private EnemyHealth _eHealth;
   private EnemyBehaviour _eBehaviour;
   private SoundPlayer _soundPlayer;
 
@@ -31,6 +32,7 @@ public class SausageWalkAttack : MonoBehaviour {
   private void Awake() {
     _anim = GetComponent<Animator>();
     _rb = GetComponent<Rigidbody2D>();
+    _eHealth = GetComponent<EnemyHealth>();
     _eBehaviour = GetComponent<EnemyBehaviour>();
     _soundPlayer = GetComponent<SoundPlayer>();
 
@@ -55,7 +57,7 @@ public class SausageWalkAttack : MonoBehaviour {
 
       for (int j = 0; j < _numShots; j++) {
         ShootAtPlayer();
-        yield return new WaitForSeconds(_timeBetweenShots);
+        yield return new WaitForSeconds(_timeBetweenShots + (_timeBetweenShots * _eHealth.CurrentHealthPercentage()));
       }
     }
 

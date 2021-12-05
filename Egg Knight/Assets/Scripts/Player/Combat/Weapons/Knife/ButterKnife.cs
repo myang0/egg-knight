@@ -52,11 +52,6 @@ public class ButterKnife : BasePlayerWeapon {
   public override void EnableHitbox() {
     PlaySound(_swingClip);
 
-    if (_isKnifeBeam) {
-      KnifeBeam knifeBeam = Instantiate(_knifeBeamPrefab, _attackPoint.position, Quaternion.identity).GetComponent<KnifeBeam>();
-      knifeBeam.SetDirection(transform.up, transform.eulerAngles.z);
-    }
-
     Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer);
     Collider2D[] obstaclesInRange = 
       Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _obstacleLayer);
@@ -73,6 +68,11 @@ public class ButterKnife : BasePlayerWeapon {
 
   public void FinisherHitbox() {
     PlaySound(_swingClip);
+
+    if (_isKnifeBeam) {
+      KnifeBeam knifeBeam = Instantiate(_knifeBeamPrefab, _attackPoint.position, Quaternion.identity).GetComponent<KnifeBeam>();
+      knifeBeam.SetDirection(transform.up, transform.eulerAngles.z);
+    }
 
     float hitboxAngle = transform.eulerAngles.z;
 

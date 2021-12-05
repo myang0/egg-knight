@@ -537,7 +537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902249381379789985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2902249381951379216}
@@ -805,7 +805,7 @@ MonoBehaviour:
   _numBursts: 3
   _timeBetweenBursts: 1.5
   _numShots: 5
-  _timeBetweenShots: 0.25
+  _timeBetweenShots: 0.125
   _bulletObject: {fileID: 7013311646222733351, guid: 61f2c72c09ba69e40971b1ef4dff6554,
     type: 3}
   _shootPoint: {fileID: 943679202}
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minIdleTime: 1
-  _initialIdleTime: 3
+  _initialIdleTime: 2
 --- !u!114 &1963139670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,7 +1059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902249382846121153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2902249381951379216}
@@ -1089,7 +1089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902249382851714522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2902249381951379216}
