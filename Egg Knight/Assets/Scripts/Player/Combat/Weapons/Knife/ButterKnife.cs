@@ -109,6 +109,11 @@ public class ButterKnife : BasePlayerWeapon {
     Gizmos.DrawWireCube(_finisherPoint.position, new Vector3(_finisherRange.x, _finisherRange.y, 1));
   }
 
+  public override void MultiplyDamage(float modifier) {
+    _damageAmount *= modifier;
+    _finisherDamage *= modifier;
+  }
+
   private void OnDestroy() {
     PlayerControls.OnLeftClick -= HandleLeftClick;
   }
