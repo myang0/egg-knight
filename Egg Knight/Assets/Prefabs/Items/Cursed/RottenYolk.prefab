@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Rotten Yolk
-  Description: Yolk attacks deal double damage... BUT all healing is halved
+  Description: Yolk attacks deal double damage... BUT all healing is reduced by 33%
   InventoryKey: 26
   _curseKey: 1
   _damageMultiplier: 2
-  _healMultiplier: 0.5
+  _healMultiplier: 0.66
 --- !u!61 &3009087022290827439
 BoxCollider2D:
   m_ObjectHideFlags: 0

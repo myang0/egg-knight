@@ -126,7 +126,7 @@ MonoBehaviour:
   Description: Increase mobility... BUT decreases maximum health
   InventoryKey: 26
   _curseKey: 0
-  _maxHealthReduction: 40
-  _speedMultiplier: 1.75
+  _maxHealthReduction: 35
+  _speedMultiplier: 1.5
   _rollSpeedMultiplier: 1
-  _rollCooldownMultiplier: 0.5
+  _rollCooldownMultiplier: 0.25
