@@ -26,6 +26,8 @@ public class PlayerWeapons : MonoBehaviour {
   public static event EventHandler OnSwitchKnife;
   public static event EventHandler OnSwitchFork;
   public static event EventHandler OnSwitchSpoon;
+  public static event EventHandler OnAttackSpeedChange;
+  public static event EventHandler OnDamageMultiplierChange;
 
   private bool _isForkUnlocked = false;
   private bool _isSpoonUnlocked = false;
@@ -202,13 +204,23 @@ public class PlayerWeapons : MonoBehaviour {
 
   public void MultiplySpeed(float speedMultiplier) {
     _speed *= speedMultiplier;
+    OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 
   public void ScaleDamageMultiplier(float scale) {
     _damageMultiplier *= scale;
+    OnDamageMultiplierChange?.Invoke(this, EventArgs.Empty);
   }
 
   public void AddToDamageMultiplier(float additionalDamage) {
     _damageMultiplier += additionalDamage;
+    OnDamageMultiplierChange?.Invoke(this, EventArgs.Empty);
+  }
+
+  public float GetDamageMultiplier() {
+    return _damageMultiplier;
+  }
+  public float GetSpeedMultiplier() {
+    return _speed;
   }
 }

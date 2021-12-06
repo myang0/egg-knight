@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Duck Egg
-  Description: Increased max health
+  Description: 'Duck eggs are stronger than Chicken eggs! '
   InventoryKey: 10
   _healthBonus: 40

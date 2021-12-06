@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Milk
-  Description: Defense up even more
+  Description: Milk is good for your shell! +Armour +Speed
   InventoryKey: 33
   _armourModifier: 1.15
+  _speedMultiplier: 1.1

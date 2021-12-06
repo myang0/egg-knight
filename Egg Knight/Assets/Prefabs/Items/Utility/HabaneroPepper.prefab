@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4871162020546173159}
   - component: {fileID: 4871162020546173158}
   - component: {fileID: 4871162020546173157}
-  - component: {fileID: 4871162020546173156}
+  - component: {fileID: 4774952487596860715}
   m_Layer: 15
   m_Name: HabaneroPepper
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 2.095}
   m_EdgeRadius: 0
---- !u!114 &4871162020546173156
+--- !u!114 &4774952487596860715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871162020546173179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eafa006572bbe004cbca529f6f991ca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a786cca741bd0a438bc67231a30bd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Habanero Pepper
-  Description: Even more movement speed
+  Description: Hot hot spice makes you move and attack faster!
   InventoryKey: 28
-  _speedMultiplier: 1.4
+  _speedMultiplier: 1.15
+  _attackSpeedMultiplier: 1.15
