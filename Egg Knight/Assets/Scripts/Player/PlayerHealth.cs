@@ -92,8 +92,13 @@ public class PlayerHealth : Health {
       return;
     }
 
+    if (isInvulnerable) {
+      return;
+    }
+
     int ninjaRoll = Random.Range(0, 8);
     if (ninjaRoll < _inventory.GetItemQuantity(Item.NinjaHeadband)) {
+       _soundPlayer.PlayClip(_ninjaClip);
       Instantiate(_ninjaParticles, transform.position, Quaternion.identity);
       StartCoroutine(NinjaIFrames());
       return;
@@ -105,6 +110,8 @@ public class PlayerHealth : Health {
 
     amount /= _armourValue;
     _currentHealth -= amount;
+
+    _soundPlayer.PlayClip(_damageClip);
 
     SpawnChangeIndicator(amount, Color.red);
 

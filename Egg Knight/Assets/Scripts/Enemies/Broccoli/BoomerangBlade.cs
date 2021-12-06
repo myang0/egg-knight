@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -31,10 +32,16 @@ public class BoomerangBlade : MonoBehaviour {
     _rb.velocity = vectorToPlayer * _speed;
     _origVelocity = _rb.velocity;
 
+    BroccoliHealth.OnBroccoliDeath += HandleBroccoliDeath;
+
     StartCoroutine(DisableCollider());
     StartCoroutine(ReturnToSender());
     StartCoroutine(PlaySounds());
     StartCoroutine(DespawnDelay());
+  }
+
+  private void HandleBroccoliDeath(object sender, EventArgs e) {
+    Destroy(gameObject);
   }
 
   private IEnumerator DisableCollider() {
@@ -90,5 +97,9 @@ public class BoomerangBlade : MonoBehaviour {
 
       Destroy(gameObject);
     }
+  }
+
+  private void OnDestroy() {
+    BroccoliHealth.OnBroccoliDeath -= HandleBroccoliDeath;
   }
 }

@@ -1,3 +1,4 @@
+using Stage;
 using System;
 using UnityEngine;
 
@@ -11,12 +12,22 @@ public class EggGuardWeapons : MonoBehaviour {
 
   [SerializeField] private GameObject _heldSpear;
 
+  private float _attackSpeed = 1;
+
   private void Awake() {
     _anim = gameObject.GetComponent<Animator>();
 
     _playerObject = GameObject.FindGameObjectWithTag("Player");
 
     EggGuardAttack[] attackBehaviours = _anim.GetBehaviours<EggGuardAttack>();
+
+    int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+    if (level > 1) {
+      _attackSpeed = 1.25f;
+    }
+    if (level > 2) {
+      _attackSpeed = 1.5f;
+    }
 
     if (attackBehaviours.Length > 0) {
       EggGuardAttack attackBehaviour = attackBehaviours[0];
@@ -37,6 +48,7 @@ public class EggGuardWeapons : MonoBehaviour {
     _currentSpear.transform.SetParent(gameObject.transform);
 
     EggGuardSpear spear = _currentSpear.GetComponent<EggGuardSpear>();
+    spear.SetSpeed(_attackSpeed);
     spear.RotateToPlayer();
   }
 

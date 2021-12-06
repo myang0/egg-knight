@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public class EggGuardSpear : BaseEnemyWeapon {
+  private Animator _anim;
+
   [SerializeField] private Transform _attackPoint;
   [SerializeField] private float _attackWidth;
   [SerializeField] private float _attackHeight;
@@ -8,6 +10,16 @@ public class EggGuardSpear : BaseEnemyWeapon {
   [SerializeField] private LayerMask _playerLayer;
 
   [SerializeField] private AudioClip _spearClip;
+
+  private void Awake() {
+    _anim = GetComponent<Animator>();
+
+    base.Awake();
+  }
+
+  public void SetSpeed(float speed) {
+    _anim.speed = speed;
+  }
 
   public override void EnableHitbox() {
     PlaySound(_spearClip);

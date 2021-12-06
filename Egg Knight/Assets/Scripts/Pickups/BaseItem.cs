@@ -37,6 +37,8 @@ public class BaseItem : MonoBehaviour
     }
 
     protected virtual void PickUp() {
+        SoundManager.Instance.PlaySound(Sound.Item, volumeScaling: 2.0f);
+                
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         Sprite s = sr.sprite;
 

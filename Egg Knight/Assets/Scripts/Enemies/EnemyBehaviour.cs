@@ -145,17 +145,18 @@ public abstract class EnemyBehaviour : MonoBehaviour {
         break;
       }
       case StatusCondition.Ignited: {
-        SoundManager.Instance.PlaySound(Sound.Ignited);
+        SoundManager.Instance.PlaySound(Sound.Ignited, 2.0f);
         OnIgnited?.Invoke(this, EventArgs.Empty);
         break;
       }
       case StatusCondition.Frosted: {
+        SoundManager.Instance.PlaySound(Sound.Frosted);
         OnFrosted?.Invoke(this, EventArgs.Empty);
         StartCoroutine(Frosted());
         break;
       }
       case StatusCondition.Electrocuted: {
-        SoundManager.Instance.PlaySound(Sound.Electrocuted);
+        SoundManager.Instance.PlaySound(Sound.Electrocuted, volumeScaling: 2.5f);
         OnElectrocuted?.Invoke(this, EventArgs.Empty);
         break;
       }

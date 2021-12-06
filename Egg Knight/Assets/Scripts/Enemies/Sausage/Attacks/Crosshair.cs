@@ -6,6 +6,12 @@ public class Crosshair : MonoBehaviour {
 
   private void Awake() {
     _anim = GetComponent<Animator>();
+
+    SausageHealth.OnSausageDeath += HandleSausageDeath;
+  }
+
+  private void HandleSausageDeath(object sender, EventArgs e) {
+    FadeOut();
   }
 
   public void FadeOut() {
@@ -14,5 +20,9 @@ public class Crosshair : MonoBehaviour {
 
   public void OnAnimationEnd() {
     Destroy(gameObject);
-  }  
+  }
+
+  private void OnDestroy() {
+    SausageHealth.OnSausageDeath -= HandleSausageDeath;
+  }
 }

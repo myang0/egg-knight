@@ -293,6 +293,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slashObject: {fileID: 2875347980883100606, guid: c9afc05dea3c86f48bf89604831070b6,
     type: 3}
+  _singleTimeSound: {fileID: 3565788561485736798, guid: 099f9b7141ddf3d4c8d40341f79c7edc,
+    type: 3}
+  _clip: {fileID: 8300000, guid: ef89bc17c2cd1a446a59183271f23562, type: 3}
 --- !u!1 &5874542447871007295
 GameObject:
   m_ObjectHideFlags: 0

@@ -148,9 +148,9 @@ public abstract class EnemyHealth : Health {
     if (type == DamageType.Slash) {
       SoundManager.Instance.PlaySound(Sound.Slash);
     } else if (type == DamageType.Pierce) {
-      SoundManager.Instance.PlaySound(Sound.Pierce);
+      SoundManager.Instance.PlaySound(Sound.Pierce, minPitch: 0.9f, maxPitch: 1.1f);
     } else if (type == DamageType.Blunt) {
-      SoundManager.Instance.PlaySound(Sound.Blunt);
+      SoundManager.Instance.PlaySound(Sound.Blunt, volumeScaling: 0.5f);
     } else {
 
     }

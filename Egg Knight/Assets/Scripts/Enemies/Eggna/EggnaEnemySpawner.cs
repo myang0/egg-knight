@@ -30,11 +30,11 @@ public class EggnaEnemySpawner : MonoBehaviour {
 
     _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-    EggnaHealth.OnEggnaBelowHalfHealth += HandleEggnaBelowHalfHealth;
+    LevelManager.OnEggnaHalfHealthDialogueEnd += StartEnemySpawns;
     EggnaHealth.OnEggnaDeath += HandleEggnaDeath;
   }
 
-  private void HandleEggnaBelowHalfHealth(object sender, EventArgs e) {
+  private void StartEnemySpawns(object sender, EventArgs e) {
     _isSpawning = true;
 
     GameObject levelManager = GameObject.FindGameObjectWithTag("LevelManager");
@@ -100,7 +100,7 @@ public class EggnaEnemySpawner : MonoBehaviour {
   }
 
   private void OnDestroy() {
-    EggnaHealth.OnEggnaBelowHalfHealth -= HandleEggnaBelowHalfHealth;
+    LevelManager.OnEggnaHalfHealthDialogueEnd -= StartEnemySpawns;
     EggnaHealth.OnEggnaDeath -= HandleEggnaDeath;
   }
 

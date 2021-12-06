@@ -107,8 +107,15 @@ public class PlayerAnimation : MonoBehaviour {
 
     if (_iFramesActive) {
       float alpha = _sr.color.a;
+      float g = _sr.color.g;
+      float b = _sr.color.b;
 
-      _sr.color = new Color(1, 1, 1, (alpha == 1) ? 0.25f : 1);
+      _sr.color = new Color(
+        1,
+        (g == 1) ? 0 : 1,
+        (b == 1) ? 0 : 1,
+        (alpha == 1) ? 0.5f : 1
+      );
     }
 
     if (_isRolling) {

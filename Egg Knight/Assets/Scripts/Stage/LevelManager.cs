@@ -45,6 +45,7 @@ namespace Stage
         private int _level2MaxStages;
         private int _level3MaxStages;
         private GameObject _player;
+        private PlayerHealth _playerHealth;
 
         public static event EventHandler OnDialogueStart;
         public static event EventHandler OnDialogueEnd;
@@ -58,11 +59,17 @@ namespace Stage
         private string _level3BossName = "Lady Eggna";
         public static event EventHandler<BossSpawnEventArgs> OnEggnaFightBegin;
 
+        public static event EventHandler OnEggnaHalfHealthDialogueStart;
+        public static event EventHandler OnEggnaHalfHealthDialogueEnd;
+
         void Start() {
             StartAsserts();
             
             PlayerHealth.OnHealthDecrease += PlayerTookDamage;
+
             _player = GameObject.FindGameObjectWithTag("Player");
+            _playerHealth = _player.GetComponent<PlayerHealth>();
+
             restRate = 0;
             sirrachaRate = 0;
             shopRate = 0;
@@ -434,8 +441,22 @@ namespace Stage
             return currentStage;
         }
 
+        public void StartEggnaDialogue() {
+            _playerHealth.isInvulnerable = true;
+            OnEggnaHalfHealthDialogueStart?.Invoke(this, EventArgs.Empty);
+
+            StartDialogue();
+        }
+
         public void StartDialogue() {
             OnDialogueStart.Invoke(this, EventArgs.Empty);
+        }
+
+        public void EndEggnaDialogue() {
+            _playerHealth.isInvulnerable = false;
+            OnEggnaHalfHealthDialogueEnd?.Invoke(this, EventArgs.Empty);
+
+            EndDialogue();
         }
 
         public void EndDialogue() {

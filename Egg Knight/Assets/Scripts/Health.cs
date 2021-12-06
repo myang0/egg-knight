@@ -37,7 +37,7 @@ public abstract class Health : MonoBehaviour {
     }
 
     if (isInvulnerable) {
-      SoundManager.Instance.PlaySound(Sound.Block);
+      SoundManager.Instance.PlaySound(Sound.Block, volumeScaling: 0.5f);
       amount = 0;
     }
 

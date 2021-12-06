@@ -21,7 +21,6 @@ public class EggArcherAttacking : StateMachineBehaviour
         if (_eaBehaviour.isStunned) animator.SetBool("isStunned", true);
         
         if (_eaBehaviour.HasClearShot() == false) {
-            Debug.Log("hi");
             animator.SetBool("IsAttacking", false);
         }
     }
