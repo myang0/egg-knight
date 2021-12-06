@@ -21,16 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/bosssign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/bosssign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/ezsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/ezsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/hardsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/hardsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/lockedsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/lockedsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/medsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/medsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/nextlevelsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/nextlevelsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/restsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/restsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/shopsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/shopsign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/sirrachasign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/sirrachasign.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Signs/survivalsign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Signs/survivalsign.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +91,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthText.cs" />
         <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/SliderValueDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/DeathScreen.cs" />
@@ -123,6 +113,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
       </list>
     </option>
   </component>
@@ -227,7 +219,7 @@
       <workItem from="1638491601681" duration="18396000" />
       <workItem from="1638566446106" duration="3111000" />
       <workItem from="1638698122084" duration="344000" />
-      <workItem from="1638748348205" duration="6156000" />
+      <workItem from="1638748348205" duration="8362000" />
     </task>
     <servers />
   </component>

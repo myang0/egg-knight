@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1397397571
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 53a61c6940e96694a904630b88789664, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35b1f22f6df3dd5468089f26c4975504, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   isDead: 0
   isInvulnerable: 1
   unlockedSprite: {fileID: 21300000, guid: 602842e958566a04f880ef148f5e989f, type: 3}
-  lockedSprite: {fileID: 21300000, guid: 53a61c6940e96694a904630b88789664, type: 3}
+  lockedSprite: {fileID: 21300000, guid: 35b1f22f6df3dd5468089f26c4975504, type: 3}
   sr: {fileID: 868785492055326479}
 --- !u!114 &868785492055326465
 MonoBehaviour:

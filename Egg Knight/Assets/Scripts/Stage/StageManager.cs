@@ -60,6 +60,7 @@ namespace Stage {
         private float _hardEnemyMultiplier = 1.25f;
         private float _easyEnemyMultiplier = 1f;
         private float _survivalEnemyMultiplier = 0.65f;
+        private float _survivalCastleEnemyMultiplier = 0.35f;
 
         public bool _initialSurvivalEnemiesSpawned;
 
@@ -221,7 +222,9 @@ namespace Stage {
                     numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * _easyEnemyMultiplier);
                     break;
                 case StageType.Survival:
-                    numEnemiesMax = Mathf.RoundToInt(numEnemiesMax * _survivalEnemyMultiplier);
+                    numEnemiesMax = _levelManager.level != 3 ?
+                        Mathf.RoundToInt(numEnemiesMax * _survivalEnemyMultiplier) :
+                        Mathf.RoundToInt(numEnemiesMax * _survivalCastleEnemyMultiplier);
                     break;
             }
             

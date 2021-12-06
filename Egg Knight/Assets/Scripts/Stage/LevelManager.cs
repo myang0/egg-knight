@@ -371,9 +371,8 @@ namespace Stage
 
             int balanceBonus = Mathf.RoundToInt(balance/3f);
             if (balanceBonus > 10) balanceBonus = 10;
-            chance = chance + balanceBonus;
-            
-            if (chance < shopRate) {
+
+            if (chance < shopRate + balanceBonus) {
                 shopRate = 0;
                 return true;
             }
