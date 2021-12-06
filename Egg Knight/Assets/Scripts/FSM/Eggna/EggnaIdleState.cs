@@ -37,6 +37,11 @@ public class EggnaIdleState : StateMachineBehaviour {
   }
 
   private void HandleIdleEnd(object sender, EventArgs e) {
+    if (_eBehaviour.IsSpeaking) {
+      _eStateManager.StartIdle();
+      return;
+    }
+
     if (_eBehaviour.IsInMeleeRange()) {
       ChooseCloseRangeAttack();
     } else {

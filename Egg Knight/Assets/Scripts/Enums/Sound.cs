@@ -8,4 +8,5 @@ public enum Sound {
   Pierce,
   Blunt,
   Block,
+  Item,
 }

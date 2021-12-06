@@ -20,22 +20,15 @@ public class SoundManager : MonoBehaviour {
     }
   }
 
-  public void PlaySound(Sound sound) {
+  public void PlaySound(Sound sound, float volumeScaling = 1.0f, float pitchScaling = 1.0f, float minPitch = 0.75f, float maxPitch = 1.25f) {
     AudioClip clip = GetClip(sound);
 
     if (clip != null) {
       SingleTimeSound stSound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity).GetComponent<SingleTimeSound>();
 
-      // TODO: do not do this
-      if (sound == Sound.Pierce) {
-        stSound.RandomizePitch(0.9f, 1.1f);
-      } else if (sound == Sound.Electrocuted) {
-        stSound.ScaleVolume(2);
-      } else if (sound == Sound.Blunt) {
-        stSound.ScaleVolume(0.5f);
-      } else if (sound == Sound.Block) {
-        stSound.ScaleVolume(0.5f);
-      }
+      stSound.ScaleVolume(volumeScaling);
+      stSound.ScalePitch(pitchScaling);
+      stSound.RandomizePitch(minPitch, maxPitch);
 
       stSound.LoadClipAndPlay(clip);
     }

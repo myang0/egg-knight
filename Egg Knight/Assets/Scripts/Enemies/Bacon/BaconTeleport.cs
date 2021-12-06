@@ -18,6 +18,9 @@ public class BaconTeleport : MonoBehaviour {
   private SpriteRenderer _sr;
   private Collider2D _collider;
 
+  [SerializeField] private GameObject _singleTimeSound;
+  [SerializeField] private AudioClip _clip;
+
   private void Awake() {
     _anim = GetComponent<Animator>();
     _sr = GetComponent<SpriteRenderer>();
@@ -34,6 +37,12 @@ public class BaconTeleport : MonoBehaviour {
   public void Disappear() {
     Instantiate(_smokeParticles, transform.position, Quaternion.identity);
 
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+
+    sound.ScaleVolume(0.5f);
+    sound.LoadClipAndPlay(_clip);
+
     _sr.enabled = false;
     _collider.enabled = false;
 
@@ -48,6 +57,12 @@ public class BaconTeleport : MonoBehaviour {
 
   public void Reappear() {
     transform.position = FindNewPosition();
+
+    SingleTimeSound sound = Instantiate(_singleTimeSound, transform.position, Quaternion.identity)
+      .GetComponent<SingleTimeSound>();
+
+    sound.ScaleVolume(0.5f);
+    sound.LoadClipAndPlay(_clip);
 
     Instantiate(_smokeParticles, transform.position, Quaternion.identity);
     

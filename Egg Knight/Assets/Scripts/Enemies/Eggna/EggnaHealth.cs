@@ -29,7 +29,7 @@ public class EggnaHealth : EnemyHealth {
     base.Damage(amount);
 
     if (_aboveHalfHealth && CurrentHealthPercentage() <= 0.5f) {
-      OnEggnaBelowHalfHealth?.Invoke(this, EventArgs.Empty);
+      Fungus.Flowchart.BroadcastFungusMessage("LadyEggnaHalf");
 
       _aboveHalfHealth = false;
     }
