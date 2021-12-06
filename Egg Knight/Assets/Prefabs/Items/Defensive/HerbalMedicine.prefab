@@ -99,7 +99,7 @@ MonoBehaviour:
   DisplayName: Herbal Medicine
   Description: Heals are stronger
   InventoryKey: 30
-  _healMultiplier: 1.25
+  _healMultiplier: 1.33
 --- !u!61 &1005877026
 BoxCollider2D:
   m_ObjectHideFlags: 0

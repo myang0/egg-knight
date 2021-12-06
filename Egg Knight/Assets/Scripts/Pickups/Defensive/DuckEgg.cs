@@ -9,6 +9,7 @@ public class DuckEgg : BaseItem {
 
       PlayerHealth pHealth = pObject?.GetComponent<PlayerHealth>();
       pHealth?.AddToMaxHealth(_healthBonus);
+      pHealth?.Heal(_healthBonus);
 
       base.PickUp();
     }

@@ -7,6 +7,8 @@ public class EggShardBehaviour : MonoBehaviour {
   [SerializeField] private float _timeToDespawn;
 
   private void Awake() {
+    PlayerWeapons pWeapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWeapons>();
+    _contactDamage *= pWeapons.GetDamageMultiplier();
     StartCoroutine(Despawn());
   }
 

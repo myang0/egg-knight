@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Hot Chili Pepper
-  Description: More movement speed
+  Description: The spice makes you run faster!
   InventoryKey: 23
-  _speedMultiplier: 1.2
+  _speedMultiplier: 1.25
