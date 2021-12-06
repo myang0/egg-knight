@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638eaaeebbe7102429ca2a685e695458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 75
+  _maxHealth: 70
   _currentHealth: 0
   isInvulnerable: 0
   _changeIndicatorPrefab: {fileID: 915490403410600299, guid: f4bb7a6b82523bf4cb68bd0c30bcbf46,

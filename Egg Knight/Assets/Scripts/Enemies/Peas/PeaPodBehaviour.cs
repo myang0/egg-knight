@@ -17,7 +17,7 @@ public class PeaPodBehaviour : EnemyBehaviour {
     int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
     if (level > 2) {
       _maxSpeed += 0.5f;
-      peaPodHealth.AddToMaxHealth(20);
+      peaPodHealth.AddToMaxHealth(25);
     }
     
     Health = peaPodHealth;

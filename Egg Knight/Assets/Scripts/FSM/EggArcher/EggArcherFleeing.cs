@@ -10,8 +10,9 @@ public class EggArcherFleeing : StateMachineBehaviour
 
   override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
     animator.SetBool("IsFleeing", true);
-
     _eaBehaviour = animator.GetComponent<EggArcherBehaviour>();
+    _eaBehaviour.LimitFleeDuration();
+
   }
 
   override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

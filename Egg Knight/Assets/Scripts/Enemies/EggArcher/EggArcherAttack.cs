@@ -21,6 +21,7 @@ public class EggArcherAttack : MonoBehaviour {
   private EggArcherBow _bow;
 
   private Transform _playerTransform;
+  private bool _isRollReady = true;
 
   private void Awake() {
     _anim = GetComponent<Animator>();
@@ -46,8 +47,17 @@ public class EggArcherAttack : MonoBehaviour {
 
   private void HandlePlayerAttack(object sender, EventArgs e) {
     if (_eaBehaviour.GetDistanceToPlayer() < _dangerRange && _anim.GetBool("IsAttacking")) {
-      StartCoroutine(Roll());
+      if (_isRollReady) {
+        _isRollReady = false;
+        StartCoroutine(Roll());
+        StartCoroutine(StartRollCD());
+      }
     }
+  }
+
+  private IEnumerator StartRollCD() {
+    yield return new WaitForSeconds(2.5f);
+    _isRollReady = true;
   }
 
   private IEnumerator Roll() {

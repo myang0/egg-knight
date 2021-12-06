@@ -137,6 +137,8 @@ MonoBehaviour:
   _lifetime: 2
   _damage: 10
   _speed: 15
+  _yolkParticles: {fileID: 9076346668763775382, guid: cbfb7c6b24e19054685d18ab517daeae,
+    type: 3}
   _explosionPrefab: {fileID: 1185810250624250000, guid: 06f60c7d1197918459b6677491bfbb2b,
     type: 3}
   _shardPrefab: {fileID: 4603155792962259345, guid: a2591da904c55fb40808d28801f6884b,

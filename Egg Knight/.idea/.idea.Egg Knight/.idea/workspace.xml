@@ -20,9 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/EggArcher/EggArcherController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/EggArcher/EggArcherController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/EggGuard/EggGuardv2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Mushroom/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Raspberry/Raspberry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Tomato/Tomato.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSM/EggArcher/EggArcherFleeing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSM/EggArcher/EggArcherFleeing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Placeholder/Tiles/Palette/Placeholder.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/SausageMinion/SausageMinionHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Strawberry/StrawberryHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/TrainingDummy/TrainingDummyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerFootprint.cs" />
@@ -85,15 +97,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSkip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/Tomato/TomatoAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/MeleeEnemyAlerted.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/QuailEgg.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/LockedWallBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsButton.cs" />
@@ -115,6 +123,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/ShopItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EggArcher/EggArcherFleeing.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggGuard/EggGuardBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Tomato/TomatoBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Corn/CornBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Peas/PeaPodBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +235,9 @@
       <workItem from="1638313301154" duration="4403000" />
       <workItem from="1638436642762" duration="161000" />
       <workItem from="1638491601681" duration="18396000" />
-      <workItem from="1638566446106" duration="2444000" />
+      <workItem from="1638566446106" duration="3111000" />
+      <workItem from="1638698122084" duration="344000" />
+      <workItem from="1638748348205" duration="5021000" />
     </task>
     <servers />
   </component>
@@ -326,10 +346,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="679" y="133" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1635284728113" />
-    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog" timestamp="1636421368333">
+    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog" timestamp="1638750235127">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1636421368333" />
+    <state x="1116" y="100" width="840" height="912" key="VCS.FileHistoryDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1638750235127" />
     <state x="1129" y="289" key="Vcs.Push.Dialog.v2" timestamp="1635031901499">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

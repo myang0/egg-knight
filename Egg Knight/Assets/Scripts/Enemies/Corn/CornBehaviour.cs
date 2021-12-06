@@ -18,6 +18,13 @@ public class CornBehaviour : EnemyBehaviour {
 
     attackCooldownMax = 6;
     maxDistanceToAttack = 15;
+    
+    int level = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().level;
+    if (level > 2) {
+      _maxSpeed += 1f;
+      attackCooldownMax -= 0.5f;
+      cornHealth.AddToMaxHealth(25);
+    }
 
     Health = cornHealth;
     isWallCollisionOn = true;

@@ -1,8 +1,12 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class YolkProjectile : Projectile {
+  [SerializeField] private GameObject _yolkParticles;
   private bool _isHoming = false;
   private Transform _nearestEnemy;
 
@@ -29,7 +33,6 @@ public class YolkProjectile : Projectile {
     }
 
     _isShellShot = upgrades.HasUpgrade(YolkUpgradeType.ShellShot);
-
     base.Awake();
   }
 
@@ -68,6 +71,7 @@ public class YolkProjectile : Projectile {
       SpawnShards();
     }
 
+    Instantiate(_yolkParticles, transform.position, Quaternion.identity);
     Destroy(gameObject);
   }
 
@@ -110,7 +114,7 @@ public class YolkProjectile : Projectile {
         enemyHealth.DamageWithStatuses(_damage, statusList);
       }
     }
-
+    
     if (collider.gameObject.layer == LayerMask.NameToLayer("Obstacle") || enemyHealth != null) {
       StopCoroutine(DespawnTimer());
       Despawn();

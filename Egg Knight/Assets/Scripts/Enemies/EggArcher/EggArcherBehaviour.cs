@@ -53,9 +53,27 @@ public class EggArcherBehaviour : EnemyBehaviour {
     return firstHit.transform.gameObject.CompareTag("Player");
   }
 
+  public void LimitFleeDuration() {
+    StartCoroutine(LimitFleeDurationCoroutine());
+  }
+
+  private IEnumerator LimitFleeDurationCoroutine() {
+    yield return new WaitForSeconds(1f);
+    if (_anim.GetBool("IsFleeing")) {
+      _anim.SetBool("IsFleeing", false);
+      Debug.Log("OK");
+    } else     Debug.Log("OKYY");
+  }
+
   protected override void OnCollisionEnter2D(Collision2D other) {
     if (_anim.GetBool("IsRolling") && other.collider.gameObject.layer == LayerMask.NameToLayer("PlayerFootprint")) {
       Physics2D.IgnoreCollision(other.collider, _collider);
+    }
+    
+    if (_anim.GetBool("IsFleeing")) {
+      if (other.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
+        if (_anim.GetBool("IsFleeing")) _anim.SetBool("IsFleeing", false);
+      }
     }
 
     base.OnCollisionEnter2D(other);

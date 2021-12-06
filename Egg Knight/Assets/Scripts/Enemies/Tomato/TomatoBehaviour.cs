@@ -31,7 +31,7 @@ public class TomatoBehaviour : EnemyBehaviour {
     if (level > 2) {
       _maxSpeed += 0.5f;
       attackCooldownMax -= 0.5f;
-      _tHealth.AddToMaxHealth(15);
+      _tHealth.AddToMaxHealth(25);
     }
 
     Health = _tHealth;

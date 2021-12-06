@@ -1650,6 +1650,7 @@
             <e p="WaveCounterText.cs" t="Include" />
             <e p="YolkBar.cs" t="Include" />
           </e>
+          <e p="VirtualCamera.cs" t="Include" />
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>
         <e p="SliderValueDisplay.cs" t="Include" />

@@ -6,6 +6,7 @@ namespace Stage {
         [SerializeField] private StageType stageType;
         [SerializeField] private Sprite[] sprites;
         private SpriteRenderer _spriteRenderer;
+        public SpriteRenderer minimapSprite;
         private LevelManager _levelManager;
         private bool _isExitInUse;
 
@@ -77,6 +78,8 @@ namespace Stage {
                     _spriteRenderer.sprite = sprites[9];
                     break;
             }
+
+            minimapSprite.sprite = _spriteRenderer.sprite;
         }
 
         public void SetStageType(StageType type) {
