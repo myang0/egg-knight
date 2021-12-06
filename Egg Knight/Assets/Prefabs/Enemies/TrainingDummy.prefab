@@ -134,8 +134,10 @@ MonoBehaviour:
   alertRange: 0
   isTurningEnabled: 0
   decrementEnemyCountOnDeath: 0
+  spawnedByEggna: 0
   disableRegularDrops: 0
   disableDeathRotation: 0
+  notAffectedByDropMods: 0
   isWandering: 0
   isWallCollisionOn: 0
   alertAnimator: {fileID: 0}
@@ -186,7 +188,8 @@ MonoBehaviour:
     type: 3}
   _electrocuteParticles: {fileID: 3428535864611965781, guid: 6a0d5f5f1b372734f89254655542dd90,
     type: 3}
-  _bleedParticles: {fileID: 0}
+  _bleedParticles: {fileID: 350271996582760256, guid: ab9b8c45bca986a4aaac8babc912872f,
+    type: 3}
 --- !u!198 &2309928917295711037
 ParticleSystem:
   m_ObjectHideFlags: 0

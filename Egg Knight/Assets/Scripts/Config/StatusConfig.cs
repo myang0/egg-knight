@@ -7,9 +7,9 @@ public static class StatusConfig {
   public static float SalmonellaTicks = 3;
   public static float SalmonellaDamage = 3;
 
-  public static int IgniteTicks = 6;
-  public static float IgniteTimeBetweenTicks = 0.5f;
-  public static float IgniteDuration = 3;
+  public static int IgniteTicks = 5;
+  public static float IgniteTimeBetweenTicks = 0.04f;
+  public static float IgniteDuration = 0.2f;
   public static float IgniteDamage = 3f;
 
   public static float FrostDuration = 5;
