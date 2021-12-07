@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 		LevelManager.OnDialogueEnd += HandleDialogueChange;
 
     _currentMovementSpeed = _movementSpeed;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 
   private void ResetSpeed(object sender, EventArgs e) {

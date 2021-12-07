@@ -1656,7 +1656,6 @@
           <e p="VirtualCamera.cs" t="Include" />
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>
-        <e p="ShowStatDisplay.cs" t="Include" />
         <e p="SliderValueDisplay.cs" t="Include" />
         <e p="StatDisplayManager.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">

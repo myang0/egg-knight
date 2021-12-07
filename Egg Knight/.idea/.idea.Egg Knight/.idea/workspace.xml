@@ -22,26 +22,14 @@
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Pizza Delivery.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Pizza Delivery.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Misc/Spinach.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Misc/Spinach.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Utility/HabaneroPepper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Utility/HabaneroPepper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionsScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionsScreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/PizzaDelivery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/PizzaDelivery.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Misc/Spinach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Misc/Spinach.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Offensive/BagOfSugar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Offensive/BagOfSugar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Offensive/EnergyDrink.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Offensive/EnergyDrink.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ShowStatDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ShowStatDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StatDisplayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StatDisplayManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +58,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/DeadTree/DeadTreeBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/KeyPickup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TitleScreenOptions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ShowStatDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OptionsDoneButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MrMusic.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,7 +102,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/SliderValueDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/Milk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs" />
@@ -134,12 +120,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/ProteinPowder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
-        <option value="$PROJECT_DIR$/Assets/StatDisplayManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/ShowStatDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/StatDisplayManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" />
       </list>
     </option>
   </component>
@@ -248,7 +235,7 @@
       <workItem from="1638767350002" duration="3955000" />
       <workItem from="1638776429038" duration="628000" />
       <workItem from="1638781223682" duration="3450000" />
-      <workItem from="1638849374494" duration="10047000" />
+      <workItem from="1638849374494" duration="12347000" />
     </task>
     <servers />
   </component>
