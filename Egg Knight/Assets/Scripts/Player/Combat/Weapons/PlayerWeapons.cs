@@ -33,7 +33,11 @@ public class PlayerWeapons : MonoBehaviour {
   private bool _isSpoonUnlocked = false;
 
   private float _speed = 1.0f;
+  private float _tempSpeed = 1.0f;
   private float _damageMultiplier = 1.0f;
+  
+  private float _berserkerSpeed = 0f;
+  private bool _isBerserkerDecaying = false;
 
   private bool _knifeBeamOffCooldown = true;
 
@@ -51,6 +55,7 @@ public class PlayerWeapons : MonoBehaviour {
     ElementalItem.OnElementalItemPickup += AddModifier;
 
     BasePlayerWeapon.OnWeaponAnimationEnd += HandleWeaponAnimEnd;
+    BasePlayerWeapon.OnValidAttack += AddBerserkerSpeed;
 
     _weaponModifiers = new List<StatusCondition>();
 
@@ -60,6 +65,34 @@ public class PlayerWeapons : MonoBehaviour {
 
     _weaponHoldPoint = GameObject.Find("PlayerWeaponDisplayPoint").transform;
     DisplayCurrentWeapon();
+  }
+
+  private void AddBerserkerSpeed(object sender, EventArgs e) {
+    if (!_inventory.HasItem(Item.BerserkersFury)) return;
+    _berserkerSpeed += 0.05f;
+    if (_berserkerSpeed > 0.5f) {
+      _berserkerSpeed = 0.5f;
+    }
+
+    _tempSpeed = _speed + _berserkerSpeed;
+    OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
+    
+    if (_isBerserkerDecaying) return;
+    StartCoroutine(BerserkerSpeedDecay());
+  }
+
+  private IEnumerator BerserkerSpeedDecay() {
+    _isBerserkerDecaying = true;
+    while (_berserkerSpeed > 0) {
+      yield return new WaitForSeconds(0.1f);
+      _berserkerSpeed -= 0.005f;
+      _tempSpeed = _speed + _berserkerSpeed;
+      OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
+    }
+  
+    _berserkerSpeed = 0;
+    _tempSpeed = _speed;
+    _isBerserkerDecaying = false;
   }
 
   private void UnlockWeapon(object sender, EventArgs e) {
@@ -107,7 +140,7 @@ public class PlayerWeapons : MonoBehaviour {
       _currentWeapon.transform.eulerAngles = new Vector3(0, 0, rotateAngle);
 
       BasePlayerWeapon weapon = _currentWeapon.GetComponent<BasePlayerWeapon>();
-      weapon.SetSpeed(_speed);
+      weapon.SetSpeed(GetSpeedMultiplier());
       weapon.MultiplyDamage(_damageMultiplier);
 
       if (_currentWeaponIndex == 0 && _inventory.HasItem(Item.MasterKnife) && _knifeBeamOffCooldown) {
@@ -221,6 +254,7 @@ public class PlayerWeapons : MonoBehaviour {
     return _damageMultiplier;
   }
   public float GetSpeedMultiplier() {
-    return _speed;
+    if (Math.Abs(_tempSpeed - _speed) > 0.005f) return _tempSpeed;
+    else return _speed;
   }
 }

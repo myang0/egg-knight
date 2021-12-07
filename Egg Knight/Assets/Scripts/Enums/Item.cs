@@ -33,5 +33,7 @@ public enum Item {
   MasterKnife,
   EnergyDrink,
   Milk,
-  ComboAttack
+  ComboAttack,
+  ShellShatteringBlows,
+  BerserkersFury
 }

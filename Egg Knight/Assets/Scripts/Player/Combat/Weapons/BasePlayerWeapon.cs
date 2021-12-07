@@ -31,6 +31,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
   [SerializeField] protected GameObject _singleTimeSound;
 
   public static event EventHandler OnWeaponAnimationEnd;
+  public static event EventHandler OnValidAttack;
 
   protected virtual void Awake() {
     _anim = GetComponent<Animator>();
@@ -71,7 +72,10 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
       if (enemyHealth != null && !enemyHealth.isInvulnerable) {
-        if (DamageEnemy(enemyHealth, damage, isFinisher)) HealOnHit();
+        if (DamageEnemy(enemyHealth, damage, isFinisher)) {
+          HealOnHit();
+          OnValidAttack?.Invoke(this, EventArgs.Empty);
+        }
       }
 
       if (enemyHealth != null && enemyHealth.isInvulnerable) {
