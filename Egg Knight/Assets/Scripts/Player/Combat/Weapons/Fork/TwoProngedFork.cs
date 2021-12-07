@@ -59,7 +59,7 @@ public class TwoProngedFork : BasePlayerWeapon {
     
     Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(_attackPoint.position, new Vector2(_attackRange.x, _attackRange.y), hitboxAngle, _coinLayer);
 
-    DamageEnemies(enemiesHit, _damageAmount);
+    DamageEnemies(enemiesHit, _damageAmount, false);
     CollectCoins(coinsInRange);
   }
 
@@ -77,7 +77,7 @@ public class TwoProngedFork : BasePlayerWeapon {
     
     Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(_finisherPoint.position, new Vector2(_finisherRange.x, _finisherRange.y), hitboxAngle, _coinLayer);
 
-    DamageEnemies(enemiesHit, _finisherDamage);
+    DamageEnemies(enemiesHit, _finisherDamage, true);
     CollectCoins(coinsInRange);
   }
 

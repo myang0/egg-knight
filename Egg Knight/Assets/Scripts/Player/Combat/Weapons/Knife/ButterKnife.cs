@@ -62,7 +62,7 @@ public class ButterKnife : BasePlayerWeapon {
     
     Collider2D[] coinsInRange = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _coinLayer);
 
-    DamageEnemies(enemiesHit, _damageAmount);
+    DamageEnemies(enemiesHit, _damageAmount, false);
     CollectCoins(coinsInRange);
   }
 
@@ -85,7 +85,7 @@ public class ButterKnife : BasePlayerWeapon {
     
     Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(_finisherPoint.position, new Vector2(_finisherRange.x, _finisherRange.y), hitboxAngle, _coinLayer);
 
-    DamageEnemies(enemiesHit, _finisherDamage);
+    DamageEnemies(enemiesHit, _finisherDamage, true);
     CollectCoins(coinsInRange);
   }
 

@@ -49,8 +49,8 @@ public class Spoon : BasePlayerWeapon {
     Collider2D[] obstaclesInRange = Physics2D.OverlapBoxAll(_attackPoint.position, new Vector2(_attackWidth, _attackHeight), hitboxAngle, _obstacleLayer);
     Collider2D[] coinsInRange = Physics2D.OverlapBoxAll(_attackPoint.position, new Vector2(_attackWidth, _attackHeight), hitboxAngle, _coinLayer);
 
-    DamageEnemies(enemiesInRange, _damageAmount);
-    DamageEnemies(obstaclesInRange, _damageAmount);
+    DamageEnemies(enemiesInRange, _damageAmount, false);
+    DamageEnemies(obstaclesInRange, _damageAmount, false);
     CollectCoins(coinsInRange);
   }
 
@@ -63,8 +63,8 @@ public class Spoon : BasePlayerWeapon {
     Collider2D[] obstaclesInRange = Physics2D.OverlapCircleAll(_finisherPoint.position, _finisherRange, _obstacleLayer);
     Collider2D[] coinsInRange = Physics2D.OverlapCircleAll(_finisherPoint.position, _finisherRange, _coinLayer);
 
-    DamageEnemies(enemiesInRange, _finisherDamage);
-    DamageEnemies(obstaclesInRange, _finisherDamage);
+    DamageEnemies(enemiesInRange, _finisherDamage, true);
+    DamageEnemies(obstaclesInRange, _finisherDamage, true);
     CollectCoins(coinsInRange);
   }
 

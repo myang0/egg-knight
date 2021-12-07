@@ -26,7 +26,7 @@ namespace Stage {
         public KeyStageStatus keyStatus;
         public List<LockedWallBehavior> lockedWalls = new List<LockedWallBehavior>();
         public event EventHandler OnStageClear;
-        public event EventHandler OnStageStart;
+        public static event EventHandler OnStageStart;
 
         private StageEntrance _stageEntrance;
         private ItemSpawnpoint _itemSpawnpoint;
@@ -228,7 +228,6 @@ namespace Stage {
                     break;
             }
             
-            //todo: this will call pizza delivery 
             OnStageStart?.Invoke(this, EventArgs.Empty);
             
             _isStageInitialized = true;

@@ -221,6 +221,7 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="DeliverySpot.cs" t="Include" />
         <e p="DyingGuard.cs" t="Include" />
         <e p="Fungus" t="Include">
           <e p="Docs" t="Include">
@@ -1533,6 +1534,7 @@
               <e p="DuckEgg.cs" t="Include" />
               <e p="HerbalMedicine.cs" t="Include" />
               <e p="Milk.cs" t="Include" />
+              <e p="PizzaDelivery.cs" t="Include" />
             </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />

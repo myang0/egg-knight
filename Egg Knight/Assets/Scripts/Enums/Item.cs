@@ -32,5 +32,6 @@ public enum Item {
   HerbalMedicine,
   MasterKnife,
   EnergyDrink,
-  Milk
+  Milk,
+  ComboAttack
 }

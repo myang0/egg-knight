@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - TutorialManager
   - Arrow
+  - DeliverySpot
   layers:
   - Default
   - TransparentFX

@@ -63,7 +63,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     transform.position = newPos;
   }
 
-  protected void DamageEnemies(Collider2D[] enemies, float damage) {
+  protected void DamageEnemies(Collider2D[] enemies, float damage, bool isFinisher) {
     GameObject[] enemyObjects = enemies.Select(e => e.gameObject).ToArray();
     GameObject[] uniqueEnemyObjects = enemyObjects.Distinct().ToArray();
 
@@ -71,7 +71,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       EnemyHealth enemyHealth = enemyObject.GetComponent<EnemyHealth>();
 
       if (enemyHealth != null && !enemyHealth.isInvulnerable) {
-        if (DamageEnemy(enemyHealth, damage)) HealOnHit();
+        if (DamageEnemy(enemyHealth, damage, isFinisher)) HealOnHit();
       }
 
       if (enemyHealth != null && enemyHealth.isInvulnerable) {
@@ -98,7 +98,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     return false;
   }
 
-  protected virtual bool DamageEnemy(EnemyHealth enemyHealth, float damage) {
+  protected virtual bool DamageEnemy(EnemyHealth enemyHealth, float damage, bool isFinisher) {
     List<StatusCondition> statuses = new List<StatusCondition>();
 
     foreach (StatusCondition modifier in _weaponModifiers) {
@@ -110,7 +110,7 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     }
 
     float proteinDamage = AddProteinDamage(damage);
-    float baseDmgInclCrit = HandleCrits(proteinDamage, statuses, enemyHealth);
+    float baseDmgInclCrit = HandleCrits(proteinDamage, statuses, enemyHealth, isFinisher);
     float coinBonus = AddCoinDamage();
     float rageBonus = AddRageDamage();
 
@@ -153,12 +153,14 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     return 0;
   }
 
-  protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses, EnemyHealth eHealth) {
+  protected virtual float HandleCrits(float originalAmount, List<StatusCondition> _statuses, EnemyHealth eHealth, 
+      bool isFinisher) {
     float totalAmount = originalAmount;
 
     int critRoll = UnityEngine.Random.Range(0, 100);
     int critChance = (10 * _inventory.GetItemQuantity(Item.ThirdEye)) +
-      (_cursedInventory.HasItem(CursedItemType.RustySword) ? 25 : 0);
+      (_cursedInventory.HasItem(CursedItemType.RustySword) ? 20 : 0);
+    if (isFinisher && _inventory.HasItem(Item.ComboAttack)) critChance += 30;
 
     if (critRoll < critChance) {
       totalAmount *= 2;
