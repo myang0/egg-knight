@@ -10,7 +10,7 @@ public class EnergyDrink : BaseItem {
       GameObject pObject = other.gameObject;
 
       PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
-      pWeapons?.MultiplySpeed(_attackSpeedModifier);
+      pWeapons?.AddToSpeedMultiplier(_attackSpeedModifier);
       pWeapons?.ScaleDamageMultiplier(_attackModifier);
 
       base.PickUp();

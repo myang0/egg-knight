@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2749343588753416625}
   - component: {fileID: 1139097004448316858}
   - component: {fileID: 2444767703232748128}
-  - component: {fileID: 1525240348147988145}
+  - component: {fileID: 88856045}
   m_Layer: 15
   m_Name: ProteinPowder
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.856, y: 1.464}
   m_EdgeRadius: 0
---- !u!114 &1525240348147988145
+--- !u!114 &88856045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,9 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6500408312060665804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cfdae395f49776469a47e3a167bc075, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e229a55544a0440b01d70011fc0bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Protein Powder
-  Description: Melee attacks deal more damage
+  Description: Because eating egg whites is cannibalism. +Melee Damage
   InventoryKey: 22
+  _bonusDamageMultiplier: 0.2

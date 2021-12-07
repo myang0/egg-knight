@@ -12,7 +12,7 @@ public class BigPepper : BaseItem {
             pMovement?.MultiplyMoveSpeed(_speedMultiplier);
 
             PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
-            pWeapons?.MultiplySpeed(_attackSpeedMultiplier);
+            pWeapons?.AddToSpeedMultiplier(_attackSpeedMultiplier);
             base.PickUp();
         }
     }

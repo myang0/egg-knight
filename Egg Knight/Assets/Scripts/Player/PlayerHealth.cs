@@ -34,6 +34,7 @@ public class PlayerHealth : Health {
   public static event EventHandler OnNinjaIFramesEnabled;
   public static event EventHandler OnNinjaIFramesDisabled;
 
+  public static event EventHandler OnArmourChange;
   public static event EventHandler OnGameOver;
   public static event EventHandler OnReviveGameOver;
   public static event EventHandler OnRevive;
@@ -227,6 +228,7 @@ public class PlayerHealth : Health {
 
   public void ScaleArmour(float scale) {
     _armourValue *= scale;
+    OnArmourChange?.Invoke(this, EventArgs.Empty);
   }
 
   public void ScaleHealMultiplier(float scale) {

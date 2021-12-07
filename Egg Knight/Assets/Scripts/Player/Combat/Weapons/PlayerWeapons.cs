@@ -202,8 +202,8 @@ public class PlayerWeapons : MonoBehaviour {
     _knifeBeamOffCooldown = true;
   }
 
-  public void MultiplySpeed(float speedMultiplier) {
-    _speed *= speedMultiplier;
+  public void AddToSpeedMultiplier(float additionalSpeed) {
+    _speed += additionalSpeed;
     OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 

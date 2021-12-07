@@ -126,4 +126,4 @@ MonoBehaviour:
   Description: Hot hot spice makes you move and attack faster!
   InventoryKey: 28
   _speedMultiplier: 1.15
-  _attackSpeedMultiplier: 1.15
+  _attackSpeedMultiplier: 0.15

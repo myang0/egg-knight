@@ -125,4 +125,4 @@ MonoBehaviour:
   DisplayName: Bag of Sugar
   Description: Increased attack speed
   InventoryKey: 27
-  _speedMultiplier: 1.25
+  _speedMultiplier: 0.25

@@ -9,7 +9,7 @@ public class BagOfSugar : BaseItem {
       GameObject pObject = other.gameObject;
 
       PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
-      pWeapons?.MultiplySpeed(_speedMultiplier);
+      pWeapons?.AddToSpeedMultiplier(_speedMultiplier);
 
       base.PickUp();
     }

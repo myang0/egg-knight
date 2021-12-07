@@ -35,6 +35,7 @@ namespace Stage
         public GameObject level1Grid;
         public GameObject level2Grid;
         public GameObject level3Grid;
+        public GameObject pizzaSlice;
         private const int NumStagesToBossLv1 = 10;
         private const int NumStagesToBossLv2 = 8;
         private const int NumStagesToBossLv3 = 9;
@@ -66,6 +67,7 @@ namespace Stage
             StartAsserts();
             
             PlayerHealth.OnHealthDecrease += PlayerTookDamage;
+            StageManager.OnStageStart += SpawnPizza;
 
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerHealth = _player.GetComponent<PlayerHealth>();
@@ -489,6 +491,19 @@ namespace Stage
         public void ForceClearStage() {
             currentStage.ClearStageRoutine();
         }
+        
+        private void SpawnPizza(object sender, EventArgs e) {
+            if (!_player.GetComponent<PlayerInventory>().HasItem(Item.PizzaDelivery)) return;
+            LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+            StageManager currentStage = levelManager.GetCurrentStage();
+            DeliverySpot deliveryLocation = currentStage.GetComponentInChildren<DeliverySpot>();
+            if (deliveryLocation) {
+                Instantiate(pizzaSlice, deliveryLocation.transform.position, Quaternion.identity);
+            }
+            else {
+                Debug.LogError("Stage " + currentStage.gameObject.name + " does not have a pizza delivery spot.");
+            }
+        }
 
         public void PrintDebugLog() {
             Debug.LogError("Current Level: " + level);
@@ -535,6 +550,10 @@ namespace Stage
 
                     break;
             }
+        }
+
+        private void OnDestroy() {
+            StageManager.OnStageStart -= SpawnPizza;
         }
     }
 }

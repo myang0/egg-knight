@@ -463,7 +463,7 @@ namespace Stage {
             enemyCount = 0;
             numWavesCurr = 1;
         }
-        
+
         public void RemoveEnemy(EnemyBehaviour e) {
             enemiesList.Remove(e);
             if (e.decrementEnemyCountOnDeath) enemyCount--;

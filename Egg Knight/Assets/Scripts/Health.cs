@@ -104,4 +104,8 @@ public abstract class Health : MonoBehaviour {
     _maxHealth += addValue;
     _currentHealth = _maxHealth * origPercent;
   }
+
+  public float GetArmour() {
+    return _armourValue;
+  }
 }

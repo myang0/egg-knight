@@ -1251,6 +1251,7 @@
         <e p="OptionsDoneButton.cs" t="Include" />
         <e p="PickupBase.cs" t="Include" />
         <e p="PlayerFootprint.cs" t="Include" />
+        <e p="ProteinPowder.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="CoinDrop.cs" t="Include" />
           <e p="Config" t="Include">
@@ -1534,7 +1535,6 @@
               <e p="DuckEgg.cs" t="Include" />
               <e p="HerbalMedicine.cs" t="Include" />
               <e p="Milk.cs" t="Include" />
-              <e p="PizzaDelivery.cs" t="Include" />
             </e>
             <e p="Elemental" t="Include">
               <e p="ElementalItem.cs" t="Include" />
@@ -1656,7 +1656,9 @@
           <e p="VirtualCamera.cs" t="Include" />
           <e p="ZcoordinateConsts.cs" t="Include" />
         </e>
+        <e p="ShowStatDisplay.cs" t="Include" />
         <e p="SliderValueDisplay.cs" t="Include" />
+        <e p="StatDisplayManager.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

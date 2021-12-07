@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 
   public static event EventHandler OnMovementBegin;
   public static event EventHandler OnMovementEnd;
+  public static event EventHandler OnSpeedChange;
 
   public static event EventHandler<RollEventArgs> OnRollBegin;
   public static event EventHandler OnRollEnd;
@@ -46,19 +47,23 @@ public class PlayerMovement : MonoBehaviour {
 
   private void ResetSpeed(object sender, EventArgs e) {
     _currentMovementSpeed = _movementSpeed;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 
   private void SandpitSlow(object sender, EventArgs e) {
     _currentMovementSpeed = _currentMovementSpeed * 0.5f;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 
   private void HandleNinjaIFramesEnabled(object sender, EventArgs e) {
     _currentMovementSpeed *= 1.5f;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
     _isVisible = false;
   }
 
   private void HandleNinjaIFramesDisabled(object sender, EventArgs e) {
     _currentMovementSpeed /= 1.5f;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
     _isVisible = true;
   }
 
@@ -122,6 +127,7 @@ public class PlayerMovement : MonoBehaviour {
   public void MultiplyMoveSpeed(float multiplyValue) {
     _movementSpeed *= multiplyValue;
     _currentMovementSpeed = _movementSpeed;
+    OnSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 
   public void MultiplyRollSpeed(float multiplyValue) {

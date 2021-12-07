@@ -109,8 +109,8 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
       }
     }
 
-    float proteinDamage = AddProteinDamage(damage);
-    float baseDmgInclCrit = HandleCrits(proteinDamage, statuses, enemyHealth, isFinisher);
+    // float proteinDamage = AddProteinDamage(damage);
+    float baseDmgInclCrit = HandleCrits(damage, statuses, enemyHealth, isFinisher);
     float coinBonus = AddCoinDamage();
     float rageBonus = AddRageDamage();
 

@@ -125,5 +125,5 @@ MonoBehaviour:
   DisplayName: Energy Drink
   Description: Greatly increases attack speed while lowering damage
   InventoryKey: 32
-  _attackSpeedModifier: 2
+  _attackSpeedModifier: 1.25
   _attackModifier: 0.4

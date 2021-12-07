@@ -16,7 +16,7 @@ public class Spinach : BaseItem {
 
       pMovement?.MultiplyMoveSpeed(_speedMultiplier);
       pHealth?.AddToMaxHealth(_bonusHealth);
-      pWeapons?.MultiplySpeed(_attackSpeedMultiplier);
+      pWeapons?.AddToSpeedMultiplier(_attackSpeedMultiplier);
       pWeapons?.AddToDamageMultiplier(_bonusDamage);
 
       base.PickUp();
