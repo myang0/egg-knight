@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class DyingGuard : MonoBehaviour
 {
+    private Animator _anim;
+
     private bool _hasEventExecuted;
     private bool _isPlayerInRange;
     private bool dying;
     private WaveCounterText _waveCounterText;
     void Start()
     {
+        _anim = GetComponent<Animator>();
+
         _waveCounterText = FindObjectOfType<WaveCounterText>();
         Vector3 currPos = transform.position;
         transform.position = new Vector3(currPos.x, currPos.y, ZcoordinateConsts.Interactable);
@@ -26,6 +30,10 @@ public class DyingGuard : MonoBehaviour
 
     private void FixedUpdate() {
         if (dying) {
+            if (_anim.GetBool("IsDead") == false) {
+                _anim.SetBool("IsDead", true);
+            }
+
             GetComponent<Collider2D>().enabled = false;
     
             Quaternion newRotation = Quaternion.Euler(0, 0, 90);
