@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Stage
@@ -65,7 +66,7 @@ namespace Stage
 
         void Start() {
             StartAsserts();
-            
+           if (SceneManager.sceneCount != 1) SceneManager.UnloadSceneAsync("Scenes/TitleScene");
             PlayerHealth.OnHealthDecrease += PlayerTookDamage;
             StageManager.OnStageStart += SpawnPizza;
 

@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionsScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionsScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShowStatDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShowStatDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StatDisplayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StatDisplayManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/OptionsButton.cs" />
         <option value="$PROJECT_DIR$/Assets/OptionsDoneButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthText.cs" />
         <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
@@ -118,7 +112,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/PizzaDelivery.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/ProteinPowder.cs" />
@@ -127,6 +120,8 @@
         <option value="$PROJECT_DIR$/Assets/ShowStatDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/StatDisplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
       </list>
     </option>
   </component>
@@ -235,7 +230,7 @@
       <workItem from="1638767350002" duration="3955000" />
       <workItem from="1638776429038" duration="628000" />
       <workItem from="1638781223682" duration="3450000" />
-      <workItem from="1638849374494" duration="12347000" />
+      <workItem from="1638849374494" duration="14420000" />
     </task>
     <servers />
   </component>
