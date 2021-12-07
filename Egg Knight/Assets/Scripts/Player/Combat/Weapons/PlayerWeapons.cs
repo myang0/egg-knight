@@ -237,6 +237,7 @@ public class PlayerWeapons : MonoBehaviour {
 
   public void AddToSpeedMultiplier(float additionalSpeed) {
     _speed += additionalSpeed;
+    _tempSpeed = _speed;
     OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
   }
 

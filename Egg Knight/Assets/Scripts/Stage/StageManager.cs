@@ -80,6 +80,7 @@ namespace Stage {
             
             // Assert.IsTrue(stageExits.Count > 0)
             Assert.IsNotNull(GetComponentInChildren<ItemSpawnpoint>());
+            Assert.IsNotNull(GetComponentInChildren<DeliverySpot>());
             Assert.IsNotNull(_stageEntrance);
             Assert.IsNotNull(_camBoundary);
             Assert.IsNotNull(_levelManager);

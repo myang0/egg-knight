@@ -59,7 +59,7 @@ public abstract class EnemyBehaviour : MonoBehaviour {
   protected virtual void Awake() {
     Assert.IsNotNull(Health);
     _currentSpeed = _maxSpeed;
-    alertRange = 6f;
+    alertRange = 4f;
 
     rb = gameObject.GetComponent<Rigidbody2D>();
     isAttackOffCooldown = true;
