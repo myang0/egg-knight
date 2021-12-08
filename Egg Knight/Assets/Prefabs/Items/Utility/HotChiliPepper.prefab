@@ -125,4 +125,4 @@ MonoBehaviour:
   DisplayName: Hot Chili Pepper
   Description: The spice makes you run faster!
   InventoryKey: 23
-  _speedMultiplier: 1.25
+  _speedBonus: 1

@@ -128,4 +128,4 @@ MonoBehaviour:
   _bonusHealth: 10
   _bonusDamage: 0.1
   _attackSpeedMultiplier: 0.1
-  _speedMultiplier: 1.1
+  _speedBonus: 0.25

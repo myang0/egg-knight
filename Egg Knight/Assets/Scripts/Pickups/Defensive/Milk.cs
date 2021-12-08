@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Milk : BaseItem {
   [SerializeField] private float _armourModifier;
-  [SerializeField] private float _speedMultiplier;
+  [SerializeField] private float _speedBonus;
 
   protected override void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("Player")) {
@@ -12,7 +12,7 @@ public class Milk : BaseItem {
       pHealth?.ScaleArmour(_armourModifier);
       
       PlayerMovement pMovement = pObject?.GetComponent<PlayerMovement>();
-      pMovement?.MultiplyMoveSpeed(_speedMultiplier);
+      pMovement?.IncreaseMoveSpeed(_speedBonus);
 
       base.PickUp();
     }

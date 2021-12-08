@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Caravan.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Cursed/TornCape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Cursed/TornCape.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/Milk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/Milk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Misc/Spinach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Misc/Spinach.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/Pepper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/Pepper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/EggArcher/EggArcherFleeing.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomBehavior.cs" />
@@ -87,8 +91,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Yolk/YolkProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/StatusConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/SliderValueDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/Milk.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/DuckEgg.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Offensive/EggShardBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/PlayerCombat.cs" />
@@ -103,12 +105,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/PizzaDelivery.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/ProteinPowder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/ShowStatDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/StatDisplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
@@ -125,6 +125,13 @@
         <option value="$PROJECT_DIR$/Assets/CreditsReel.cs" />
         <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/Pepper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Utility/BigPepper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Defensive/Milk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Cursed/TornCape.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Misc/Spinach.cs" />
+        <option value="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" />
       </list>
     </option>
   </component>
@@ -234,7 +241,7 @@
       <workItem from="1638776429038" duration="628000" />
       <workItem from="1638781223682" duration="3450000" />
       <workItem from="1638849374494" duration="19445000" />
-      <workItem from="1638942630907" duration="671000" />
+      <workItem from="1638942630907" duration="1417000" />
     </task>
     <servers />
   </component>

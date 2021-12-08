@@ -127,6 +127,6 @@ MonoBehaviour:
   InventoryKey: 26
   _curseKey: 0
   _maxHealthReduction: 35
-  _speedMultiplier: 1.5
+  _speedBonus: 2
   _rollSpeedMultiplier: 1
   _rollCooldownMultiplier: 0.25

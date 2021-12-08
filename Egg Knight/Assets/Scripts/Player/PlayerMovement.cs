@@ -125,8 +125,8 @@ public class PlayerMovement : MonoBehaviour {
     _rb.velocity = Vector2.zero;
   }
 
-  public void MultiplyMoveSpeed(float multiplyValue) {
-    _movementSpeed *= multiplyValue;
+  public void IncreaseMoveSpeed(float increment) {
+    _movementSpeed += increment;
     _currentMovementSpeed = _movementSpeed;
     OnSpeedChange?.Invoke(this, EventArgs.Empty);
   }

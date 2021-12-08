@@ -4,7 +4,7 @@ public class Spinach : BaseItem {
   [SerializeField] private float _bonusHealth;
   [SerializeField] private float _bonusDamage;
   [SerializeField] private float _attackSpeedMultiplier;
-  [SerializeField] private float _speedMultiplier;
+  [SerializeField] private float _speedBonus;
 
   protected override void OnTriggerEnter2D(Collider2D col) {
     if (col.CompareTag("Player")) {
@@ -14,7 +14,7 @@ public class Spinach : BaseItem {
       PlayerHealth pHealth = pObject?.GetComponent<PlayerHealth>();
       PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
 
-      pMovement?.MultiplyMoveSpeed(_speedMultiplier);
+      pMovement?.IncreaseMoveSpeed(_speedBonus);
       pHealth?.AddToMaxHealth(_bonusHealth);
       pWeapons?.AddToSpeedMultiplier(_attackSpeedMultiplier);
       pWeapons?.AddToDamageMultiplier(_bonusDamage);

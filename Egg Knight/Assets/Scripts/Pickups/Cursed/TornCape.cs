@@ -4,7 +4,7 @@ using UnityEngine;
 public class TornCape : CursedItem {
   [SerializeField] private int _maxHealthReduction;
 
-  [SerializeField] private float _speedMultiplier;
+  [SerializeField] private float _speedBonus;
   [SerializeField] private float _rollSpeedMultiplier;
   [SerializeField] private float _rollCooldownMultiplier;
 
@@ -17,7 +17,7 @@ public class TornCape : CursedItem {
 
       pHealth?.AddToMaxHealth(-_maxHealthReduction);
 
-      pMovement?.MultiplyMoveSpeed(_speedMultiplier);
+      pMovement?.IncreaseMoveSpeed(_speedBonus);
       pMovement?.MultiplyRollSpeed(_rollSpeedMultiplier);
       pMovement?.MultiplyRollCooldown(_rollCooldownMultiplier);
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class BigPepper : BaseItem {
-    [SerializeField] private float _speedMultiplier;
+    [SerializeField] private float _speedBonus;
     [SerializeField] private float _attackSpeedMultiplier;
 
     protected override void OnTriggerEnter2D(Collider2D col) {
@@ -9,7 +9,7 @@ public class BigPepper : BaseItem {
             GameObject pObject = col.gameObject;
 
             PlayerMovement pMovement = pObject?.GetComponent<PlayerMovement>();
-            pMovement?.MultiplyMoveSpeed(_speedMultiplier);
+            pMovement?.IncreaseMoveSpeed(_speedBonus);
 
             PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
             pWeapons?.AddToSpeedMultiplier(_attackSpeedMultiplier);

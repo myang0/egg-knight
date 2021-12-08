@@ -8,7 +8,7 @@ public class StatIncreaseItem : BaseItem
     [SerializeField] private float _bonusDamageFlat;
     [SerializeField] private float _bonusDamageMultiplier;
     [SerializeField] private float _attackSpeedBonus;
-    [SerializeField] private float _speedMultiplier;
+    [SerializeField] private float _speedBonus;
 
     protected override void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Player")) {
@@ -18,7 +18,7 @@ public class StatIncreaseItem : BaseItem
             PlayerHealth pHealth = pObject?.GetComponent<PlayerHealth>();
             PlayerWeapons pWeapons = pObject?.GetComponent<PlayerWeapons>();
 
-            if (_speedMultiplier != 0) pMovement?.MultiplyMoveSpeed(_speedMultiplier);
+            if (_speedBonus != 0) pMovement?.IncreaseMoveSpeed(_speedBonus);
             if (_bonusHealth != 0) pHealth?.AddToMaxHealth(_bonusHealth);
             if (_attackSpeedBonus != 0) pWeapons?.AddToSpeedMultiplier(_attackSpeedBonus);
             if (_bonusDamageFlat != 0) pWeapons?.AddToDamageMultiplier(_bonusDamageFlat);
