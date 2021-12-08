@@ -211,7 +211,7 @@ public class PlayerHealth : Health {
   }
 
   public void RustySwordDamage() {
-    if (CurrentHealthPercentage() >= 0.2f) {
+    if (CurrentHealthPercentage() >= 0.25f) {
       _currentHealth -= 1;
 
       SpawnChangeIndicator(1, Color.red);
