@@ -44,12 +44,14 @@ public class YolkProjectile : Projectile {
     GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
     foreach(GameObject enemy in allEnemies) {
+      if (enemy == null) continue;      
+
       if (enemy.GetComponent<DeadTreeBehavior>() != null ||
           enemy.GetComponent<CactusBehavior>() != null ||
           enemy.GetComponent<LockedWallBehavior>() != null) continue;
       
       if (enemy.GetComponent<EnemyBehaviour>().isDead) continue;
-      
+
       float currentDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
       if (currentDistance < minDistance && enemy.layer == LayerMask.NameToLayer("Enemy")) {
