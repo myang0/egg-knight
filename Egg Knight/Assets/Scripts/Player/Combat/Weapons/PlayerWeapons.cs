@@ -85,11 +85,11 @@ public class PlayerWeapons : MonoBehaviour {
     _isBerserkerDecaying = true;
     while (_berserkerSpeed > 0) {
       yield return new WaitForSeconds(0.1f);
-      if (_berserkerSpeed > 0.5f) _berserkerSpeed -= 0.004f;
-      if (_berserkerSpeed > 0.4f) _berserkerSpeed -= 0.003f;
-      if (_berserkerSpeed > 0.3f) _berserkerSpeed -= 0.002f;
-      if (_berserkerSpeed > 0.2f) _berserkerSpeed -= 0.002f;
-      if (_berserkerSpeed > 0.1f) _berserkerSpeed -= 0.002f;
+      if (_berserkerSpeed*_speed > 0.5f) _berserkerSpeed -= 0.005f;
+      if (_berserkerSpeed*_speed > 0.4f) _berserkerSpeed -= 0.004f;
+      if (_berserkerSpeed*_speed > 0.3f) _berserkerSpeed -= 0.003f;
+      if (_berserkerSpeed*_speed > 0.2f) _berserkerSpeed -= 0.002f;
+      if (_berserkerSpeed*_speed > 0.1f) _berserkerSpeed -= 0.002f;
       _berserkerSpeed -= 0.002f;
       _tempSpeed = _speed + _berserkerSpeed;
       OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
