@@ -102,8 +102,8 @@ MonoBehaviour:
   _bonusHealth: 0
   _bonusDamageFlat: 0.4
   _bonusDamageMultiplier: 0
-  _attackSpeedBonus: -0.275
-  _speedMultiplier: 0
+  _attackSpeedBonus: -0.2
+  _speedBonus: 0
 --- !u!61 &3074863961141854254
 BoxCollider2D:
   m_ObjectHideFlags: 0

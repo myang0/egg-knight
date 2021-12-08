@@ -241,7 +241,11 @@ public class PlayerWeapons : MonoBehaviour {
   }
 
   public void AddToSpeedMultiplier(float additionalSpeed) {
-    _speed += additionalSpeed;
+    if (Math.Abs(additionalSpeed - 1) < 0.01f) _speed = _speed * 2f;
+    else {
+      _speed += additionalSpeed;
+      if (_inventory.HasItem(Item.EnergyDrink)) _speed += additionalSpeed;
+    }
     _tempSpeed = _speed;
     OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
   }
@@ -253,6 +257,7 @@ public class PlayerWeapons : MonoBehaviour {
 
   public void AddToDamageMultiplier(float additionalDamage) {
     _damageMultiplier += additionalDamage;
+    if (_inventory.HasItem(Item.EnergyDrink)) _damageMultiplier -= additionalDamage/2f;
     OnDamageMultiplierChange?.Invoke(this, EventArgs.Empty);
   }
 
