@@ -19,36 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/NPCs/Eggtonio/Shopkeeper.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/NPCs/Eggtonio/Shopkeeper.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MrMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MrMusic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Milk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Milk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Berserker's Fury.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Berserker's Fury.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Combo Attack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Combo Attack.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/MasterKnife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/MasterKnife.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Norovirus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Norovirus.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Shell Shattering Swings.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Shell Shattering Swings.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
