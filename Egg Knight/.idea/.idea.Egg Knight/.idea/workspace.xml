@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="" />
+    <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +110,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/EggtonioCreditsWalk.cs" />
@@ -122,6 +124,7 @@
         <option value="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" />
         <option value="$PROJECT_DIR$/Assets/CreditsReel.cs" />
         <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
       </list>
     </option>
   </component>
@@ -231,7 +234,7 @@
       <workItem from="1638776429038" duration="628000" />
       <workItem from="1638781223682" duration="3450000" />
       <workItem from="1638849374494" duration="19445000" />
-      <workItem from="1638942630907" duration="327000" />
+      <workItem from="1638942630907" duration="671000" />
     </task>
     <servers />
   </component>

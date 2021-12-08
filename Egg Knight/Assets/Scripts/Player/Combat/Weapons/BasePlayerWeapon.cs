@@ -162,9 +162,9 @@ public abstract class BasePlayerWeapon : MonoBehaviour {
     float totalAmount = originalAmount;
 
     int critRoll = UnityEngine.Random.Range(0, 100);
-    int critChance = (10 * _inventory.GetItemQuantity(Item.ThirdEye)) +
+    int critChance = (12 * _inventory.GetItemQuantity(Item.ThirdEye)) +
       (_cursedInventory.HasItem(CursedItemType.RustySword) ? 20 : 0);
-    if (isFinisher && _inventory.HasItem(Item.ComboAttack)) critChance += 30;
+    if (isFinisher && _inventory.HasItem(Item.ComboAttack)) critChance += 35;
 
     if (critRoll < critChance) {
       totalAmount *= 2;
