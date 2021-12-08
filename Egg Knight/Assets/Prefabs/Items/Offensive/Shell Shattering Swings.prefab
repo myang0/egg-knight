@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3074863961141854257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.83, y: 71.29, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,9 +100,9 @@ MonoBehaviour:
   Description: Your swings are heavier and hit harder! Maybe too heavy...
   InventoryKey: 35
   _bonusHealth: 0
-  _bonusDamageFlat: 0.375
+  _bonusDamageFlat: 0.4
   _bonusDamageMultiplier: 0
-  _attackSpeedBonus: -0.25
+  _attackSpeedBonus: -0.275
   _speedMultiplier: 0
 --- !u!61 &3074863961141854254
 BoxCollider2D:

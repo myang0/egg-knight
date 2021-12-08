@@ -1,7 +1,7 @@
 // This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-﻿using UnityEngine;
+ using UnityEngine;
 using System.Collections.Generic;
 
 namespace Fungus
@@ -24,7 +24,7 @@ namespace Fungus
     {
         [Tooltip("Volume level of writing sound effects")]
         [Range(0,1)]
-        [SerializeField] protected float volume = 1f;
+        [SerializeField] public float volume = 1f;
 
         [Tooltip("Loop the audio when in Sound Effect mode. Has no effect in Beeps mode.")]
         [SerializeField] protected bool loop = true;

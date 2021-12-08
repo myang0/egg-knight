@@ -48,14 +48,14 @@ public class ChestBehavior : EnemyBehaviour
         float maxOffset = 0.6f;
         
         if (drop == ChestDrops.Coin) {
-            int randomAmt = Random.Range(minAmt, maxAmt+1);
+            int randomAmt = Random.Range(minAmt+1, maxAmt+1);
             for (int i = 0; i < randomAmt; i++) {
                 Vector3 pos = transform.position;
                 Vector3 spawnPos = new Vector3(pos.x + Random.Range(-maxOffset, maxOffset), pos.y + Random.Range(-maxOffset, maxOffset), ZcoordinateConsts.Pickup);
                 Instantiate(coinObj, spawnPos, Quaternion.identity);
             }
         } else if (drop == ChestDrops.Heart) {
-            int randomAmt = Random.Range(minAmt*3, maxAmt*3+1);
+            int randomAmt = Random.Range(minAmt*3+3, maxAmt*3+1);
             for (int i = 0; i < randomAmt; i++) {
                 Vector3 pos = transform.position;
                 Vector3 spawnPos = new Vector3(pos.x + Random.Range(-maxOffset, maxOffset), pos.y + Random.Range(-maxOffset, maxOffset), ZcoordinateConsts.Pickup);

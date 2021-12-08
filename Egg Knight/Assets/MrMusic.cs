@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using Stage;
 using UnityEngine;
+using EventHandler = System.EventHandler;
 
 public class MrMusic : MonoBehaviour {
     public AudioClip level1BGM;
@@ -14,6 +16,7 @@ public class MrMusic : MonoBehaviour {
     public AudioClip gameOver;
 
     public AudioSource source;
+    public WriterAudio wAudio;
 
     public float musicVolume;
     public float fxVolume;
@@ -38,6 +41,7 @@ public class MrMusic : MonoBehaviour {
         source.volume = PlayerPrefs.GetFloat("BGMVolume", 0.2f);
         musicVolume = source.volume;
         fxVolume = PlayerPrefs.GetFloat("SFXVolume", 0.2f);
+        wAudio.volume = fxVolume * 2f;
         PlayerHealth.OnGameOver += StartGameOverMusic;
     }
     
@@ -52,6 +56,7 @@ public class MrMusic : MonoBehaviour {
     public void SetSFXVolume(System.Single vol) {
         OnSFXVolumeChange?.Invoke(this, EventArgs.Empty);
         fxVolume = vol;
+        wAudio.volume = fxVolume * 2f;
         PlayerPrefs.SetFloat("SFXVolume", fxVolume);
         PlayerPrefs.Save();
     }
@@ -98,6 +103,25 @@ public class MrMusic : MonoBehaviour {
         else if (curLevel == 3) clip = level3BGM;
 
         StartCoroutine(MusicFadeOut(clip));
+    }
+
+    public void StartMusicFadeOutNoClip() {
+        StartCoroutine(MusicFadeOutNoClip());
+    }
+    
+    private IEnumerator MusicFadeOutNoClip() {
+        bool isFading = true;
+        float timeCurr = 0f;
+        float timeDest = 2.5f;
+
+        float initialVolume = source.volume;
+        while (isFading) {
+            timeCurr += Time.deltaTime / timeDest;
+
+            source.volume = Mathf.Lerp(initialVolume, 0f, timeCurr);
+            if (Math.Abs(source.volume - 0) < 0.01f) isFading = false;
+            yield return null;
+        }
     }
 
     private IEnumerator MusicFadeOut(AudioClip clip) {

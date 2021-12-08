@@ -221,8 +221,12 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="CreditsReel.cs" t="Include" />
         <e p="DeliverySpot.cs" t="Include" />
         <e p="DyingGuard.cs" t="Include" />
+        <e p="EggtonioCredits.cs" t="Include" />
+        <e p="EggtonioCreditsMoveBackwards.cs" t="Include" />
+        <e p="EggtonioCreditsMoveForward.cs" t="Include" />
         <e p="Fungus" t="Include">
           <e p="Docs" t="Include">
             <e p="CHANGELOG.txt" t="Include" />
@@ -1243,6 +1247,7 @@
         </e>
         <e p="IntroControls.cs" t="Include" />
         <e p="KeyPickup.cs" t="Include" />
+        <e p="LoadCreditsScript.cs" t="Include" />
         <e p="LockedWallBehavior.cs" t="Include" />
         <e p="LockedWallHealth.cs" t="Include" />
         <e p="MinimapCamera.cs" t="Include" />
@@ -1522,6 +1527,7 @@
             <e p="ShopItem.cs" t="Include" />
             <e p="SirRachaController.cs" t="Include" />
           </e>
+          <e p="NPC.cs" t="Include" />
           <e p="Pickups" t="Include">
             <e p="BaseItem.cs" t="Include" />
             <e p="Coin.cs" t="Include" />

@@ -126,4 +126,4 @@ MonoBehaviour:
   Description: Milk is good for your shell! +Armour +Speed
   InventoryKey: 33
   _armourModifier: 1.15
-  _speedMultiplier: 1.1
+  _speedMultiplier: 1.15

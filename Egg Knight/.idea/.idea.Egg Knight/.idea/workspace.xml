@@ -20,10 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07a20515-e1dc-408c-bc71-586e01773dd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egg Knight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/NPCs/Eggtonio/Shopkeeper.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/NPCs/Eggtonio/Shopkeeper.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MrMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MrMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/BrandNewHelmet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Milk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Defensive/Milk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/BagOfSugar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Berserker's Fury.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Berserker's Fury.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Combo Attack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Combo Attack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EggShardsItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/EnergyDrink.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/GoldChainNecklace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/MasterKnife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/MasterKnife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Norovirus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Norovirus.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ProteinPowder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Shell Shattering Swings.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/Shell Shattering Swings.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/ThirdEye.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VampireFangs.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Items/Offensive/VikingHelmet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +60,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/LockedWallBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/37/3a9a44a3/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EggtonioCreditsMoveForward.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MinimapCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LoadCreditsScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/DeathScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7117D168-A9EC-4E51-8E0D-E7D9C98BD09A/fb/49458999/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,12 +81,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/Cactus/CactusBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OptionsDoneButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MrMusic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CreditsReel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StatDisplayManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EggtonioCredits.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/b1/3704a7c8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/d2/e1c17cce/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TitleMenuMusic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Editor/LuaScriptedImporter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/75/85607e98/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EggtonioCreditsMoveBackwards.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapEntities/SirRachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StatIncreaseItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/Mushroom/MushroomHealth.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,16 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthText.cs" />
-        <option value="$PROJECT_DIR$/Assets/DyingGuard.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/DeathScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerDeath.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/DisplayWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/WeaponDisplayPoint.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/ShopItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Caravan.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageExit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EggArcher/EggArcherAttack.cs" />
@@ -115,13 +134,23 @@
         <option value="$PROJECT_DIR$/Assets/StatDisplayManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TitleScreenOptions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/TitleMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/StatIncreaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/BasePlayerWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Stage/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/EggtonioCreditsWalk.cs" />
+        <option value="$PROJECT_DIR$/Assets/EggtonioCreditsMoveBackwards.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stage/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/LoadCredits.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEntities/Chest/ChestBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Combat/Weapons/PlayerWeapons.cs" />
+        <option value="$PROJECT_DIR$/Assets/EggtonioCredits.cs" />
+        <option value="$PROJECT_DIR$/Assets/EggtonioCreditsMoveForward.cs" />
+        <option value="$PROJECT_DIR$/Assets/LoadCreditsScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Fungus/Scripts/Components/WriterAudio.cs" />
+        <option value="$PROJECT_DIR$/Assets/CreditsReel.cs" />
+        <option value="$PROJECT_DIR$/Assets/MrMusic.cs" />
       </list>
     </option>
   </component>
@@ -379,6 +408,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerDeath.cs</url>
+          <line>57</line>
+          <properties documentPath="D:\Unity Projects\iat410\Egg Knight\Assets\Scripts\Player\PlayerDeath.cs" initialLine="57">
+            <startOffsets>
+              <option value="1966" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1990" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

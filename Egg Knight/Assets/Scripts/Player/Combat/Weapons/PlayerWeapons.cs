@@ -70,8 +70,8 @@ public class PlayerWeapons : MonoBehaviour {
   private void AddBerserkerSpeed(object sender, EventArgs e) {
     if (!_inventory.HasItem(Item.BerserkersFury)) return;
     _berserkerSpeed += 0.05f;
-    if (_berserkerSpeed > 0.5f) {
-      _berserkerSpeed = 0.5f;
+    if (_berserkerSpeed > 0.6f) {
+      _berserkerSpeed = 0.6f;
     }
 
     _tempSpeed = _speed + _berserkerSpeed;
@@ -85,7 +85,12 @@ public class PlayerWeapons : MonoBehaviour {
     _isBerserkerDecaying = true;
     while (_berserkerSpeed > 0) {
       yield return new WaitForSeconds(0.1f);
-      _berserkerSpeed -= 0.005f;
+      if (_berserkerSpeed > 0.5f) _berserkerSpeed -= 0.004f;
+      if (_berserkerSpeed > 0.4f) _berserkerSpeed -= 0.003f;
+      if (_berserkerSpeed > 0.3f) _berserkerSpeed -= 0.002f;
+      if (_berserkerSpeed > 0.2f) _berserkerSpeed -= 0.002f;
+      if (_berserkerSpeed > 0.1f) _berserkerSpeed -= 0.002f;
+      _berserkerSpeed -= 0.002f;
       _tempSpeed = _speed + _berserkerSpeed;
       OnAttackSpeedChange?.Invoke(this, EventArgs.Empty);
     }
