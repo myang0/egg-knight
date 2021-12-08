@@ -222,6 +222,7 @@
           </e>
         </e>
         <e p="CreditsReel.cs" t="Include" />
+        <e p="CursorControl.cs" t="Include" />
         <e p="DeliverySpot.cs" t="Include" />
         <e p="DyingGuard.cs" t="Include" />
         <e p="EggtonioCredits.cs" t="Include" />

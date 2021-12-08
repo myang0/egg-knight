@@ -12,6 +12,11 @@ public class TitleMenu : MonoBehaviour {
     public CanvasGroup titleCanvasGroup;
     public Slider loadingSlider;
     public bool isGameLoading;
+
+    public void LoadIntro() {
+        SceneManager.LoadScene("Scenes/IntroScene");
+    }
+
     public void StartGame() {
         Debug.Log("STARTING GAME");
         StartCoroutine(FadeOutTitleScreen());

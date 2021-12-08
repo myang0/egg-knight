@@ -41,9 +41,9 @@ public class StatDisplayManager : MonoBehaviour {
     }
 
     public void UpdateStats(object sender, EventArgs e) {
-        attack.SetText(_playerWeapons.GetDamageMultiplier().ToString("F2"));
-        attackSpeed.SetText(_playerWeapons.GetSpeedMultiplier().ToString("F2"));
-        armour.SetText(_playerHealth.GetArmour().ToString("F2"));
+        attack.SetText(_playerWeapons.GetDamageMultiplier().ToString("F2") + "x");
+        attackSpeed.SetText(_playerWeapons.GetSpeedMultiplier().ToString("F2") + "x");
+        armour.SetText(_playerHealth.GetArmour().ToString("F2") + "x");
         speed.SetText(_playerMovement._currentMovementSpeed.ToString("F2"));
     }
     
