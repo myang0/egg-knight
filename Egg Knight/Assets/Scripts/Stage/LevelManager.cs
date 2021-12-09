@@ -446,24 +446,24 @@ namespace Stage
         }
 
         public void StartEggnaDialogue() {
-            _playerHealth.isInvulnerable = true;
             OnEggnaHalfHealthDialogueStart?.Invoke(this, EventArgs.Empty);
 
             StartDialogue();
         }
 
         public void StartDialogue() {
+            _playerHealth.isInvulnerable = true;
             OnDialogueStart.Invoke(this, EventArgs.Empty);
         }
 
         public void EndEggnaDialogue() {
-            _playerHealth.isInvulnerable = false;
             OnEggnaHalfHealthDialogueEnd?.Invoke(this, EventArgs.Empty);
 
             EndDialogue();
         }
 
         public void EndDialogue() {
+            _playerHealth.isInvulnerable = false;
             OnDialogueEnd.Invoke(this, EventArgs.Empty);
         }
 

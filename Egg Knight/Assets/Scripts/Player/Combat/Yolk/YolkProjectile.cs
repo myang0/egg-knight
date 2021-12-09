@@ -92,6 +92,10 @@ public class YolkProjectile : Projectile {
   }
 
   private void FixedUpdate() {
+    if (_nearestEnemy == null) {
+      return;
+    }
+
     if (_isHoming && _nearestEnemy != null) {
       Vector2 direction = VectorHelper.GetVectorToPoint(transform.position, _nearestEnemy.position);
 
