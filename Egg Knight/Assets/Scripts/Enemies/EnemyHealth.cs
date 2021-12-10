@@ -34,7 +34,7 @@ public abstract class EnemyHealth : Health {
     enemyBehaviour.OnWeakened += HandleWeakened;
 
     if (_playerInventory != null && _playerInventory.HasItem(Item.Norovirus)) {
-      _currentHealth = _maxHealth * 0.9f;
+      _maxHealth = _maxHealth * 0.9f;
     } else {
       base.Awake();
     }
