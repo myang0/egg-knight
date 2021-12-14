@@ -35,9 +35,8 @@ public abstract class EnemyHealth : Health {
 
     if (_playerInventory != null && _playerInventory.HasItem(Item.Norovirus)) {
       _maxHealth = _maxHealth * 0.9f;
-    } else {
-      base.Awake();
-    }
+    } 
+    base.Awake();
   }
 
   protected virtual void HandleFrosted(object sender, EventArgs e) {
