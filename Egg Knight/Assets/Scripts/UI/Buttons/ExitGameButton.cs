@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ExitGameButton : MonoBehaviour {
 	private Button _button;
@@ -11,6 +12,7 @@ public class ExitGameButton : MonoBehaviour {
   }
 
   private void ExitGame() {
-    Application.Quit();
+      Time.timeScale = 1;
+      SceneManager.LoadScene("Scenes/TitleScene");
   }
 }

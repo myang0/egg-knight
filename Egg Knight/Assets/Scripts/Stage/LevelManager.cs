@@ -38,9 +38,14 @@ namespace Stage
         public GameObject level2Grid;
         public GameObject level3Grid;
         public GameObject pizzaSlice;
-        private const int NumStagesToBossLv1 = 10;
-        private const int NumStagesToBossLv2 = 8;
-        private const int NumStagesToBossLv3 = 9;
+        
+        // NOTE: Cross-check with Stage Manager
+        // private const int NumStagesToBossLv1 = 10;
+        // private const int NumStagesToBossLv2 = 8;
+        // private const int NumStagesToBossLv3 = 9;
+        private const int NumStagesToBossLv1 = 5;
+        private const int NumStagesToBossLv2 = 4;
+        private const int NumStagesToBossLv3 = 4;
 
         public EventHandler OnStageStart;
         
@@ -179,41 +184,45 @@ namespace Stage
                     break;
             }
 
-            shopRate += 10;
-            sirrachaRate += 1;
+            // shopRate += 10;
+            shopRate += 100 / ((NumStagesToBossLv1 + NumStagesToBossLv2 + NumStagesToBossLv3) / 4);
+            // sirrachaRate += 1;
+            sirrachaRate += 2;
+
+            var multiplier = 2;
 
             switch (currStageType) {
                 case StageType.Hard:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 5;
-                        sirrachaRate += 15; 
+                        luckyItemRate += 5*multiplier;
+                        sirrachaRate += 15*multiplier; 
                     }
 
-                    luckyItemRate += 3;
+                    luckyItemRate += 3*multiplier;
                     break;
                 
                 case StageType.Medium:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 3;
-                        sirrachaRate += 10; 
+                        luckyItemRate += 3*multiplier;
+                        sirrachaRate += 10*multiplier; 
                     }
-                    luckyItemRate += 2;
+                    luckyItemRate += 2*multiplier;
                     break;
                 
                 case StageType.Easy:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 2;
-                        sirrachaRate += 5; 
+                        luckyItemRate += 2*multiplier;
+                        sirrachaRate += 5*multiplier; 
                     }
-                    luckyItemRate += 1;
+                    luckyItemRate += 1*multiplier;
                     break;
                 
                 case StageType.Survival:
                     if (!hasPlayerTakenDamageCurrStage) {
-                        luckyItemRate += 5;
-                        sirrachaRate += 15; 
+                        luckyItemRate += 5*multiplier;
+                        sirrachaRate += 15*multiplier; 
                     }
-                    luckyItemRate += 4;
+                    luckyItemRate += 4*multiplier;
                     break;
                 
                 case StageType.Boss:
@@ -221,8 +230,8 @@ namespace Stage
                         luckyItemRate += 100;
                         sirrachaRate += 100;
                     }
-                    luckyItemRate += 5;
-                    sirrachaRate += 5;
+                    luckyItemRate += 5*multiplier;
+                    sirrachaRate += 5*multiplier;
                     break;
                 }
         }

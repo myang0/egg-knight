@@ -13,7 +13,8 @@ public class CoinDrop : MonoBehaviour
     [SerializeField] private StageManager stageManager;
     [SerializeField] private Coin coin;
     
-    private int _coinDropRate = 35;
+    // private int _coinDropRate = 35;
+    private int _coinDropRate = 50;
 
     private void Awake() {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
